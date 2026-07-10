@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EU Tobacco Lobby Watch</title>
+<style>
+  :root {
+    --navy: #0a2540;
+    --navy-light: #133a5e;
+    --orange: #e8590c;
+    --orange-light: #ff8a3d;
+    --grey-bg: #f4f6f8;
+    --grey-border: #dde3e8;
+    --text: #1c2b39;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--grey-bg);
+    color: var(--text);
+  }
+  header {
+    background: var(--navy);
+    color: #fff;
+    padding: 1.5rem 1.25rem;
+  }
+  header h1 {
+    margin: 0 0 0.25rem;
+    font-size: 1.5rem;
+  }
+  header p {
+    margin: 0;
+    color: #b9c9d8;
+    font-size: 0.9rem;
+  }
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.25rem;
+  }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.75rem;
+    margin: 1.25rem 0;
+  }
+  .stat-tile {
+    background: #fff;
+    border: 1px solid var(--grey-border);
+    border-top: 4px solid var(--orange);
+    border-radius: 6px;
+    padding: 0.9rem 1rem;
+  }
+  .stat-tile .value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .stat-tile .label {
+    font-size: 0.8rem;
+    color: #55606b;
+    margin-top: 0.2rem;
+  }
+  .updated-note {
+    font-size: 0.8rem;
+    color: #55606b;
+    margin-bottom: 1rem;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border: 1px solid var(--grey-border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  thead th {
+    background: var(--navy);
+    color: #fff;
+    text-align: left;
+    padding: 0.6rem 0.7rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  thead th.num, td.num { text-align: right; }
+  tbody tr.org-row {
+    cursor: pointer;
+    border-top: 1px solid var(--grey-border);
+  }
+  tbody tr.org-row:hover {
+    background: #f0f5fa;
+  }
+  tbody td {
+    padding: 0.55rem 0.7rem;
+    font-size: 0.88rem;
+    vertical-align: top;
+  }
+  tbody tr.org-row td:first-child {
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .unregistered-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    padding: 0.1rem 0.45rem;
+    border-radius: 10px;
+    background: #fdece3;
+    color: #b6410a;
+    font-weight: 600;
+  }
+  .muted { color: #8a949c; font-style: italic; }
+  tr.detail-row { display: none; }
+  tr.detail-row.open { display: table-row; }
+  tr.detail-row td {
+    background: #f9fbfc;
+    padding: 0.9rem 1.1rem;
+    border-top: 1px dashed var(--grey-border);
+  }
+  .detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+  .detail-grid dt { color: #55606b; font-weight: 600; margin-bottom: 0.1rem; }
+  .detail-grid dd { margin: 0 0 0.6rem; }
+  .intermediaries-list {
+    margin: 0.2rem 0 0;
+    padding-left: 1.1rem;
+  }
+  a.register-link {
+    display: inline-block;
+    margin-top: 0.4rem;
+    color: var(--orange);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.85rem;
+  }
+  a.register-link:hover { text-decoration: underline; }
+  .sort-indicator { opacity: 0.6; font-size: 0.7em; }
+  footer {
+    text-align: center;
+    font-size: 0.78rem;
+    color: #8a949c;
+    padding: 2rem 1rem;
+  }
+
+  @media (max-width: 720px) {
+    thead { display: none; }
+    table, tbody, tr, td { display: block; width: 100%; }
+    tbody tr.org-row {
+      border: 1px solid var(--grey-border);
+      border-radius: 6px;
+      margin-bottom: 0.6rem;
+      padding: 0.4rem 0.2rem;
+    }
+    tbody td {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.35rem 0.7rem;
+    }
+    tbody td.num { text-align: right; }
+    tbody td::before {
+      content: attr(data-label);
+      font-weight: 600;
+      color: #55606b;
+      flex: 0 0 auto;
+    }
+    tbody td:first-child::before { content: ""; }
+    tr.detail-row.open td { display: block; }
+    tr.detail-row.open td::before { content: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>EU Tobacco Lobby Watch</h1>
+  <p>Suivi du lobby du tabac auprès des institutions de l'Union européenne</p>
+</header>
+
+<main>
+  <div class="stats" id="stats"></div>
+  <p class="updated-note" id="updated-note"></p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Organisation</th>
+        <th>Type</th>
+        <th class="num">Budget annuel</th>
+        <th class="num">Personnes</th>
+        <th class="num">Cabinets</th>
+        <th class="num">Réunions PE (2025+)</th>
+        <th class="num">Réunions Commission (2025+)</th>
+      </tr>
+    </thead>
+    <tbody id="table-body"></tbody>
+  </table>
+
+  <p class="updated-note">
+    Cliquez sur une ligne pour voir la fiche détaillée de l'organisation.
+    Le budget affiché est la fourchette officielle la plus récente disponible
+    (fiche du registre de transparence de l'UE, mise à jour automatiquement
+    chaque nuit) ; à défaut, la valeur issue de la recherche initiale est
+    affichée à la place.
+  </p>
+</main>
+
+<footer>
+  Sources : registre de transparence de l'UE, LobbyFacts, Parlement européen.
+  Données mises à jour automatiquement chaque nuit.
+</footer>
+
+<script>
+async function loadData() {
+  const [entitiesRes, liveRes] = await Promise.all([
+    fetch('data/entities.json'),
+    fetch('data/live_data.json'),
+  ]);
+  const entitiesJson = await entitiesRes.json();
+  const liveData = await liveRes.json();
+  return { entities: entitiesJson.entities, liveData };
+}
+
+function formatEuro(n) {
+  if (n === null || n === undefined) return null;
+  return n.toLocaleString('fr-FR') + ' €';
+}
+
+function budgetRange(low, high) {
+  if (low === null || low === undefined || high === null || high === undefined) return null;
+  return `${formatEuro(low)} – ${formatEuro(high)}`;
+}
+
+function mergeOrg(entity, liveData) {
+  const live = entity.register_id ? liveData[entity.register_id] : null;
+  const hasRegisterId = !!entity.register_id;
+
+  const budgetLow = (live && live.budget_low != null) ? live.budget_low : entity.budget_low;
+  const budgetHigh = (live && live.budget_high != null) ? live.budget_high : entity.budget_high;
+  const peopleInvolved = (live && live.people_involved != null) ? live.people_involved : entity.people_involved;
+  const nbIntermediaries = (live && live.nb_intermediaries != null) ? live.nb_intermediaries : entity.nb_intermediaries;
+  const intermediariesNames = (live && live.intermediaries_current_year) ? live.intermediaries_current_year : null;
+
+  const epMeetings = live && live.ep_meetings ? live.ep_meetings.since_2025_count : null;
+  const ecMeetings = live && live.ec_meetings ? live.ec_meetings.since_2025_count : null;
+
+  return {
+    name: entity.name,
+    type: entity.type || '',
+    section: entity.section || '',
+    hqAddress: entity.hq_address || '',
+    dateRegistration: entity.date_registration || '',
+    registerUrl: entity.register_url || null,
+    hasRegisterId,
+    budgetLow, budgetHigh,
+    peopleInvolved,
+    nbIntermediaries,
+    intermediariesNames,
+    epMeetings,
+    ecMeetings,
+    lobbyfactsStatus: live && live.lobbyfacts ? live.lobbyfacts.status : null,
+    lobbyfactsSnapshot: live && live.lobbyfacts ? live.lobbyfacts.snapshot_date : null,
+  };
+}
+
+function renderStats(aggregate, nbEntities) {
+  const stats = document.getElementById('stats');
+  const tiles = [
+    { value: nbEntities, label: 'Organisations suivies' },
+    { value: formatEuro(aggregate.budget_high_total) || '—', label: 'Budget annuel déclaré (total)' },
+    { value: aggregate.people_involved_total ?? '—', label: 'Personnes concernées (total)' },
+    { value: aggregate.ep_meetings_since_2025_total ?? '—', label: 'Réunions Parlement (depuis 2025)' },
+    { value: aggregate.ec_meetings_since_2025_total ?? '—', label: 'Réunions Commission (depuis 2025)' },
+  ];
+  stats.innerHTML = tiles.map(t => `
+    <div class="stat-tile">
+      <div class="value">${t.value}</div>
+      <div class="label">${t.label}</div>
+    </div>
+  `).join('');
+}
+
+function renderTable(orgs) {
+  const tbody = document.getElementById('table-body');
+  const rows = [];
+
+  orgs.forEach((org, i) => {
+    const budget = budgetRange(org.budgetLow, org.budgetHigh);
+    const unregisteredBadge = !org.hasRegisterId
+      ? '<span class="unregistered-badge">non enregistrée</span>'
+      : '';
+
+    rows.push(`
+      <tr class="org-row" data-index="${i}">
+        <td data-label="Organisation">${org.name} ${unregisteredBadge}</td>
+        <td data-label="Type">${org.type}</td>
+        <td class="num" data-label="Budget annuel">${budget ?? '<span class="muted">n.c.</span>'}</td>
+        <td class="num" data-label="Personnes">${org.peopleInvolved ?? '<span class="muted">n.c.</span>'}</td>
+        <td class="num" data-label="Cabinets">${org.nbIntermediaries ?? '<span class="muted">n.c.</span>'}</td>
+        <td class="num" data-label="Réunions PE">${org.hasRegisterId ? (org.epMeetings ?? '<span class="muted">n.c.</span>') : '<span class="muted">non enregistrée</span>'}</td>
+        <td class="num" data-label="Réunions Commission">${org.hasRegisterId ? (org.ecMeetings ?? '<span class="muted">n.c.</span>') : '<span class="muted">non enregistrée</span>'}</td>
+      </tr>
+    `);
+
+    const intermediariesHtml = (org.intermediariesNames && org.intermediariesNames.length)
+      ? `<ul class="intermediaries-list">${org.intermediariesNames.map(n => `<li>${n}</li>`).join('')}</ul>`
+      : '<span class="muted">Aucun / non communiqué</span>';
+
+    rows.push(`
+      <tr class="detail-row" id="detail-${i}">
+        <td colspan="7">
+          <div class="detail-grid">
+            <div>
+              <dt>Type</dt><dd>${org.type || '—'}</dd>
+              <dt>Section</dt><dd>${org.section || '—'}</dd>
+              <dt>Siège</dt><dd>${org.hqAddress || '—'}</dd>
+            </div>
+            <div>
+              <dt>Enregistrée depuis</dt><dd>${org.dateRegistration || '—'}</dd>
+              <dt>Statut LobbyFacts</dt><dd>${org.lobbyfactsStatus || '—'}${org.lobbyfactsSnapshot ? ` (instantané du ${org.lobbyfactsSnapshot.slice(0,10)})` : ''}</dd>
+            </div>
+            <div>
+              <dt>Cabinets / consultants (exercice en cours)</dt>
+              <dd>${intermediariesHtml}</dd>
+            </div>
+          </div>
+          ${org.registerUrl
+            ? `<a class="register-link" href="${org.registerUrl}" target="_blank" rel="noopener">Voir la fiche officielle du registre de transparence →</a>`
+            : '<p class="muted">Organisation non enregistrée au registre de transparence de l\'UE.</p>'}
+        </td>
+      </tr>
+    `);
+  });
+
+  tbody.innerHTML = rows.join('');
+
+  tbody.querySelectorAll('tr.org-row').forEach(row => {
+    row.addEventListener('click', () => {
+      const detail = document.getElementById(`detail-${row.dataset.index}`);
+      detail.classList.toggle('open');
+    });
+  });
+}
+
+(async function init() {
+  try {
+    const { entities, liveData } = await loadData();
+    const orgs = entities.map(e => mergeOrg(e, liveData));
+
+    orgs.sort((a, b) => (b.budgetHigh ?? -1) - (a.budgetHigh ?? -1));
+
+    const aggregate = liveData._aggregate || {};
+    renderStats(aggregate, entities.length);
+    renderTable(orgs);
+
+    const updatedAt = aggregate.computed_at ? new Date(aggregate.computed_at) : null;
+    document.getElementById('updated-note').textContent = updatedAt
+      ? `Dernière mise à jour des données live : ${updatedAt.toLocaleString('fr-FR')}`
+      : 'Date de dernière mise à jour inconnue.';
+  } catch (err) {
+    document.getElementById('table-body').innerHTML =
+      `<tr><td colspan="7">Erreur de chargement des données : ${err.message}</td></tr>`;
+  }
+})();
+</script>
+
+</body>
+</html>
