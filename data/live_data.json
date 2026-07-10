@@ -1,0 +1,2728 @@
+{
+  "51925911965-76": {
+    "name": "Philip Morris International Inc.",
+    "register_id": "51925911965-76",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 8,
+      "members_fte": 2.0,
+      "members_25": 8,
+      "members_50": null,
+      "members_75": null,
+      "members_100": null,
+      "snapshot_date": "2022-03-16T11:57:59.690000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=51925911965-76"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/51925911965-76/pdf",
+      "total_all_time_count": 10,
+      "since_2025_count": 3,
+      "since_2025": [
+        {
+          "date": "2026-01-30",
+          "representative_or_dg": "Peter Berz, Head of Unit, Trade",
+          "location_and_subject": "Videoconference Request for public access to documents regarding PMI correspondence."
+        },
+        {
+          "date": "2026-01-21",
+          "representative_or_dg": "Eric Mamer, Director-General, Environment",
+          "location_and_subject": "Brussels General discussion on DG ENV priorities"
+        },
+        {
+          "date": "2025-02-19",
+          "representative_or_dg": "Cristina Dias, Cabinet member of Maria Luís Albuquerque",
+          "location_and_subject": "Brussels, Belgium Presentation of the company concerns as regards taxation of tobacco products and CoP on tobacco control"
+        }
+      ]
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=51925911965-76&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 94,
+      "since_2025": [
+        {
+          "date": "2026-07-03",
+          "member_name": "ZIJLSTRA Auke",
+          "member_capacity": "Member",
+          "title": "Scientific research tobacco related harm reduction",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-06-17",
+          "member_name": "SCHEURING-WIELGUS Joanna",
+          "member_capacity": "Member",
+          "title": "Structure and rates of excise duty applied to tobacco and tobacco related products",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-06-09",
+          "member_name": "VAN OVERTVELDT Johan",
+          "member_capacity": "Member",
+          "title": "Sustainable Finance Disclosure Regulation",
+          "procedure_reference": "2025/0361(COD)"
+        },
+        {
+          "date": "2026-06-02",
+          "member_name": "GYŐRI Enikő",
+          "member_capacity": "Member",
+          "title": "Revision of the Tobacco Taxation Directive",
+          "procedure_reference": "2025/0581(CNS)"
+        },
+        {
+          "date": "2026-06-02",
+          "member_name": "TROCHU Laurence",
+          "member_capacity": "Member",
+          "title": "Législation européenne sur le tabac",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-06-02",
+          "member_name": "FIDANZA Carlo",
+          "member_capacity": "Member",
+          "title": "legislative update",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-06-02",
+          "member_name": "AGIRREGOITIA MARTÍNEZ Oihane",
+          "member_capacity": "Member",
+          "title": "Tabaco",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-06-02",
+          "member_name": "CRISTEA Andi",
+          "member_capacity": "Member",
+          "title": "Current legislative developments in the tobacco sector",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-06-02",
+          "member_name": "BIRKHOLM Majbritt",
+          "member_capacity": "Member",
+          "title": "Revision af tobaksbeskatningsdirektivet",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-06-02",
+          "member_name": "BARTULICA Stephen Nikola",
+          "member_capacity": "Member",
+          "title": "Tobacco taxation",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-06-02",
+          "member_name": "GUALMINI Elisabetta",
+          "member_capacity": "Member",
+          "title": "ITRE committee",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-06-02",
+          "member_name": "MAYDELL Eva",
+          "member_capacity": "Member",
+          "title": "Revision of the tobacco taxation Directive",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-05-27",
+          "member_name": "NIEBLER Angelika",
+          "member_capacity": "Member",
+          "title": "EU Consumer Policies",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-05-11",
+          "member_name": "VINCZE Loránt",
+          "member_capacity": "Member",
+          "title": "Transformation and vision for a smoke-free future",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-05-05",
+          "member_name": "PEDULLA' Gaetano",
+          "member_capacity": "Shadow rapporteur",
+          "title": "Mercato europeo prodotti del fumo, tassazione",
+          "procedure_reference": "2025/0580(CNS)"
+        },
+        {
+          "date": "2026-04-29",
+          "member_name": "DIEPEVEEN Ton",
+          "member_capacity": "Member",
+          "title": "SANT dossiers",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-04-21",
+          "member_name": "STORM Kristoffer",
+          "member_capacity": "Member",
+          "title": "Cardiovascular diseases",
+          "procedure_reference": "2025/2132(INI)"
+        },
+        {
+          "date": "2026-04-14",
+          "member_name": "RUISSEN Bert-Jan",
+          "member_capacity": "Member",
+          "title": "Rookvrije alternatieven sigaretten",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-04-09",
+          "member_name": "PEDULLA' Gaetano",
+          "member_capacity": "Shadow rapporteur",
+          "title": "Mercato europeo prodotti del fumo, tassazione",
+          "procedure_reference": "2025/0581(CNS)"
+        },
+        {
+          "date": "2026-03-24",
+          "member_name": "DE MEO Salvatore",
+          "member_capacity": "Member",
+          "title": "Tobacco",
+          "procedure_reference": "2025/2132(INI)"
+        },
+        {
+          "date": "2026-03-05",
+          "member_name": "PIMPIE Pierre",
+          "member_capacity": "Member",
+          "title": "Taxation du tabac",
+          "procedure_reference": "2025/0581(CNS)"
+        },
+        {
+          "date": "2026-03-05",
+          "member_name": "BOCHEŃSKI Tobiasz",
+          "member_capacity": "Member",
+          "title": "Philip Morris's activities",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-03-04",
+          "member_name": "SYPNIEWSKI Marcin",
+          "member_capacity": "Member",
+          "title": "Excise directive review",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-03-04",
+          "member_name": "BORRÁS PABÓN Mireia",
+          "member_capacity": "Member",
+          "title": "Tobbaco Directive",
+          "procedure_reference": "2025/0581(CNS)"
+        },
+        {
+          "date": "2026-03-03",
+          "member_name": "KÖHLER Stefan",
+          "member_capacity": "Member",
+          "title": "Politischer Austausch über Einwegplastik",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-03-03",
+          "member_name": "KOLÁŘ Ondřej",
+          "member_capacity": "Member",
+          "title": "Courtesy meeting with Petr Šebek",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-03-03",
+          "member_name": "LÁSZLÓ András",
+          "member_capacity": "Member",
+          "title": "Informal meeting",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-03-03",
+          "member_name": "DAHL Henrik",
+          "member_capacity": "Member",
+          "title": "Future Regulation",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-02-16",
+          "member_name": "NIEBLER Angelika",
+          "member_capacity": "Member",
+          "title": "EU Policies",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-02-11",
+          "member_name": "ZIJLSTRA Auke",
+          "member_capacity": "Shadow rapporteur",
+          "title": "Digital Euro, Tobacco Tax Directive",
+          "procedure_reference": "2023/0212(COD)"
+        },
+        {
+          "date": "2026-02-10",
+          "member_name": "ZIJLSTRA Auke",
+          "member_capacity": "Member",
+          "title": "Tobacco Excise Directive",
+          "procedure_reference": "2025/0581(CNS)"
+        },
+        {
+          "date": "2026-02-04",
+          "member_name": "HERBST Niclas",
+          "member_capacity": "Committee chair",
+          "title": "Taxation towards better control",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-02-03",
+          "member_name": "HADJIPANTELA Michalis",
+          "member_capacity": "Member",
+          "title": "Meeting",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-01-30",
+          "member_name": "STORM Kristoffer",
+          "member_capacity": "Member",
+          "title": "Courtesy call",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-11",
+          "member_name": "ZĪLE Roberts",
+          "member_capacity": "Member",
+          "title": "European tobacco industry",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-05",
+          "member_name": "FALCONE Marco",
+          "member_capacity": "Member",
+          "title": "Council Directive amending Directive (EU) 2020/262 as regards the general arrangements for excise duty in respect of tobacco and tobacco related products",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-04",
+          "member_name": "ZIJLSTRA Auke",
+          "member_capacity": "Member",
+          "title": "Tobacco Tax Directive",
+          "procedure_reference": "2025/0580(CNS)"
+        },
+        {
+          "date": "2025-10-14",
+          "member_name": "DOLESCHAL Christian",
+          "member_capacity": "Member",
+          "title": "Jugendschutz",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-10-13",
+          "member_name": "TINAGLI Irene",
+          "member_capacity": "Member",
+          "title": "Introductory meeting",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-09-17",
+          "member_name": "NIEBLER Angelika",
+          "member_capacity": "Member",
+          "title": "EU regulatory policies",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-09-10",
+          "member_name": "ZIJLSTRA Auke",
+          "member_capacity": "Member",
+          "title": "Tobacco tax directive",
+          "procedure_reference": "2025/0581(CNS)"
+        },
+        {
+          "date": "2025-09-04",
+          "member_name": "HAIDER Roman",
+          "member_capacity": "Member",
+          "title": "TED",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-09-03",
+          "member_name": "NIEBLER Angelika",
+          "member_capacity": "Member",
+          "title": "EU and Consumer regulations",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-09-03",
+          "member_name": "SCHENK Oliver",
+          "member_capacity": "Member",
+          "title": "European Environmental Policy - priorities",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-09-03",
+          "member_name": "SOKOL Tomislav",
+          "member_capacity": "Member",
+          "title": "European policy",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-09-03",
+          "member_name": "DAHL Henrik",
+          "member_capacity": "Member",
+          "title": "General discussions",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-09-03",
+          "member_name": "BARNA Dan",
+          "member_capacity": "Member",
+          "title": "Tobacco Excise Directive (TED)",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-09-03",
+          "member_name": "FERNÁNDEZ Jonás",
+          "member_capacity": "Member",
+          "title": "Tobacco Taxation Directive and Economic Priorities",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-09-03",
+          "member_name": "WINKLER Iuliu",
+          "member_capacity": "Member",
+          "title": "Tobacco Products Directive and the own resources in the new MFF",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-09-03",
+          "member_name": "TUDOSE Mihai",
+          "member_capacity": "Member",
+          "title": "Socio-economic impact of Philip Morris International in Romania and bilateral trade agreements",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-09-03",
+          "member_name": "RATAS Jüri",
+          "member_capacity": "Member",
+          "title": "Nikotiinitoodete maksustamise direktiiv",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-09-03",
+          "member_name": "UŠAKOVS Nils",
+          "member_capacity": "Member",
+          "title": "Exchange on Own Resources",
+          "procedure_reference": "2025/0571(APP)"
+        },
+        {
+          "date": "2025-09-03",
+          "member_name": "VISTISEN Anders",
+          "member_capacity": "Member",
+          "title": "Tobacco",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-09-03",
+          "member_name": "CAVEDAGNA Stefano",
+          "member_capacity": "Member",
+          "title": "Discussion on the revision of the Tobacco Taxation directive",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-09-03",
+          "member_name": "MUREŞAN Siegfried",
+          "member_capacity": "Member",
+          "title": "Introductory meeting with the new leadership of Philip Morris România",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-09-02",
+          "member_name": "DÎNCU Vasile",
+          "member_capacity": "Member",
+          "title": "The vision of a smokeless future for the EU and the company's future prospects",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-09-02",
+          "member_name": "ZIJLSTRA Auke",
+          "member_capacity": "Member",
+          "title": "Tobacco Tax Directive",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-09-02",
+          "member_name": "HAVA Mircea-Gheorghe",
+          "member_capacity": "Member",
+          "title": "Provocările și oportunitățile legislative europene referitoare la industria și piața tutunului din România",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-09-02",
+          "member_name": "BRASIER-CLAIN Marie-Luce",
+          "member_capacity": "Member",
+          "title": "Échanges sur la révision des directives européennes relatives aux produits du tabac et à la fiscalité, et leurs impacts en matière de santé publique, de réduction des risques et de lutte contre le tabagisme.",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-09-02",
+          "member_name": "CRISTEA Andi",
+          "member_capacity": "Member",
+          "title": "Overview of the company operations within the framework of EU industry legislation",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-09-02",
+          "member_name": "NICA Dan",
+          "member_capacity": "Member",
+          "title": "Presentation of Philip Morris Romania vision, activities in the region and the process of company transformation",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-09-02",
+          "member_name": "BAY Nicolas",
+          "member_capacity": "Member",
+          "title": "Enjeux sur la révision des textes européens relatifs à la fiscalité et à la règlementation des produits du tabac",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-07-01",
+          "member_name": "NEVADO DEL CAMPO Elena",
+          "member_capacity": "Member",
+          "title": "Nuevos productos e implicaciones sanitarias",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-06-04",
+          "member_name": "RAZZA Ruggero",
+          "member_capacity": "Member",
+          "title": "Scambio di opinioni in materia di Salute",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-05-20",
+          "member_name": "FALCONE Marco",
+          "member_capacity": "Member",
+          "title": "La disciplina dei prodotti del tabacco e della nicotina",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-05-20",
+          "member_name": "BONTE Barbara",
+          "member_capacity": "Member",
+          "title": "Nicotine alternatives",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-05-15",
+          "member_name": "ZĪLE Roberts",
+          "member_capacity": "Member",
+          "title": "Future of tobacco industry in Europe",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-05-13",
+          "member_name": "RATAS Jüri",
+          "member_capacity": "Member",
+          "title": "Excise Duties on Tobacco",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-05-13",
+          "member_name": "IJABS Ivars",
+          "member_capacity": "Member",
+          "title": "Taxation and Public Health",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-05-13",
+          "member_name": "BLINKEVIČIŪTĖ Vilija",
+          "member_capacity": "Member",
+          "title": "Meeting",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-05-06",
+          "member_name": "ZIJLSTRA Auke",
+          "member_capacity": "Member",
+          "title": "Tobacco tax directive",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-04-24",
+          "member_name": "WECHSLER Andrea",
+          "member_capacity": "Member",
+          "title": "EU health policy",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-04-24",
+          "member_name": "FREUND Daniel",
+          "member_capacity": "Member",
+          "title": "Observing tobacco lobbying",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-03-28",
+          "member_name": "VIGENIN Kristian",
+          "member_capacity": "Member",
+          "title": "Upcoming legislation",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-03-25",
+          "member_name": "VANDENDRIESSCHE Tom",
+          "member_capacity": "Member",
+          "title": "Tobacco policy",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-03-20",
+          "member_name": "PALMISANO Valentina",
+          "member_capacity": "Member",
+          "title": "Incontro conoscitivo",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-03-20",
+          "member_name": "JARUBAS Adam",
+          "member_capacity": "Committee chair",
+          "title": "tobacco",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-03-20",
+          "member_name": "HETMAN Krzysztof",
+          "member_capacity": "Member",
+          "title": "Situation of Polish tabac farmers",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-03-19",
+          "member_name": "CAVAZZINI Anna",
+          "member_capacity": "Shadow rapporteur",
+          "title": "Public procurement",
+          "procedure_reference": "2024/2103(INI)"
+        },
+        {
+          "date": "2025-03-19",
+          "member_name": "ANGEL Marc",
+          "member_capacity": "Member",
+          "title": "Alternative products to cigarettes",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-03-19",
+          "member_name": "HADJIPANTELA Michalis",
+          "member_capacity": "Member",
+          "title": "Introductory Meeting",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-03-19",
+          "member_name": "MARTÍN FRÍAS Jorge",
+          "member_capacity": "Member",
+          "title": "Revisión de la Directiva de Impuestos sobre el Tabaco de la Unión Europea",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-03-18",
+          "member_name": "FERNÁNDEZ Jonás",
+          "member_capacity": "Member",
+          "title": "Tobacco Taxation Directive and Economic Priorities",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-03-18",
+          "member_name": "SOKOL Tomislav",
+          "member_capacity": "Member",
+          "title": "Internal market, consumer protection and health policy",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-03-18",
+          "member_name": "NEVADO DEL CAMPO Elena",
+          "member_capacity": "Member",
+          "title": "New products and health implications",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-03-18",
+          "member_name": "BENJUMEA BENJUMEA Isabel",
+          "member_capacity": "Member",
+          "title": "FISC matters",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-03-18",
+          "member_name": "KUBÍN Tomáš",
+          "member_capacity": "Member",
+          "title": "Explanation of position on current and forthcoming legislation.",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-03-18",
+          "member_name": "MADISON Jaak",
+          "member_capacity": "Member",
+          "title": "Overview of the nicotine market (update)",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-03-18",
+          "member_name": "VISTISEN Anders",
+          "member_capacity": "Member",
+          "title": "Tobak",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-02-04",
+          "member_name": "VAUTMANS Hilde",
+          "member_capacity": "Member",
+          "title": "Tobacco Products Directive",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-01-30",
+          "member_name": "DIEPEVEEN Ton",
+          "member_capacity": "Member",
+          "title": "Kennismakingsgesprek",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-01-29",
+          "member_name": "MADISON Jaak",
+          "member_capacity": "Member",
+          "title": "Overview of the nicotine market",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-01-29",
+          "member_name": "HOHLMEIER Monika",
+          "member_capacity": "Member",
+          "title": "illegal smuggling of cigarettes into EU and the health and financial damages resulting",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-01-28",
+          "member_name": "VERYGA Aurelijus",
+          "member_capacity": "Member",
+          "title": "Tobacco Industry and Public Health in Europe",
+          "procedure_reference": null
+        }
+      ]
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "62460931291-40": {
+    "name": "Imperial Brands",
+    "register_id": "62460931291-40",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 6,
+      "members_fte": 5.5,
+      "members_25": null,
+      "members_50": 1,
+      "members_75": null,
+      "members_100": 5,
+      "snapshot_date": "2021-10-18T17:10:21.872000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=62460931291-40"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/62460931291-40/pdf",
+      "total_all_time_count": 1,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=62460931291-40&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 12,
+      "since_2025": [
+        {
+          "date": "2026-03-26",
+          "member_name": "KRUIS Sebastian",
+          "member_capacity": "Member",
+          "title": "Regulation tobacco and smoke-free alternatives",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-19",
+          "member_name": "NEVADO DEL CAMPO Elena",
+          "member_capacity": "Member",
+          "title": "Agricultura extremeña",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-13",
+          "member_name": "BRASIER-CLAIN Marie-Luce",
+          "member_capacity": "Member",
+          "title": "Discussion autour du rapport d’initiative concernant une stratégie européenne sur les maladies cardiovasculaires",
+          "procedure_reference": "2025/2132(INI)"
+        },
+        {
+          "date": "2025-11-07",
+          "member_name": "GYŐRI Enikő",
+          "member_capacity": "Member",
+          "title": "Revision of the Tobacco Taxation Directive",
+          "procedure_reference": "2025/0580(CNS)"
+        },
+        {
+          "date": "2025-11-06",
+          "member_name": "VERYGA Aurelijus",
+          "member_capacity": "Member",
+          "title": "The future of nicotine products in Europe",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-05",
+          "member_name": "ZŁOTOWSKI Kosma",
+          "member_capacity": "Member",
+          "title": "Excise duties on tobacco",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-05",
+          "member_name": "ZALEWSKA Anna",
+          "member_capacity": "Member",
+          "title": "Dyrektywa Rady 2011/64/UE z dnia 21 czerwca 2011 r. w sprawie struktury oraz stawek akcyzy stosowanych do wyrobów tytoniowych (znanej jako „Tobacco Excise Directive”)",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-05",
+          "member_name": "KARTHEISER Fernand",
+          "member_capacity": "Member",
+          "title": "Accises sur le tabac",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-05",
+          "member_name": "NAGYOVÁ Jana",
+          "member_capacity": "Member",
+          "title": "Excise duty - tobacco",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-05",
+          "member_name": "POKORNÁ JERMANOVÁ Jaroslava",
+          "member_capacity": "Member",
+          "title": "EU Directive on the Excise Duty on Tobacco",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-05",
+          "member_name": "FALCONE Marco",
+          "member_capacity": "Member",
+          "title": "Council Directive amending Directive (EU) 2020/262 as regards the general arrangements for excise duty in respect of tobacco and tobacco related products",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-05",
+          "member_name": "KANEV Radan",
+          "member_capacity": "Member",
+          "title": "Upcoming taxation legislation tobacco products",
+          "procedure_reference": null
+        }
+      ]
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "71175716023-03": {
+    "name": "JT International",
+    "register_id": "71175716023-03",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 5,
+      "members_fte": 3.0,
+      "members_25": 1,
+      "members_50": 1,
+      "members_75": 3,
+      "members_100": null,
+      "snapshot_date": "2022-03-01T09:53:31.096000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=71175716023-03"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/71175716023-03/pdf",
+      "total_all_time_count": 4,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=71175716023-03&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 6,
+      "since_2025": [
+        {
+          "date": "2025-12-16",
+          "member_name": "VIVALDINI Mariateresa",
+          "member_capacity": "Member",
+          "title": "Tobacco Industry",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-10-30",
+          "member_name": "BARLEY Katarina",
+          "member_capacity": "Member",
+          "title": "Tabaksteuerrichtlinie",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-10-28",
+          "member_name": "HADJIPANTELA Michalis",
+          "member_capacity": "Member",
+          "title": "Meeting on Tobacco Excise Directive",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-05-06",
+          "member_name": "CEPEDA José",
+          "member_capacity": "Member",
+          "title": "Legislation current term",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-03-24",
+          "member_name": "VERYGA Aurelijus",
+          "member_capacity": "Member",
+          "title": "The upcoming Tobacco Products Directive",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-01-21",
+          "member_name": "ZIJLSTRA Auke",
+          "member_capacity": "Member",
+          "title": "Tobacco tax directive",
+          "procedure_reference": null
+        }
+      ]
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "124135527355-29": {
+    "name": "J CORTES CIGARS",
+    "register_id": "124135527355-29",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 2,
+      "members_fte": 0.5,
+      "members_25": 2,
+      "members_50": null,
+      "members_75": null,
+      "members_100": null,
+      "snapshot_date": "2021-10-18T18:02:32.623000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=124135527355-29"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/124135527355-29/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=124135527355-29&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "2427500988-58": {
+    "name": "British American Tobacco",
+    "register_id": "2427500988-58",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 7,
+      "members_fte": 1.8,
+      "members_25": 2,
+      "members_50": 2,
+      "members_75": null,
+      "members_100": null,
+      "snapshot_date": "2022-03-16T17:33:28.287000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=2427500988-58"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/2427500988-58/pdf",
+      "total_all_time_count": 4,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=2427500988-58&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 33,
+      "since_2025": [
+        {
+          "date": "2026-07-08",
+          "member_name": "KNOTEK Ondřej",
+          "member_capacity": "Member",
+          "title": "SANT Committee",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-06-23",
+          "member_name": "WEIMERS Charlie",
+          "member_capacity": "Member",
+          "title": "EU Harm reduction policy",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-06-16",
+          "member_name": "RAZZA Ruggero",
+          "member_capacity": "Member",
+          "title": "Incontro conoscitivo su tematiche SANT",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-06-16",
+          "member_name": "ZIJLSTRA Auke",
+          "member_capacity": "Member",
+          "title": "Tobacco tax directive",
+          "procedure_reference": "2025/0581(CNS)"
+        },
+        {
+          "date": "2026-06-02",
+          "member_name": "FIDANZA Carlo",
+          "member_capacity": "Member",
+          "title": "legislative update",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-06-02",
+          "member_name": "SQUARTA Marco",
+          "member_capacity": "Shadow rapporteur",
+          "title": "Eu Youth Strategy - considerations on SANT opinion",
+          "procedure_reference": "2025/2115(INI)"
+        },
+        {
+          "date": "2026-05-05",
+          "member_name": "DIEPEVEEN Ton",
+          "member_capacity": "Member",
+          "title": "Kennismakingsgesprek",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-04-16",
+          "member_name": "HADJIPANTELA Michalis",
+          "member_capacity": "Member",
+          "title": "BECA report",
+          "procedure_reference": "2025/2139(INI)"
+        },
+        {
+          "date": "2026-03-25",
+          "member_name": "VRECIONOVÁ Veronika",
+          "member_capacity": "Committee chair",
+          "title": "Agricultural value chain",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-03-24",
+          "member_name": "LAURETI Camilla",
+          "member_capacity": "Member",
+          "title": "agricoltura in UE",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-03-11",
+          "member_name": "PIMPIE Pierre",
+          "member_capacity": "Member",
+          "title": "Taxation du tabac",
+          "procedure_reference": "2025/0581(CNS)"
+        },
+        {
+          "date": "2026-03-10",
+          "member_name": "ZIJLSTRA Auke",
+          "member_capacity": "Member",
+          "title": "Tobacco Excise Directive",
+          "procedure_reference": "2025/0581(CNS)"
+        },
+        {
+          "date": "2026-02-10",
+          "member_name": "HADJIPANTELA Michalis",
+          "member_capacity": "Member",
+          "title": "Introductory Meeting",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-12-16",
+          "member_name": "FIOCCHI Pietro",
+          "member_capacity": "Member",
+          "title": "Tematiche Sanitarie",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-12-10",
+          "member_name": "GLÜCK Andreas",
+          "member_capacity": "Member",
+          "title": "Tabakfreie Nikotinprodukte",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-25",
+          "member_name": "CRISTEA Andi",
+          "member_capacity": "Member",
+          "title": "Recent developments in EU-US trade policy",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-10-02",
+          "member_name": "PICIERNO Pina",
+          "member_capacity": "Member",
+          "title": "Future developments of EU policies",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-10-01",
+          "member_name": "BARTULICA Stephen Nikola",
+          "member_capacity": "Member",
+          "title": "Tobacco industry",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-10-01",
+          "member_name": "DE MEO Salvatore",
+          "member_capacity": "Member",
+          "title": "EU Directives on Tobacco (TTD, TPD)",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-10-01",
+          "member_name": "TORSELLI Francesco",
+          "member_capacity": "Member",
+          "title": "Incontro di aggiornamento sulle problematiche del settore tabacco",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-09-03",
+          "member_name": "WARBORN Jörgen",
+          "member_capacity": "Member",
+          "title": "Snus",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-07-17",
+          "member_name": "FERBER Markus",
+          "member_capacity": "Member",
+          "title": "Tobacco Excise Directive",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-07-08",
+          "member_name": "FIOCCHI Pietro",
+          "member_capacity": "Member",
+          "title": "Problematice sanitarie",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-06-04",
+          "member_name": "PENNELLE Gilles",
+          "member_capacity": "Member",
+          "title": "Agriculture",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-05-21",
+          "member_name": "ZINGARETTI Nicola",
+          "member_capacity": "Member",
+          "title": "tobacco industry",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-05-13",
+          "member_name": "ARIAS ECHEVERRÍA Pablo",
+          "member_capacity": "Member",
+          "title": "Regulatory developments on tobacco control in the EU and its Member States",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-04-08",
+          "member_name": "WALSMANN Marion",
+          "member_capacity": "Member",
+          "title": "EU regulation on tobacco products",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-04-04",
+          "member_name": "NEVADO DEL CAMPO Elena",
+          "member_capacity": "Member",
+          "title": "New products and health implucations",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-03-28",
+          "member_name": "SÁNCHEZ AMOR Nacho",
+          "member_capacity": "Member",
+          "title": "Call with British American Tobacco",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-02-19",
+          "member_name": "SBERNA Antonella",
+          "member_capacity": "Member",
+          "title": "Innovazione prodotti, filiera del tabacco, riconversione industriale riforma PAC e revisione delle direttive europee del settore.",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-02-12",
+          "member_name": "MANDL Lukas",
+          "member_capacity": "Member",
+          "title": "EU Wettbewerbsfähigkeit",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-02-05",
+          "member_name": "TOVAGLIERI Isabella",
+          "member_capacity": "Member",
+          "title": "Futuro della legislazione europea sui tabacchi",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-02-04",
+          "member_name": "STANCANELLI Raffaele",
+          "member_capacity": "Member",
+          "title": "tax mitigation and harmonization on tobaccos' products",
+          "procedure_reference": null
+        }
+      ]
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "613360243179-87": {
+    "name": "TTI Magyarország Nemzetközi Dohánykereskedelmi Kft",
+    "register_id": "613360243179-87",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 1,
+      "members_fte": 0.25,
+      "members_25": 1,
+      "members_50": null,
+      "members_75": null,
+      "members_100": null,
+      "snapshot_date": "2021-11-15T14:31:34.701000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=613360243179-87"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/613360243179-87/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=613360243179-87&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "462081624095-48": {
+    "name": "Logista (part of Imperial brand)",
+    "register_id": "462081624095-48",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 3,
+      "members_fte": 0.75,
+      "members_25": 3,
+      "members_50": null,
+      "members_75": null,
+      "members_100": null,
+      "snapshot_date": "2022-03-15T13:51:27.017000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=462081624095-48"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/462081624095-48/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=462081624095-48&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "78982871558-95": {
+    "name": "Deutscher Zigarettenverband",
+    "register_id": "78982871558-95",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 5,
+      "members_fte": 1.25,
+      "members_25": 5,
+      "members_50": null,
+      "members_75": null,
+      "members_100": null,
+      "snapshot_date": "2022-03-21T12:46:27.443000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=78982871558-95"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/78982871558-95/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=78982871558-95&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "189661446368-32": {
+    "name": "Manifatture Sigaro Toscano",
+    "register_id": "189661446368-32",
+    "lobbyfacts": null,
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/189661446368-32/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=189661446368-32&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 15,
+      "since_2025": [
+        {
+          "date": "2026-06-02",
+          "member_name": "RAZZA Ruggero",
+          "member_capacity": "Member",
+          "title": "Incontro conoscitivo",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-26",
+          "member_name": "INSELVINI Paolo",
+          "member_capacity": "Member",
+          "title": "presentazione società, direttiva aromi ed accise su tabacco",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-26",
+          "member_name": "CECCARDI Susanna",
+          "member_capacity": "Member",
+          "title": "Future of the cigar industry",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-25",
+          "member_name": "VANNACCI Roberto",
+          "member_capacity": "Member",
+          "title": "Futuro del settore dei sigari e prospettive rispetto alle future regolamentazioni europee",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-25",
+          "member_name": "BONACCINI Stefano",
+          "member_capacity": "Member",
+          "title": "Meeting with Manifatture Sigaro Toscano",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-25",
+          "member_name": "MORATTI Letizia",
+          "member_capacity": "Member",
+          "title": "policies",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-25",
+          "member_name": "CIRIANI Alessandro",
+          "member_capacity": "Member",
+          "title": "Introductory meeting",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-24",
+          "member_name": "FIDANZA Carlo",
+          "member_capacity": "Member",
+          "title": "legislative update",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-24",
+          "member_name": "TINAGLI Irene",
+          "member_capacity": "Member",
+          "title": "Introductory meeting",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-10-15",
+          "member_name": "FALCONE Marco",
+          "member_capacity": "Member",
+          "title": "Council Directive amending Directive (EU) 2020/262 as regards the general arrangements for excise duty in respect of tobacco and tobacco related products",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-07-21",
+          "member_name": "NARDELLA Dario",
+          "member_capacity": "Member",
+          "title": "Priorities in the field of Agricultural and rural development",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-07-16",
+          "member_name": "FIOCCHI Pietro",
+          "member_capacity": "Member",
+          "title": "Tematiche ambientali",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-05-20",
+          "member_name": "CAVEDAGNA Stefano",
+          "member_capacity": "Member",
+          "title": "Introductory meeting",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-03-18",
+          "member_name": "FIDANZA Carlo",
+          "member_capacity": "Member",
+          "title": "Introductory meeting",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-03-18",
+          "member_name": "MORETTI Alessandra",
+          "member_capacity": "Member",
+          "title": "sigaro toscano",
+          "procedure_reference": null
+        }
+      ]
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "583622337776-40": {
+    "name": "DOS SANTOS",
+    "register_id": "583622337776-40",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 2,
+      "members_fte": 0.5,
+      "members_25": 2,
+      "members_50": null,
+      "members_75": null,
+      "members_100": null,
+      "snapshot_date": "2021-10-06T11:38:13.852000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=583622337776-40"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/583622337776-40/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=583622337776-40&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "891734924313-39": {
+    "name": "Scandinavian Tobacco Group",
+    "register_id": "891734924313-39",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 2,
+      "members_fte": 0.75,
+      "members_25": 1,
+      "members_50": 1,
+      "members_75": null,
+      "members_100": null,
+      "snapshot_date": "2022-03-08T09:02:47.648000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=891734924313-39"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/891734924313-39/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=891734924313-39&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "701118397425-19": {
+    "name": "Tabaqueira (subsidiary of PMI in Portugal)",
+    "register_id": "701118397425-19",
+    "lobbyfacts": null,
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/701118397425-19/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=701118397425-19&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "923856024330-39": {
+    "name": "Manufacture de Tabacs Heintz van Landewyck",
+    "register_id": "923856024330-39",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 3,
+      "members_fte": 1.0,
+      "members_25": 2,
+      "members_50": 1,
+      "members_75": null,
+      "members_100": null,
+      "snapshot_date": "2022-03-03T10:12:31.352000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=923856024330-39"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/923856024330-39/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=923856024330-39&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 1,
+      "since_2025": [
+        {
+          "date": "2026-04-17",
+          "member_name": "KEMP Martine",
+          "member_capacity": "Member",
+          "title": "Tobacco Taxation Direction revision",
+          "procedure_reference": "2025/0581(CNS)"
+        }
+      ]
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "224656024222-52": {
+    "name": "KARELIA TOBACCO COMPANY INC",
+    "register_id": "224656024222-52",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 7,
+      "members_fte": 2.25,
+      "members_25": 5,
+      "members_50": 2,
+      "members_75": null,
+      "members_100": null,
+      "snapshot_date": "2022-03-08T11:38:21.736000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=224656024222-52"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/224656024222-52/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=224656024222-52&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 2,
+      "since_2025": [
+        {
+          "date": "2025-10-14",
+          "member_name": "MANIATIS Yannis",
+          "member_capacity": "Member",
+          "title": "Introductory Meeting",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-10-14",
+          "member_name": "TSIODRAS Dimitris",
+          "member_capacity": "Member",
+          "title": "Introductory meeting",
+          "procedure_reference": null
+        }
+      ]
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "1496873833-97": {
+    "name": "Tobacco Europe AISBL",
+    "register_id": "1496873833-97",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 2,
+      "members_fte": 1.0,
+      "members_25": null,
+      "members_50": 2,
+      "members_75": null,
+      "members_100": null,
+      "snapshot_date": "2022-03-16T16:36:06.031000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=1496873833-97"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/1496873833-97/pdf",
+      "total_all_time_count": 4,
+      "since_2025_count": 1,
+      "since_2025": [
+        {
+          "date": "2025-05-07",
+          "representative_or_dg": "Michele Piergiovanni, Acting Director, Competition",
+          "location_and_subject": "Brussels Presentation of the most relevant policy files for Tobacco Europe"
+        }
+      ]
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=1496873833-97&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 6,
+      "since_2025": [
+        {
+          "date": "2026-03-03",
+          "member_name": "TIMGREN Beatrice",
+          "member_capacity": "Member",
+          "title": "Pouches and tobacco in the EU",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-03-02",
+          "member_name": "HADJIPANTELA Michalis",
+          "member_capacity": "Member",
+          "title": "Introductory Meeting",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-02-19",
+          "member_name": "PIMPIE Pierre",
+          "member_capacity": "Member",
+          "title": "Directives sur le tabac",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-06",
+          "member_name": "GYŐRI Enikő",
+          "member_capacity": "Member",
+          "title": "Revision of the Tobacco Taxation Directive",
+          "procedure_reference": "2025/0580(CNS)"
+        },
+        {
+          "date": "2025-07-15",
+          "member_name": "KUBÍN Tomáš",
+          "member_capacity": "Member",
+          "title": "meeting on the upcoming review of the Tobacco Products Directive",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-03-04",
+          "member_name": "STORM Kristoffer",
+          "member_capacity": "Member",
+          "title": "Tobacco Industry",
+          "procedure_reference": null
+        }
+      ]
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "30971284469-05": {
+    "name": "Association of Independent Tobacco Specialists",
+    "register_id": "30971284469-05",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 1,
+      "members_fte": 0.25,
+      "members_25": 1,
+      "members_50": null,
+      "members_75": null,
+      "members_100": null,
+      "snapshot_date": "2022-02-14T15:02:52.972000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=30971284469-05"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/30971284469-05/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=30971284469-05&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "0138855852-93": {
+    "name": "European Smoking Tobacco Association ESTA",
+    "register_id": "0138855852-93",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 3,
+      "members_fte": 2.5,
+      "members_25": null,
+      "members_50": null,
+      "members_75": 2,
+      "members_100": 1,
+      "snapshot_date": "2022-01-20T15:39:21.248000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=0138855852-93"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/0138855852-93/pdf",
+      "total_all_time_count": 1,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=0138855852-93&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "876337940850-36": {
+    "name": "European Shisha Community Alliance",
+    "register_id": "876337940850-36",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 2,
+      "members_fte": 1.25,
+      "members_25": 1,
+      "members_50": null,
+      "members_75": null,
+      "members_100": 1,
+      "snapshot_date": "2021-11-17T12:13:56.540000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=876337940850-36"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/876337940850-36/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=876337940850-36&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "92802501097-37": {
+    "name": "European Cigar Manufacturers Association",
+    "register_id": "92802501097-37",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 1,
+      "members_fte": 0.75,
+      "members_25": null,
+      "members_50": null,
+      "members_75": 1,
+      "members_100": null,
+      "snapshot_date": "2022-03-07T15:12:36.960000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=92802501097-37"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/92802501097-37/pdf",
+      "total_all_time_count": 1,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=92802501097-37&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 22,
+      "since_2025": [
+        {
+          "date": "2026-04-15",
+          "member_name": "BARTULICA Stephen Nikola",
+          "member_capacity": "Member",
+          "title": "EU cigar industry - Tobacco excise duty directives",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-04-14",
+          "member_name": "CASTILLO Laurent",
+          "member_capacity": "Member",
+          "title": "Législation européenne sur le tabac",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-03-25",
+          "member_name": "KONEČNÁ Kateřina",
+          "member_capacity": "Member",
+          "title": "Tabbacco regulation",
+          "procedure_reference": "2025/2132(INI)"
+        },
+        {
+          "date": "2026-03-25",
+          "member_name": "VONDRA Alexandr",
+          "member_capacity": "Member",
+          "title": "Tabaco Control Framework",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-02-10",
+          "member_name": "RADEV Emil",
+          "member_capacity": "Member",
+          "title": "Tobacco products directive",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-01-27",
+          "member_name": "NEVADO DEL CAMPO Elena",
+          "member_capacity": "Member",
+          "title": "New CAP",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-27",
+          "member_name": "KOLÁŘ Ondřej",
+          "member_capacity": "Member",
+          "title": "Tobacco excise duty and EU Multiannual Financial Framework 2028 - 2034",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-26",
+          "member_name": "KABILOV Taner",
+          "member_capacity": "Member",
+          "title": "Discussion about ongoing legislation",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-26",
+          "member_name": "TAVARES Carla",
+          "member_capacity": "Member",
+          "title": "Introduction",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-26",
+          "member_name": "NEVADO DEL CAMPO Elena",
+          "member_capacity": "Member",
+          "title": "New CAP",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-25",
+          "member_name": "STANĚK Antonín",
+          "member_capacity": "Member",
+          "title": "\"Track&Trace\" and the New Categorization Framework",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-25",
+          "member_name": "ZIJLSTRA Auke",
+          "member_capacity": "Member",
+          "title": "Tobacco tax directive",
+          "procedure_reference": "2025/0580(CNS)"
+        },
+        {
+          "date": "2025-11-25",
+          "member_name": "KARTHEISER Fernand",
+          "member_capacity": "Member",
+          "title": "Cigares",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-10-15",
+          "member_name": "NAGYOVÁ Jana",
+          "member_capacity": "Member",
+          "title": "Excise duties for cigars/cigarillos and the impact on the SMEs, EU competitiveness, and supply chains across the world",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-10-14",
+          "member_name": "LAZAROV Ilia",
+          "member_capacity": "Member",
+          "title": "EU Tobacco Control Framework",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-10-14",
+          "member_name": "ARIAS ECHEVERRÍA Pablo",
+          "member_capacity": "Member",
+          "title": "Characteristics of the cigar sector and differences with mass-consumption nicotine products",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-10-01",
+          "member_name": "KRUTÍLEK Ondřej",
+          "member_capacity": "Member",
+          "title": "Cigars and cigarillos",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-10-01",
+          "member_name": "KUBÍN Tomáš",
+          "member_capacity": "Rapporteur",
+          "title": "Discussion about TTD in relation to the new categorization",
+          "procedure_reference": "2025/0581(CNS)"
+        },
+        {
+          "date": "2025-10-01",
+          "member_name": "KNOT Jaroslav",
+          "member_capacity": "Member",
+          "title": "Discussion about TTD in relation to the new categorization",
+          "procedure_reference": "2025/0581(CNS)"
+        },
+        {
+          "date": "2025-07-07",
+          "member_name": "JARUBAS Adam",
+          "member_capacity": "Committee chair",
+          "title": "Tabaco Directive",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-05-20",
+          "member_name": "ATTARD Daniel",
+          "member_capacity": "Member",
+          "title": "EU Track and Trade System - Achieved Results and Future Plans",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-04-08",
+          "member_name": "HADJIPANTELA Michalis",
+          "member_capacity": "Member",
+          "title": "Introductory Meeting",
+          "procedure_reference": null
+        }
+      ]
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "893796741802-11": {
+    "name": "Bundesverband der Tabakwirtschaft und neuartiger Erzeugnisse",
+    "register_id": "893796741802-11",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 6,
+      "members_fte": 1.5,
+      "members_25": 6,
+      "members_50": null,
+      "members_75": null,
+      "members_100": null,
+      "snapshot_date": "2022-03-21T12:39:24.443000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=893796741802-11"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/893796741802-11/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=893796741802-11&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 2,
+      "since_2025": [
+        {
+          "date": "2025-01-28",
+          "member_name": "WECHSLER Andrea",
+          "member_capacity": "Member",
+          "title": "EU Consumer Policy",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-01-24",
+          "member_name": "HAHN Svenja",
+          "member_capacity": "Member",
+          "title": "Exchange on Green Claims",
+          "procedure_reference": "2023/0085(COD)"
+        }
+      ]
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "665729842737-11": {
+    "name": "Association of Tobacco Sellers, Convenience Stores and Kiosks of Macedonia",
+    "register_id": "665729842737-11",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 3,
+      "members_fte": 3.0,
+      "members_25": null,
+      "members_50": null,
+      "members_75": null,
+      "members_100": 3,
+      "snapshot_date": "2022-02-16T14:42:25.146000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=665729842737-11"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/665729842737-11/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=665729842737-11&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "27567784437-46": {
+    "name": "Tobaksindustrien, (Tobacco Manufactures Association of Denmark)",
+    "register_id": "27567784437-46",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 1,
+      "members_fte": 0.5,
+      "members_25": null,
+      "members_50": 1,
+      "members_75": null,
+      "members_100": null,
+      "snapshot_date": "2021-09-20T15:48:21.255000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=27567784437-46"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/27567784437-46/pdf",
+      "total_all_time_count": 1,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=27567784437-46&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "102135939541-25": {
+    "name": "TOBACCO AND NICOTINE PRODUCTS CHEMICALS GROUP",
+    "register_id": "102135939541-25",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 1,
+      "members_fte": 0.25,
+      "members_25": 1,
+      "members_50": null,
+      "members_75": null,
+      "members_100": null,
+      "snapshot_date": "2021-09-28T16:03:48.364000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=102135939541-25"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/102135939541-25/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=102135939541-25&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "209043544083-79": {
+    "name": "Vereniging Nederlandse Sigaretten- en Kerftabakfabrikanten",
+    "register_id": "209043544083-79",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 1,
+      "members_fte": 0.75,
+      "members_25": null,
+      "members_50": null,
+      "members_75": 1,
+      "members_100": null,
+      "snapshot_date": "2022-03-21T19:26:40.462000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=209043544083-79"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/209043544083-79/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=209043544083-79&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 1,
+      "since_2025": [
+        {
+          "date": "2026-02-27",
+          "member_name": "ZIJLSTRA Auke",
+          "member_capacity": "Member",
+          "title": "Tobacco tax directive",
+          "procedure_reference": "2025/0581(CNS)"
+        }
+      ]
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "87594253741-94": {
+    "name": "BDTA e V",
+    "register_id": "87594253741-94",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 3,
+      "members_fte": 0.75,
+      "members_25": 3,
+      "members_50": null,
+      "members_75": null,
+      "members_100": null,
+      "snapshot_date": "2021-11-18T10:21:03.746000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=87594253741-94"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/87594253741-94/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=87594253741-94&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "389796615375-43": {
+    "name": "Asociación Empresarial del Tabaco",
+    "register_id": "389796615375-43",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 2,
+      "members_fte": 1.25,
+      "members_25": null,
+      "members_50": 1,
+      "members_75": 1,
+      "members_100": null,
+      "snapshot_date": "2021-09-21T12:33:43.679000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=389796615375-43"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/389796615375-43/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=389796615375-43&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "835059415132-95": {
+    "name": "Fédération Européenne des Transformateurs de Tabac",
+    "register_id": "835059415132-95",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 1,
+      "members_fte": 0.25,
+      "members_25": 1,
+      "members_50": null,
+      "members_75": null,
+      "members_100": null,
+      "snapshot_date": "2021-09-24T19:16:01.140000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=835059415132-95"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/835059415132-95/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=835059415132-95&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "775494740511-57": {
+    "name": "Bundesverband der Zigarrenindustrie e.V.",
+    "register_id": "775494740511-57",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 1,
+      "members_fte": 0.25,
+      "members_25": 1,
+      "members_50": null,
+      "members_75": null,
+      "members_100": null,
+      "snapshot_date": "2022-01-06T09:49:48.317000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=775494740511-57"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/775494740511-57/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=775494740511-57&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 5,
+      "since_2025": [
+        {
+          "date": "2025-11-26",
+          "member_name": "MERTENS Verena",
+          "member_capacity": "Member",
+          "title": "Tabaksteuerrichtlinie",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-26",
+          "member_name": "STREIT Joachim",
+          "member_capacity": "Member",
+          "title": "EU cigar production",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-26",
+          "member_name": "GLÜCK Andreas",
+          "member_capacity": "Member",
+          "title": "Tabaksteuerrichtlinie",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-25",
+          "member_name": "FERBER Markus",
+          "member_capacity": "Member",
+          "title": "Tobacco Taxation Directive",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-14",
+          "member_name": "DOLESCHAL Christian",
+          "member_capacity": "Member",
+          "title": "Verbraucherschutz und aktuelle wirtschaftspolitische Situation",
+          "procedure_reference": null
+        }
+      ]
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "78764438624-42": {
+    "name": "Federazione Italiana Tabaccai",
+    "register_id": "78764438624-42",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 5,
+      "members_fte": 4.0,
+      "members_25": null,
+      "members_50": null,
+      "members_75": 4,
+      "members_100": 1,
+      "snapshot_date": "2022-03-03T12:40:29.022000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=78764438624-42"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/78764438624-42/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=78764438624-42&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 5,
+      "since_2025": [
+        {
+          "date": "2026-05-28",
+          "member_name": "PEDULLA' Gaetano",
+          "member_capacity": "Shadow rapporteur",
+          "title": "Mercato italiano prodotti del fumo, contraffazione, contrabbando, tassazione e legalità",
+          "procedure_reference": "2025/0581(CNS)"
+        },
+        {
+          "date": "2026-04-09",
+          "member_name": "PEDULLA' Gaetano",
+          "member_capacity": "Shadow rapporteur",
+          "title": "Mercato europeo ed italiano prodotti del fumo, tassazione",
+          "procedure_reference": "2025/0581(CNS)"
+        },
+        {
+          "date": "2026-02-03",
+          "member_name": "PEDULLA' Gaetano",
+          "member_capacity": "Shadow rapporteur",
+          "title": "Mercato italiano ed europeo dei prodotti del fumo",
+          "procedure_reference": "2025/0580(CNS)"
+        },
+        {
+          "date": "2025-11-11",
+          "member_name": "FALCONE Marco",
+          "member_capacity": "Member",
+          "title": "Council Directive amending Directive (EU) 2020/262 as regards the general arrangements for excise duty in respect of tobacco and tobacco related products",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-06-24",
+          "member_name": "DONAZZAN Elena",
+          "member_capacity": "Member",
+          "title": "Incontro conoscitivo, prossimi file rilevanti e prossime iniziative europee",
+          "procedure_reference": null
+        }
+      ]
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "066314042392-60": {
+    "name": "Mesa Del Tobacco",
+    "register_id": "066314042392-60",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 2,
+      "members_fte": 0.75,
+      "members_25": 1,
+      "members_50": 1,
+      "members_75": null,
+      "members_100": null,
+      "snapshot_date": "2021-09-21T11:57:18.755000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=066314042392-60"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/066314042392-60/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=066314042392-60&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "756303940554-19": {
+    "name": "Alliance One International, LLC",
+    "register_id": "756303940554-19",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 1,
+      "members_fte": 0.1,
+      "members_25": null,
+      "members_50": null,
+      "members_75": null,
+      "members_100": null,
+      "snapshot_date": "2022-01-25T10:58:30.972000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=756303940554-19"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/756303940554-19/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=756303940554-19&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "56705163713-93": {
+    "name": "Sweditch Match (PMI Subsidary)",
+    "register_id": "56705163713-93",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 2,
+      "members_fte": 0.2,
+      "members_25": null,
+      "members_50": null,
+      "members_75": null,
+      "members_100": null,
+      "snapshot_date": "2022-03-11T12:55:59.788000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=56705163713-93"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/56705163713-93/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=56705163713-93&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 5,
+      "since_2025": [
+        {
+          "date": "2025-11-04",
+          "member_name": "POLFJÄRD Jessica",
+          "member_capacity": "Member",
+          "title": "Health Policy",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-09-03",
+          "member_name": "WEIMERS Charlie",
+          "member_capacity": "Member",
+          "title": "EU Snus legislation",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-09-02",
+          "member_name": "POLFJÄRD Jessica",
+          "member_capacity": "Member",
+          "title": "Health Policy",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-03-19",
+          "member_name": "TIMGREN Beatrice",
+          "member_capacity": "Member",
+          "title": "EU Snus legislation",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-03-17",
+          "member_name": "POLFJÄRD Jessica",
+          "member_capacity": "Member",
+          "title": "Tobacco policy",
+          "procedure_reference": null
+        }
+      ]
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "491937195894-38": {
+    "name": "Skruf Snus (Imperial subsidary)",
+    "register_id": "491937195894-38",
+    "lobbyfacts": null,
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/491937195894-38/pdf",
+      "total_all_time_count": 1,
+      "since_2025_count": 1,
+      "since_2025": [
+        {
+          "date": "2025-02-18",
+          "representative_or_dg": "Axel Fritz Georg Hellman, Cabinet member of Jessika Roswall",
+          "location_and_subject": "Brussels Green Claims and harmonization of EU rules"
+        }
+      ]
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=491937195894-38&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "220858648398-48": {
+    "name": "Association of Swedish Snus Manufacturers (includes PMI in its Member)",
+    "register_id": "220858648398-48",
+    "lobbyfacts": null,
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/220858648398-48/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=220858648398-48&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "203595432279-89": {
+    "name": "France Vapotage (includes Imperial and BAT)",
+    "register_id": "203595432279-89",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 1,
+      "members_fte": 0.5,
+      "members_25": null,
+      "members_50": 1,
+      "members_75": null,
+      "members_100": null,
+      "snapshot_date": "2022-02-22T11:49:09.394000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=203595432279-89"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/203595432279-89/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=203595432279-89&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 2,
+      "since_2025": [
+        {
+          "date": "2026-06-17",
+          "member_name": "CASTILLO Laurent",
+          "member_capacity": "Member",
+          "title": "Législation européenne sur le tabac",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-09-24",
+          "member_name": "FURET Angéline",
+          "member_capacity": "Member",
+          "title": "Normes sur les produits de vapotage",
+          "procedure_reference": null
+        }
+      ]
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "105924642733-12": {
+    "name": "The Internation Association on Smoking Control & Harm Reduction (links with the TI, see Tobacco Tactics)",
+    "register_id": "105924642733-12",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 2,
+      "members_fte": 1.25,
+      "members_25": 1,
+      "members_50": null,
+      "members_75": null,
+      "members_100": 1,
+      "snapshot_date": "2022-03-16T13:20:36.594000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=105924642733-12"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/105924642733-12/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=105924642733-12&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "207263897934-45": {
+    "name": "Global Institute for Novel Nicotine (promotes heated tobacco and nicotine pouches)",
+    "register_id": "207263897934-45",
+    "lobbyfacts": null,
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/207263897934-45/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=207263897934-45&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "680379741539-17": {
+    "name": "Center of Excellence for the acceleration of Harm Reduction (financed by the TI - see Tobacco Tactics)",
+    "register_id": "680379741539-17",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 10,
+      "members_fte": 5.25,
+      "members_25": 3,
+      "members_50": 3,
+      "members_75": 4,
+      "members_100": 0,
+      "snapshot_date": "2022-02-15T09:43:49.464000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=680379741539-17"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/680379741539-17/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=680379741539-17&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "354946837243-73": {
+    "name": "ETHRA European Tobacco Harm Reduction Advocates (Members defending SNUS and nicotine pouches)",
+    "register_id": "354946837243-73",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 1,
+      "members_fte": 0.25,
+      "members_25": 1,
+      "members_50": null,
+      "members_75": null,
+      "members_100": null,
+      "snapshot_date": "2022-03-06T13:23:42.973000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=354946837243-73"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/354946837243-73/pdf",
+      "total_all_time_count": 1,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=354946837243-73&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "347372799139-19": {
+    "name": "HEATED COMMUNITY HUB (promotes heated tobacco and nicotine pouches)",
+    "register_id": "347372799139-19",
+    "lobbyfacts": null,
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/347372799139-19/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=347372799139-19&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "530382045552-40": {
+    "name": "Villanypára Egyesület (via INNCO)",
+    "register_id": "530382045552-40",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 1,
+      "members_fte": 1.0,
+      "members_25": null,
+      "members_50": null,
+      "members_75": null,
+      "members_100": 1,
+      "snapshot_date": "2022-02-24T12:53:52.513000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=530382045552-40"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/530382045552-40/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=530382045552-40&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "642478741759-44": {
+    "name": "New Nicotine Alliance UK (has been directly linked to PMI in investigative reports)",
+    "register_id": "642478741759-44",
+    "lobbyfacts": {
+      "status": "active",
+      "members": 1,
+      "members_fte": 0.25,
+      "members_25": 1,
+      "members_50": null,
+      "members_75": null,
+      "members_100": null,
+      "snapshot_date": "2021-11-15T14:50:08.516000",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/x?rid=642478741759-44"
+    },
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/642478741759-44/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=642478741759-44&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "432272548963-49": {
+    "name": "Nordic Nicotine Pouches Alliance",
+    "register_id": "432272548963-49",
+    "lobbyfacts": null,
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/432272548963-49/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=432272548963-49&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 5,
+      "since_2025": [
+        {
+          "date": "2026-03-11",
+          "member_name": "POLFJÄRD Jessica",
+          "member_capacity": "Member",
+          "title": "Health policy",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-10-22",
+          "member_name": "TROCHU Laurence",
+          "member_capacity": "Member",
+          "title": "Interdiction des sachets de nicotine en France",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-10-22",
+          "member_name": "POLFJÄRD Jessica",
+          "member_capacity": "Member",
+          "title": "Health Policy",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-03-19",
+          "member_name": "WEIMERS Charlie",
+          "member_capacity": "Member",
+          "title": "EU Snus legislation",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-03-19",
+          "member_name": "POLFJÄRD Jessica",
+          "member_capacity": "Member",
+          "title": "Health policy",
+          "procedure_reference": null
+        }
+      ]
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "766884047993-79": {
+    "name": "World vapers' alliance (financed by the industry)",
+    "register_id": "766884047993-79",
+    "lobbyfacts": null,
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/766884047993-79/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=766884047993-79&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  },
+  "174447099137-38": {
+    "name": "Smoke Free Sweden (directly linked to the industry)",
+    "register_id": "174447099137-38",
+    "lobbyfacts": null,
+    "ec_meetings": {
+      "source_pdf_url": "https://ec.europa.eu/transparencyregister/public/meetings/174447099137-38/pdf",
+      "total_all_time_count": 0,
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "lobbyfacts_last_fetched": "2026-07-10T13:19:17.130658+00:00",
+    "ep_meetings": {
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=174447099137-38&fromDate=01%2F01%2F2025&toDate=10%2F07%2F2026&exportFormat=CSV",
+      "since_2025_count": 0,
+      "since_2025": []
+    },
+    "ep_meetings_last_fetched": "2026-07-10T13:25:09.731695+00:00"
+  }
+}
