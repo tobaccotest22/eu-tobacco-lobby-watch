@@ -33,10 +33,13 @@ def search_lobbyfacts(name: str):
     results = data.get("results", data if isinstance(data, list) else [])
     candidates = []
     for item in results[:5]:
+        # On garde l'objet brut complet pour cette version : la recherche
+        # renvoie un identifiant interne LobbyFacts, pas le numero officiel
+        # du registre (celui affiche dans les fiches publiques, ex "2427500988-58").
+        # On le recupere ici tel quel pour l'identifier precisement a l'etape suivante.
         candidates.append({
             "name_found": item.get("name"),
-            "register_id": item.get("regId") or item.get("register_id") or item.get("id"),
-            "lobbyfacts_url": item.get("url") or item.get("meta", {}).get("url"),
+            "raw": item,
         })
     return {"candidates": candidates}
 
