@@ -11,6 +11,12 @@ registre de transparence, avec un export CSV directement exploitable
 
 Le script fusionne ses résultats dans data/live_data.json sans écraser les
 clés "lobbyfacts"/"ec_meetings" qu'écrit scripts/fetch_lobbyfacts.py.
+
+Comme ce script tourne en second dans le workflow, il recalcule aussi, à la
+fin, un total agrégé ("_aggregate") sur l'ensemble des organisations : somme
+du budget_high (estimation maximale prudente plutôt qu'une moyenne),
+somme de people_involved, et nombre total de réunions Parlement/Commission
+depuis 2025.
 """
 
 import csv
@@ -91,11 +97,26 @@ def main():
         entry["ep_meetings_last_fetched"] = now
         time.sleep(SLEEP_BETWEEN_REQUESTS)
 
+    live_data["_aggregate"] = compute_aggregate(live_data)
+
     with open(LIVE_DATA_PATH, "w", encoding="utf-8") as f:
         json.dump(live_data, f, ensure_ascii=False, indent=2)
         f.write("\n")
 
     print(f"\nTerminé. Résultats fusionnés dans {LIVE_DATA_PATH}")
+
+
+def compute_aggregate(live_data: dict) -> dict:
+    orgs = [e for rid, e in live_data.items() if rid != "_aggregate"]
+    return {
+        "note": "budget_total = somme des bornes hautes (budget_high) : estimation maximale prudente, pas une moyenne.",
+        "computed_at": datetime.now(timezone.utc).isoformat(),
+        "nb_organisations": len(orgs),
+        "budget_high_total": sum(e.get("budget_high") or 0 for e in orgs),
+        "people_involved_total": sum(e.get("people_involved") or 0 for e in orgs),
+        "ep_meetings_since_2025_total": sum((e.get("ep_meetings") or {}).get("since_2025_count") or 0 for e in orgs),
+        "ec_meetings_since_2025_total": sum((e.get("ec_meetings") or {}).get("since_2025_count") or 0 for e in orgs),
+    }
 
 
 if __name__ == "__main__":

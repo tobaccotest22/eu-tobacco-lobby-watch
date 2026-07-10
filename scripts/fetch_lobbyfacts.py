@@ -17,6 +17,14 @@ récupère deux choses et les écrit dans data/live_data.json :
    Ce PDF est régénéré à la demande par la Commission (contrairement à
    LobbyFacts) et contient des réunions jusqu'à la date du jour.
 
+3. Le budget annuel déclaré, le nombre de personnes concernées et la liste
+   des cabinets/consultants sous-traitants pour l'exercice en cours, lus
+   directement sur la fiche officielle du registre de transparence
+   (transparency-register.europa.eu). Cette page Drupal est statique mais
+   injecte son contenu principal via un fetch JS vers un fragment HTML ;
+   ce fragment (endpoint trouvé dans son bundle JS) est directement
+   accessible et c'est celui-ci que le script interroge.
+
 Le script fusionne ses résultats dans data/live_data.json sans écraser la
 partie "ep_meetings" qu'écrit scripts/fetch_ep_meetings.py.
 """
@@ -29,12 +37,14 @@ import urllib.request
 from datetime import datetime, timezone
 from io import BytesIO
 
+from bs4 import BeautifulSoup
 from pypdf import PdfReader
 
 ENTITIES_PATH = "data/entities.json"
 LIVE_DATA_PATH = "data/live_data.json"
 LOBBYFACTS_API = "https://api2.lobbyfacts.eu/api/1/representative"
 EC_MEETINGS_PDF = "https://ec.europa.eu/transparencyregister/public/meetings/{register_id}/pdf"
+REGISTER_DETAIL_FRAGMENT = "https://ec.europa.eu/transparencyregister/public/PUBLIC/ORGANISATION/{register_id}?lang=fr"
 SINCE_DATE = "2025-01-01"
 USER_AGENT = "eu-tobacco-lobby-watch/0.3"
 REQUEST_TIMEOUT = 20
@@ -142,6 +152,69 @@ def fetch_ec_meetings(register_id: str) -> dict | None:
     }
 
 
+def parse_amount(text: str) -> int | None:
+    digits = text.replace("\xa0", "").replace(" ", "").replace(" ", "").replace("€", "").strip()
+    return int(digits) if digits.isdigit() else None
+
+
+def parse_register_detail(html: str) -> dict:
+    """Lit budget/personnes/cabinets sur le fragment HTML de la fiche du registre.
+
+    Les libellés officiels contiennent des accents ("coûts", "personnes
+    concernées") ; on matche sur des sous-chaînes stables pour éviter tout
+    souci d'encodage entre environnements.
+    """
+    soup = BeautifulSoup(html, "lxml")
+    fields = {
+        "people_involved": None,
+        "nb_intermediaries": None,
+        "intermediaries_current_year": [],
+        "budget_low": None,
+        "budget_high": None,
+    }
+    for row in soup.select("tr.ecl-table__row"):
+        cells = row.find_all("td", recursive=False)
+        if len(cells) < 2:
+            continue
+        label_el = cells[0].find("strong")
+        if not label_el:
+            continue
+        label = label_el.get_text(strip=True).rstrip(":")
+        value_cell = cells[1]
+
+        if "personnes" in label and "total" in label:
+            txt = value_cell.get_text(strip=True)
+            fields["people_involved"] = int(txt) if txt.isdigit() else None
+
+        elif "exercice en cours" in label and "Interm" in label:
+            names = [td.get_text(strip=True) for td in value_cell.select("tbody td") if td.get_text(strip=True)]
+            fields["nb_intermediaries"] = len(names)
+            fields["intermediaries_current_year"] = names
+
+        elif "co" in label and "ts annuels" in label:
+            nums = [parse_amount(s.get_text()) for s in value_cell.select("span > span")]
+            nums = [n for n in nums if n is not None]
+            if len(nums) >= 2:
+                fields["budget_low"], fields["budget_high"] = nums[0], nums[1]
+            elif len(nums) == 1:
+                fields["budget_low"] = fields["budget_high"] = nums[0]
+
+    return fields
+
+
+def fetch_register_detail(register_id: str) -> dict | None:
+    url = REGISTER_DETAIL_FRAGMENT.format(register_id=register_id)
+    try:
+        html = http_get(url).decode("utf-8")
+    except Exception as exc:
+        return {"error": f"fiche registre échouée : {exc}"}
+
+    try:
+        return parse_register_detail(html)
+    except Exception as exc:
+        return {"error": f"lecture fiche registre échouée : {exc}"}
+
+
 def main():
     with open(ENTITIES_PATH, encoding="utf-8") as f:
         entities = json.load(f)["entities"]
@@ -161,12 +234,24 @@ def main():
             print(f"(pas de register_id, ignoré) {name}")
             continue
 
-        print(f"LobbyFacts + réunions EC : {name} ({register_id})")
+        print(f"LobbyFacts + réunions EC + fiche registre : {name} ({register_id})")
         entry = live_data.setdefault(register_id, {"name": name, "register_id": register_id})
         entry["name"] = name
         entry["lobbyfacts"] = fetch_lobbyfacts_snapshot(register_id)
         time.sleep(SLEEP_BETWEEN_REQUESTS)
         entry["ec_meetings"] = fetch_ec_meetings(register_id)
+        time.sleep(SLEEP_BETWEEN_REQUESTS)
+
+        register_detail = fetch_register_detail(register_id) or {}
+        if "error" in register_detail:
+            entry["register_detail_error"] = register_detail["error"]
+        else:
+            entry["budget_low"] = register_detail.get("budget_low")
+            entry["budget_high"] = register_detail.get("budget_high")
+            entry["people_involved"] = register_detail.get("people_involved")
+            entry["nb_intermediaries"] = register_detail.get("nb_intermediaries")
+            entry["intermediaries_current_year"] = register_detail.get("intermediaries_current_year")
+
         entry["lobbyfacts_last_fetched"] = now
         time.sleep(SLEEP_BETWEEN_REQUESTS)
 
