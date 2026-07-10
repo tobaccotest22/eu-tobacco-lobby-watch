@@ -1,5 +1,8 @@
 name: Recherche des identifiants registre
 
+permissions:
+  contents: write
+
 on:
   workflow_dispatch:
 
