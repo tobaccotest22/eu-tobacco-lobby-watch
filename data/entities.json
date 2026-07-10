@@ -2,62 +2,355 @@
   "source": "Contre-Feu / STOP, \"Behind Closed Doors: How the Tobacco Lobby Influences the European Union and Beyond\", décembre 2025 - Annexe",
   "source_url": "https://exposetobacco.org/wp-content/uploads/Behind_Closed_Doors_EN.pdf",
   "extraction_date": "2026-07-10",
-  "note": "register_id à compléter manuellement par organisation (non fourni dans l'annexe texte). status='a_verifier' tant que le register_id n'a pas été confirmé et lié à une fiche du registre de transparence.",
+  "note": "register_id complété automatiquement via l'API LobbyFacts (champ identification_code) pour les organisations dont le nom correspond exactement à une fiche du registre. Pour les autres, register_id reste à null avec une note 'à vérifier manuellement' (parfois accompagnée du candidat le plus probable trouvé par la recherche, à confirmer à la main).",
   "categories": {
     "tobacco_organisations": "Entreprises/fabricants de tabac",
     "trade_associations": "Associations professionnelles du tabac",
     "harm_reduction_linked": "Organisations 'harm reduction' liées à l'industrie"
   },
   "entities": [
-    { "name": "Philip Morris International Inc.", "category": "tobacco_organisations", "register_status": "actif", "register_id": null },
-    { "name": "Imperial Brands PLC", "category": "tobacco_organisations", "register_status": "actif", "register_id": null },
-    { "name": "Japan Tobacco International", "category": "tobacco_organisations", "register_status": "actif", "register_id": null },
-    { "name": "British American Tobacco", "category": "tobacco_organisations", "register_status": "actif", "register_id": null },
-    { "name": "J. Cortes Cigars N.V.", "category": "tobacco_organisations", "register_status": "actif", "register_id": null },
-    { "name": "TTI Magyarország Nemzetközi Dohánykereskedelmi Kft", "category": "tobacco_organisations", "register_status": "actif", "register_id": null },
-    { "name": "Logista Integral, S.A.", "category": "tobacco_organisations", "register_status": "actif", "register_id": null, "note": "Filiale d'Imperial Brands" },
-    { "name": "Deutscher Zigarettenverband e.V.", "category": "tobacco_organisations", "register_status": "actif", "register_id": null },
-    { "name": "Manifatture Sigaro Toscano S.r.l.", "category": "tobacco_organisations", "register_status": "actif", "register_id": null },
-    { "name": "Dos Santos", "category": "tobacco_organisations", "register_status": "actif", "register_id": null },
-    { "name": "Scandinavian Tobacco Group A/S", "category": "tobacco_organisations", "register_status": "actif", "register_id": null },
-    { "name": "Tabaqueira II", "category": "tobacco_organisations", "register_status": "actif", "register_id": null, "note": "Filiale PMI" },
-    { "name": "Manufacture de Tabacs Heintz van Landewyck", "category": "tobacco_organisations", "register_status": "actif", "register_id": null },
-    { "name": "Karelia Tobacco Company Inc", "category": "tobacco_organisations", "register_status": "actif", "register_id": null },
-
-    { "name": "Tobacco Europe AISBL", "category": "trade_associations", "register_status": "actif", "register_id": null },
-    { "name": "Association of Independent Tobacco Specialists", "category": "trade_associations", "register_status": "non_enregistre_2025", "register_id": null, "note": "Enregistrée jusqu'en 2024 (LobbyFacts)" },
-    { "name": "European Smoking Tobacco Association (ESTA)", "category": "trade_associations", "register_status": "actif", "register_id": null },
-    { "name": "European Shisha Community Alliance", "category": "trade_associations", "register_status": "actif", "register_id": null },
-    { "name": "European Cigar Manufacturers Association (ECMA)", "category": "trade_associations", "register_status": "actif", "register_id": null },
-    { "name": "Confédération des buralistes de France", "category": "trade_associations", "register_status": "non_enregistre", "register_id": null, "note": "Non inscrite au registre mais a rencontré un eurodéputé en 2025" },
-    { "name": "Bundesverband der Tabakwirtschaft und neuartiger Erzeugnisse", "category": "trade_associations", "register_status": "actif", "register_id": null },
-    { "name": "Association of Tobacco Sellers, Convenience Stores and Kiosks of Macedonia", "category": "trade_associations", "register_status": "non_enregistre_2025", "register_id": null, "note": "Enregistrée jusqu'en 2024 (LobbyFacts)" },
-    { "name": "Tobaksindustrien - Tobacco Manufactures Association of Denmark", "category": "trade_associations", "register_status": "non_enregistre_2025", "register_id": null, "note": "Enregistrée jusqu'en janvier 2025 (LobbyFacts)" },
-    { "name": "Tobacco and Nicotine Products Chemicals Group", "category": "trade_associations", "register_status": "suspendu", "register_id": null, "note": "Compte suspendu au 25/11/2025 selon le registre" },
-    { "name": "Vereniging Nederlandse Sigaretten- en Kerftabakfabrikanten", "category": "trade_associations", "register_status": "actif", "register_id": null },
-    { "name": "BDTA e.V.", "category": "trade_associations", "register_status": "actif", "register_id": null },
-    { "name": "Asociación Empresarial del Tabaco", "category": "trade_associations", "register_status": "actif", "register_id": null },
-    { "name": "UNITAB", "category": "trade_associations", "register_status": "non_enregistre_2025", "register_id": null, "note": "Rencontres avec la Commission en 2023 documentées par LobbyFacts" },
-    { "name": "Fédération Européenne des Transformateurs de Tabac", "category": "trade_associations", "register_status": "actif", "register_id": null },
-    { "name": "Bundesverband der Zigarrenindustrie e.V.", "category": "trade_associations", "register_status": "actif", "register_id": null },
-    { "name": "Federazione Italiana Tabaccai", "category": "trade_associations", "register_status": "actif", "register_id": null },
-    { "name": "Mesa del Tabaco", "category": "trade_associations", "register_status": "actif", "register_id": null },
-    { "name": "Alliance One International, LLC", "category": "trade_associations", "register_status": "actif", "register_id": null, "note": "Objectif général déclaré, mais identifiée par Tobacco Tactics comme représentant l'industrie du tabac" },
-
-    { "name": "Swedish Match", "category": "harm_reduction_linked", "register_status": "actif", "register_id": null, "note": "Filiale PMI" },
-    { "name": "Skruf Snus AB", "category": "harm_reduction_linked", "register_status": "actif", "register_id": null, "note": "Filiale Imperial Brands" },
-    { "name": "Svensk Snustillverkarförening", "category": "harm_reduction_linked", "register_status": "actif", "register_id": null, "note": "Membres: PMI, BAT, Skruf Snus (Imperial)" },
-    { "name": "France Vapotage", "category": "harm_reduction_linked", "register_status": "actif", "register_id": null, "note": "Membres incluant BAT" },
-    { "name": "International Not-For-Profit Association 'Smoking Control & Harm Reduction'", "category": "harm_reduction_linked", "register_status": "actif", "register_id": null },
-    { "name": "Global Institute for Novel Nicotine", "category": "harm_reduction_linked", "register_status": "actif", "register_id": null, "note": "Dirigée par un ex-cadre PMI" },
-    { "name": "Centre of Excellence for the Acceleration of Harm Reduction (CoEHAR)", "category": "harm_reduction_linked", "register_status": "actif", "register_id": null },
-    { "name": "European Tobacco Harm Reduction Advocates", "category": "harm_reduction_linked", "register_status": "actif", "register_id": null },
-    { "name": "Heated Community Hub", "category": "harm_reduction_linked", "register_status": "actif", "register_id": null },
-    { "name": "Villanypára Egyesület", "category": "harm_reduction_linked", "register_status": "actif", "register_id": null },
-    { "name": "New Nicotine Alliance UK", "category": "harm_reduction_linked", "register_status": "actif", "register_id": null },
-    { "name": "Nordic Nicotine Pouches Alliance", "category": "harm_reduction_linked", "register_status": "actif", "register_id": null, "note": "Partenaires: BAT, JTI" },
-    { "name": "World Vapers' Alliance", "category": "harm_reduction_linked", "register_status": "non_enregistre_2025", "register_id": null, "note": "Enregistrée jusqu'en 2024 (LobbyFacts)" },
-    { "name": "Smoke Free Sweden", "category": "harm_reduction_linked", "register_status": "actif", "register_id": null },
-    { "name": "We Are Innovation", "category": "harm_reduction_linked", "register_status": "non_enregistre", "register_id": null, "note": "Non inscrite au registre, mais 1 réunion avec un eurodéputé recensée en 2025" }
+    {
+      "name": "Philip Morris International Inc.",
+      "category": "tobacco_organisations",
+      "register_status": "actif",
+      "register_id": "51925911965-76",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/philip-morris-international-inc?rid=51925911965-76"
+    },
+    {
+      "name": "Imperial Brands PLC",
+      "category": "tobacco_organisations",
+      "register_status": "actif",
+      "register_id": "62460931291-40",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/imperial-brands-plc?rid=62460931291-40"
+    },
+    {
+      "name": "Japan Tobacco International",
+      "category": "tobacco_organisations",
+      "register_status": "actif",
+      "register_id": null,
+      "note": "à vérifier manuellement (candidat probable : 'EPPA SA', register_id '31367501249-92')"
+    },
+    {
+      "name": "British American Tobacco",
+      "category": "tobacco_organisations",
+      "register_status": "actif",
+      "register_id": "2427500988-58",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/british-american-tobacco?rid=2427500988-58"
+    },
+    {
+      "name": "J. Cortes Cigars N.V.",
+      "category": "tobacco_organisations",
+      "register_status": "actif",
+      "register_id": null,
+      "note": "à vérifier manuellement"
+    },
+    {
+      "name": "TTI Magyarország Nemzetközi Dohánykereskedelmi Kft",
+      "category": "tobacco_organisations",
+      "register_status": "actif",
+      "register_id": "613360243179-87",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/tti-magyarorsz-g-nemzetk-zi-doh-nykereskedelmi-kft?rid=613360243179-87"
+    },
+    {
+      "name": "Logista Integral, S.A.",
+      "category": "tobacco_organisations",
+      "register_status": "actif",
+      "register_id": null,
+      "note": "Filiale d'Imperial Brands ; à vérifier manuellement (candidat probable : 'COMPAÑÍA DE DISTRIBUCIÓN INTEGRAL LOGISTA HOLDINGS, S.A.', register_id '462081624095-48')"
+    },
+    {
+      "name": "Deutscher Zigarettenverband e.V.",
+      "category": "tobacco_organisations",
+      "register_status": "actif",
+      "register_id": "78982871558-95",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/deutscher-zigarettenverband-e-v?rid=78982871558-95"
+    },
+    {
+      "name": "Manifatture Sigaro Toscano S.r.l.",
+      "category": "tobacco_organisations",
+      "register_status": "actif",
+      "register_id": null,
+      "note": "à vérifier manuellement (candidat probable : 'Associazione fra le società italiane per azioni', register_id '15491122381-71')"
+    },
+    {
+      "name": "Dos Santos",
+      "category": "tobacco_organisations",
+      "register_status": "actif",
+      "register_id": "583622337776-40",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/dos-santos?rid=583622337776-40"
+    },
+    {
+      "name": "Scandinavian Tobacco Group A/S",
+      "category": "tobacco_organisations",
+      "register_status": "actif",
+      "register_id": "891734924313-39",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/scandinavian-tobacco-group-a-s?rid=891734924313-39"
+    },
+    {
+      "name": "Tabaqueira II",
+      "category": "tobacco_organisations",
+      "register_status": "actif",
+      "register_id": null,
+      "note": "Filiale PMI ; à vérifier manuellement (candidat probable : 'EUPPORTUNITY (QB, Lda.)', register_id '38225546532-14')"
+    },
+    {
+      "name": "Manufacture de Tabacs Heintz van Landewyck",
+      "category": "tobacco_organisations",
+      "register_status": "actif",
+      "register_id": "923856024330-39",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/manufacture-de-tabacs-heintz-van-landewyck?rid=923856024330-39"
+    },
+    {
+      "name": "Karelia Tobacco Company Inc",
+      "category": "tobacco_organisations",
+      "register_status": "actif",
+      "register_id": "224656024222-52",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/karelia-tobacco-company-inc?rid=224656024222-52"
+    },
+    {
+      "name": "Tobacco Europe AISBL",
+      "category": "trade_associations",
+      "register_status": "actif",
+      "register_id": "1496873833-97",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/tobacco-europe-aisbl?rid=1496873833-97"
+    },
+    {
+      "name": "Association of Independent Tobacco Specialists",
+      "category": "trade_associations",
+      "register_status": "non_enregistre_2025",
+      "register_id": "30971284469-05",
+      "note": "Enregistrée jusqu'en 2024 (LobbyFacts)",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/association-of-independent-tobacco-specialists?rid=30971284469-05"
+    },
+    {
+      "name": "European Smoking Tobacco Association (ESTA)",
+      "category": "trade_associations",
+      "register_status": "actif",
+      "register_id": null,
+      "note": "à vérifier manuellement (candidat probable : 'European Smoking Tobacco Association', register_id '0138855852-93')"
+    },
+    {
+      "name": "European Shisha Community Alliance",
+      "category": "trade_associations",
+      "register_status": "actif",
+      "register_id": "876337940850-36",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/european-shisha-community-alliance?rid=876337940850-36"
+    },
+    {
+      "name": "European Cigar Manufacturers Association (ECMA)",
+      "category": "trade_associations",
+      "register_status": "actif",
+      "register_id": null,
+      "note": "à vérifier manuellement (candidat probable : 'Scandinavian Tobacco Group A/S', register_id '891734924313-39')"
+    },
+    {
+      "name": "Confédération des buralistes de France",
+      "category": "trade_associations",
+      "register_status": "non_enregistre",
+      "register_id": null,
+      "note": "Non inscrite au registre mais a rencontré un eurodéputé en 2025 ; à vérifier manuellement (candidat probable : 'Confédération Européenne des Détaillants en Tabac', register_id '85326064523-94')"
+    },
+    {
+      "name": "Bundesverband der Tabakwirtschaft und neuartiger Erzeugnisse",
+      "category": "trade_associations",
+      "register_status": "actif",
+      "register_id": "893796741802-11",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/bundesverband-der-tabakwirtschaft-und-neuartiger-erzeugnisse?rid=893796741802-11"
+    },
+    {
+      "name": "Association of Tobacco Sellers, Convenience Stores and Kiosks of Macedonia",
+      "category": "trade_associations",
+      "register_status": "non_enregistre_2025",
+      "register_id": "665729842737-11",
+      "note": "Enregistrée jusqu'en 2024 (LobbyFacts)",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/association-of-tobacco-sellers-convenience-stores-and-kiosks-of-macedonia?rid=665729842737-11"
+    },
+    {
+      "name": "Tobaksindustrien - Tobacco Manufactures Association of Denmark",
+      "category": "trade_associations",
+      "register_status": "non_enregistre_2025",
+      "register_id": null,
+      "note": "Enregistrée jusqu'en janvier 2025 (LobbyFacts) ; à vérifier manuellement (candidat probable : 'Tobaksindustrien, (Tobacco Manufactures Association of Denmark)', register_id '27567784437-46')"
+    },
+    {
+      "name": "Tobacco and Nicotine Products Chemicals Group",
+      "category": "trade_associations",
+      "register_status": "suspendu",
+      "register_id": "102135939541-25",
+      "note": "Compte suspendu au 25/11/2025 selon le registre",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/tobacco-and-nicotine-products-chemicals-group?rid=102135939541-25"
+    },
+    {
+      "name": "Vereniging Nederlandse Sigaretten- en Kerftabakfabrikanten",
+      "category": "trade_associations",
+      "register_status": "actif",
+      "register_id": "209043544083-79",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/vereniging-nederlandse-sigaretten-en-kerftabakfabrikanten?rid=209043544083-79"
+    },
+    {
+      "name": "BDTA e.V.",
+      "category": "trade_associations",
+      "register_status": "actif",
+      "register_id": null,
+      "note": "à vérifier manuellement (candidat probable : 'Bundesverband Deutscher Tabakwaren-Großhändler und Automatenaufsteller e.V.', register_id '87594253741-94')"
+    },
+    {
+      "name": "Asociación Empresarial del Tabaco",
+      "category": "trade_associations",
+      "register_status": "actif",
+      "register_id": "389796615375-43",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/asociaci-n-empresarial-del-tabaco?rid=389796615375-43"
+    },
+    {
+      "name": "UNITAB",
+      "category": "trade_associations",
+      "register_status": "non_enregistre_2025",
+      "register_id": "14541128505-57",
+      "note": "Rencontres avec la Commission en 2023 documentées par LobbyFacts",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/unitab?rid=14541128505-57"
+    },
+    {
+      "name": "Fédération Européenne des Transformateurs de Tabac",
+      "category": "trade_associations",
+      "register_status": "actif",
+      "register_id": null,
+      "note": "à vérifier manuellement (candidat probable : 'European Leaf Tobacco Interbranch', register_id '647119725366-96')"
+    },
+    {
+      "name": "Bundesverband der Zigarrenindustrie e.V.",
+      "category": "trade_associations",
+      "register_status": "actif",
+      "register_id": null,
+      "note": "à vérifier manuellement"
+    },
+    {
+      "name": "Federazione Italiana Tabaccai",
+      "category": "trade_associations",
+      "register_status": "actif",
+      "register_id": "78764438624-42",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/federazione-italiana-tabaccai?rid=78764438624-42"
+    },
+    {
+      "name": "Mesa del Tabaco",
+      "category": "trade_associations",
+      "register_status": "actif",
+      "register_id": "066314042392-60",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/mesa-del-tabaco?rid=066314042392-60"
+    },
+    {
+      "name": "Alliance One International, LLC",
+      "category": "trade_associations",
+      "register_status": "actif",
+      "register_id": "756303940554-19",
+      "note": "Objectif général déclaré, mais identifiée par Tobacco Tactics comme représentant l'industrie du tabac",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/alliance-one-international-llc?rid=756303940554-19"
+    },
+    {
+      "name": "Swedish Match",
+      "category": "harm_reduction_linked",
+      "register_status": "actif",
+      "register_id": "56705163713-93",
+      "note": "Filiale PMI",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/swedish-match?rid=56705163713-93"
+    },
+    {
+      "name": "Skruf Snus AB",
+      "category": "harm_reduction_linked",
+      "register_status": "actif",
+      "register_id": null,
+      "note": "Filiale Imperial Brands ; à vérifier manuellement"
+    },
+    {
+      "name": "Svensk Snustillverkarförening",
+      "category": "harm_reduction_linked",
+      "register_status": "actif",
+      "register_id": null,
+      "note": "Membres: PMI, BAT, Skruf Snus (Imperial) ; à vérifier manuellement"
+    },
+    {
+      "name": "France Vapotage",
+      "category": "harm_reduction_linked",
+      "register_status": "actif",
+      "register_id": "203595432279-89",
+      "note": "Membres incluant BAT",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/france-vapotage?rid=203595432279-89"
+    },
+    {
+      "name": "International Not-For-Profit Association 'Smoking Control & Harm Reduction'",
+      "category": "harm_reduction_linked",
+      "register_status": "actif",
+      "register_id": null,
+      "note": "à vérifier manuellement (candidat probable : 'International Not-For-Profit Association \"Smoking Control & Harm Reduction\"', register_id '105924642733-12')"
+    },
+    {
+      "name": "Global Institute for Novel Nicotine",
+      "category": "harm_reduction_linked",
+      "register_status": "actif",
+      "register_id": null,
+      "note": "Dirigée par un ex-cadre PMI ; à vérifier manuellement"
+    },
+    {
+      "name": "Centre of Excellence for the Acceleration of Harm Reduction (CoEHAR)",
+      "category": "harm_reduction_linked",
+      "register_status": "actif",
+      "register_id": null,
+      "note": "à vérifier manuellement"
+    },
+    {
+      "name": "European Tobacco Harm Reduction Advocates",
+      "category": "harm_reduction_linked",
+      "register_status": "actif",
+      "register_id": "354946837243-73",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/european-tobacco-harm-reduction-advocates?rid=354946837243-73"
+    },
+    {
+      "name": "Heated Community Hub",
+      "category": "harm_reduction_linked",
+      "register_status": "actif",
+      "register_id": null,
+      "note": "à vérifier manuellement (candidat probable : 'FIPRA International SRL', register_id '58746194306-23')"
+    },
+    {
+      "name": "Villanypára Egyesület",
+      "category": "harm_reduction_linked",
+      "register_status": "actif",
+      "register_id": "530382045552-40",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/villanyp-ra-egyes-let?rid=530382045552-40"
+    },
+    {
+      "name": "New Nicotine Alliance UK",
+      "category": "harm_reduction_linked",
+      "register_status": "actif",
+      "register_id": "642478741759-44",
+      "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/new-nicotine-alliance-uk?rid=642478741759-44"
+    },
+    {
+      "name": "Nordic Nicotine Pouches Alliance",
+      "category": "harm_reduction_linked",
+      "register_status": "actif",
+      "register_id": null,
+      "note": "Partenaires: BAT, JTI ; à vérifier manuellement"
+    },
+    {
+      "name": "World Vapers' Alliance",
+      "category": "harm_reduction_linked",
+      "register_status": "non_enregistre_2025",
+      "register_id": null,
+      "note": "Enregistrée jusqu'en 2024 (LobbyFacts) ; à vérifier manuellement"
+    },
+    {
+      "name": "Smoke Free Sweden",
+      "category": "harm_reduction_linked",
+      "register_status": "actif",
+      "register_id": null,
+      "note": "à vérifier manuellement (candidat probable : 'AS - Center for the Empowerment Youth of people who are living with HIV and AIDS', register_id '724914316092-74')"
+    },
+    {
+      "name": "We Are Innovation",
+      "category": "harm_reduction_linked",
+      "register_status": "non_enregistre",
+      "register_id": null,
+      "note": "Non inscrite au registre, mais 1 réunion avec un eurodéputé recensée en 2025 ; à vérifier manuellement"
+    }
   ]
 }
