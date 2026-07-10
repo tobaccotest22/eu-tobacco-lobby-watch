@@ -23,13 +23,7 @@
       "register_id": "62460931291-40",
       "lobbyfacts_url": "https://www.lobbyfacts.eu/datacard/imperial-brands-plc?rid=62460931291-40"
     },
-    {
-      "name": "Japan Tobacco International",
-      "category": "tobacco_organisations",
-      "register_status": "actif",
-      "register_id": null,
-      "note": "à vérifier manuellement (candidat probable : 'EPPA SA', register_id '31367501249-92')"
-    },
+    { "name": "Japan Tobacco International", "category": "tobacco_organisations", "register_status": "actif", "register_id": "71175716023-03" },
     {
       "name": "British American Tobacco",
       "category": "tobacco_organisations",
