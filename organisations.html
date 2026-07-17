@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Organisations suivies — EU Tobacco Lobby Watch</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="banner-inner">
+    <a href="index.html" class="nav-link">Accueil</a>
+    <a href="statistiques.html" class="nav-link">Statistiques</a>
+    <a href="organisations.html" class="nav-link active">Organisations suivies</a>
+  </div>
+</nav>
+
+<div class="banner">
+  <div class="banner-inner">
+    <h1>EU Tobacco Lobby Watch</h1>
+    <p class="description">Détail des organisations suivies, triées par budget annuel déclaré.</p>
+  </div>
+</div>
+
+<main>
+  <section>
+    <h2>Détail des organisations suivies</h2>
+    <p class="section-intro">
+      Cliquez sur une ligne pour voir la fiche détaillée de l'organisation.
+      Le budget affiché correspond à la borne haute de la fourchette officielle
+      la plus récente disponible (fiche du registre de transparence de l'UE,
+      mise à jour automatiquement chaque nuit) ; à défaut, la valeur issue de
+      la recherche initiale est affichée à la place.
+    </p>
+    <div class="card" style="overflow: hidden;">
+      <table>
+        <thead>
+          <tr>
+            <th>Organisation</th>
+            <th>Type</th>
+            <th class="num">Budget annuel (borne haute)</th>
+            <th class="num">Personnes</th>
+            <th class="num">Cabinets</th>
+            <th class="num">Réunions PE (2025+)</th>
+            <th class="num">Réunions Commission (2025+)</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer>
+  Sources : registre de transparence de l'UE, LobbyFacts, Parlement européen.
+  Données mises à jour automatiquement chaque nuit.
+</footer>
+
+<script src="common.js"></script>
+<script>
+(async function init() {
+  try {
+    const { entities, liveData } = await loadData();
+    const orgs = entities.map(e => mergeOrg(e, liveData));
+    const sortedByBudget = [...orgs].sort((a, b) => (b.budgetHigh ?? -1) - (a.budgetHigh ?? -1));
+
+    renderOrgTable(sortedByBudget, 'table-body', sortedByBudget.length);
+  } catch (err) {
+    document.getElementById('table-body').innerHTML =
+      `<tr><td colspan="7">Erreur de chargement des données : ${err.message}</td></tr>`;
+  }
+})();
+</script>
+
+</body>
+</html>

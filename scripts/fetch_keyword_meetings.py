@@ -110,6 +110,7 @@ def main():
                 "date": meeting["date"],
                 "member_name": meeting["member_name"],
                 "title": meeting["title"],
+                "procedure_reference": meeting["procedure_reference"],
                 "attendees": sorted(meeting["attendees"]),
                 "matched_keywords": sorted(meeting["matched_keywords"]),
             })

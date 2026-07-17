@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>EU Tobacco Lobby Watch</title>
 <link rel="stylesheet" href="styles.css">
+<style>
+  table.meps-table tbody td.rank {
+    font-weight: 700;
+    color: var(--blue-dark);
+    width: 3rem;
+  }
+</style>
 </head>
 <body>
 
@@ -12,6 +19,7 @@
   <div class="banner-inner">
     <a href="index.html" class="nav-link active">Accueil</a>
     <a href="statistiques.html" class="nav-link">Statistiques</a>
+    <a href="organisations.html" class="nav-link">Organisations suivies</a>
   </div>
 </nav>
 
@@ -32,39 +40,75 @@
 
 <main>
   <section>
-    <h2>Dernières réunions</h2>
-    <p class="section-intro">Les 5 réunions les plus récentes déclarées par les organisations suivies, au Parlement européen comme à la Commission. Cliquez sur une réunion pour voir le détail.</p>
-    <div class="card meetings-list" id="latest-meetings"></div>
+    <div class="card">
+      <button class="collapsible-toggle" id="meetings-toggle" aria-expanded="false">
+        <span class="collapsible-icon">▸</span>
+        Voir les dernières réunions entre lobbyistes et représentants des institutions
+      </button>
+      <div class="collapsible-body" id="meetings-body">
+        <p class="section-intro">
+          Les 5 réunions les plus récentes déclarées par des lobbies concernant le tabac : réunions
+          des organisations suivies (Parlement et Commission) et, côté Parlement uniquement, réunions
+          trouvées par recherche mot-clé impliquant d'autres acteurs. Cliquez sur une réunion pour voir le détail.
+        </p>
+        <div class="meetings-list" id="latest-meetings"></div>
+      </div>
+    </div>
   </section>
 
   <section>
-    <h2>Détail des organisations suivies</h2>
-    <p class="section-intro">
-      Cliquez sur une ligne pour voir la fiche détaillée de l'organisation.
-      Le budget affiché correspond à la borne haute de la fourchette officielle
-      la plus récente disponible (fiche du registre de transparence de l'UE,
-      mise à jour automatiquement chaque nuit, cohérent avec le total agrégé
-      ci-dessus) ; à défaut, la valeur issue de la recherche initiale est
-      affichée à la place.
-    </p>
-    <div class="card" style="overflow: hidden;">
-      <table>
-        <thead>
-          <tr>
-            <th>Organisation</th>
-            <th>Type</th>
-            <th class="num">Budget annuel (borne haute)</th>
-            <th class="num">Personnes</th>
-            <th class="num">Cabinets</th>
-            <th class="num">Réunions PE (2025+)</th>
-            <th class="num">Réunions Commission (2025+)</th>
-          </tr>
-        </thead>
-        <tbody id="table-body"></tbody>
-      </table>
+    <div class="card">
+      <button class="collapsible-toggle" id="orgs-preview-toggle" aria-expanded="false">
+        <span class="collapsible-icon">▸</span>
+        Voir les principales organisations de lobby du tabac
+      </button>
+      <div class="collapsible-body" id="orgs-preview-body">
+        <p class="section-intro">Les 5 organisations suivies au budget annuel déclaré le plus élevé. Cliquez sur une ligne pour voir sa fiche détaillée.</p>
+        <div style="overflow: hidden; border-radius: 12px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Organisation</th>
+                <th>Type</th>
+                <th class="num">Budget annuel (borne haute)</th>
+                <th class="num">Personnes</th>
+                <th class="num">Cabinets</th>
+                <th class="num">Réunions PE (2025+)</th>
+                <th class="num">Réunions Commission (2025+)</th>
+              </tr>
+            </thead>
+            <tbody id="orgs-preview-table-body"></tbody>
+          </table>
+        </div>
+        <p style="margin: 1rem 0 0;"><a class="register-link" href="organisations.html">Voir toutes les organisations →</a></p>
+      </div>
     </div>
-    <div class="table-toggle-wrapper" id="table-toggle-wrapper">
-      <button class="toggle-btn" id="toggle-orgs-btn"></button>
+  </section>
+
+  <section>
+    <div class="card">
+      <button class="collapsible-toggle" id="meps-toggle" aria-expanded="false">
+        <span class="collapsible-icon">▸</span>
+        Voir les eurodéputés les plus rencontrés
+      </button>
+      <div class="collapsible-body" id="meps-body">
+        <p class="section-intro">Top 20 des eurodéputés ayant déclaré le plus de réunions avec les organisations suivies, toutes organisations confondues, depuis le 1er janvier 2025. Cliquez sur un eurodéputé pour voir le détail de sa réunion la plus récente.</p>
+        <div style="overflow: hidden; border-radius: 12px;">
+          <table class="meps-table">
+            <thead>
+              <tr>
+                <th>Rang</th>
+                <th>Eurodéputé</th>
+                <th class="num">Réunions</th>
+              </tr>
+            </thead>
+            <tbody id="meps-table-body"></tbody>
+          </table>
+        </div>
+        <div class="table-toggle-wrapper" id="meps-toggle-wrapper">
+          <button class="toggle-btn" id="toggle-meps-btn"></button>
+        </div>
+      </div>
     </div>
   </section>
 </main>
@@ -80,8 +124,8 @@ function renderStats(aggregate, nbEntities) {
   const stats = document.getElementById('stats');
   const tiles = [
     { value: nbEntities, label: 'Organisations suivies' },
-    { value: formatEuro(aggregate.budget_high_total) || '—', label: 'Budget annuel déclaré (total)' },
-    { value: aggregate.people_involved_total ?? '—', label: 'Personnes concernées (total)' },
+    { value: formatEuro(aggregate.budget_high_total) || '—', label: 'Budget annuel déclaré (2025, total)' },
+    { value: aggregate.people_involved_total ?? '—', label: 'Personnes concernées (2025, total)' },
     { value: aggregate.ep_meetings_since_2025_total ?? '—', label: 'Réunions Parlement (depuis 2025)' },
     { value: aggregate.ec_meetings_since_2025_total ?? '—', label: 'Réunions Commission (depuis 2025)' },
   ];
@@ -93,170 +137,38 @@ function renderStats(aggregate, nbEntities) {
   `).join('');
 }
 
-function renderLatestMeetings(orgs) {
-  const container = document.getElementById('latest-meetings');
-  const combined = [];
-
-  orgs.forEach(org => {
-    org.epMeetingsList.forEach(m => {
-      combined.push({
-        date: m.date,
-        orgName: org.name,
-        institution: 'parliament',
-        dg: null,
-        subject: m.title || null,
-        procedureRef: m.procedure_reference || null,
-        registerUrl: org.registerUrl,
-      });
-    });
-    org.ecMeetingsList.forEach(m => {
-      combined.push({
-        date: m.date,
-        orgName: org.name,
-        institution: 'commission',
-        dg: ecMeetingDG(m.representative_or_dg),
-        subject: null,
-        procedureRef: null,
-        registerUrl: org.registerUrl,
-      });
-    });
-  });
-
-  combined.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
-  const latest = combined.slice(0, 5);
-
-  if (!latest.length) {
-    container.innerHTML = '<div class="meeting-item"><span class="muted">Aucune réunion récente disponible.</span></div>';
-    return;
-  }
-
-  const rows = [];
-  latest.forEach((m, i) => {
-    const institutionLabel = m.institution === 'parliament' ? 'Parlement européen' : 'Commission européenne';
-
-    rows.push(`
-      <div class="meeting-item" data-index="${i}">
-        <span class="meeting-date">${formatDate(m.date)}</span>
-        <span class="meeting-org">
-          ${m.orgName}
-          ${m.dg ? `<span class="meeting-dg">${m.dg}</span>` : ''}
-        </span>
-        <span class="institution-badge ${m.institution}">${m.institution === 'parliament' ? 'Parlement' : 'Commission'}</span>
-      </div>
-    `);
-
-    rows.push(`
-      <div class="meeting-detail" id="meeting-detail-${i}">
-        <div class="detail-grid">
-          <div>
-            <dt>Organisation</dt><dd>${m.orgName}</dd>
-            <dt>Institution</dt><dd>${institutionLabel}</dd>
-            ${m.dg ? `<dt>DG concernée</dt><dd>${m.dg}</dd>` : ''}
-            ${m.subject ? `<dt>Sujet</dt><dd>${m.subject}</dd>` : ''}
-            ${m.procedureRef ? `<dt>Dossier législatif</dt><dd>${m.procedureRef}</dd>` : ''}
-            <dt>Date complète</dt><dd>${formatFullDate(m.date)}</dd>
-          </div>
-        </div>
-        ${m.registerUrl
-          ? `<a class="register-link" href="${m.registerUrl}" target="_blank" rel="noopener">Voir la fiche officielle du registre de transparence →</a>`
-          : '<p class="muted" style="margin: 0.5rem 0 0;">Organisation non enregistrée au registre de transparence de l\'UE.</p>'}
-      </div>
-    `);
-  });
-
-  container.innerHTML = rows.join('');
-
-  container.querySelectorAll('.meeting-item').forEach(item => {
-    item.addEventListener('click', () => {
-      const detail = document.getElementById(`meeting-detail-${item.dataset.index}`);
-      detail.classList.toggle('open');
-    });
-  });
-}
-
-function renderTable(orgs, initialCount) {
-  const tbody = document.getElementById('table-body');
-  const rows = [];
-
-  orgs.forEach((org, i) => {
-    const extraClass = i >= initialCount ? ' extra-row' : '';
-    const budget = formatEuro(org.budgetHigh);
-    const unregisteredBadge = !org.hasRegisterId
-      ? '<span class="unregistered-badge">non enregistrée</span>'
-      : '';
-
-    rows.push(`
-      <tr class="org-row${extraClass}" data-index="${i}">
-        <td data-label="Organisation">${org.name} ${unregisteredBadge}</td>
-        <td data-label="Type">${org.type}</td>
-        <td class="num" data-label="Budget annuel">${budget ?? '<span class="muted">n.c.</span>'}</td>
-        <td class="num" data-label="Personnes">${org.peopleInvolved ?? '<span class="muted">n.c.</span>'}</td>
-        <td class="num" data-label="Cabinets">${org.nbIntermediaries ?? '<span class="muted">n.c.</span>'}</td>
-        <td class="num" data-label="Réunions PE">${org.hasRegisterId ? (org.epMeetings ?? '<span class="muted">n.c.</span>') : '<span class="muted">non enregistrée</span>'}</td>
-        <td class="num" data-label="Réunions Commission">${org.hasRegisterId ? (org.ecMeetings ?? '<span class="muted">n.c.</span>') : '<span class="muted">non enregistrée</span>'}</td>
-      </tr>
-    `);
-
-    const intermediariesHtml = (org.intermediariesNames && org.intermediariesNames.length)
-      ? `<ul class="intermediaries-list">${org.intermediariesNames.map(n => `<li>${n}</li>`).join('')}</ul>`
-      : '<span class="muted">Aucun / non communiqué</span>';
-
-    rows.push(`
-      <tr class="detail-row${extraClass}" id="detail-${i}">
-        <td colspan="7">
-          <div class="detail-grid">
-            <div>
-              <dt>Type</dt><dd>${org.type || '—'}</dd>
-              <dt>Section</dt><dd>${org.section || '—'}</dd>
-              <dt>Siège</dt><dd>${org.hqAddress || '—'}</dd>
-            </div>
-            <div>
-              <dt>Enregistrée depuis</dt><dd>${org.dateRegistration || '—'}</dd>
-              <dt>Statut LobbyFacts</dt><dd>${org.lobbyfactsStatus || '—'}${org.lobbyfactsSnapshot ? ` (instantané du ${org.lobbyfactsSnapshot.slice(0,10)})` : ''}</dd>
-            </div>
-            <div>
-              <dt>Cabinets / consultants (exercice en cours)</dt>
-              <dd>${intermediariesHtml}</dd>
-            </div>
-          </div>
-          ${org.registerUrl
-            ? `<a class="register-link" href="${org.registerUrl}" target="_blank" rel="noopener">Voir la fiche officielle du registre de transparence →</a>`
-            : '<p class="muted">Organisation non enregistrée au registre de transparence de l\'UE.</p>'}
-        </td>
-      </tr>
-    `);
-  });
-
-  tbody.innerHTML = rows.join('');
-
-  tbody.querySelectorAll('tr.org-row').forEach(row => {
-    row.addEventListener('click', () => {
-      const detail = document.getElementById(`detail-${row.dataset.index}`);
-      detail.classList.toggle('open');
-    });
-  });
-}
-
-const INITIAL_ORG_COUNT = 5;
+const INITIAL_ORG_PREVIEW_COUNT = 5;
+const INITIAL_MEP_COUNT = 3;
+const TOP_MEP_COUNT = 20;
 
 (async function init() {
+  setupCollapsible('meetings-toggle', 'meetings-body');
+  setupCollapsible('orgs-preview-toggle', 'orgs-preview-body');
+  setupCollapsible('meps-toggle', 'meps-body');
+
   try {
     const { entities, liveData } = await loadData();
     const orgs = entities.map(e => mergeOrg(e, liveData));
-
     const sortedByBudget = [...orgs].sort((a, b) => (b.budgetHigh ?? -1) - (a.budgetHigh ?? -1));
 
     const aggregate = liveData._aggregate || {};
     renderStats(aggregate, entities.length);
-    renderLatestMeetings(orgs);
-    renderTable(sortedByBudget, INITIAL_ORG_COUNT);
+
+    const latest = computeLatestMeetings(orgs, aggregate.ep_meetings_outside_our_46);
+    renderLatestMeetings(latest, 'latest-meetings');
+
+    const top5ByBudget = sortedByBudget.slice(0, INITIAL_ORG_PREVIEW_COUNT);
+    renderOrgTable(top5ByBudget, 'orgs-preview-table-body', top5ByBudget.length);
+
+    const topMeps = computeTopMeps(orgs, TOP_MEP_COUNT);
+    renderTopMeps(topMeps, 'meps-table-body', INITIAL_MEP_COUNT);
     setupTableToggle({
-      tbodyId: 'table-body',
-      wrapperId: 'table-toggle-wrapper',
-      btnId: 'toggle-orgs-btn',
-      total: sortedByBudget.length,
-      initialCount: INITIAL_ORG_COUNT,
-      labelPrefix: 'Voir toutes les organisations',
+      tbodyId: 'meps-table-body',
+      wrapperId: 'meps-toggle-wrapper',
+      btnId: 'toggle-meps-btn',
+      total: topMeps.length,
+      initialCount: INITIAL_MEP_COUNT,
+      labelPrefix: 'Voir tous les eurodéputés',
     });
 
     const updatedAt = aggregate.computed_at ? new Date(aggregate.computed_at) : null;
@@ -264,8 +176,8 @@ const INITIAL_ORG_COUNT = 5;
       ? `Dernière mise à jour des données live : ${updatedAt.toLocaleString('fr-FR')}`
       : 'Date de dernière mise à jour inconnue.';
   } catch (err) {
-    document.getElementById('table-body').innerHTML =
-      `<tr><td colspan="7">Erreur de chargement des données : ${err.message}</td></tr>`;
+    document.getElementById('latest-meetings').innerHTML =
+      `<div class="meeting-item"><span class="muted">Erreur de chargement des données : ${err.message}</span></div>`;
   }
 })();
 </script>
