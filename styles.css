@@ -131,6 +131,35 @@ section .section-intro {
   box-shadow: 0 1px 3px rgba(16, 24, 40, 0.08), 0 1px 2px rgba(16, 24, 40, 0.06);
 }
 
+/* ---------- Sections dépliables ---------- */
+.collapsible-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 1.1rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--blue-dark);
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background 0.15s ease;
+}
+.collapsible-toggle:hover { background: #f4f7ff; }
+.collapsible-icon {
+  display: inline-block;
+  transition: transform 0.15s ease;
+  font-size: 0.8rem;
+  color: var(--orange);
+  flex: 0 0 auto;
+}
+.collapsible-toggle[aria-expanded="true"] .collapsible-icon { transform: rotate(90deg); }
+.collapsible-body { display: none; padding: 0 1.25rem 1.25rem; }
+.collapsible-body.open { display: block; }
+
 /* ---------- Dernières réunions ---------- */
 .meetings-list {
   display: flex;

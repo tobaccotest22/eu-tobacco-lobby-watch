@@ -32,6 +32,9 @@ jobs:
       - name: Historique du budget LobbyFacts
         run: python scripts/fetch_budget_history.py
 
+      - name: Réunions Parlement par recherche mot-clé (hors organisations suivies)
+        run: python scripts/fetch_keyword_meetings.py
+
       - name: Sauvegarder le résultat dans le dépôt
         run: |
           git config user.name "github-actions"
