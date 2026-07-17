@@ -24,7 +24,7 @@
     line-height: 1.5;
   }
 
-  /* ---------- Bannière ---------- */
+  /* ---------- Bannière principale ---------- */
   .banner {
     background: linear-gradient(160deg, var(--blue), var(--blue-dark));
     color: #fff;
@@ -35,16 +35,35 @@
     margin: 0 auto;
   }
   .banner h1 {
-    margin: 0 0 0.75rem;
+    margin: 0 0 0.5rem;
     font-size: clamp(1.7rem, 3.5vw, 2.5rem);
     font-weight: 800;
     letter-spacing: -0.01em;
   }
   .banner .subtitle {
-    margin: 0 0 2.25rem;
-    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    margin: 0 0 1rem;
+    font-size: clamp(1.05rem, 1.8vw, 1.3rem);
     color: #dbe4ff;
-    max-width: 60ch;
+    font-weight: 600;
+  }
+  .banner .description {
+    margin: 0;
+    font-size: clamp(0.92rem, 1.3vw, 1.05rem);
+    color: #dbe4ff;
+    max-width: 65ch;
+  }
+
+  /* ---------- Bandeau chiffres agrégés ---------- */
+  .stats-banner {
+    background: #fff;
+    padding: 2.5rem 1.5rem;
+    box-shadow: 0 2px 6px rgba(16, 24, 40, 0.06);
+  }
+  .stats-banner h2 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--blue-dark);
+    margin: 0 0 1.5rem;
   }
   .stats {
     display: grid;
@@ -52,25 +71,25 @@
     gap: 1rem;
   }
   .stat-tile {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: var(--grey-bg);
+    border: 1px solid var(--grey-border);
     border-radius: 12px;
     padding: 1.25rem 1.4rem;
   }
   .stat-tile .value {
     font-size: clamp(1.5rem, 2.6vw, 2rem);
     font-weight: 800;
-    color: #fff;
+    color: var(--blue-dark);
   }
   .stat-tile .label {
     font-size: 0.85rem;
-    color: #cfdaf7;
+    color: var(--muted);
     margin-top: 0.35rem;
   }
   .updated-note {
-    margin: 1.75rem 0 0;
+    margin: 1.5rem 0 0;
     font-size: 0.85rem;
-    color: #cfdaf7;
+    color: var(--muted);
   }
 
   /* ---------- Sections générales ---------- */
@@ -112,6 +131,12 @@
     align-items: center;
     gap: 1rem;
     padding: 1rem 1.25rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.15s ease;
+  }
+  .meeting-item:hover {
+    background: #f4f7ff;
   }
   .meeting-date {
     font-weight: 700;
@@ -146,6 +171,16 @@
     background: #fdece3;
     color: var(--orange);
   }
+  .meeting-detail {
+    display: none;
+    padding: 1rem 1.5rem 1.25rem;
+    margin: 0 0.25rem 0.25rem;
+    background: #f9fbfc;
+    border-radius: 8px;
+    font-size: 0.87rem;
+  }
+  .meeting-detail.open { display: block; }
+  .meeting-detail .detail-grid { margin-bottom: 0.4rem; }
 
   /* ---------- Tableau des organisations ---------- */
   table {
@@ -221,6 +256,27 @@
   }
   a.register-link:hover { text-decoration: underline; }
 
+  tr.extra-row { display: none; }
+  #table-body.show-all tr.extra-row.org-row { display: table-row; }
+  #table-body.show-all tr.extra-row.detail-row.open { display: table-row; }
+
+  .table-toggle-wrapper {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+  .toggle-btn {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.65rem 1.4rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  .toggle-btn:hover { background: var(--blue-dark); }
+
   footer {
     text-align: center;
     font-size: 0.78rem;
@@ -264,8 +320,15 @@
 
 <div class="banner">
   <div class="banner-inner">
-    <h1>Suivi général du lobby du tabac en Europe</h1>
-    <p class="subtitle">Rencontres, budgets et effectifs déclarés des acteurs de l'industrie du tabac auprès des institutions européennes.</p>
+    <h1>EU Tobacco Lobby Watch</h1>
+    <p class="subtitle">Suivi général du lobby du tabac en Europe</p>
+    <p class="description">Rencontres, budgets et effectifs déclarés des acteurs de l'industrie du tabac auprès des institutions européennes.</p>
+  </div>
+</div>
+
+<div class="stats-banner">
+  <div class="banner-inner">
+    <h2>État global sur le lobby du tabac</h2>
     <div class="stats" id="stats"></div>
     <p class="updated-note" id="updated-note"></p>
   </div>
@@ -274,7 +337,7 @@
 <main>
   <section>
     <h2>Dernières réunions</h2>
-    <p class="section-intro">Les 5 réunions les plus récentes déclarées par les organisations suivies, au Parlement européen comme à la Commission.</p>
+    <p class="section-intro">Les 5 réunions les plus récentes déclarées par les organisations suivies, au Parlement européen comme à la Commission. Cliquez sur une réunion pour voir le détail.</p>
     <div class="card meetings-list" id="latest-meetings"></div>
   </section>
 
@@ -302,6 +365,9 @@
         </thead>
         <tbody id="table-body"></tbody>
       </table>
+    </div>
+    <div class="table-toggle-wrapper" id="table-toggle-wrapper">
+      <button class="toggle-btn" id="toggle-orgs-btn"></button>
     </div>
   </section>
 </main>
@@ -400,16 +466,23 @@ function formatDate(isoDate) {
   return d.toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' });
 }
 
+function formatFullDate(isoDate) {
+  if (!isoDate) return '—';
+  const d = new Date(isoDate);
+  if (isNaN(d)) return isoDate;
+  return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+
 function renderLatestMeetings(orgs) {
   const container = document.getElementById('latest-meetings');
   const combined = [];
 
   orgs.forEach(org => {
     org.epMeetingsList.forEach(m => {
-      combined.push({ date: m.date, orgName: org.name, institution: 'parliament', dg: null });
+      combined.push({ date: m.date, orgName: org.name, institution: 'parliament', dg: null, registerUrl: org.registerUrl });
     });
     org.ecMeetingsList.forEach(m => {
-      combined.push({ date: m.date, orgName: org.name, institution: 'commission', dg: ecMeetingDG(m.representative_or_dg) });
+      combined.push({ date: m.date, orgName: org.name, institution: 'commission', dg: ecMeetingDG(m.representative_or_dg), registerUrl: org.registerUrl });
     });
   });
 
@@ -421,30 +494,61 @@ function renderLatestMeetings(orgs) {
     return;
   }
 
-  container.innerHTML = latest.map(m => `
-    <div class="meeting-item">
-      <span class="meeting-date">${formatDate(m.date)}</span>
-      <span class="meeting-org">
-        ${m.orgName}
-        ${m.dg ? `<span class="meeting-dg">${m.dg}</span>` : ''}
-      </span>
-      <span class="institution-badge ${m.institution}">${m.institution === 'parliament' ? 'Parlement' : 'Commission'}</span>
-    </div>
-  `).join('');
+  const rows = [];
+  latest.forEach((m, i) => {
+    const institutionLabel = m.institution === 'parliament' ? 'Parlement européen' : 'Commission européenne';
+
+    rows.push(`
+      <div class="meeting-item" data-index="${i}">
+        <span class="meeting-date">${formatDate(m.date)}</span>
+        <span class="meeting-org">
+          ${m.orgName}
+          ${m.dg ? `<span class="meeting-dg">${m.dg}</span>` : ''}
+        </span>
+        <span class="institution-badge ${m.institution}">${m.institution === 'parliament' ? 'Parlement' : 'Commission'}</span>
+      </div>
+    `);
+
+    rows.push(`
+      <div class="meeting-detail" id="meeting-detail-${i}">
+        <div class="detail-grid">
+          <div>
+            <dt>Organisation</dt><dd>${m.orgName}</dd>
+            <dt>Institution</dt><dd>${institutionLabel}</dd>
+            ${m.dg ? `<dt>DG concernée</dt><dd>${m.dg}</dd>` : ''}
+            <dt>Date complète</dt><dd>${formatFullDate(m.date)}</dd>
+          </div>
+        </div>
+        ${m.registerUrl
+          ? `<a class="register-link" href="${m.registerUrl}" target="_blank" rel="noopener">Voir la fiche officielle du registre de transparence →</a>`
+          : '<p class="muted" style="margin: 0.5rem 0 0;">Organisation non enregistrée au registre de transparence de l\'UE.</p>'}
+      </div>
+    `);
+  });
+
+  container.innerHTML = rows.join('');
+
+  container.querySelectorAll('.meeting-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const detail = document.getElementById(`meeting-detail-${item.dataset.index}`);
+      detail.classList.toggle('open');
+    });
+  });
 }
 
-function renderTable(orgs) {
+function renderTable(orgs, initialCount) {
   const tbody = document.getElementById('table-body');
   const rows = [];
 
   orgs.forEach((org, i) => {
+    const extraClass = i >= initialCount ? ' extra-row' : '';
     const budget = budgetRange(org.budgetLow, org.budgetHigh);
     const unregisteredBadge = !org.hasRegisterId
       ? '<span class="unregistered-badge">non enregistrée</span>'
       : '';
 
     rows.push(`
-      <tr class="org-row" data-index="${i}">
+      <tr class="org-row${extraClass}" data-index="${i}">
         <td data-label="Organisation">${org.name} ${unregisteredBadge}</td>
         <td data-label="Type">${org.type}</td>
         <td class="num" data-label="Budget annuel">${budget ?? '<span class="muted">n.c.</span>'}</td>
@@ -460,7 +564,7 @@ function renderTable(orgs) {
       : '<span class="muted">Aucun / non communiqué</span>';
 
     rows.push(`
-      <tr class="detail-row" id="detail-${i}">
+      <tr class="detail-row${extraClass}" id="detail-${i}">
         <td colspan="7">
           <div class="detail-grid">
             <div>
@@ -495,6 +599,27 @@ function renderTable(orgs) {
   });
 }
 
+function setupOrgToggle(total, initialCount) {
+  const wrapper = document.getElementById('table-toggle-wrapper');
+  const btn = document.getElementById('toggle-orgs-btn');
+  const tbody = document.getElementById('table-body');
+
+  if (total <= initialCount) {
+    wrapper.style.display = 'none';
+    return;
+  }
+
+  const collapsedLabel = `Voir toutes les organisations (${total})`;
+  btn.textContent = collapsedLabel;
+
+  btn.addEventListener('click', () => {
+    const expanded = tbody.classList.toggle('show-all');
+    btn.textContent = expanded ? 'Réduire' : collapsedLabel;
+  });
+}
+
+const INITIAL_ORG_COUNT = 10;
+
 (async function init() {
   try {
     const { entities, liveData } = await loadData();
@@ -505,7 +630,8 @@ function renderTable(orgs) {
     const aggregate = liveData._aggregate || {};
     renderStats(aggregate, entities.length);
     renderLatestMeetings(orgs);
-    renderTable(sortedByBudget);
+    renderTable(sortedByBudget, INITIAL_ORG_COUNT);
+    setupOrgToggle(sortedByBudget.length, INITIAL_ORG_COUNT);
 
     const updatedAt = aggregate.computed_at ? new Date(aggregate.computed_at) : null;
     document.getElementById('updated-note').textContent = updatedAt
