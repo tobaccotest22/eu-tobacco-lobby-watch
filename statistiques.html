@@ -53,16 +53,17 @@
   </section>
 
   <section>
-    <h2>Évolution du budget total déclaré</h2>
-    <p class="section-intro">
-      Pour chaque année, somme des budgets annuels de lobbying déclarés par les
-      organisations suivies disposant d'un historique sur LobbyFacts (le nombre
-      d'organisations comptées, indiqué sous chaque barre, varie selon les
-      années disponibles pour chacune).
-    </p>
+    <h2 id="budget-chart-heading">Évolution du budget lobby des principales organisations en Europe</h2>
+    <p class="section-intro">Historique du budget annuel déclaré par cinq organisations parmi les plus actives, tel que publié par LobbyFacts.</p>
     <div class="card chart-wrapper">
       <div id="budget-chart"></div>
     </div>
+    <p class="section-intro">
+      Ces chiffres correspondent à la borne basse des fourchettes de budget déclarées par les organisations,
+      telle que publiée par LobbyFacts pour chaque année. Le total affiché en page d'accueil utilise la borne
+      haute de la fourchette la plus récente ; aucun historique n'existe pour cette borne haute sur les années
+      passées, les deux chiffres ne sont donc pas directement comparables.
+    </p>
     <p class="updated-note" id="budget-updated-note"></p>
   </section>
 </main>
@@ -150,52 +151,120 @@ function renderTopMeps(topMeps, initialCount) {
   });
 }
 
-function renderBudgetChart(yearlyTotals) {
+const PILOT_ORGS = [
+  { registerId: '51925911965-76', name: 'Philip Morris International', color: '#0038FF' },
+  { registerId: '2427500988-58', name: 'British American Tobacco', color: '#e8590c' },
+  { registerId: '62460931291-40', name: 'Imperial Brands', color: '#10b981' },
+  { registerId: '71175716023-03', name: 'JT International', color: '#7c3aed' },
+  { registerId: '1496873833-97', name: 'Tobacco Europe AISBL', color: '#d63384' },
+];
+
+function niceCeil(value) {
+  if (value <= 0) return 1;
+  const exponent = Math.floor(Math.log10(value));
+  const base = Math.pow(10, exponent);
+  const fraction = value / base;
+  const niceFractions = [1, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10];
+  const niceFraction = niceFractions.find(f => f >= fraction) || 10;
+  return niceFraction * base;
+}
+
+function formatCompactEuro(value) {
+  if (value >= 1e6) return `${(value / 1e6).toFixed(1)}M€`;
+  return `${Math.round(value / 1000)}k€`;
+}
+
+function renderPilotBudgetChart(organisations) {
   const container = document.getElementById('budget-chart');
-  const years = Object.keys(yearlyTotals).sort((a, b) => Number(a) - Number(b));
+  const heading = document.getElementById('budget-chart-heading');
+
+  const series = PILOT_ORGS.map(org => {
+    const entry = organisations[org.registerId];
+    const byYear = (entry && entry.budget_by_year && typeof entry.budget_by_year === 'object' && !Array.isArray(entry.budget_by_year))
+      ? entry.budget_by_year
+      : {};
+    return Object.assign({}, org, { byYear });
+  });
+
+  const yearsSet = new Set();
+  series.forEach(s => Object.keys(s.byYear).forEach(y => yearsSet.add(y)));
+  const years = Array.from(yearsSet).sort((a, b) => Number(a) - Number(b));
+
+  heading.textContent = years.length
+    ? `Évolution sur ${years.length} années du budget lobby des principales organisations en Europe`
+    : `Évolution du budget lobby des principales organisations en Europe`;
 
   if (!years.length) {
     container.innerHTML = '<p class="muted">Aucune donnée d\'historique de budget disponible.</p>';
     return;
   }
 
-  const values = years.map(y => yearlyTotals[y].total);
-  const maxValue = Math.max(...values, 1);
+  const allValues = series.flatMap(s => years.map(y => s.byYear[y]).filter(v => typeof v === 'number'));
+  const yMax = niceCeil(Math.max(...allValues, 1));
+  const TICK_COUNT = 5;
 
-  const paddingLeft = 24;
+  const paddingLeft = 56;
   const paddingRight = 24;
-  const paddingTop = 24;
-  const paddingBottom = 54;
+  const paddingTop = 20;
+  const paddingBottom = 46;
   const chartHeight = 260;
-  const step = 64;
-  const width = paddingLeft + paddingRight + years.length * step;
+  const step = 56;
+  const width = paddingLeft + paddingRight + (years.length - 1) * step;
   const height = paddingTop + chartHeight + paddingBottom;
-  const barWidth = step * 0.6;
 
-  let bars = '';
-  years.forEach((year, i) => {
-    const value = yearlyTotals[year].total;
-    const nbOrgs = yearlyTotals[year].nb_organisations;
-    const barHeight = maxValue > 0 ? (value / maxValue) * chartHeight : 0;
-    const x = paddingLeft + i * step + (step - barWidth) / 2;
-    const y = paddingTop + chartHeight - barHeight;
-    const valueLabel = value >= 1e6 ? `${(value / 1e6).toFixed(1)}M€` : `${Math.round(value / 1000)}k€`;
+  const xFor = i => paddingLeft + i * step;
+  const yFor = value => paddingTop + chartHeight - (value / yMax) * chartHeight;
 
-    bars += `
-      <rect class="chart-bar" x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${barWidth.toFixed(1)}" height="${barHeight.toFixed(1)}" rx="3">
-        <title>${year} : ${formatEuro(value)} (${nbOrgs} organisation${nbOrgs > 1 ? 's' : ''})</title>
-      </rect>
-      <text class="chart-value-label" x="${(x + barWidth / 2).toFixed(1)}" y="${(y - 6).toFixed(1)}" text-anchor="middle">${valueLabel}</text>
-      <text class="chart-axis-label" x="${(x + barWidth / 2).toFixed(1)}" y="${(paddingTop + chartHeight + 18).toFixed(1)}" text-anchor="middle">${year}</text>
-      <text class="chart-note" x="${(x + barWidth / 2).toFixed(1)}" y="${(paddingTop + chartHeight + 32).toFixed(1)}" text-anchor="middle">n=${nbOrgs}</text>
+  let gridlines = '';
+  for (let t = 0; t <= TICK_COUNT; t++) {
+    const value = (yMax / TICK_COUNT) * t;
+    const y = yFor(value);
+    gridlines += `
+      <line class="chart-axis-line" x1="${paddingLeft}" y1="${y.toFixed(1)}" x2="${(width - paddingRight).toFixed(1)}" y2="${y.toFixed(1)}" />
+      <text class="chart-axis-label" x="${(paddingLeft - 8).toFixed(1)}" y="${(y + 3).toFixed(1)}" text-anchor="end">${formatCompactEuro(value)}</text>
     `;
+  }
+
+  let xLabels = '';
+  years.forEach((year, i) => {
+    xLabels += `<text class="chart-axis-label" x="${xFor(i).toFixed(1)}" y="${(paddingTop + chartHeight + 18).toFixed(1)}" text-anchor="middle">${year}</text>`;
+  });
+
+  let linesAndPoints = '';
+  series.forEach(s => {
+    let currentRun = [];
+
+    const flushRun = () => {
+      if (currentRun.length > 1) {
+        const points = currentRun.map(p => `${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
+        linesAndPoints += `<polyline points="${points}" fill="none" stroke="${s.color}" stroke-width="2.5" />`;
+      }
+      currentRun.forEach(p => {
+        linesAndPoints += `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="3.5" fill="${s.color}"><title>${s.name} — ${p.year} : ${formatEuro(p.value)}</title></circle>`;
+      });
+      currentRun = [];
+    };
+
+    years.forEach((year, i) => {
+      const value = s.byYear[year];
+      if (typeof value === 'number') {
+        currentRun.push({ x: xFor(i), y: yFor(value), year, value });
+      } else {
+        flushRun();
+      }
+    });
+    flushRun();
   });
 
   container.innerHTML = `
     <svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" class="chart-svg-container" style="width: 100%; height: auto;">
-      <line class="chart-axis-line" x1="${paddingLeft}" y1="${paddingTop + chartHeight}" x2="${width - paddingRight}" y2="${paddingTop + chartHeight}" />
-      ${bars}
+      ${gridlines}
+      ${linesAndPoints}
+      ${xLabels}
     </svg>
+    <div class="chart-legend">
+      ${series.map(s => `<span class="chart-legend-item"><span class="chart-legend-dot" style="background:${s.color}"></span>${s.name}</span>`).join('')}
+    </div>
   `;
 }
 
@@ -224,7 +293,7 @@ const TOP_MEP_COUNT = 20;
   try {
     const budgetRes = await fetch('data/budget_history.json');
     const budgetData = await budgetRes.json();
-    renderBudgetChart(budgetData.yearly_totals || {});
+    renderPilotBudgetChart(budgetData.organisations || {});
 
     const computedAt = budgetData.computed_at ? new Date(budgetData.computed_at) : null;
     document.getElementById('budget-updated-note').textContent = computedAt
