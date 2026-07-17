@@ -7,6 +7,7 @@
   --grey-border: #dde3e8;
   --text: #1c2b39;
   --muted: #55606b;
+  --font-heading: "Barlow Condensed", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 * { box-sizing: border-box; }
 body {
@@ -24,7 +25,24 @@ body {
 }
 .site-nav .banner-inner {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.nav-brand {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nav-links {
+  display: flex;
   gap: 1.5rem;
+  flex-wrap: wrap;
 }
 .nav-link {
   color: #b9c8f2;
@@ -42,16 +60,38 @@ body {
   background: linear-gradient(160deg, var(--blue), var(--blue-dark));
   color: #fff;
   padding: 1.1rem 1.5rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.banner-watermark {
+  position: absolute;
+  top: -25px;
+  right: -25px;
+  width: 130px;
+  height: 130px;
+  opacity: 0.12;
+  pointer-events: none;
 }
 .banner-inner {
   max-width: 1100px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 .banner h1 {
   margin: 0 0 0.15rem;
   font-size: clamp(1.05rem, 1.6vw, 1.3rem);
-  font-weight: 800;
+  font-family: var(--font-heading);
+  font-weight: 700;
   letter-spacing: -0.01em;
+}
+.redacted {
+  display: inline-block;
+  background: #000;
+  color: #000;
+  padding: 0 0.35em;
+  border-radius: 2px;
+  user-select: none;
 }
 .banner .subtitle {
   margin: 0 0 0.25rem;
@@ -73,9 +113,15 @@ body {
   box-shadow: 0 2px 6px rgba(16, 24, 40, 0.06);
 }
 .stats-banner h2 {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--blue-dark);
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #fff;
+  background: var(--text);
+  padding: 0.3rem 0.7rem;
+  border-radius: 3px;
   margin: 0 0 0.85rem;
 }
 .stats {
@@ -86,6 +132,7 @@ body {
 .stat-tile {
   background: var(--grey-bg);
   border: 1px solid var(--grey-border);
+  border-left: 3px solid var(--orange);
   border-radius: 8px;
   padding: 0.6rem 0.75rem;
 }
@@ -115,10 +162,26 @@ section {
   margin: 3rem 0;
 }
 section h2 {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--blue-dark);
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #fff;
+  background: var(--text);
+  padding: 0.3rem 0.7rem;
+  border-radius: 3px;
   margin: 0 0 0.35rem;
+}
+.title-stamp {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #fff;
+  background: var(--text);
+  padding: 0.25rem 0.65rem;
+  border-radius: 3px;
 }
 section .section-intro {
   margin: 0 0 1.5rem;
