@@ -34,7 +34,7 @@
 <main>
   <section>
     <h2>Eurodéputés les plus rencontrés depuis 2025</h2>
-    <p class="section-intro">Top 20 des eurodéputés ayant déclaré le plus de réunions avec les organisations suivies, toutes organisations confondues, depuis le 1er janvier 2025.</p>
+    <p class="section-intro">Top 20 des eurodéputés ayant déclaré le plus de réunions avec les organisations suivies, toutes organisations confondues, depuis le 1er janvier 2025. Cliquez sur un eurodéputé pour voir le détail de sa réunion la plus récente.</p>
     <div class="card" style="overflow: hidden;">
       <table class="meps-table">
         <thead>
@@ -46,6 +46,9 @@
         </thead>
         <tbody id="meps-table-body"></tbody>
       </table>
+    </div>
+    <div class="table-toggle-wrapper" id="meps-toggle-wrapper">
+      <button class="toggle-btn" id="toggle-meps-btn"></button>
     </div>
   </section>
 
@@ -72,32 +75,79 @@
 <script src="common.js"></script>
 <script>
 function computeTopMeps(orgs, limit) {
-  const counts = new Map();
+  const meps = new Map();
+
   orgs.forEach(org => {
     org.epMeetingsList.forEach(m => {
       if (!m.member_name) return;
-      counts.set(m.member_name, (counts.get(m.member_name) || 0) + 1);
+      const entry = meps.get(m.member_name) || { count: 0, latest: null };
+      entry.count += 1;
+      if (!entry.latest || (m.date || '') > (entry.latest.date || '')) {
+        entry.latest = {
+          date: m.date,
+          orgName: org.name,
+          registerUrl: org.registerUrl,
+          subject: m.title || null,
+          procedureRef: m.procedure_reference || null,
+        };
+      }
+      meps.set(m.member_name, entry);
     });
   });
-  return Array.from(counts.entries())
-    .map(([name, count]) => ({ name, count }))
+
+  return Array.from(meps.entries())
+    .map(([name, entry]) => ({ name, count: entry.count, latest: entry.latest }))
     .sort((a, b) => b.count - a.count)
     .slice(0, limit);
 }
 
-function renderTopMeps(topMeps) {
+function renderTopMeps(topMeps, initialCount) {
   const tbody = document.getElementById('meps-table-body');
   if (!topMeps.length) {
     tbody.innerHTML = '<tr><td colspan="3" class="muted">Aucune donnée disponible.</td></tr>';
     return;
   }
-  tbody.innerHTML = topMeps.map((m, i) => `
-    <tr>
-      <td class="rank" data-label="Rang">${i + 1}</td>
-      <td data-label="Eurodéputé">${m.name}</td>
-      <td class="num" data-label="Réunions">${m.count}</td>
-    </tr>
-  `).join('');
+
+  const rows = [];
+  topMeps.forEach((mep, i) => {
+    const extraClass = i >= initialCount ? ' extra-row' : '';
+
+    rows.push(`
+      <tr class="org-row${extraClass}" data-index="${i}">
+        <td class="rank" data-label="Rang">${i + 1}</td>
+        <td data-label="Eurodéputé">${mep.name}</td>
+        <td class="num" data-label="Réunions">${mep.count}</td>
+      </tr>
+    `);
+
+    const latest = mep.latest;
+    rows.push(`
+      <tr class="detail-row${extraClass}" id="mep-detail-${i}">
+        <td colspan="3">
+          <div class="detail-grid">
+            <div>
+              <dt>Organisation rencontrée</dt><dd>${latest.orgName}</dd>
+              <dt>Date de la réunion</dt><dd>${formatFullDate(latest.date)}</dd>
+              ${latest.subject ? `<dt>Sujet</dt><dd>${latest.subject}</dd>` : ''}
+              ${latest.procedureRef ? `<dt>Dossier législatif</dt><dd>${latest.procedureRef}</dd>` : ''}
+            </div>
+          </div>
+          ${latest.registerUrl
+            ? `<a class="register-link" href="${latest.registerUrl}" target="_blank" rel="noopener">Voir la fiche officielle du registre de transparence →</a>`
+            : ''}
+        </td>
+      </tr>
+    `);
+  });
+
+  tbody.innerHTML = rows.join('');
+
+  tbody.querySelectorAll('tr.org-row').forEach(row => {
+    row.addEventListener('click', () => {
+      const detail = document.getElementById(`mep-detail-${row.dataset.index}`);
+      detail.classList.toggle('open');
+    });
+  });
 }
 
 function renderBudgetChart(yearlyTotals) {
@@ -149,11 +199,23 @@ function renderBudgetChart(yearlyTotals) {
   `;
 }
 
+const INITIAL_MEP_COUNT = 5;
+const TOP_MEP_COUNT = 20;
+
 (async function init() {
   try {
     const { entities, liveData } = await loadData();
     const orgs = entities.map(e => mergeOrg(e, liveData));
-    renderTopMeps(computeTopMeps(orgs, 20));
+    const topMeps = computeTopMeps(orgs, TOP_MEP_COUNT);
+    renderTopMeps(topMeps, INITIAL_MEP_COUNT);
+    setupTableToggle({
+      tbodyId: 'meps-table-body',
+      wrapperId: 'meps-toggle-wrapper',
+      btnId: 'toggle-meps-btn',
+      total: topMeps.length,
+      initialCount: INITIAL_MEP_COUNT,
+      labelPrefix: 'Voir tous les eurodéputés',
+    });
   } catch (err) {
     document.getElementById('meps-table-body').innerHTML =
       `<tr><td colspan="3">Erreur de chargement des données : ${err.message}</td></tr>`;
