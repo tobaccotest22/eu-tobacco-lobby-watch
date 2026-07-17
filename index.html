@@ -4,320 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>EU Tobacco Lobby Watch</title>
-<style>
-  :root {
-    --blue: #0038FF;
-    --blue-dark: #0025b3;
-    --orange: #e8590c;
-    --orange-light: #ff8a3d;
-    --grey-bg: #f4f6f8;
-    --grey-border: #dde3e8;
-    --text: #1c2b39;
-    --muted: #55606b;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: var(--grey-bg);
-    color: var(--text);
-    line-height: 1.5;
-  }
-
-  /* ---------- Bannière principale ---------- */
-  .banner {
-    background: linear-gradient(160deg, var(--blue), var(--blue-dark));
-    color: #fff;
-    padding: 3.5rem 1.5rem 3rem;
-  }
-  .banner-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .banner h1 {
-    margin: 0 0 0.4rem;
-    font-size: clamp(1.3rem, 2vw, 1.6rem);
-    font-weight: 800;
-    letter-spacing: -0.01em;
-  }
-  .banner .subtitle {
-    margin: 0 0 0.75rem;
-    font-size: clamp(0.95rem, 1.3vw, 1.05rem);
-    color: #dbe4ff;
-    font-weight: 600;
-  }
-  .banner .description {
-    margin: 0;
-    font-size: clamp(0.82rem, 1.1vw, 0.9rem);
-    color: #dbe4ff;
-    max-width: 65ch;
-  }
-
-  /* ---------- Bandeau chiffres agrégés ---------- */
-  .stats-banner {
-    background: #fff;
-    padding: 2.5rem 1.5rem;
-    box-shadow: 0 2px 6px rgba(16, 24, 40, 0.06);
-  }
-  .stats-banner h2 {
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: var(--blue-dark);
-    margin: 0 0 1.25rem;
-  }
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    gap: 1rem;
-  }
-  .stat-tile {
-    background: var(--grey-bg);
-    border: 1px solid var(--grey-border);
-    border-radius: 12px;
-    padding: 1.25rem 1.4rem;
-  }
-  .stat-tile .value {
-    font-size: clamp(1.4rem, 2.2vw, 1.75rem);
-    font-weight: 800;
-    color: var(--blue-dark);
-  }
-  .stat-tile .label {
-    font-size: 0.8rem;
-    color: var(--muted);
-    margin-top: 0.35rem;
-  }
-  .updated-note {
-    margin: 1.5rem 0 0;
-    font-size: 0.8rem;
-    color: var(--muted);
-  }
-
-  /* ---------- Sections générales ---------- */
-  main {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-  section {
-    margin: 3rem 0;
-  }
-  section h2 {
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: var(--blue-dark);
-    margin: 0 0 0.35rem;
-  }
-  section .section-intro {
-    margin: 0 0 1.5rem;
-    color: var(--muted);
-    font-size: 0.85rem;
-    max-width: 75ch;
-  }
-  .card {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 1px 3px rgba(16, 24, 40, 0.08), 0 1px 2px rgba(16, 24, 40, 0.06);
-  }
-
-  /* ---------- Dernières réunions ---------- */
-  .meetings-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  .meeting-item {
-    display: grid;
-    grid-template-columns: 110px 1fr auto;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 1.25rem;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: background 0.15s ease;
-  }
-  .meeting-item:hover {
-    background: #f4f7ff;
-  }
-  .meeting-date {
-    font-weight: 700;
-    color: var(--blue-dark);
-    font-size: 0.85rem;
-    white-space: nowrap;
-  }
-  .meeting-org {
-    font-weight: 600;
-    color: var(--text);
-    font-size: 0.92rem;
-  }
-  .meeting-dg {
-    display: block;
-    font-weight: 400;
-    color: var(--muted);
-    font-size: 0.78rem;
-    margin-top: 0.15rem;
-  }
-  .institution-badge {
-    display: inline-block;
-    font-size: 0.7rem;
-    font-weight: 700;
-    padding: 0.25rem 0.65rem;
-    border-radius: 20px;
-    white-space: nowrap;
-  }
-  .institution-badge.parliament {
-    background: #e6ebff;
-    color: var(--blue-dark);
-  }
-  .institution-badge.commission {
-    background: #fdece3;
-    color: var(--orange);
-  }
-  .meeting-detail {
-    display: none;
-    padding: 1rem 1.5rem 1.25rem;
-    margin: 0 0.25rem 0.25rem;
-    background: #f9fbfc;
-    border-radius: 8px;
-    font-size: 0.82rem;
-  }
-  .meeting-detail.open { display: block; }
-  .meeting-detail .detail-grid { margin-bottom: 0.4rem; }
-
-  /* ---------- Tableau des organisations ---------- */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  thead th {
-    background: var(--blue);
-    color: #fff;
-    text-align: left;
-    padding: 0.85rem 1rem;
-    font-size: 0.75rem;
-    font-weight: 700;
-    white-space: nowrap;
-  }
-  thead th:first-child { border-top-left-radius: 12px; }
-  thead th:last-child { border-top-right-radius: 12px; }
-  thead th.num, td.num { text-align: right; }
-  tbody tr.org-row {
-    cursor: pointer;
-    border-top: 1px solid var(--grey-border);
-    transition: background 0.15s ease;
-  }
-  tbody tr.org-row:hover {
-    background: #f4f7ff;
-  }
-  tbody td {
-    padding: 0.85rem 1rem;
-    font-size: 0.85rem;
-    vertical-align: top;
-  }
-  tbody tr.org-row td:first-child {
-    font-weight: 700;
-    color: var(--blue-dark);
-  }
-  .unregistered-badge {
-    display: inline-block;
-    font-size: 0.72rem;
-    padding: 0.15rem 0.5rem;
-    border-radius: 10px;
-    background: #fdece3;
-    color: #b6410a;
-    font-weight: 600;
-    margin-left: 0.35rem;
-  }
-  .muted { color: #8a949c; font-style: italic; }
-  tr.detail-row { display: none; }
-  tr.detail-row.open { display: table-row; }
-  tr.detail-row td {
-    background: #f9fbfc;
-    padding: 1.5rem 1.75rem;
-    border-top: 1px dashed var(--grey-border);
-  }
-  .detail-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1rem 2rem;
-    font-size: 0.83rem;
-  }
-  .detail-grid dt { color: var(--muted); font-weight: 700; margin-bottom: 0.25rem; }
-  .detail-grid dd { margin: 0 0 0.9rem; }
-  .intermediaries-list {
-    margin: 0.3rem 0 0;
-    padding-left: 1.1rem;
-  }
-  a.register-link {
-    display: inline-block;
-    margin-top: 0.75rem;
-    color: var(--orange);
-    font-weight: 700;
-    text-decoration: none;
-    font-size: 0.82rem;
-  }
-  a.register-link:hover { text-decoration: underline; }
-
-  tr.extra-row { display: none; }
-  #table-body.show-all tr.extra-row.org-row { display: table-row; }
-  #table-body.show-all tr.extra-row.detail-row.open { display: table-row; }
-
-  .table-toggle-wrapper {
-    text-align: center;
-    margin-top: 1.5rem;
-  }
-  .toggle-btn {
-    background: var(--blue);
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 0.6rem 1.3rem;
-    font-size: 0.85rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 0.15s ease;
-  }
-  .toggle-btn:hover { background: var(--blue-dark); }
-
-  footer {
-    text-align: center;
-    font-size: 0.78rem;
-    color: #8a949c;
-    padding: 2.5rem 1.5rem 3rem;
-  }
-
-  @media (max-width: 720px) {
-    .meeting-item {
-      grid-template-columns: 1fr;
-      gap: 0.4rem;
-    }
-    thead { display: none; }
-    table, tbody, tr, td { display: block; width: 100%; }
-    tbody tr.org-row {
-      border: 1px solid var(--grey-border);
-      border-radius: 8px;
-      margin-bottom: 0.75rem;
-      padding: 0.4rem 0.2rem;
-    }
-    tbody td {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 0.4rem 0.9rem;
-    }
-    tbody td.num { text-align: right; }
-    tbody td::before {
-      content: attr(data-label);
-      font-weight: 600;
-      color: var(--muted);
-      flex: 0 0 auto;
-    }
-    tbody td:first-child::before { content: ""; }
-    tr.detail-row.open td { display: block; }
-    tr.detail-row.open td::before { content: none; }
-  }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<nav class="site-nav">
+  <div class="banner-inner">
+    <a href="index.html" class="nav-link active">Accueil</a>
+    <a href="statistiques.html" class="nav-link">Statistiques</a>
+  </div>
+</nav>
 
 <div class="banner">
   <div class="banner-inner">
@@ -346,9 +42,10 @@
     <h2>Détail des organisations suivies</h2>
     <p class="section-intro">
       Cliquez sur une ligne pour voir la fiche détaillée de l'organisation.
-      Le budget affiché est la fourchette officielle la plus récente disponible
-      (fiche du registre de transparence de l'UE, mise à jour automatiquement
-      chaque nuit) ; à défaut, la valeur issue de la recherche initiale est
+      Le budget affiché correspond à la borne haute de la fourchette officielle
+      la plus récente disponible (fiche du registre de transparence de l'UE,
+      mise à jour automatiquement chaque nuit, cohérent avec le total agrégé
+      ci-dessus) ; à défaut, la valeur issue de la recherche initiale est
       affichée à la place.
     </p>
     <div class="card" style="overflow: hidden;">
@@ -357,7 +54,7 @@
           <tr>
             <th>Organisation</th>
             <th>Type</th>
-            <th class="num">Budget annuel</th>
+            <th class="num">Budget annuel (borne haute)</th>
             <th class="num">Personnes</th>
             <th class="num">Cabinets</th>
             <th class="num">Réunions PE (2025+)</th>
@@ -378,63 +75,8 @@
   Données mises à jour automatiquement chaque nuit.
 </footer>
 
+<script src="common.js"></script>
 <script>
-async function loadData() {
-  const [entitiesRes, liveRes] = await Promise.all([
-    fetch('data/entities.json'),
-    fetch('data/live_data.json'),
-  ]);
-  const entitiesJson = await entitiesRes.json();
-  const liveData = await liveRes.json();
-  return { entities: entitiesJson.entities, liveData };
-}
-
-function formatEuro(n) {
-  if (n === null || n === undefined) return null;
-  return n.toLocaleString('fr-FR') + ' €';
-}
-
-function budgetRange(low, high) {
-  if (low === null || low === undefined || high === null || high === undefined) return null;
-  return `${formatEuro(low)} – ${formatEuro(high)}`;
-}
-
-function mergeOrg(entity, liveData) {
-  const live = entity.register_id ? liveData[entity.register_id] : null;
-  const hasRegisterId = !!entity.register_id;
-
-  const budgetLow = (live && live.budget_low != null) ? live.budget_low : entity.budget_low;
-  const budgetHigh = (live && live.budget_high != null) ? live.budget_high : entity.budget_high;
-  const peopleInvolved = (live && live.people_involved != null) ? live.people_involved : entity.people_involved;
-  const nbIntermediaries = (live && live.nb_intermediaries != null) ? live.nb_intermediaries : entity.nb_intermediaries;
-  const intermediariesNames = (live && live.intermediaries_current_year) ? live.intermediaries_current_year : null;
-
-  const epMeetings = live && live.ep_meetings ? live.ep_meetings.since_2025_count : null;
-  const ecMeetings = live && live.ec_meetings ? live.ec_meetings.since_2025_count : null;
-  const epMeetingsList = (live && live.ep_meetings && live.ep_meetings.since_2025) ? live.ep_meetings.since_2025 : [];
-  const ecMeetingsList = (live && live.ec_meetings && live.ec_meetings.since_2025) ? live.ec_meetings.since_2025 : [];
-
-  return {
-    name: entity.name,
-    type: entity.type || '',
-    section: entity.section || '',
-    hqAddress: entity.hq_address || '',
-    dateRegistration: entity.date_registration || '',
-    registerUrl: entity.register_url || null,
-    hasRegisterId,
-    budgetLow, budgetHigh,
-    peopleInvolved,
-    nbIntermediaries,
-    intermediariesNames,
-    epMeetings,
-    ecMeetings,
-    epMeetingsList,
-    ecMeetingsList,
-    lobbyfactsStatus: live && live.lobbyfacts ? live.lobbyfacts.status : null,
-    lobbyfactsSnapshot: live && live.lobbyfacts ? live.lobbyfacts.snapshot_date : null,
-  };
-}
-
 function renderStats(aggregate, nbEntities) {
   const stats = document.getElementById('stats');
   const tiles = [
@@ -452,38 +94,32 @@ function renderStats(aggregate, nbEntities) {
   `).join('');
 }
 
-function ecMeetingDG(representativeOrDg) {
-  const raw = representativeOrDg || '';
-  const cabinetMatch = raw.match(/Cabinet member of (.+)$/i);
-  if (cabinetMatch) return `Cabinet de ${cabinetMatch[1].trim()}`;
-  const parts = raw.split(',').map(s => s.trim()).filter(Boolean);
-  return parts.length ? parts[parts.length - 1] : null;
-}
-
-function formatDate(isoDate) {
-  if (!isoDate) return '—';
-  const d = new Date(isoDate);
-  if (isNaN(d)) return isoDate;
-  return d.toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' });
-}
-
-function formatFullDate(isoDate) {
-  if (!isoDate) return '—';
-  const d = new Date(isoDate);
-  if (isNaN(d)) return isoDate;
-  return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
-}
-
 function renderLatestMeetings(orgs) {
   const container = document.getElementById('latest-meetings');
   const combined = [];
 
   orgs.forEach(org => {
     org.epMeetingsList.forEach(m => {
-      combined.push({ date: m.date, orgName: org.name, institution: 'parliament', dg: null, registerUrl: org.registerUrl });
+      combined.push({
+        date: m.date,
+        orgName: org.name,
+        institution: 'parliament',
+        dg: null,
+        subject: m.title || null,
+        procedureRef: m.procedure_reference || null,
+        registerUrl: org.registerUrl,
+      });
     });
     org.ecMeetingsList.forEach(m => {
-      combined.push({ date: m.date, orgName: org.name, institution: 'commission', dg: ecMeetingDG(m.representative_or_dg), registerUrl: org.registerUrl });
+      combined.push({
+        date: m.date,
+        orgName: org.name,
+        institution: 'commission',
+        dg: ecMeetingDG(m.representative_or_dg),
+        subject: null,
+        procedureRef: null,
+        registerUrl: org.registerUrl,
+      });
     });
   });
 
@@ -517,6 +153,8 @@ function renderLatestMeetings(orgs) {
             <dt>Organisation</dt><dd>${m.orgName}</dd>
             <dt>Institution</dt><dd>${institutionLabel}</dd>
             ${m.dg ? `<dt>DG concernée</dt><dd>${m.dg}</dd>` : ''}
+            ${m.subject ? `<dt>Sujet</dt><dd>${m.subject}</dd>` : ''}
+            ${m.procedureRef ? `<dt>Dossier législatif</dt><dd>${m.procedureRef}</dd>` : ''}
             <dt>Date complète</dt><dd>${formatFullDate(m.date)}</dd>
           </div>
         </div>
@@ -543,7 +181,7 @@ function renderTable(orgs, initialCount) {
 
   orgs.forEach((org, i) => {
     const extraClass = i >= initialCount ? ' extra-row' : '';
-    const budget = budgetRange(org.budgetLow, org.budgetHigh);
+    const budget = formatEuro(org.budgetHigh);
     const unregisteredBadge = !org.hasRegisterId
       ? '<span class="unregistered-badge">non enregistrée</span>'
       : '';
