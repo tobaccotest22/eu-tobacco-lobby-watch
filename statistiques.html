@@ -53,6 +53,14 @@
   </section>
 
   <section>
+    <h2>Nombre de réunions par mois depuis janvier 2025</h2>
+    <p class="section-intro">Réunions déclarées chaque mois par les organisations suivies, Parlement européen et Commission confondus (un point = le nombre de réunions ce mois-là, pas un cumul).</p>
+    <div class="card chart-wrapper">
+      <div id="monthly-chart"></div>
+    </div>
+  </section>
+
+  <section>
     <h2 id="budget-chart-heading">Évolution du budget lobby des principales organisations en Europe</h2>
     <p class="section-intro">Historique du budget annuel déclaré par cinq organisations parmi les plus actives, tel que publié par LobbyFacts.</p>
     <div class="card chart-wrapper">
@@ -151,6 +159,89 @@ function renderTopMeps(topMeps, initialCount) {
   });
 }
 
+const MONTH_LABELS_FR = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'];
+
+function computeMonthlyMeetingCounts(orgs) {
+  const counts = new Map();
+
+  const now = new Date();
+  const endYear = now.getFullYear();
+  const endMonth = now.getMonth() + 1;
+
+  const months = [];
+  for (let y = 2025, m = 1; y < endYear || (y === endYear && m <= endMonth); m++) {
+    if (m > 12) { m = 1; y++; }
+    months.push(`${y}-${String(m).padStart(2, '0')}`);
+  }
+  months.forEach(key => counts.set(key, 0));
+
+  orgs.forEach(org => {
+    org.epMeetingsList.concat(org.ecMeetingsList).forEach(meeting => {
+      if (!meeting.date) return;
+      const key = meeting.date.slice(0, 7);
+      if (counts.has(key)) counts.set(key, counts.get(key) + 1);
+    });
+  });
+
+  return months.map(key => {
+    const [year, month] = key.split('-');
+    return { key, label: `${MONTH_LABELS_FR[Number(month) - 1]} ${year.slice(2)}`, count: counts.get(key) };
+  });
+}
+
+function renderMonthlyChart(monthlyData) {
+  const container = document.getElementById('monthly-chart');
+
+  if (!monthlyData.length) {
+    container.innerHTML = '<p class="muted">Aucune réunion disponible sur la période.</p>';
+    return;
+  }
+
+  const maxCount = Math.max(...monthlyData.map(d => d.count), 1);
+  const yMax = Math.ceil(maxCount / 5) * 5 || 5;
+  const TICK_COUNT = 5;
+
+  const paddingLeft = 40;
+  const paddingRight = 24;
+  const paddingTop = 20;
+  const paddingBottom = 46;
+  const chartHeight = 220;
+  const step = 44;
+  const width = paddingLeft + paddingRight + (monthlyData.length - 1) * step;
+  const height = paddingTop + chartHeight + paddingBottom;
+
+  const xFor = i => paddingLeft + i * step;
+  const yFor = value => paddingTop + chartHeight - (value / yMax) * chartHeight;
+
+  let gridlines = '';
+  for (let t = 0; t <= TICK_COUNT; t++) {
+    const value = (yMax / TICK_COUNT) * t;
+    const y = yFor(value);
+    gridlines += `
+      <line class="chart-axis-line" x1="${paddingLeft}" y1="${y.toFixed(1)}" x2="${(width - paddingRight).toFixed(1)}" y2="${y.toFixed(1)}" />
+      <text class="chart-axis-label" x="${(paddingLeft - 8).toFixed(1)}" y="${(y + 3).toFixed(1)}" text-anchor="end">${Math.round(value)}</text>
+    `;
+  }
+
+  let xLabels = '';
+  monthlyData.forEach((d, i) => {
+    xLabels += `<text class="chart-axis-label" x="${xFor(i).toFixed(1)}" y="${(paddingTop + chartHeight + 18).toFixed(1)}" text-anchor="middle" transform="rotate(-45 ${xFor(i).toFixed(1)} ${(paddingTop + chartHeight + 14).toFixed(1)})">${d.label}</text>`;
+  });
+
+  const points = monthlyData.map((d, i) => ({ x: xFor(i), y: yFor(d.count), label: d.label, count: d.count }));
+  const polylinePoints = points.map(p => `${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
+  const circles = points.map(p => `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="3.5" fill="#0038FF"><title>${p.label} : ${p.count} réunion${p.count === 1 ? '' : 's'}</title></circle>`).join('');
+
+  container.innerHTML = `
+    <svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" class="chart-svg-container" style="width: 100%; height: auto;">
+      ${gridlines}
+      <polyline points="${polylinePoints}" fill="none" stroke="#0038FF" stroke-width="2.5" />
+      ${circles}
+      ${xLabels}
+    </svg>
+  `;
+}
+
 const PILOT_ORGS = [
   { registerId: '51925911965-76', name: 'Philip Morris International', color: '#0038FF' },
   { registerId: '2427500988-58', name: 'British American Tobacco', color: '#e8590c' },
@@ -199,7 +290,14 @@ function renderPilotBudgetChart(organisations) {
     return;
   }
 
-  const allValues = series.flatMap(s => years.map(y => s.byYear[y]).filter(v => typeof v === 'number'));
+  const totalByYear = {};
+  years.forEach(year => {
+    totalByYear[year] = series.reduce((sum, s) => sum + (typeof s.byYear[year] === 'number' ? s.byYear[year] : 0), 0);
+  });
+  const totalSeries = { name: 'Total des 5 organisations', color: '#1c2b39', byYear: totalByYear, dashed: true };
+
+  const allValues = series.flatMap(s => years.map(y => s.byYear[y]).filter(v => typeof v === 'number'))
+    .concat(years.map(y => totalByYear[y]));
   const yMax = niceCeil(Math.max(...allValues, 1));
   const TICK_COUNT = 5;
 
@@ -231,13 +329,15 @@ function renderPilotBudgetChart(organisations) {
   });
 
   let linesAndPoints = '';
-  series.forEach(s => {
+  const drawSeries = allSeries => allSeries.forEach(s => {
     let currentRun = [];
+    const strokeWidth = s.dashed ? 3.5 : 2.5;
+    const dashAttr = s.dashed ? ' stroke-dasharray="7 5"' : '';
 
     const flushRun = () => {
       if (currentRun.length > 1) {
         const points = currentRun.map(p => `${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
-        linesAndPoints += `<polyline points="${points}" fill="none" stroke="${s.color}" stroke-width="2.5" />`;
+        linesAndPoints += `<polyline points="${points}" fill="none" stroke="${s.color}" stroke-width="${strokeWidth}"${dashAttr} />`;
       }
       currentRun.forEach(p => {
         linesAndPoints += `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="3.5" fill="${s.color}"><title>${s.name} — ${p.year} : ${formatEuro(p.value)}</title></circle>`;
@@ -256,6 +356,9 @@ function renderPilotBudgetChart(organisations) {
     flushRun();
   });
 
+  drawSeries(series);
+  drawSeries([totalSeries]);
+
   container.innerHTML = `
     <svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" class="chart-svg-container" style="width: 100%; height: auto;">
       ${gridlines}
@@ -263,18 +366,23 @@ function renderPilotBudgetChart(organisations) {
       ${xLabels}
     </svg>
     <div class="chart-legend">
-      ${series.map(s => `<span class="chart-legend-item"><span class="chart-legend-dot" style="background:${s.color}"></span>${s.name}</span>`).join('')}
+      ${series.concat([totalSeries]).map(s => `<span class="chart-legend-item">${
+        s.dashed
+          ? `<span class="chart-legend-dash" style="border-color:${s.color}"></span>`
+          : `<span class="chart-legend-dot" style="background:${s.color}"></span>`
+      }${s.name}</span>`).join('')}
     </div>
   `;
 }
 
-const INITIAL_MEP_COUNT = 5;
+const INITIAL_MEP_COUNT = 3;
 const TOP_MEP_COUNT = 20;
 
 (async function init() {
   try {
     const { entities, liveData } = await loadData();
     const orgs = entities.map(e => mergeOrg(e, liveData));
+
     const topMeps = computeTopMeps(orgs, TOP_MEP_COUNT);
     renderTopMeps(topMeps, INITIAL_MEP_COUNT);
     setupTableToggle({
@@ -285,9 +393,13 @@ const TOP_MEP_COUNT = 20;
       initialCount: INITIAL_MEP_COUNT,
       labelPrefix: 'Voir tous les eurodéputés',
     });
+
+    renderMonthlyChart(computeMonthlyMeetingCounts(orgs));
   } catch (err) {
     document.getElementById('meps-table-body').innerHTML =
       `<tr><td colspan="3">Erreur de chargement des données : ${err.message}</td></tr>`;
+    document.getElementById('monthly-chart').innerHTML =
+      `<p class="muted">Erreur de chargement des données : ${err.message}</p>`;
   }
 
   try {

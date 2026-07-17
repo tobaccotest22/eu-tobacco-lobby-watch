@@ -327,6 +327,13 @@ tbody.show-all tr.extra-row.detail-row.open { display: table-row; }
   display: inline-block;
   flex: 0 0 auto;
 }
+.chart-legend-dash {
+  width: 16px;
+  height: 0;
+  border-top: 3px dashed;
+  display: inline-block;
+  flex: 0 0 auto;
+}
 
 footer {
   text-align: center;
