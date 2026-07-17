@@ -124,7 +124,6 @@ section .section-intro {
   margin: 0 0 1.5rem;
   color: var(--muted);
   font-size: 0.85rem;
-  max-width: 75ch;
 }
 .card {
   background: #fff;
