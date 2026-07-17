@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Statistiques — EU Tobacco Lobby Watch</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .chart-axis-line { stroke: var(--grey-border); stroke-width: 1; }
+  table.meps-table tbody td.rank {
+    font-weight: 700;
+    color: var(--blue-dark);
+    width: 3rem;
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="banner-inner">
+    <a href="index.html" class="nav-link">Accueil</a>
+    <a href="statistiques.html" class="nav-link active">Statistiques</a>
+  </div>
+</nav>
+
+<div class="banner">
+  <div class="banner-inner">
+    <h1>EU Tobacco Lobby Watch</h1>
+    <p class="subtitle">Statistiques sur le lobby du tabac en Europe</p>
+    <p class="description">Vue agrégée des eurodéputés les plus rencontrés et de l'évolution des budgets de lobbying déclarés dans le temps.</p>
+  </div>
+</div>
+
+<main>
+  <section>
+    <h2>Eurodéputés les plus rencontrés depuis 2025</h2>
+    <p class="section-intro">Top 20 des eurodéputés ayant déclaré le plus de réunions avec les organisations suivies, toutes organisations confondues, depuis le 1er janvier 2025.</p>
+    <div class="card" style="overflow: hidden;">
+      <table class="meps-table">
+        <thead>
+          <tr>
+            <th>Rang</th>
+            <th>Eurodéputé</th>
+            <th class="num">Réunions</th>
+          </tr>
+        </thead>
+        <tbody id="meps-table-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Évolution du budget total déclaré</h2>
+    <p class="section-intro">
+      Pour chaque année, somme des budgets annuels de lobbying déclarés par les
+      organisations suivies disposant d'un historique sur LobbyFacts (le nombre
+      d'organisations comptées, indiqué sous chaque barre, varie selon les
+      années disponibles pour chacune).
+    </p>
+    <div class="card chart-wrapper">
+      <div id="budget-chart"></div>
+    </div>
+    <p class="updated-note" id="budget-updated-note"></p>
+  </section>
+</main>
+
+<footer>
+  Sources : registre de transparence de l'UE, LobbyFacts, Parlement européen.
+  Données mises à jour automatiquement chaque nuit.
+</footer>
+
+<script src="common.js"></script>
+<script>
+function computeTopMeps(orgs, limit) {
+  const counts = new Map();
+  orgs.forEach(org => {
+    org.epMeetingsList.forEach(m => {
+      if (!m.member_name) return;
+      counts.set(m.member_name, (counts.get(m.member_name) || 0) + 1);
+    });
+  });
+  return Array.from(counts.entries())
+    .map(([name, count]) => ({ name, count }))
+    .sort((a, b) => b.count - a.count)
+    .slice(0, limit);
+}
+
+function renderTopMeps(topMeps) {
+  const tbody = document.getElementById('meps-table-body');
+  if (!topMeps.length) {
+    tbody.innerHTML = '<tr><td colspan="3" class="muted">Aucune donnée disponible.</td></tr>';
+    return;
+  }
+  tbody.innerHTML = topMeps.map((m, i) => `
+    <tr>
+      <td class="rank" data-label="Rang">${i + 1}</td>
+      <td data-label="Eurodéputé">${m.name}</td>
+      <td class="num" data-label="Réunions">${m.count}</td>
+    </tr>
+  `).join('');
+}
+
+function renderBudgetChart(yearlyTotals) {
+  const container = document.getElementById('budget-chart');
+  const years = Object.keys(yearlyTotals).sort((a, b) => Number(a) - Number(b));
+
+  if (!years.length) {
+    container.innerHTML = '<p class="muted">Aucune donnée d\'historique de budget disponible.</p>';
+    return;
+  }
+
+  const values = years.map(y => yearlyTotals[y].total);
+  const maxValue = Math.max(...values, 1);
+
+  const paddingLeft = 24;
+  const paddingRight = 24;
+  const paddingTop = 24;
+  const paddingBottom = 54;
+  const chartHeight = 260;
+  const step = 64;
+  const width = paddingLeft + paddingRight + years.length * step;
+  const height = paddingTop + chartHeight + paddingBottom;
+  const barWidth = step * 0.6;
+
+  let bars = '';
+  years.forEach((year, i) => {
+    const value = yearlyTotals[year].total;
+    const nbOrgs = yearlyTotals[year].nb_organisations;
+    const barHeight = maxValue > 0 ? (value / maxValue) * chartHeight : 0;
+    const x = paddingLeft + i * step + (step - barWidth) / 2;
+    const y = paddingTop + chartHeight - barHeight;
+    const valueLabel = value >= 1e6 ? `${(value / 1e6).toFixed(1)}M€` : `${Math.round(value / 1000)}k€`;
+
+    bars += `
+      <rect class="chart-bar" x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${barWidth.toFixed(1)}" height="${barHeight.toFixed(1)}" rx="3">
+        <title>${year} : ${formatEuro(value)} (${nbOrgs} organisation${nbOrgs > 1 ? 's' : ''})</title>
+      </rect>
+      <text class="chart-value-label" x="${(x + barWidth / 2).toFixed(1)}" y="${(y - 6).toFixed(1)}" text-anchor="middle">${valueLabel}</text>
+      <text class="chart-axis-label" x="${(x + barWidth / 2).toFixed(1)}" y="${(paddingTop + chartHeight + 18).toFixed(1)}" text-anchor="middle">${year}</text>
+      <text class="chart-note" x="${(x + barWidth / 2).toFixed(1)}" y="${(paddingTop + chartHeight + 32).toFixed(1)}" text-anchor="middle">n=${nbOrgs}</text>
+    `;
+  });
+
+  container.innerHTML = `
+    <svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" class="chart-svg-container" style="width: 100%; height: auto;">
+      <line class="chart-axis-line" x1="${paddingLeft}" y1="${paddingTop + chartHeight}" x2="${width - paddingRight}" y2="${paddingTop + chartHeight}" />
+      ${bars}
+    </svg>
+  `;
+}
+
+(async function init() {
+  try {
+    const { entities, liveData } = await loadData();
+    const orgs = entities.map(e => mergeOrg(e, liveData));
+    renderTopMeps(computeTopMeps(orgs, 20));
+  } catch (err) {
+    document.getElementById('meps-table-body').innerHTML =
+      `<tr><td colspan="3">Erreur de chargement des données : ${err.message}</td></tr>`;
+  }
+
+  try {
+    const budgetRes = await fetch('data/budget_history.json');
+    const budgetData = await budgetRes.json();
+    renderBudgetChart(budgetData.yearly_totals || {});
+
+    const computedAt = budgetData.computed_at ? new Date(budgetData.computed_at) : null;
+    document.getElementById('budget-updated-note').textContent = computedAt
+      ? `Historique de budget calculé le : ${computedAt.toLocaleString('fr-FR')}`
+      : '';
+  } catch (err) {
+    document.getElementById('budget-chart').innerHTML =
+      `<p class="muted">Erreur de chargement de l'historique de budget : ${err.message}</p>`;
+  }
+})();
+</script>
+
+</body>
+</html>

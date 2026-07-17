@@ -1,0 +1,366 @@
+:root {
+  --blue: #0038FF;
+  --blue-dark: #0025b3;
+  --orange: #e8590c;
+  --orange-light: #ff8a3d;
+  --grey-bg: #f4f6f8;
+  --grey-border: #dde3e8;
+  --text: #1c2b39;
+  --muted: #55606b;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--grey-bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* ---------- Menu de navigation ---------- */
+.site-nav {
+  background: var(--blue-dark);
+  padding: 0.55rem 1.5rem;
+}
+.site-nav .banner-inner {
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-link {
+  color: #b9c8f2;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.2rem 0;
+  border-bottom: 2px solid transparent;
+}
+.nav-link:hover { color: #fff; }
+.nav-link.active { color: #fff; border-bottom-color: var(--orange); }
+
+/* ---------- Bannière principale ---------- */
+.banner {
+  background: linear-gradient(160deg, var(--blue), var(--blue-dark));
+  color: #fff;
+  padding: 1.1rem 1.5rem 1rem;
+}
+.banner-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.banner h1 {
+  margin: 0 0 0.15rem;
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.banner .subtitle {
+  margin: 0 0 0.25rem;
+  font-size: clamp(0.8rem, 1vw, 0.88rem);
+  color: #dbe4ff;
+  font-weight: 600;
+}
+.banner .description {
+  margin: 0;
+  font-size: clamp(0.72rem, 0.9vw, 0.8rem);
+  color: #dbe4ff;
+  max-width: 65ch;
+}
+
+/* ---------- Bandeau chiffres agrégés ---------- */
+.stats-banner {
+  background: #fff;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(16, 24, 40, 0.06);
+}
+.stats-banner h2 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--blue-dark);
+  margin: 0 0 0.85rem;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+  gap: 0.6rem;
+}
+.stat-tile {
+  background: var(--grey-bg);
+  border: 1px solid var(--grey-border);
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+}
+.stat-tile .value {
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  font-weight: 800;
+  color: var(--blue-dark);
+}
+.stat-tile .label {
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+.updated-note {
+  margin: 0.85rem 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* ---------- Sections générales ---------- */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+section {
+  margin: 3rem 0;
+}
+section h2 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--blue-dark);
+  margin: 0 0 0.35rem;
+}
+section .section-intro {
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  max-width: 75ch;
+}
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.08), 0 1px 2px rgba(16, 24, 40, 0.06);
+}
+
+/* ---------- Dernières réunions ---------- */
+.meetings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.meeting-item {
+  display: grid;
+  grid-template-columns: 110px 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.15s ease;
+}
+.meeting-item:hover {
+  background: #f4f7ff;
+}
+.meeting-date {
+  font-weight: 700;
+  color: var(--blue-dark);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+.meeting-org {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.92rem;
+}
+.meeting-dg {
+  display: block;
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 0.78rem;
+  margin-top: 0.15rem;
+}
+.institution-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.institution-badge.parliament {
+  background: #e6ebff;
+  color: var(--blue-dark);
+}
+.institution-badge.commission {
+  background: #fdece3;
+  color: var(--orange);
+}
+.meeting-detail {
+  display: none;
+  padding: 1rem 1.5rem 1.25rem;
+  margin: 0 0.25rem 0.25rem;
+  background: #f9fbfc;
+  border-radius: 8px;
+  font-size: 0.82rem;
+}
+.meeting-detail.open { display: block; }
+.meeting-detail .detail-grid { margin-bottom: 0.4rem; }
+
+/* ---------- Tableaux ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+thead th {
+  background: var(--blue);
+  color: #fff;
+  text-align: left;
+  padding: 0.85rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+thead th:first-child { border-top-left-radius: 12px; }
+thead th:last-child { border-top-right-radius: 12px; }
+thead th.num, td.num { text-align: right; }
+tbody tr.org-row {
+  cursor: pointer;
+  border-top: 1px solid var(--grey-border);
+  transition: background 0.15s ease;
+}
+tbody tr.org-row:hover {
+  background: #f4f7ff;
+}
+tbody td {
+  padding: 0.85rem 1rem;
+  font-size: 0.85rem;
+  vertical-align: top;
+}
+tbody tr.org-row td:first-child {
+  font-weight: 700;
+  color: var(--blue-dark);
+}
+tbody tr:not(.org-row) td:first-child {
+  font-weight: 700;
+  color: var(--blue-dark);
+}
+.unregistered-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+  background: #fdece3;
+  color: #b6410a;
+  font-weight: 600;
+  margin-left: 0.35rem;
+}
+.muted { color: #8a949c; font-style: italic; }
+tr.detail-row { display: none; }
+tr.detail-row.open { display: table-row; }
+tr.detail-row td {
+  background: #f9fbfc;
+  padding: 1.5rem 1.75rem;
+  border-top: 1px dashed var(--grey-border);
+}
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem 2rem;
+  font-size: 0.83rem;
+}
+.detail-grid dt { color: var(--muted); font-weight: 700; margin-bottom: 0.25rem; }
+.detail-grid dd { margin: 0 0 0.9rem; }
+.intermediaries-list {
+  margin: 0.3rem 0 0;
+  padding-left: 1.1rem;
+}
+a.register-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: var(--orange);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.82rem;
+}
+a.register-link:hover { text-decoration: underline; }
+
+tr.extra-row { display: none; }
+#table-body.show-all tr.extra-row.org-row { display: table-row; }
+#table-body.show-all tr.extra-row.detail-row.open { display: table-row; }
+
+.table-toggle-wrapper {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.toggle-btn {
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.3rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.toggle-btn:hover { background: var(--blue-dark); }
+
+/* ---------- Graphique budget (page Statistiques) ---------- */
+.chart-wrapper {
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+.chart-svg-container {
+  min-width: 560px;
+}
+.chart-bar {
+  fill: var(--blue);
+  transition: fill 0.15s ease;
+}
+.chart-bar:hover {
+  fill: var(--orange);
+}
+.chart-axis-label {
+  font-size: 0.68rem;
+  fill: var(--muted);
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.chart-value-label {
+  font-size: 0.68rem;
+  fill: var(--blue-dark);
+  font-weight: 700;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.chart-note {
+  font-size: 0.68rem;
+  fill: var(--muted);
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.78rem;
+  color: #8a949c;
+  padding: 2.5rem 1.5rem 3rem;
+}
+
+@media (max-width: 720px) {
+  .meeting-item {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+  thead { display: none; }
+  table, tbody, tr, td { display: block; width: 100%; }
+  tbody tr:not(.detail-row) {
+    border: 1px solid var(--grey-border);
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    padding: 0.4rem 0.2rem;
+  }
+  tbody td {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.4rem 0.9rem;
+  }
+  tbody td.num { text-align: right; }
+  tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--muted);
+    flex: 0 0 auto;
+  }
+  tbody td:first-child::before { content: ""; }
+  tr.detail-row.open td { display: block; }
+  tr.detail-row.open td::before { content: none; }
+}
