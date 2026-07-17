@@ -69,38 +69,38 @@ body {
 /* ---------- Bandeau chiffres agrégés ---------- */
 .stats-banner {
   background: #fff;
-  padding: 2.5rem 1.5rem;
+  padding: 1.5rem;
   box-shadow: 0 2px 6px rgba(16, 24, 40, 0.06);
 }
 .stats-banner h2 {
   font-size: 1.1rem;
   font-weight: 800;
   color: var(--blue-dark);
-  margin: 0 0 1.25rem;
+  margin: 0 0 0.85rem;
 }
 .stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+  gap: 0.6rem;
 }
 .stat-tile {
   background: var(--grey-bg);
   border: 1px solid var(--grey-border);
-  border-radius: 12px;
-  padding: 1.25rem 1.4rem;
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
 }
 .stat-tile .value {
-  font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
   font-weight: 800;
   color: var(--blue-dark);
 }
 .stat-tile .label {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: var(--muted);
-  margin-top: 0.35rem;
+  margin-top: 0.15rem;
 }
 .updated-note {
-  margin: 1.5rem 0 0;
+  margin: 0.85rem 0 0;
   font-size: 0.8rem;
   color: var(--muted);
 }
