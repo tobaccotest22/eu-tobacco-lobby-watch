@@ -105,6 +105,43 @@ body {
   color: #dbe4ff;
   max-width: 65ch;
 }
+.banner-lead {
+  margin: 0 0 0.2rem;
+  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+  font-weight: 600;
+  color: #fff;
+}
+.banner-sub {
+  margin: 0;
+  font-size: clamp(0.7rem, 0.85vw, 0.78rem);
+  color: #dbe4ff;
+}
+
+/* ---------- Bande photo ---------- */
+.photo-band {
+  position: relative;
+  height: 190px;
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+}
+.photo-band-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 37, 179, 0.55);
+}
+.photo-credit {
+  position: absolute;
+  bottom: 6px;
+  right: 14px;
+  margin: 0;
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.8);
+  z-index: 1;
+}
+.photo-credit a {
+  color: inherit;
+}
 
 /* ---------- Bandeau chiffres agrégés ---------- */
 .stats-banner {
@@ -177,11 +214,9 @@ section h2 {
   display: inline-block;
   font-family: var(--font-heading);
   font-weight: 700;
+  font-size: 1.1rem;
   letter-spacing: 0.01em;
-  color: #fff;
-  background: var(--text);
-  padding: 0.25rem 0.65rem;
-  border-radius: 3px;
+  color: var(--blue-dark);
 }
 section .section-intro {
   margin: 0 0 1.5rem;
@@ -427,6 +462,20 @@ tbody.show-all tr.extra-row.detail-row.open { display: table-row; }
   flex: 0 0 auto;
 }
 
+/* ---------- Colonnes eurodéputés (accueil) ---------- */
+.meps-columns {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+.pie-chart-label {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--blue-dark);
+}
+
 footer {
   text-align: center;
   font-size: 0.78rem;
@@ -435,6 +484,9 @@ footer {
 }
 
 @media (max-width: 720px) {
+  .meps-columns {
+    grid-template-columns: 1fr;
+  }
   .meeting-item {
     grid-template-columns: 1fr;
     gap: 0.4rem;

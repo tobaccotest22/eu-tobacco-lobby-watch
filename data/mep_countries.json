@@ -1,0 +1,529 @@
+{
+  "computed_at": "2026-07-17T14:49:59.223485+00:00",
+  "meps": {
+    "103246": {
+      "country_code": "NLD",
+      "country_name": "Pays-Bas"
+    },
+    "106936": {
+      "country_code": "DEU",
+      "country_name": "Allemagne"
+    },
+    "123562": {
+      "country_code": "SWE",
+      "country_name": "Suède"
+    },
+    "124760": {
+      "country_code": "FRA",
+      "country_name": "France"
+    },
+    "124784": {
+      "country_code": "ROU",
+      "country_name": "Roumanie"
+    },
+    "124799": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "124802": {
+      "country_code": "ROU",
+      "country_name": "Roumanie"
+    },
+    "124846": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "124850": {
+      "country_code": "BGR",
+      "country_name": "Bulgarie"
+    },
+    "124875": {
+      "country_code": "DNK",
+      "country_name": "Danemark"
+    },
+    "124884": {
+      "country_code": "POL",
+      "country_name": "Pologne"
+    },
+    "124895": {
+      "country_code": "POL",
+      "country_name": "Pologne"
+    },
+    "125046": {
+      "country_code": "ESP",
+      "country_name": "Espagne"
+    },
+    "125106": {
+      "country_code": "BEL",
+      "country_name": "Belgique"
+    },
+    "126699": {
+      "country_code": "FRA",
+      "country_name": "France"
+    },
+    "130100": {
+      "country_code": "BEL",
+      "country_name": "Belgique"
+    },
+    "185771": {
+      "country_code": "BEL",
+      "country_name": "Belgique"
+    },
+    "188096": {
+      "country_code": "EST",
+      "country_name": "Estonie"
+    },
+    "190713": {
+      "country_code": "AUT",
+      "country_name": "Autriche"
+    },
+    "1917": {
+      "country_code": "DEU",
+      "country_name": "Allemagne"
+    },
+    "197404": {
+      "country_code": "SWE",
+      "country_name": "Suède"
+    },
+    "197405": {
+      "country_code": "SWE",
+      "country_name": "Suède"
+    },
+    "197412": {
+      "country_code": "DEU",
+      "country_name": "Allemagne"
+    },
+    "197417": {
+      "country_code": "HRV",
+      "country_name": "Croatie"
+    },
+    "197429": {
+      "country_code": "DEU",
+      "country_name": "Allemagne"
+    },
+    "197433": {
+      "country_code": "DEU",
+      "country_name": "Allemagne"
+    },
+    "197443": {
+      "country_code": "DEU",
+      "country_name": "Allemagne"
+    },
+    "197444": {
+      "country_code": "DEU",
+      "country_name": "Allemagne"
+    },
+    "197473": {
+      "country_code": "DEU",
+      "country_name": "Allemagne"
+    },
+    "197493": {
+      "country_code": "EST",
+      "country_name": "Estonie"
+    },
+    "197517": {
+      "country_code": "POL",
+      "country_name": "Pologne"
+    },
+    "197528": {
+      "country_code": "CZE",
+      "country_name": "Tchéquie"
+    },
+    "197537": {
+      "country_code": "CZE",
+      "country_name": "Tchéquie"
+    },
+    "197552": {
+      "country_code": "CZE",
+      "country_name": "Tchéquie"
+    },
+    "197572": {
+      "country_code": "POL",
+      "country_name": "Pologne"
+    },
+    "197580": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "197591": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "197607": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "197618": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "197624": {
+      "country_code": "LVA",
+      "country_name": "Lettonie"
+    },
+    "197646": {
+      "country_code": "ROU",
+      "country_name": "Roumanie"
+    },
+    "197679": {
+      "country_code": "ESP",
+      "country_name": "Espagne"
+    },
+    "197722": {
+      "country_code": "ESP",
+      "country_name": "Espagne"
+    },
+    "197773": {
+      "country_code": "NLD",
+      "country_name": "Pays-Bas"
+    },
+    "197786": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "197810": {
+      "country_code": "LVA",
+      "country_name": "Lettonie"
+    },
+    "197825": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "197839": {
+      "country_code": "BGR",
+      "country_name": "Bulgarie"
+    },
+    "198176": {
+      "country_code": "AUT",
+      "country_name": "Autriche"
+    },
+    "198183": {
+      "country_code": "ROU",
+      "country_name": "Roumanie"
+    },
+    "202073": {
+      "country_code": "LUX",
+      "country_name": "Luxembourg"
+    },
+    "204333": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "230085": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "23699": {
+      "country_code": "CZE",
+      "country_name": "Tchéquie"
+    },
+    "249603": {
+      "country_code": "LUX",
+      "country_name": "Luxembourg"
+    },
+    "256811": {
+      "country_code": "LTU",
+      "country_name": "Lituanie"
+    },
+    "256824": {
+      "country_code": "GRC",
+      "country_name": "Grèce"
+    },
+    "256843": {
+      "country_code": "CZE",
+      "country_name": "Tchéquie"
+    },
+    "256844": {
+      "country_code": "CZE",
+      "country_name": "Tchéquie"
+    },
+    "256845": {
+      "country_code": "CZE",
+      "country_name": "Tchéquie"
+    },
+    "256846": {
+      "country_code": "CZE",
+      "country_name": "Tchéquie"
+    },
+    "256860": {
+      "country_code": "HUN",
+      "country_name": "Hongrie"
+    },
+    "256878": {
+      "country_code": "FRA",
+      "country_name": "France"
+    },
+    "256881": {
+      "country_code": "BEL",
+      "country_name": "Belgique"
+    },
+    "256893": {
+      "country_code": "FRA",
+      "country_name": "France"
+    },
+    "256896": {
+      "country_code": "FRA",
+      "country_name": "France"
+    },
+    "256900": {
+      "country_code": "LUX",
+      "country_name": "Luxembourg"
+    },
+    "256921": {
+      "country_code": "FRA",
+      "country_name": "France"
+    },
+    "256925": {
+      "country_code": "FRA",
+      "country_name": "France"
+    },
+    "256934": {
+      "country_code": "MLT",
+      "country_name": "Malte"
+    },
+    "256950": {
+      "country_code": "GRC",
+      "country_name": "Grèce"
+    },
+    "256962": {
+      "country_code": "DEU",
+      "country_name": "Allemagne"
+    },
+    "256973": {
+      "country_code": "DEU",
+      "country_name": "Allemagne"
+    },
+    "256974": {
+      "country_code": "DEU",
+      "country_name": "Allemagne"
+    },
+    "256977": {
+      "country_code": "DEU",
+      "country_name": "Allemagne"
+    },
+    "256979": {
+      "country_code": "DEU",
+      "country_name": "Allemagne"
+    },
+    "256981": {
+      "country_code": "NLD",
+      "country_name": "Pays-Bas"
+    },
+    "256985": {
+      "country_code": "CYP",
+      "country_name": "Chypre"
+    },
+    "256987": {
+      "country_code": "ESP",
+      "country_name": "Espagne"
+    },
+    "256996": {
+      "country_code": "NLD",
+      "country_name": "Pays-Bas"
+    },
+    "257000": {
+      "country_code": "HRV",
+      "country_name": "Croatie"
+    },
+    "257002": {
+      "country_code": "ESP",
+      "country_name": "Espagne"
+    },
+    "257022": {
+      "country_code": "ESP",
+      "country_name": "Espagne"
+    },
+    "257024": {
+      "country_code": "ESP",
+      "country_name": "Espagne"
+    },
+    "257025": {
+      "country_code": "DNK",
+      "country_name": "Danemark"
+    },
+    "257028": {
+      "country_code": "DNK",
+      "country_name": "Danemark"
+    },
+    "257029": {
+      "country_code": "ESP",
+      "country_name": "Espagne"
+    },
+    "257039": {
+      "country_code": "ESP",
+      "country_name": "Espagne"
+    },
+    "257070": {
+      "country_code": "POL",
+      "country_name": "Pologne"
+    },
+    "257071": {
+      "country_code": "PRT",
+      "country_name": "Portugal"
+    },
+    "257073": {
+      "country_code": "POL",
+      "country_name": "Pologne"
+    },
+    "257084": {
+      "country_code": "POL",
+      "country_name": "Pologne"
+    },
+    "257090": {
+      "country_code": "SWE",
+      "country_name": "Suède"
+    },
+    "257095": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "257096": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "257104": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "257108": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "257109": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "257110": {
+      "country_code": "ROU",
+      "country_name": "Roumanie"
+    },
+    "257111": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "257113": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "257125": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "257126": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "257135": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "257137": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "257143": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "257144": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "257147": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "257151": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "257163": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "257256": {
+      "country_code": "BGR",
+      "country_name": "Bulgarie"
+    },
+    "257261": {
+      "country_code": "BGR",
+      "country_name": "Bulgarie"
+    },
+    "261038": {
+      "country_code": "CZE",
+      "country_name": "Tchéquie"
+    },
+    "270261": {
+      "country_code": "CZE",
+      "country_name": "Tchéquie"
+    },
+    "272024": {
+      "country_code": "CZE",
+      "country_name": "Tchéquie"
+    },
+    "277178": {
+      "country_code": "DNK",
+      "country_name": "Danemark"
+    },
+    "28419": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "28615": {
+      "country_code": "LVA",
+      "country_name": "Lettonie"
+    },
+    "33998": {
+      "country_code": "ROU",
+      "country_name": "Roumanie"
+    },
+    "34232": {
+      "country_code": "BGR",
+      "country_name": "Bulgarie"
+    },
+    "39725": {
+      "country_code": "ROU",
+      "country_name": "Roumanie"
+    },
+    "40224": {
+      "country_code": "ROU",
+      "country_name": "Roumanie"
+    },
+    "4289": {
+      "country_code": "DEU",
+      "country_name": "Allemagne"
+    },
+    "86793": {
+      "country_code": "DEU",
+      "country_name": "Allemagne"
+    },
+    "96681": {
+      "country_code": "LTU",
+      "country_name": "Lituanie"
+    },
+    "96780": {
+      "country_code": "DEU",
+      "country_name": "Allemagne"
+    },
+    "96808": {
+      "country_code": "ESP",
+      "country_name": "Espagne"
+    },
+    "96810": {
+      "country_code": "ITA",
+      "country_name": "Italie"
+    },
+    "96830": {
+      "country_code": "HUN",
+      "country_name": "Hongrie"
+    },
+    "98341": {
+      "country_code": "BGR",
+      "country_name": "Bulgarie"
+    },
+    "98582": {
+      "country_code": "ROU",
+      "country_name": "Roumanie"
+    }
+  }
+}
