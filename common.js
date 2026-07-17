@@ -71,3 +71,22 @@ function formatFullDate(isoDate) {
   if (isNaN(d)) return isoDate;
   return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
 }
+
+function setupTableToggle({ tbodyId, wrapperId, btnId, total, initialCount, labelPrefix }) {
+  const wrapper = document.getElementById(wrapperId);
+  const btn = document.getElementById(btnId);
+  const tbody = document.getElementById(tbodyId);
+
+  if (total <= initialCount) {
+    wrapper.style.display = 'none';
+    return;
+  }
+
+  const collapsedLabel = `${labelPrefix} (${total})`;
+  btn.textContent = collapsedLabel;
+
+  btn.addEventListener('click', () => {
+    const expanded = tbody.classList.toggle('show-all');
+    btn.textContent = expanded ? 'Réduire' : collapsedLabel;
+  });
+}

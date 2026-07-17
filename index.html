@@ -237,25 +237,6 @@ function renderTable(orgs, initialCount) {
   });
 }
 
-function setupOrgToggle(total, initialCount) {
-  const wrapper = document.getElementById('table-toggle-wrapper');
-  const btn = document.getElementById('toggle-orgs-btn');
-  const tbody = document.getElementById('table-body');
-
-  if (total <= initialCount) {
-    wrapper.style.display = 'none';
-    return;
-  }
-
-  const collapsedLabel = `Voir toutes les organisations (${total})`;
-  btn.textContent = collapsedLabel;
-
-  btn.addEventListener('click', () => {
-    const expanded = tbody.classList.toggle('show-all');
-    btn.textContent = expanded ? 'Réduire' : collapsedLabel;
-  });
-}
-
 const INITIAL_ORG_COUNT = 5;
 
 (async function init() {
@@ -269,7 +250,14 @@ const INITIAL_ORG_COUNT = 5;
     renderStats(aggregate, entities.length);
     renderLatestMeetings(orgs);
     renderTable(sortedByBudget, INITIAL_ORG_COUNT);
-    setupOrgToggle(sortedByBudget.length, INITIAL_ORG_COUNT);
+    setupTableToggle({
+      tbodyId: 'table-body',
+      wrapperId: 'table-toggle-wrapper',
+      btnId: 'toggle-orgs-btn',
+      total: sortedByBudget.length,
+      initialCount: INITIAL_ORG_COUNT,
+      labelPrefix: 'Voir toutes les organisations',
+    });
 
     const updatedAt = aggregate.computed_at ? new Date(aggregate.computed_at) : null;
     document.getElementById('updated-note').textContent = updatedAt

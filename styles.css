@@ -274,8 +274,8 @@ a.register-link {
 a.register-link:hover { text-decoration: underline; }
 
 tr.extra-row { display: none; }
-#table-body.show-all tr.extra-row.org-row { display: table-row; }
-#table-body.show-all tr.extra-row.detail-row.open { display: table-row; }
+tbody.show-all tr.extra-row.org-row { display: table-row; }
+tbody.show-all tr.extra-row.detail-row.open { display: table-row; }
 
 .table-toggle-wrapper {
   text-align: center;
