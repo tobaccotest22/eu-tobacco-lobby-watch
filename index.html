@@ -48,8 +48,8 @@
     <use href="#eu-star" transform="translate(67.5,43.7)"/>
   </svg>
   <div class="banner-inner">
-    <h1>EU <span class="redacted">████</span> TOBACCO WATCH</h1>
-    <p class="description">Rencontres, budgets et effectifs déclarés des acteurs de l'industrie du tabac auprès des institutions européennes.</p>
+    <p class="banner-lead">Plateforme de suivi des organisations de lobby du tabac en Europe.</p>
+    <p class="banner-sub">Sources : registres de transparence, LobbyFacts, Integrity Watch.</p>
   </div>
 </div>
 
@@ -61,29 +61,17 @@
   </div>
 </div>
 
-<main>
-  <section>
-    <div class="card">
-      <button class="collapsible-toggle" id="meetings-toggle" aria-expanded="false">
-        <span class="collapsible-icon">▸</span>
-        <span class="title-stamp">Voir les dernières réunions entre lobbyistes et représentants des institutions</span>
-      </button>
-      <div class="collapsible-body" id="meetings-body">
-        <p class="section-intro">
-          Les 5 réunions les plus récentes déclarées par des lobbies concernant le tabac : réunions
-          des organisations suivies (Parlement et Commission) et, côté Parlement uniquement, réunions
-          trouvées par recherche mot-clé impliquant d'autres acteurs. Cliquez sur une réunion pour voir le détail.
-        </p>
-        <div class="meetings-list" id="latest-meetings"></div>
-      </div>
-    </div>
-  </section>
+<div class="photo-band" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/European_Parliament_Strasbourg_Hemicycle_-_Diliff.jpg/1280px-European_Parliament_Strasbourg_Hemicycle_-_Diliff.jpg');">
+  <div class="photo-band-overlay"></div>
+  <p class="photo-credit">Hémicycle du Parlement européen, Strasbourg — photo : David Iliff, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>, via Wikimedia Commons</p>
+</div>
 
+<main>
   <section>
     <div class="card">
       <button class="collapsible-toggle" id="orgs-preview-toggle" aria-expanded="false">
         <span class="collapsible-icon">▸</span>
-        <span class="title-stamp">Voir les principales organisations de lobby du tabac</span>
+        <span class="title-stamp">Quelles sont les principales organisations de lobby du tabac en Europe ?</span>
       </button>
       <div class="collapsible-body" id="orgs-preview-body">
         <p class="section-intro">Les 5 organisations suivies au budget annuel déclaré le plus élevé. Cliquez sur une ligne pour voir sa fiche détaillée.</p>
@@ -110,26 +98,51 @@
 
   <section>
     <div class="card">
+      <button class="collapsible-toggle" id="meetings-toggle" aria-expanded="false">
+        <span class="collapsible-icon">▸</span>
+        <span class="title-stamp">Quelles sont les dernières réunions ?</span>
+      </button>
+      <div class="collapsible-body" id="meetings-body">
+        <p class="section-intro">
+          Les 5 réunions les plus récentes déclarées par des lobbies concernant le tabac : réunions
+          des organisations suivies (Parlement et Commission) et, côté Parlement uniquement, réunions
+          trouvées par recherche mot-clé impliquant d'autres acteurs. Cliquez sur une réunion pour voir le détail.
+        </p>
+        <div class="meetings-list" id="latest-meetings"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
       <button class="collapsible-toggle" id="meps-toggle" aria-expanded="false">
         <span class="collapsible-icon">▸</span>
-        <span class="title-stamp">Voir les eurodéputés les plus rencontrés</span>
+        <span class="title-stamp">Quels sont les eurodéputés les plus rencontrés ?</span>
       </button>
       <div class="collapsible-body" id="meps-body">
         <p class="section-intro">Top 20 des eurodéputés ayant déclaré le plus de réunions avec les organisations suivies, toutes organisations confondues, depuis le 1er janvier 2025. Cliquez sur un eurodéputé pour voir le détail de sa réunion la plus récente.</p>
-        <div style="overflow: hidden; border-radius: 12px;">
-          <table class="meps-table">
-            <thead>
-              <tr>
-                <th>Rang</th>
-                <th>Eurodéputé</th>
-                <th class="num">Réunions</th>
-              </tr>
-            </thead>
-            <tbody id="meps-table-body"></tbody>
-          </table>
-        </div>
-        <div class="table-toggle-wrapper" id="meps-toggle-wrapper">
-          <button class="toggle-btn" id="toggle-meps-btn"></button>
+        <div class="meps-columns">
+          <div class="meps-column-left">
+            <div style="overflow: hidden; border-radius: 12px;">
+              <table class="meps-table">
+                <thead>
+                  <tr>
+                    <th>Rang</th>
+                    <th>Eurodéputé</th>
+                    <th class="num">Réunions</th>
+                  </tr>
+                </thead>
+                <tbody id="meps-table-body"></tbody>
+              </table>
+            </div>
+            <div class="table-toggle-wrapper" id="meps-toggle-wrapper">
+              <button class="toggle-btn" id="toggle-meps-btn"></button>
+            </div>
+          </div>
+          <div class="meps-column-right">
+            <p class="pie-chart-label">Répartition par nationalité des eurodéputés rencontrés</p>
+            <div id="mep-nationality-chart"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -165,13 +178,14 @@ const INITIAL_MEP_COUNT = 3;
 const TOP_MEP_COUNT = 20;
 
 (async function init() {
-  setupCollapsible('meetings-toggle', 'meetings-body');
   setupCollapsible('orgs-preview-toggle', 'orgs-preview-body');
+  setupCollapsible('meetings-toggle', 'meetings-body');
   setupCollapsible('meps-toggle', 'meps-body');
 
+  let orgs = [];
   try {
     const { entities, liveData } = await loadData();
-    const orgs = entities.map(e => mergeOrg(e, liveData));
+    orgs = entities.map(e => mergeOrg(e, liveData));
     const sortedByBudget = [...orgs].sort((a, b) => (b.budgetHigh ?? -1) - (a.budgetHigh ?? -1));
 
     const aggregate = liveData._aggregate || {};
@@ -201,6 +215,16 @@ const TOP_MEP_COUNT = 20;
   } catch (err) {
     document.getElementById('latest-meetings').innerHTML =
       `<div class="meeting-item"><span class="muted">Erreur de chargement des données : ${err.message}</span></div>`;
+  }
+
+  try {
+    const mepCountriesRes = await fetch('data/mep_countries.json');
+    const mepCountriesData = await mepCountriesRes.json();
+    const breakdown = computeMepNationalityBreakdown(orgs, mepCountriesData.meps || {});
+    renderNationalityPieChart(breakdown, 'mep-nationality-chart');
+  } catch (err) {
+    document.getElementById('mep-nationality-chart').innerHTML =
+      `<p class="muted">Erreur de chargement des données : ${err.message}</p>`;
   }
 })();
 </script>

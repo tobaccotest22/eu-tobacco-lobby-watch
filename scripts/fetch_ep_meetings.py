@@ -55,6 +55,7 @@ def fetch_ep_meetings(register_id: str) -> dict:
     meetings = [
         {
             "date": row.get("meeting_date"),
+            "member_id": row.get("member_id") or None,
             "member_name": row.get("member_name"),
             "member_capacity": row.get("member_capacity"),
             "title": row.get("title"),

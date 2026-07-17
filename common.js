@@ -243,6 +243,78 @@ function renderTopMeps(topMeps, tbodyId, initialCount) {
   });
 }
 
+/* ---------- Répartition par nationalité des eurodéputés rencontrés ---------- */
+
+const NATIONALITY_CHART_COLORS = ['#0038FF', '#e8590c', '#10b981', '#7c3aed', '#d63384', '#f59e0b', '#0ea5e9', '#84cc16', '#94a3b8'];
+
+function computeMepNationalityBreakdown(orgs, mepCountries) {
+  const counts = new Map();
+
+  orgs.forEach(org => {
+    org.epMeetingsList.forEach(m => {
+      const info = m.member_id ? mepCountries[String(m.member_id)] : null;
+      const country = info ? info.country_name : 'Non identifié';
+      counts.set(country, (counts.get(country) || 0) + 1);
+    });
+  });
+
+  return Array.from(counts.entries())
+    .map(([country, count]) => ({ country, count }))
+    .sort((a, b) => b.count - a.count);
+}
+
+function renderNationalityPieChart(breakdown, containerId) {
+  const container = document.getElementById(containerId);
+
+  if (!breakdown.length) {
+    container.innerHTML = '<p class="muted">Aucune donnée disponible.</p>';
+    return;
+  }
+
+  const TOP_N = 8;
+  const top = breakdown.slice(0, TOP_N);
+  const restTotal = breakdown.slice(TOP_N).reduce((sum, d) => sum + d.count, 0);
+  const slices = restTotal > 0 ? top.concat([{ country: 'Autres', count: restTotal }]) : top;
+  const total = slices.reduce((sum, s) => sum + s.count, 0);
+
+  const size = 180;
+  const radius = 70;
+  const strokeWidth = 36;
+  const cx = size / 2;
+  const cy = size / 2;
+  const circumference = 2 * Math.PI * radius;
+
+  let offset = 0;
+  let arcs = '';
+  slices.forEach((s, i) => {
+    const fraction = s.count / total;
+    const dash = fraction * circumference;
+    const color = NATIONALITY_CHART_COLORS[i % NATIONALITY_CHART_COLORS.length];
+    arcs += `
+      <circle cx="${cx}" cy="${cy}" r="${radius}" fill="none" stroke="${color}" stroke-width="${strokeWidth}"
+        stroke-dasharray="${dash.toFixed(2)} ${(circumference - dash).toFixed(2)}"
+        stroke-dashoffset="${(-offset).toFixed(2)}" transform="rotate(-90 ${cx} ${cy})">
+        <title>${s.country} : ${s.count} réunion${s.count === 1 ? '' : 's'} (${Math.round(fraction * 100)}%)</title>
+      </circle>
+    `;
+    offset += dash;
+  });
+
+  const legend = slices.map((s, i) => `
+    <span class="chart-legend-item">
+      <span class="chart-legend-dot" style="background:${NATIONALITY_CHART_COLORS[i % NATIONALITY_CHART_COLORS.length]}"></span>
+      ${s.country} (${s.count})
+    </span>
+  `).join('');
+
+  container.innerHTML = `
+    <svg viewBox="0 0 ${size} ${size}" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 220px; height: auto; display: block; margin: 0 auto;">
+      ${arcs}
+    </svg>
+    <div class="chart-legend" style="justify-content: center; text-align: center;">${legend}</div>
+  `;
+}
+
 /* ---------- Dernières réunions (organisations suivies + recherche mots-clés PE) ---------- */
 
 const EXCLUDED_LOBBY_SEARCH_NAMES = [
