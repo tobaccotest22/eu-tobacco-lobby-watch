@@ -121,6 +121,43 @@ body {
   font-size: clamp(0.7rem, 0.85vw, 0.78rem);
   color: #dbe4ff;
 }
+.banner-inner-with-counter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.banner-counter {
+  flex: 0 0 auto;
+  text-align: right;
+}
+.banner-counter-value {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+.banner-counter-label {
+  margin-top: 0.2rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #dbe4ff;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+@media (max-width: 720px) {
+  .banner-inner-with-counter {
+    justify-content: center;
+    text-align: center;
+  }
+  .banner-counter {
+    text-align: center;
+  }
+}
 
 /* ---------- Bandeau chiffres agrégés ---------- */
 .stats-banner {
@@ -248,7 +285,7 @@ section .section-intro {
 }
 .meeting-item {
   display: grid;
-  grid-template-columns: 110px 1fr auto;
+  grid-template-columns: 110px 1fr;
   align-items: center;
   gap: 1rem;
   padding: 1rem 1.25rem;
@@ -269,29 +306,6 @@ section .section-intro {
   font-weight: 600;
   color: var(--text);
   font-size: 0.92rem;
-}
-.meeting-dg {
-  display: block;
-  font-weight: 400;
-  color: var(--muted);
-  font-size: 0.78rem;
-  margin-top: 0.15rem;
-}
-.institution-badge {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 0.25rem 0.65rem;
-  border-radius: 20px;
-  white-space: nowrap;
-}
-.institution-badge.parliament {
-  background: #e6ebff;
-  color: var(--blue-dark);
-}
-.institution-badge.commission {
-  background: #fdece3;
-  color: var(--orange);
 }
 .meeting-detail {
   display: none;

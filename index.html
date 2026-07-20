@@ -49,9 +49,15 @@
     <use href="#eu-star" transform="translate(43.7,67.5)"/>
     <use href="#eu-star" transform="translate(67.5,43.7)"/>
   </svg>
-  <div class="banner-inner">
-    <p class="banner-lead">Plateforme de suivi des organisations de lobby du tabac en Europe.</p>
-    <p class="banner-sub">Sources : registres de transparence, LobbyFacts, Integrity Watch.</p>
+  <div class="banner-inner banner-inner-with-counter">
+    <div>
+      <p class="banner-lead">Plateforme de suivi des organisations de lobby du tabac en Europe.</p>
+      <p class="banner-sub">Sources : registres de transparence, LobbyFacts, Integrity Watch.</p>
+    </div>
+    <div class="banner-counter">
+      <div class="banner-counter-value" id="banner-counter-value">0</div>
+      <div class="banner-counter-label">réunions depuis janvier 2025</div>
+    </div>
   </div>
 </div>
 
@@ -522,7 +528,13 @@ function renderPilotBudgetChart(organisations) {
     const aggregate = liveData._aggregate || {};
     const epOutside = aggregate.ep_meetings_outside_our_46;
     const ecOutside = aggregate.ec_meetings_outside_our_46;
-    renderStats(computeCombinedMeetingTotals(aggregate, epOutside, ecOutside), entities.length);
+    const combinedTotals = computeCombinedMeetingTotals(aggregate, epOutside, ecOutside);
+    renderStats(combinedTotals, entities.length);
+    animateCounter(
+      document.getElementById('banner-counter-value'),
+      (combinedTotals.ep_meetings_since_2025_total || 0) + (combinedTotals.ec_meetings_since_2025_total || 0),
+      1800
+    );
 
     const latest = computeLatestMeetings(orgs, epOutside, ecOutside, MEETINGS_LIMIT);
     renderLatestMeetings(latest, 'latest-meetings', INITIAL_MEETINGS_COUNT);
