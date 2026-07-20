@@ -38,6 +38,9 @@ jobs:
       - name: Pays des eurodéputés rencontrés
         run: python scripts/fetch_mep_countries.py
 
+      - name: Réunions Commission par recherche mot-clé (hors organisations suivies)
+        run: python scripts/fetch_ec_keyword_meetings.py
+
       - name: Sauvegarder le résultat dans le dépôt
         run: |
           git config user.name "github-actions"

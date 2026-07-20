@@ -48,9 +48,9 @@
 
 <main>
   <section>
-    <h2>Détail des organisations suivies</h2>
+    <h2>Organisations de lobbying des produits du tabac</h2>
     <p class="section-intro">
-      Cliquez sur une ligne pour voir la fiche détaillée de l'organisation.
+      Les 48 organisations suivies par ce site. Cliquez sur une ligne pour voir la fiche détaillée de l'organisation.
       Le budget affiché correspond à la borne haute de la fourchette officielle
       la plus récente disponible (fiche du registre de transparence de l'UE,
       mise à jour automatiquement chaque nuit) ; à défaut, la valeur issue de
@@ -73,6 +73,27 @@
       </table>
     </div>
   </section>
+
+  <section>
+    <h2>Organisations non spécialisées dans le tabac mais ayant tenu des réunions sur le sujet</h2>
+    <p class="section-intro">
+      Organisations détectées par recherche mot-clé (tabac/nicotine) auprès du Parlement européen et/ou de la
+      Commission, en dehors des 48 organisations suivies ci-dessus, hors ONG de santé publique. Ces données
+      n'ayant pas été vérifiées individuellement pour ces organisations, seuls le nom et la date du dernier
+      rendez-vous connu sont affichés.
+    </p>
+    <div class="card" style="overflow: hidden;">
+      <table>
+        <thead>
+          <tr>
+            <th>Organisation</th>
+            <th>Dernier rendez-vous</th>
+          </tr>
+        </thead>
+        <tbody id="outside-orgs-table-body"></tbody>
+      </table>
+    </div>
+  </section>
 </main>
 
 <footer>
@@ -89,9 +110,15 @@
     const sortedByBudget = [...orgs].sort((a, b) => (b.budgetHigh ?? -1) - (a.budgetHigh ?? -1));
 
     renderOrgTable(sortedByBudget, 'table-body', sortedByBudget.length);
+
+    const aggregate = liveData._aggregate || {};
+    const outsideOrgs = computeOutsideOrganisations(aggregate.ep_meetings_outside_our_46, aggregate.ec_meetings_outside_our_46);
+    renderOutsideOrganisations(outsideOrgs, 'outside-orgs-table-body');
   } catch (err) {
     document.getElementById('table-body').innerHTML =
       `<tr><td colspan="7">Erreur de chargement des données : ${err.message}</td></tr>`;
+    document.getElementById('outside-orgs-table-body').innerHTML =
+      `<tr><td colspan="2">Erreur de chargement des données : ${err.message}</td></tr>`;
   }
 })();
 </script>

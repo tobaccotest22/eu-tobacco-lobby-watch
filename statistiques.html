@@ -84,7 +84,7 @@
 <script>
 const MONTH_LABELS_FR = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'];
 
-function computeMonthlyMeetingCounts(orgs) {
+function computeMonthlyMeetingCounts(orgs, epOutsideList, ecOutsideList) {
   const counts = new Map();
 
   const now = new Date();
@@ -104,6 +104,18 @@ function computeMonthlyMeetingCounts(orgs) {
       const key = meeting.date.slice(0, 7);
       if (counts.has(key)) counts.set(key, counts.get(key) + 1);
     });
+  });
+
+  (epOutsideList || []).forEach(m => {
+    if (!m.date || (m.attendees || []).some(isExcludedFromLobbySearch)) return;
+    const key = m.date.slice(0, 7);
+    if (counts.has(key)) counts.set(key, counts.get(key) + 1);
+  });
+
+  (ecOutsideList || []).forEach(m => {
+    if (!m.date || isExcludedFromLobbySearch(m.org)) return;
+    const key = m.date.slice(0, 7);
+    if (counts.has(key)) counts.set(key, counts.get(key) + 1);
   });
 
   return months.map(key => {
@@ -302,7 +314,8 @@ function renderPilotBudgetChart(organisations) {
   try {
     const { entities, liveData } = await loadData();
     const orgs = entities.map(e => mergeOrg(e, liveData));
-    renderMonthlyChart(computeMonthlyMeetingCounts(orgs));
+    const aggregate = liveData._aggregate || {};
+    renderMonthlyChart(computeMonthlyMeetingCounts(orgs, aggregate.ep_meetings_outside_our_46, aggregate.ec_meetings_outside_our_46));
   } catch (err) {
     document.getElementById('monthly-chart').innerHTML =
       `<p class="muted">Erreur de chargement des données : ${err.message}</p>`;

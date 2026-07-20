@@ -189,15 +189,17 @@ const TOP_MEP_COUNT = 20;
     const sortedByBudget = [...orgs].sort((a, b) => (b.budgetHigh ?? -1) - (a.budgetHigh ?? -1));
 
     const aggregate = liveData._aggregate || {};
-    renderStats(aggregate, entities.length);
+    const epOutside = aggregate.ep_meetings_outside_our_46;
+    const ecOutside = aggregate.ec_meetings_outside_our_46;
+    renderStats(computeCombinedMeetingTotals(aggregate, epOutside, ecOutside), entities.length);
 
-    const latest = computeLatestMeetings(orgs, aggregate.ep_meetings_outside_our_46);
+    const latest = computeLatestMeetings(orgs, epOutside, ecOutside);
     renderLatestMeetings(latest, 'latest-meetings');
 
     const top5ByBudget = sortedByBudget.slice(0, INITIAL_ORG_PREVIEW_COUNT);
     renderOrgTable(top5ByBudget, 'orgs-preview-table-body', top5ByBudget.length);
 
-    const topMeps = computeTopMeps(orgs, TOP_MEP_COUNT);
+    const topMeps = computeTopMeps(orgs, TOP_MEP_COUNT, epOutside);
     renderTopMeps(topMeps, 'meps-table-body', INITIAL_MEP_COUNT);
     setupTableToggle({
       tbodyId: 'meps-table-body',
