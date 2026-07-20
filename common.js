@@ -339,11 +339,20 @@ function renderNationalityPieChart(breakdown, containerId) {
 const EXCLUDED_LOBBY_SEARCH_NAMES = [
   'Smoke Free Partnership',
   'Contre-Feu',
+  'Contre feu', // variante sans tiret utilisée par certaines entrées Commission
   'European Respiratory Society',
   'Association of European Cancer Leagues',
   'European Society of Cardiology',
   'European Cancer Organisation',
   'European Alcohol Policy Alliance',
+  'Danish Cancer Society',
+  'Kræftens Bekæmpelse', // Danish Cancer Society, nom danois
+  'European Chronic Disease Alliance',
+  'Lung Cancer Europe',
+  'Fondation Cancer',
+  'Swedish Childhood Cancer Fund',
+  'Terveyden ja hyvinvoinnin laitos', // institut finlandais de santé publique (THL)
+  'No Plastic Filter',
 ];
 
 function isExcludedFromLobbySearch(name) {
