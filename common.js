@@ -58,6 +58,12 @@ function ecMeetingDG(representativeOrDg) {
   return parts.length ? parts[parts.length - 1] : null;
 }
 
+function ecMeetingPerson(representativeOrDg) {
+  const raw = representativeOrDg || '';
+  const parts = raw.split(',').map(s => s.trim()).filter(Boolean);
+  return parts.length ? parts[0] : null;
+}
+
 function formatDate(isoDate) {
   if (!isoDate) return '—';
   const d = new Date(isoDate);
@@ -374,6 +380,7 @@ function computeLatestMeetings(orgs, epOutsideList, ecOutsideList) {
         orgName: org.name,
         institution: 'parliament',
         dg: null,
+        withWhom: m.member_name || null,
         subject: m.title || null,
         procedureRef: m.procedure_reference || null,
         registerUrl: org.registerUrl,
@@ -385,6 +392,7 @@ function computeLatestMeetings(orgs, epOutsideList, ecOutsideList) {
         orgName: org.name,
         institution: 'commission',
         dg: ecMeetingDG(m.representative_or_dg),
+        withWhom: ecMeetingPerson(m.representative_or_dg),
         subject: null,
         procedureRef: null,
         registerUrl: org.registerUrl,
@@ -401,6 +409,7 @@ function computeLatestMeetings(orgs, epOutsideList, ecOutsideList) {
       orgName: attendees.length ? attendees.join(', ') : 'Acteur non identifié',
       institution: 'parliament',
       dg: null,
+      withWhom: m.member_name || null,
       subject: m.title || null,
       procedureRef: m.procedure_reference || null,
       registerUrl: null,
@@ -415,6 +424,7 @@ function computeLatestMeetings(orgs, epOutsideList, ecOutsideList) {
       orgName: m.org || 'Acteur non identifié',
       institution: 'commission',
       dg: m.dg || null,
+      withWhom: m.host || null,
       subject: m.subject || null,
       procedureRef: null,
       registerUrl: null,
@@ -462,6 +472,7 @@ function renderLatestMeetings(latest, containerId) {
           <div>
             <dt>Organisation</dt><dd>${m.orgName}</dd>
             <dt>Institution</dt><dd>${institutionLabel}</dd>
+            ${m.withWhom ? `<dt>${m.institution === 'parliament' ? 'Eurodéputé rencontré' : 'Représentant Commission rencontré'}</dt><dd>${m.withWhom}</dd>` : ''}
             ${m.dg ? `<dt>DG concernée</dt><dd>${m.dg}</dd>` : ''}
             ${m.subject ? `<dt>Sujet</dt><dd>${m.subject}</dd>` : ''}
             ${m.procedureRef ? `<dt>Dossier législatif</dt><dd>${m.procedureRef}</dd>` : ''}
@@ -506,7 +517,13 @@ function computeOutsideOrganisations(epOutsideList, ecOutsideList) {
     (m.attendees || []).forEach(name => {
       if (!name || isExcludedFromLobbySearch(name)) return;
       const current = orgs.get(name);
-      if (!current || (m.date || '') > current) orgs.set(name, m.date || '');
+      if (current && current.lastDate >= (m.date || '')) return;
+      orgs.set(name, {
+        lastDate: m.date || '',
+        institution: 'parliament',
+        withWhom: m.member_name || null,
+        subject: m.title || null,
+      });
     });
   });
 
@@ -514,15 +531,21 @@ function computeOutsideOrganisations(epOutsideList, ecOutsideList) {
     const name = m.org;
     if (!name || isExcludedFromLobbySearch(name)) return;
     const current = orgs.get(name);
-    if (!current || (m.date || '') > current) orgs.set(name, m.date || '');
+    if (current && current.lastDate >= (m.date || '')) return;
+    orgs.set(name, {
+      lastDate: m.date || '',
+      institution: 'commission',
+      withWhom: m.host || m.dg || null,
+      subject: m.subject || null,
+    });
   });
 
   return Array.from(orgs.entries())
-    .map(([name, lastDate]) => ({ name, lastDate }))
+    .map(([name, info]) => Object.assign({ name }, info))
     .sort((a, b) => (b.lastDate || '').localeCompare(a.lastDate || ''));
 }
 
-function renderOutsideOrganisations(list, tbodyId) {
+function renderOutsideOrganisations(list, tbodyId, initialCount) {
   const tbody = document.getElementById(tbodyId);
 
   if (!list.length) {
@@ -530,10 +553,41 @@ function renderOutsideOrganisations(list, tbodyId) {
     return;
   }
 
-  tbody.innerHTML = list.map(org => `
-    <tr>
-      <td data-label="Organisation">${org.name}</td>
-      <td data-label="Dernier rendez-vous">${formatDate(org.lastDate)}</td>
-    </tr>
-  `).join('');
+  const rows = [];
+  list.forEach((org, i) => {
+    const extraClass = i >= initialCount ? ' extra-row' : '';
+    const institutionLabel = org.institution === 'parliament' ? 'Parlement européen' : 'Commission européenne';
+
+    rows.push(`
+      <tr class="org-row${extraClass}" data-index="${i}">
+        <td data-label="Organisation">${org.name}</td>
+        <td data-label="Dernier rendez-vous">${formatDate(org.lastDate)}</td>
+      </tr>
+    `);
+
+    rows.push(`
+      <tr class="detail-row${extraClass}" id="${tbodyId}-detail-${i}">
+        <td colspan="2">
+          <div class="detail-grid">
+            <div>
+              <dt>Institution</dt><dd>${institutionLabel}</dd>
+              ${org.withWhom ? `<dt>${org.institution === 'parliament' ? 'Eurodéputé rencontré' : 'Représentant Commission rencontré'}</dt><dd>${org.withWhom}</dd>` : ''}
+              ${org.subject ? `<dt>Sujet</dt><dd>${org.subject}</dd>` : ''}
+              <dt>Date complète</dt><dd>${formatFullDate(org.lastDate)}</dd>
+            </div>
+          </div>
+          <p class="muted" style="margin: 0.5rem 0 0;">Aucune fiche du registre de transparence disponible pour cette organisation dans nos données.</p>
+        </td>
+      </tr>
+    `);
+  });
+
+  tbody.innerHTML = rows.join('');
+
+  tbody.querySelectorAll('tr.org-row').forEach(row => {
+    row.addEventListener('click', () => {
+      const detail = document.getElementById(`${tbodyId}-detail-${row.dataset.index}`);
+      detail.classList.toggle('open');
+    });
+  });
 }

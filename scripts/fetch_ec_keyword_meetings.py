@@ -25,7 +25,11 @@ celles d'acteurs "hors liste".
 
 Écrit dans data/live_data.json._aggregate :
 - ec_meetings_outside_our_46 : réunions Commission hors de nos organisations
-  suivies, filtrées par mot-clé tabac/nicotine (tri décroissant par date)
+  suivies, filtrées par mot-clé tabac/nicotine (tri décroissant par date).
+  Champ "host" : nom(s) et fonction(s) du/des représentant(s) Commission
+  rencontré(s) (ex: "Wopke Hoekstra (Commissioner)"), issu du champ "Host"
+  du jeu de données source - toujours renseigné, contrairement à "cabinet"
+  qui ne l'est que pour les réunions avec un cabinet de commissaire.
 """
 
 import html
@@ -67,6 +71,16 @@ def cabinet_label(cabinet: str | None) -> str | None:
     return f"Cabinet de {match.group(1)}" if match else cabinet
 
 
+def host_label(hosts: list[str] | None) -> str | None:
+    """Nom(s) du/des représentant(s) Commission rencontré(s) (champ "Host" du
+    jeu de données Integrity Watch, ex: "Wopke Hoekstra (Commissioner)").
+    Toujours présent dans le jeu de données source (0 valeur manquante
+    vérifiée sur les ~31 700 réunions), contrairement à "cabinet"."""
+    if not hosts:
+        return None
+    return ", ".join(html.unescape(h) for h in hosts if h)
+
+
 def main():
     our_register_ids = load_our_register_ids()
 
@@ -88,6 +102,7 @@ def main():
             "org_id": org_id,
             "subject": html.unescape(m.get("subject") or ""),
             "dg": cabinet_label(m.get("cabinet")),
+            "host": host_label(m.get("Host")),
         })
     outside.sort(key=lambda m: m["date"] or "", reverse=True)
     outside_actors = sorted({m["org"] for m in outside if m["org"]})

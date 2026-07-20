@@ -3233,7 +3233,7 @@
       "snus",
       "tabac"
     ],
-    "ec_meetings_keyword_computed_at": "2026-07-20T08:33:46.571935+00:00",
+    "ec_meetings_keyword_computed_at": "2026-07-20T09:30:17.045036+00:00",
     "ec_meetings_outside_our_46_count": 26,
     "ec_meetings_outside_our_46": [
       {
@@ -3241,182 +3241,208 @@
         "org": "The Smoke Free Partnership",
         "org_id": "6403725595-50",
         "subject": "Meeting on the Future of EU Tobacco control Policy",
-        "dg": null
+        "dg": null,
+        "host": "Dirk Van Den Steen (Head of Unit)"
       },
       {
         "date": "2026-06-16",
         "org": "European Federation of Food, Agriculture and Tourism Trade Unions",
         "org_id": "33130841043-14",
         "subject": "Situation of workforce in the tobacco sector",
-        "dg": null
+        "dg": null,
+        "host": "Stefan Olsson (Deputy Director-General)"
       },
       {
         "date": "2026-05-27",
         "org": "Association of European Cancer Leagues",
         "org_id": "19265592757-25",
         "subject": "EU tobacco policy",
-        "dg": "Cabinet de Olivér Várhelyi"
+        "dg": "Cabinet de Olivér Várhelyi",
+        "host": "Laszlo Andrejko (Cabinet member), Katri Teedumäe (Cabinet member), Jana Dabbelt (Cabinet member), Karolina Tomaszewska-Boillot (Cabinet member), Olivér Várhelyi (Commissioner)"
       },
       {
         "date": "2026-01-26",
         "org": "Contre-feu",
         "org_id": "363299842989-87",
         "subject": "Concerns regarding tobacco industry interference in public health policymaking",
-        "dg": null
+        "dg": null,
+        "host": "Dirk Van Den Steen (Head of Unit)"
       },
       {
         "date": "2026-01-15",
         "org": "Contre-feu",
         "org_id": "363299842989-87",
         "subject": "Tobacco lobbying / Contre-feu report of 10 December 2025",
-        "dg": "Cabinet de Maroš Šefčovič"
+        "dg": "Cabinet de Maroš Šefčovič",
+        "host": "Jan Hendrik Dopheide (Cabinet member)"
       },
       {
         "date": "2026-01-15",
         "org": "Contre-feu",
         "org_id": "363299842989-87",
         "subject": "Tobacco lobbying / Contre-feu report of 10 December 2025",
-        "dg": null
+        "dg": null,
+        "host": "Peter Berz (Head of Unit)"
       },
       {
         "date": "2025-12-11",
         "org": "European Federation of Food, Agriculture and Tourism Trade Unions",
         "org_id": "33130841043-14",
         "subject": "Revision of the Tobacco Taxation Directive",
-        "dg": null
+        "dg": null,
+        "host": "David Boublil (Head of Unit)"
       },
       {
         "date": "2025-12-11",
         "org": "Fødevareforbundet NNF",
         "org_id": "723641028862-15",
         "subject": "Revision of the Tobacco Taxation Directive",
-        "dg": null
+        "dg": null,
+        "host": "David Boublil (Head of Unit)"
       },
       {
         "date": "2025-12-02",
         "org": "Kaupan liitto ry - Finnish Commerce Federation",
         "org_id": "141376015883-52",
         "subject": "Revision of the Tobacco Taxation Directive",
-        "dg": null
+        "dg": null,
+        "host": "David Boublil (Head of Unit)"
       },
       {
         "date": "2025-11-19",
         "org": "Terveyden ja hyvinvoinnin laitos",
         "org_id": "577560851584-36",
         "subject": "Taxation of tobacco and nicotine products",
-        "dg": null
+        "dg": null,
+        "host": "David Boublil (Head of Unit)"
       },
       {
         "date": "2025-11-04",
         "org": "The Smoke Free Partnership",
         "org_id": "6403725595-50",
         "subject": "Revision of Tobacco Taxation Directive",
-        "dg": null
+        "dg": null,
+        "host": "David Boublil (Head of Unit)"
       },
       {
         "date": "2025-10-14",
         "org": "Aeroporti di Roma",
         "org_id": "990367446239-60",
         "subject": "Tobacco sales in airport duty-free shops and the link to illicit\r\ntobacco trafficking",
-        "dg": null
+        "dg": null,
+        "host": "David Boublil (Head of Unit)"
       },
       {
         "date": "2025-10-14",
         "org": "Dini Romiti Partners Bruxelles",
         "org_id": "1578248100284-97",
         "subject": "Tobacco sales in airport duty-free shops and the link to illicit\r\ntobacco trafficking",
-        "dg": null
+        "dg": null,
+        "host": "David Boublil (Head of Unit)"
       },
       {
         "date": "2025-09-30",
         "org": "European Society of Cardiology",
         "org_id": "01150446981-34",
         "subject": "Public health and tobacco matters",
-        "dg": "Cabinet de Wopke Hoekstra"
+        "dg": "Cabinet de Wopke Hoekstra",
+        "host": "Wopke Hoekstra (Commissioner), Patrice Pillet (Cabinet member), Célia Dejond (Cabinet member)"
       },
       {
         "date": "2025-09-30",
         "org": "Association of European Cancer Leagues",
         "org_id": "19265592757-25",
         "subject": "Public health and tobacco matters",
-        "dg": "Cabinet de Wopke Hoekstra"
+        "dg": "Cabinet de Wopke Hoekstra",
+        "host": "Wopke Hoekstra (Commissioner), Patrice Pillet (Cabinet member), Célia Dejond (Cabinet member)"
       },
       {
         "date": "2025-09-30",
         "org": "European Cancer Organisation",
         "org_id": "51022176260-12",
         "subject": "Public health and tobacco matters",
-        "dg": "Cabinet de Wopke Hoekstra"
+        "dg": "Cabinet de Wopke Hoekstra",
+        "host": "Wopke Hoekstra (Commissioner), Patrice Pillet (Cabinet member), Célia Dejond (Cabinet member)"
       },
       {
         "date": "2025-09-30",
         "org": "The Smoke Free Partnership",
         "org_id": "6403725595-50",
         "subject": "Public health and tobacco matters",
-        "dg": "Cabinet de Wopke Hoekstra"
+        "dg": "Cabinet de Wopke Hoekstra",
+        "host": "Wopke Hoekstra (Commissioner), Patrice Pillet (Cabinet member), Célia Dejond (Cabinet member)"
       },
       {
         "date": "2025-09-30",
         "org": "The Smoke Free Partnership",
         "org_id": "6403725595-50",
         "subject": "Public health and tobacco matters",
-        "dg": "Cabinet de Olivér Várhelyi"
+        "dg": "Cabinet de Olivér Várhelyi",
+        "host": "Olivér Várhelyi (Commissioner)"
       },
       {
         "date": "2025-09-30",
         "org": "Association of European Cancer Leagues",
         "org_id": "19265592757-25",
         "subject": "Public health and tobacco matters",
-        "dg": "Cabinet de Olivér Várhelyi"
+        "dg": "Cabinet de Olivér Várhelyi",
+        "host": "Olivér Várhelyi (Commissioner)"
       },
       {
         "date": "2025-09-30",
         "org": "European Society of Cardiology",
         "org_id": "01150446981-34",
         "subject": "Public health and tobacco matters",
-        "dg": "Cabinet de Olivér Várhelyi"
+        "dg": "Cabinet de Olivér Várhelyi",
+        "host": "Olivér Várhelyi (Commissioner)"
       },
       {
         "date": "2025-09-30",
         "org": "European Cancer Organisation",
         "org_id": "51022176260-12",
         "subject": "Public health and tobacco matters",
-        "dg": "Cabinet de Olivér Várhelyi"
+        "dg": "Cabinet de Olivér Várhelyi",
+        "host": "Olivér Várhelyi (Commissioner)"
       },
       {
         "date": "2025-09-30",
         "org": "European Alcohol Policy Alliance",
         "org_id": "01546986656-22",
         "subject": "HFSS taxation, Tobacco taxation",
-        "dg": null
+        "dg": null,
+        "host": "David Boublil (Head of Unit)"
       },
       {
         "date": "2025-05-27",
         "org": "The Smoke Free Partnership",
         "org_id": "6403725595-50",
         "subject": "EU tobacco policy",
-        "dg": "Cabinet de Olivér Várhelyi"
+        "dg": "Cabinet de Olivér Várhelyi",
+        "host": "Olivér Várhelyi (Commissioner), Laszlo Kristoffy (Cabinet member), Laszlo Andrejko (Cabinet member)"
       },
       {
         "date": "2025-05-07",
         "org": "The Smoke Free Partnership",
         "org_id": "6403725595-50",
         "subject": "Introductory meeting / EU transparency rules on tobacco lobbying",
-        "dg": "Cabinet de Maroš Šefčovič"
+        "dg": "Cabinet de Maroš Šefčovič",
+        "host": "Jan Hendrik Dopheide (Cabinet member)"
       },
       {
         "date": "2025-05-07",
         "org": "Corporate Europe Observatory",
         "org_id": "5353162366-85",
         "subject": "Introductory meeting / EU transparency rules on tobacco lobbying",
-        "dg": "Cabinet de Maroš Šefčovič"
+        "dg": "Cabinet de Maroš Šefčovič",
+        "host": "Jan Hendrik Dopheide (Cabinet member)"
       },
       {
         "date": "2025-03-17",
         "org": "The Smoke Free Partnership",
         "org_id": "6403725595-50",
         "subject": "Revision of the Tobacco Taxation Directive",
-        "dg": null
+        "dg": null,
+        "host": "David Boublil (Head of Unit)"
       }
     ],
     "ep_meetings_keyword_total_since_2025": 258,
