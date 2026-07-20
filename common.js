@@ -353,6 +353,8 @@ const EXCLUDED_LOBBY_SEARCH_NAMES = [
   'Swedish Childhood Cancer Fund',
   'Terveyden ja hyvinvoinnin laitos', // institut finlandais de santé publique (THL)
   'No Plastic Filter',
+  'Corporate Europe Observatory', // ONG de veille sur le lobbying, pas santé mais adversaire du lobbying industriel
+  'Recycling Netwerk Benelux', // ONG environnementale (mégots/pollution), pas santé mais non lié à l'industrie
 ];
 
 function isExcludedFromLobbySearch(name) {
