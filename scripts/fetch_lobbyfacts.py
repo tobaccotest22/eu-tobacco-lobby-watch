@@ -25,6 +25,18 @@ récupère deux choses et les écrit dans data/live_data.json :
    ce fragment (endpoint trouvé dans son bundle JS) est directement
    accessible et c'est celui-ci que le script interroge.
 
+4. La liste des personnes accréditées pour l'accès aux bâtiments du Parlement
+   européen (nom, prénom, date de début/fin), lue sur ce même fragment HTML
+   (section "Personnes accréditées..."). À chaque exécution, on compare la
+   liste fraîchement récupérée à celle stockée lors de l'exécution
+   précédente (surname+first_name+start_date) : toute personne absente de
+   l'ancienne liste est une nouvelle accréditation, accumulée (jamais
+   écrasée) dans _aggregate.new_lobbyist_accreditations - même principe que
+   _aggregate.ec_meetings_outside_our_46. Aucune accréditation n'est
+   signalée lors de la toute première exécution pour une organisation
+   donnée (pas de référence à comparer) : elle sert uniquement à établir la
+   base de comparaison des exécutions suivantes.
+
 Le script fusionne ses résultats dans data/live_data.json sans écraser la
 partie "ep_meetings" qu'écrit scripts/fetch_ep_meetings.py.
 """
@@ -157,6 +169,54 @@ def parse_amount(text: str) -> int | None:
     return int(digits) if digits.isdigit() else None
 
 
+def parse_ddmmyyyy(text: str) -> str | None:
+    match = re.match(r"(\d{2})/(\d{2})/(\d{4})", text or "")
+    if not match:
+        return None
+    day, month, year = match.groups()
+    return f"{year}-{month}-{day}"
+
+
+def parse_accredited_persons(html: str) -> list[dict]:
+    """Lit la table "Personnes accréditées pour accéder aux bâtiments du
+    Parlement européen" sur la fiche officielle du registre : nom, prénom,
+    date de début et date de fin de l'accréditation. Liste vide si
+    l'organisation n'a aucune personne accréditée."""
+    soup = BeautifulSoup(html, "lxml")
+    heading = soup.find(id="persons-accredited-for-access-to-european-parliament-premises")
+    if not heading:
+        return []
+
+    # La section contient une table externe à une seule cellule enveloppant la
+    # vraie table de données (avec un <thead> Nom/Prénom/Date de début/Date de
+    # fin) : on cible spécifiquement celle qui a un <thead>, sinon
+    # find_next("table") récupère l'enveloppe et sa cellule unique concatène
+    # tout le texte imbriqué.
+    table = next((t for t in heading.find_all_next("table") if t.find("thead", recursive=False)), None)
+    if not table:
+        return []
+    tbody = table.find("tbody")
+    if not tbody:
+        return []
+
+    persons = []
+    for row in tbody.find_all("tr", recursive=False):
+        cells = row.find_all("td", recursive=False)
+        if len(cells) < 2:
+            continue
+        surname = cells[0].get_text(strip=True)
+        first_name = cells[1].get_text(strip=True)
+        if not surname and not first_name:
+            continue
+        persons.append({
+            "surname": surname,
+            "first_name": first_name,
+            "start_date": parse_ddmmyyyy(cells[2].get_text(strip=True)) if len(cells) > 2 else None,
+            "end_date": parse_ddmmyyyy(cells[3].get_text(strip=True)) if len(cells) > 3 else None,
+        })
+    return persons
+
+
 def parse_register_detail(html: str) -> dict:
     """Lit budget/personnes/cabinets sur le fragment HTML de la fiche du registre.
 
@@ -171,6 +231,7 @@ def parse_register_detail(html: str) -> dict:
         "intermediaries_current_year": [],
         "budget_low": None,
         "budget_high": None,
+        "accredited_persons": parse_accredited_persons(html),
     }
     for row in soup.select("tr.ecl-table__row"):
         cells = row.find_all("td", recursive=False)
@@ -215,6 +276,10 @@ def fetch_register_detail(register_id: str) -> dict | None:
         return {"error": f"lecture fiche registre échouée : {exc}"}
 
 
+def accreditation_key(person: dict) -> tuple:
+    return (person.get("surname"), person.get("first_name"), person.get("start_date"))
+
+
 def main():
     with open(ENTITIES_PATH, encoding="utf-8") as f:
         entities = json.load(f)["entities"]
@@ -226,6 +291,11 @@ def main():
         live_data = {}
 
     now = datetime.now(timezone.utc).isoformat()
+    aggregate = live_data.setdefault("_aggregate", {})
+    new_accreditations = aggregate.get("new_lobbyist_accreditations", [])
+    seen_accreditation_keys = {
+        (a["register_id"], a["surname"], a["first_name"], a["start_date"]) for a in new_accreditations
+    }
 
     for entity in entities:
         register_id = entity.get("register_id")
@@ -242,6 +312,12 @@ def main():
         entry["ec_meetings"] = fetch_ec_meetings(register_id)
         time.sleep(SLEEP_BETWEEN_REQUESTS)
 
+        # Capturé avant écrasement : None si jamais récupéré (première
+        # exécution pour cette organisation), auquel cas on ne signale aucune
+        # "nouvelle" accréditation - on se contente d'établir la référence de
+        # comparaison pour les prochaines exécutions.
+        previous_accredited = entry.get("accredited_persons")
+
         register_detail = fetch_register_detail(register_id) or {}
         if "error" in register_detail:
             entry["register_detail_error"] = register_detail["error"]
@@ -252,8 +328,32 @@ def main():
             entry["nb_intermediaries"] = register_detail.get("nb_intermediaries")
             entry["intermediaries_current_year"] = register_detail.get("intermediaries_current_year")
 
+            accredited_persons = register_detail.get("accredited_persons", [])
+            entry["accredited_persons"] = accredited_persons
+
+            if previous_accredited is not None:
+                previous_keys = {accreditation_key(p) for p in previous_accredited}
+                for person in accredited_persons:
+                    key = (register_id, person["surname"], person["first_name"], person["start_date"])
+                    if accreditation_key(person) in previous_keys or key in seen_accreditation_keys:
+                        continue
+                    seen_accreditation_keys.add(key)
+                    new_accreditations.append({
+                        "register_id": register_id,
+                        "org_name": name,
+                        "surname": person["surname"],
+                        "first_name": person["first_name"],
+                        "start_date": person["start_date"],
+                        "detected_at": now,
+                    })
+
         entry["lobbyfacts_last_fetched"] = now
         time.sleep(SLEEP_BETWEEN_REQUESTS)
+
+    new_accreditations.sort(key=lambda a: a.get("start_date") or "", reverse=True)
+    aggregate["new_lobbyist_accreditations"] = new_accreditations
+    aggregate["new_lobbyist_accreditations_count"] = len(new_accreditations)
+    aggregate["new_lobbyist_accreditations_computed_at"] = now
 
     with open(LIVE_DATA_PATH, "w", encoding="utf-8") as f:
         json.dump(live_data, f, ensure_ascii=False, indent=2)

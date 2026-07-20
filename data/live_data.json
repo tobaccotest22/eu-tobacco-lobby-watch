@@ -49,7 +49,7 @@
       "Transatlantic Public Affairs",
       "UTOPIA LAB S.R.L."
     ],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=51925911965-76&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 95,
@@ -816,7 +816,81 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": [
+      {
+        "surname": "Mueller",
+        "first_name": "Mario",
+        "start_date": "2024-09-03",
+        "end_date": "2026-09-03"
+      },
+      {
+        "surname": "Dr. Aracena",
+        "first_name": "Maximilian",
+        "start_date": "2024-10-03",
+        "end_date": "2026-10-02"
+      },
+      {
+        "surname": "Tonnaer",
+        "first_name": "Antoon",
+        "start_date": "2024-11-13",
+        "end_date": "2026-11-12"
+      },
+      {
+        "surname": "Santi",
+        "first_name": "Stefano",
+        "start_date": "2025-09-08",
+        "end_date": "2026-09-08"
+      },
+      {
+        "surname": "von Eicke und Polwitz",
+        "first_name": "Steffen",
+        "start_date": "2025-09-22",
+        "end_date": "2026-09-21"
+      },
+      {
+        "surname": "Briec",
+        "first_name": "Nicolas",
+        "start_date": "2025-11-17",
+        "end_date": "2026-11-17"
+      },
+      {
+        "surname": "Santi",
+        "first_name": "Eleonora",
+        "start_date": "2025-11-26",
+        "end_date": "2026-11-26"
+      },
+      {
+        "surname": "Løvgreen",
+        "first_name": "Alexander von Wildenrath",
+        "start_date": "2025-11-27",
+        "end_date": "2026-11-27"
+      },
+      {
+        "surname": "Hlavacek",
+        "first_name": "Martin",
+        "start_date": "2026-05-06",
+        "end_date": "2027-03-05"
+      },
+      {
+        "surname": "Balaban",
+        "first_name": "Razvan",
+        "start_date": "2026-05-11",
+        "end_date": "2027-03-10"
+      },
+      {
+        "surname": "Weggler",
+        "first_name": "Tobias Raphael",
+        "start_date": "2026-05-15",
+        "end_date": "2027-05-14"
+      },
+      {
+        "surname": "Tzavelas",
+        "first_name": "Christos",
+        "start_date": "2026-06-30",
+        "end_date": "2027-06-30"
+      }
+    ]
   },
   "62460931291-40": {
     "name": "Imperial Brands",
@@ -843,7 +917,7 @@
     "people_involved": 4,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=62460931291-40&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 12,
@@ -946,7 +1020,21 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": [
+      {
+        "surname": "Olivares Guerrero",
+        "first_name": "Jesús",
+        "start_date": "2025-04-02",
+        "end_date": "2027-03-05"
+      },
+      {
+        "surname": "Wiersum",
+        "first_name": "Jolyon",
+        "start_date": "2026-04-13",
+        "end_date": "2027-04-13"
+      }
+    ]
   },
   "71175716023-03": {
     "name": "JT International",
@@ -973,7 +1061,7 @@
     "people_involved": 6,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=71175716023-03&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 6,
@@ -1028,7 +1116,45 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": [
+      {
+        "surname": "Anastasiou",
+        "first_name": "Efi",
+        "start_date": "2024-09-27",
+        "end_date": "2026-09-27"
+      },
+      {
+        "surname": "Barysiene",
+        "first_name": "Ksenija",
+        "start_date": "2024-09-27",
+        "end_date": "2026-09-27"
+      },
+      {
+        "surname": "Hansen",
+        "first_name": "Philipp",
+        "start_date": "2024-09-27",
+        "end_date": "2026-09-27"
+      },
+      {
+        "surname": "Sugata",
+        "first_name": "Ryohei",
+        "start_date": "2025-09-27",
+        "end_date": "2026-09-27"
+      },
+      {
+        "surname": "Mizuno",
+        "first_name": "Yukari",
+        "start_date": "2025-09-27",
+        "end_date": "2026-09-27"
+      },
+      {
+        "surname": "Gaglioppa",
+        "first_name": "Francesco",
+        "start_date": "2026-04-22",
+        "end_date": "2027-04-22"
+      }
+    ]
   },
   "124135527355-29": {
     "name": "J CORTES CIGARS",
@@ -1055,13 +1181,14 @@
     "people_involved": 2,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=124135527355-29&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "2427500988-58": {
     "name": "British American Tobacco",
@@ -1099,7 +1226,7 @@
       "Savoir EU Advocacy & Legal Consulting",
       "Trade & Access Consulting"
     ],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=2427500988-58&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 33,
@@ -1370,7 +1497,69 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": [
+      {
+        "surname": "Smok-Chajn",
+        "first_name": "Justyna",
+        "start_date": "2024-09-18",
+        "end_date": "2026-09-17"
+      },
+      {
+        "surname": "Jängnemyr",
+        "first_name": "Carl",
+        "start_date": "2024-09-18",
+        "end_date": "2026-09-17"
+      },
+      {
+        "surname": "Patalano",
+        "first_name": "Federica",
+        "start_date": "2024-09-18",
+        "end_date": "2026-09-17"
+      },
+      {
+        "surname": "Nardini",
+        "first_name": "Luca",
+        "start_date": "2024-09-18",
+        "end_date": "2026-09-17"
+      },
+      {
+        "surname": "Pelsers",
+        "first_name": "Christa",
+        "start_date": "2024-09-18",
+        "end_date": "2026-09-17"
+      },
+      {
+        "surname": "Boyo Arias",
+        "first_name": "Alex",
+        "start_date": "2024-09-18",
+        "end_date": "2026-09-17"
+      },
+      {
+        "surname": "Maccione",
+        "first_name": "Fabio",
+        "start_date": "2025-09-29",
+        "end_date": "2026-09-29"
+      },
+      {
+        "surname": "Janne",
+        "first_name": "Hadrien",
+        "start_date": "2025-10-15",
+        "end_date": "2026-10-15"
+      },
+      {
+        "surname": "Past",
+        "first_name": "Harald",
+        "start_date": "2025-10-15",
+        "end_date": "2026-10-15"
+      },
+      {
+        "surname": "de Petris",
+        "first_name": "Fabio",
+        "start_date": "2026-01-26",
+        "end_date": "2027-01-25"
+      }
+    ]
   },
   "613360243179-87": {
     "name": "TTI Magyarország Nemzetközi Dohánykereskedelmi Kft",
@@ -1397,13 +1586,14 @@
     "people_involved": 1,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=613360243179-87&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "462081624095-48": {
     "name": "Logista (part of Imperial brand)",
@@ -1430,13 +1620,14 @@
     "people_involved": 3,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=462081624095-48&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "78982871558-95": {
     "name": "Deutscher Zigarettenverband",
@@ -1463,13 +1654,14 @@
     "people_involved": 1,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=78982871558-95&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "189661446368-32": {
     "name": "Manifatture Sigaro Toscano",
@@ -1488,7 +1680,7 @@
     "intermediaries_current_year": [
       "UTOPIA LAB S.R.L."
     ],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=189661446368-32&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 15,
@@ -1615,7 +1807,21 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": [
+      {
+        "surname": "Mariotti",
+        "first_name": "Stefano",
+        "start_date": "2025-10-15",
+        "end_date": "2026-10-14"
+      },
+      {
+        "surname": "de Benedictis",
+        "first_name": "Ilaria",
+        "start_date": "2025-11-24",
+        "end_date": "2026-11-24"
+      }
+    ]
   },
   "583622337776-40": {
     "name": "DOS SANTOS",
@@ -1642,13 +1848,21 @@
     "people_involved": 2,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=583622337776-40&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": [
+      {
+        "surname": "Compensación al transporte de mercancías - Tratado de Funcionamiento de la UE",
+        "first_name": "48 513 €",
+        "start_date": null,
+        "end_date": null
+      }
+    ]
   },
   "891734924313-39": {
     "name": "Scandinavian Tobacco Group",
@@ -1675,13 +1889,14 @@
     "people_involved": null,
     "nb_intermediaries": null,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=891734924313-39&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "701118397425-19": {
     "name": "Tabaqueira (subsidiary of PMI in Portugal)",
@@ -1700,13 +1915,27 @@
     "intermediaries_current_year": [
       "EUPPORTUNITY (QB, Lda.)"
     ],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=701118397425-19&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": [
+      {
+        "surname": "Rodrigues",
+        "first_name": "Madalena",
+        "start_date": "2026-06-14",
+        "end_date": "2027-06-14"
+      },
+      {
+        "surname": "Bessa Gomes",
+        "first_name": "Isabel",
+        "start_date": "2026-06-14",
+        "end_date": "2027-06-14"
+      }
+    ]
   },
   "923856024330-39": {
     "name": "Manufacture de Tabacs Heintz van Landewyck",
@@ -1733,7 +1962,7 @@
     "people_involved": 4,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=923856024330-39&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 1,
@@ -1748,7 +1977,8 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "224656024222-52": {
     "name": "KARELIA TOBACCO COMPANY INC",
@@ -1775,7 +2005,7 @@
     "people_involved": 7,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=224656024222-52&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 2,
@@ -1798,7 +2028,8 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "1496873833-97": {
     "name": "Tobacco Europe AISBL",
@@ -1831,7 +2062,7 @@
     "people_involved": 3,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=1496873833-97&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 6,
@@ -1886,7 +2117,21 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": [
+      {
+        "surname": "Konteas",
+        "first_name": "Ilias",
+        "start_date": "2026-01-06",
+        "end_date": "2027-01-05"
+      },
+      {
+        "surname": "Bussi",
+        "first_name": "Danilo",
+        "start_date": "2026-06-11",
+        "end_date": "2027-06-11"
+      }
+    ]
   },
   "30971284469-05": {
     "name": "Association of Independent Tobacco Specialists",
@@ -1913,13 +2158,14 @@
     "people_involved": null,
     "nb_intermediaries": null,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=30971284469-05&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "0138855852-93": {
     "name": "European Smoking Tobacco Association ESTA",
@@ -1948,13 +2194,21 @@
     "intermediaries_current_year": [
       "James Ramsay"
     ],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=0138855852-93&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": [
+      {
+        "surname": "Boyden",
+        "first_name": "Jack Clarke",
+        "start_date": "2026-07-10",
+        "end_date": "2027-07-10"
+      }
+    ]
   },
   "876337940850-36": {
     "name": "European Shisha Community Alliance",
@@ -1981,13 +2235,14 @@
     "people_involved": 2,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=876337940850-36&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "92802501097-37": {
     "name": "European Cigar Manufacturers Association",
@@ -2017,7 +2272,7 @@
       "Aretera PA UG (haftungsbeschränkt)",
       "UTOPIA LAB S.R.L."
     ],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=92802501097-37&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 22,
@@ -2200,7 +2455,15 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": [
+      {
+        "surname": "Varakas",
+        "first_name": "Paul",
+        "start_date": "2026-01-20",
+        "end_date": "2027-01-17"
+      }
+    ]
   },
   "893796741802-11": {
     "name": "Bundesverband der Tabakwirtschaft und neuartiger Erzeugnisse",
@@ -2227,7 +2490,7 @@
     "people_involved": 6,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=893796741802-11&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 2,
@@ -2250,7 +2513,8 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "665729842737-11": {
     "name": "Association of Tobacco Sellers, Convenience Stores and Kiosks of Macedonia",
@@ -2277,13 +2541,14 @@
     "people_involved": null,
     "nb_intermediaries": null,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=665729842737-11&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "27567784437-46": {
     "name": "Tobaksindustrien, (Tobacco Manufactures Association of Denmark)",
@@ -2310,13 +2575,14 @@
     "people_involved": null,
     "nb_intermediaries": null,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=27567784437-46&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "102135939541-25": {
     "name": "TOBACCO AND NICOTINE PRODUCTS CHEMICALS GROUP",
@@ -2345,13 +2611,21 @@
     "intermediaries_current_year": [
       "Mayer Brown Europe-Brussels LLP"
     ],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=102135939541-25&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": [
+      {
+        "surname": "Mayer Brown Europe-Brussels LLP",
+        "first_name": "100 000 €-199 999 €",
+        "start_date": null,
+        "end_date": null
+      }
+    ]
   },
   "209043544083-79": {
     "name": "Vereniging Nederlandse Sigaretten- en Kerftabakfabrikanten",
@@ -2378,7 +2652,7 @@
     "people_involved": 1,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=209043544083-79&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 1,
@@ -2393,7 +2667,8 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "87594253741-94": {
     "name": "BDTA e V",
@@ -2420,13 +2695,14 @@
     "people_involved": 4,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=87594253741-94&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "389796615375-43": {
     "name": "Asociación Empresarial del Tabaco",
@@ -2453,13 +2729,14 @@
     "people_involved": 1,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=389796615375-43&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "835059415132-95": {
     "name": "Fédération Européenne des Transformateurs de Tabac",
@@ -2486,13 +2763,14 @@
     "people_involved": 2,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=835059415132-95&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "775494740511-57": {
     "name": "Bundesverband der Zigarrenindustrie e.V.",
@@ -2519,7 +2797,7 @@
     "people_involved": 2,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=775494740511-57&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 5,
@@ -2566,7 +2844,15 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": [
+      {
+        "surname": "Mehrlein",
+        "first_name": "Bodo",
+        "start_date": "2025-10-13",
+        "end_date": "2026-10-12"
+      }
+    ]
   },
   "78764438624-42": {
     "name": "Federazione Italiana Tabaccai",
@@ -2593,7 +2879,7 @@
     "people_involved": 4,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=78764438624-42&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 5,
@@ -2640,7 +2926,15 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": [
+      {
+        "surname": "Marchese",
+        "first_name": "Manfredi Maria",
+        "start_date": "2026-06-22",
+        "end_date": "2027-06-18"
+      }
+    ]
   },
   "066314042392-60": {
     "name": "Mesa Del Tobacco",
@@ -2667,13 +2961,14 @@
     "people_involved": 2,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=066314042392-60&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "756303940554-19": {
     "name": "Alliance One International, LLC",
@@ -2700,13 +2995,14 @@
     "people_involved": 1,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=756303940554-19&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "56705163713-93": {
     "name": "Sweditch Match (PMI Subsidary)",
@@ -2733,7 +3029,7 @@
     "people_involved": null,
     "nb_intermediaries": null,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=56705163713-93&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 5,
@@ -2780,7 +3076,8 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "491937195894-38": {
     "name": "Skruf Snus (Imperial subsidary)",
@@ -2803,13 +3100,14 @@
     "people_involved": 2,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=491937195894-38&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "220858648398-48": {
     "name": "Association of Swedish Snus Manufacturers (includes PMI in its Member)",
@@ -2826,13 +3124,14 @@
     "people_involved": null,
     "nb_intermediaries": null,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=220858648398-48&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "203595432279-89": {
     "name": "France Vapotage (includes Imperial and BAT)",
@@ -2859,7 +3158,7 @@
     "people_involved": 1,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=203595432279-89&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 2,
@@ -2882,7 +3181,21 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": [
+      {
+        "surname": "MESLET",
+        "first_name": "Florence",
+        "start_date": "2025-09-24",
+        "end_date": "2026-09-24"
+      },
+      {
+        "surname": "DURIEUX",
+        "first_name": "Vincent",
+        "start_date": "2025-09-24",
+        "end_date": "2026-09-24"
+      }
+    ]
   },
   "105924642733-12": {
     "name": "The Internation Association on Smoking Control & Harm Reduction (links with the TI, see Tobacco Tactics)",
@@ -2909,13 +3222,14 @@
     "people_involved": null,
     "nb_intermediaries": null,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=105924642733-12&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "207263897934-45": {
     "name": "Global Institute for Novel Nicotine (promotes heated tobacco and nicotine pouches)",
@@ -2934,13 +3248,14 @@
     "intermediaries_current_year": [
       "EPPA SA"
     ],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=207263897934-45&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "680379741539-17": {
     "name": "Center of Excellence for the acceleration of Harm Reduction (financed by the TI - see Tobacco Tactics)",
@@ -2967,13 +3282,21 @@
     "people_involved": 7,
     "nb_intermediaries": null,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=680379741539-17&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": [
+      {
+        "surname": "Next Generation EU",
+        "first_name": "150 000 €",
+        "start_date": null,
+        "end_date": null
+      }
+    ]
   },
   "354946837243-73": {
     "name": "ETHRA European Tobacco Harm Reduction Advocates (Members defending SNUS and nicotine pouches)",
@@ -3000,13 +3323,14 @@
     "people_involved": 1,
     "nb_intermediaries": null,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=354946837243-73&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "347372799139-19": {
     "name": "HEATED COMMUNITY HUB (promotes heated tobacco and nicotine pouches)",
@@ -3023,13 +3347,14 @@
     "people_involved": 4,
     "nb_intermediaries": null,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=347372799139-19&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "530382045552-40": {
     "name": "Villanypára Egyesület (via INNCO)",
@@ -3056,13 +3381,14 @@
     "people_involved": null,
     "nb_intermediaries": null,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=530382045552-40&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "642478741759-44": {
     "name": "New Nicotine Alliance UK (has been directly linked to PMI in investigative reports)",
@@ -3089,13 +3415,14 @@
     "people_involved": 1,
     "nb_intermediaries": null,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=642478741759-44&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "432272548963-49": {
     "name": "Nordic Nicotine Pouches Alliance",
@@ -3112,7 +3439,7 @@
     "people_involved": 2,
     "nb_intermediaries": null,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=432272548963-49&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 6,
@@ -3167,7 +3494,15 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": [
+      {
+        "surname": "Lundqvist",
+        "first_name": "Olof Jonas",
+        "start_date": "2025-10-21",
+        "end_date": "2026-10-21"
+      }
+    ]
   },
   "766884047993-79": {
     "name": "World vapers' alliance (financed by the industry)",
@@ -3184,13 +3519,14 @@
     "people_involved": null,
     "nb_intermediaries": null,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=766884047993-79&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "174447099137-38": {
     "name": "Smoke Free Sweden (directly linked to the industry)",
@@ -3207,13 +3543,14 @@
     "people_involved": 2,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-07-10T13:51:32.596616+00:00",
+    "lobbyfacts_last_fetched": "2026-07-20T10:17:28.627117+00:00",
     "ep_meetings": {
       "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=174447099137-38&fromDate=01%2F01%2F2025&toDate=17%2F07%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00"
+    "ep_meetings_last_fetched": "2026-07-17T14:44:10.229784+00:00",
+    "accredited_persons": []
   },
   "_aggregate": {
     "note": "budget_total = somme des bornes hautes (budget_high) : estimation maximale prudente, pas une moyenne.",
@@ -5114,6 +5451,9 @@
       "Kaupan liitto ry - Finnish Commerce Federation",
       "Terveyden ja hyvinvoinnin laitos",
       "The Smoke Free Partnership"
-    ]
+    ],
+    "new_lobbyist_accreditations": [],
+    "new_lobbyist_accreditations_count": 0,
+    "new_lobbyist_accreditations_computed_at": "2026-07-20T10:17:28.627117+00:00"
   }
 }

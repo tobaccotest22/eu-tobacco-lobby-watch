@@ -15,13 +15,6 @@
     width: 3rem;
   }
   .chart-axis-line { stroke: var(--grey-border); stroke-width: 1; }
-  .chart-subheading {
-    display: block;
-    margin: 0 0 0.35rem;
-  }
-  section#statistiques .chart-subheading:not(:first-of-type) {
-    margin-top: 2.5rem;
-  }
 </style>
 </head>
 <body>
@@ -145,11 +138,68 @@
       </button>
       <div class="collapsible-body" id="meetings-body">
         <p class="section-intro">
-          Les 5 réunions les plus récentes déclarées par des lobbies concernant le tabac : réunions
-          des organisations suivies (Parlement et Commission) et, côté Parlement uniquement, réunions
-          trouvées par recherche mot-clé impliquant d'autres acteurs. Cliquez sur une réunion pour voir le détail.
+          Les réunions les plus récentes déclarées par des lobbies concernant le tabac : réunions
+          des organisations suivies (Parlement et Commission) et réunions trouvées par recherche mot-clé
+          impliquant d'autres acteurs. Cliquez sur une réunion pour voir le détail.
         </p>
         <div class="meetings-list" id="latest-meetings"></div>
+        <div class="table-toggle-wrapper" id="meetings-toggle-wrapper">
+          <button class="toggle-btn" id="toggle-meetings-btn"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 1.5rem;">
+      <button class="collapsible-toggle" id="accreditations-toggle" aria-expanded="false">
+        <span class="collapsible-icon">▸</span>
+        <span class="title-stamp">Nouveaux lobbyistes accrédités</span>
+      </button>
+      <div class="collapsible-body" id="accreditations-body">
+        <p class="section-intro">
+          Les 3 personnes les plus récemment accréditées pour l'accès aux bâtiments du Parlement européen, tous
+          organismes confondus parmi nos 48 organisations suivies, classées par date de début d'accréditation.
+        </p>
+        <div class="card" style="overflow: hidden;">
+          <table>
+            <thead>
+              <tr>
+                <th>Personne</th>
+                <th>Organisation</th>
+                <th>Date de début</th>
+              </tr>
+            </thead>
+            <tbody id="new-accreditations-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 1.5rem;">
+      <button class="collapsible-toggle" id="new-registrants-toggle" aria-expanded="false">
+        <span class="collapsible-icon">▸</span>
+        <span class="title-stamp">Dernières inscriptions au registre mentionnant tabac, nicotine ou vape</span>
+      </button>
+      <div class="collapsible-body" id="new-registrants-body">
+        <p class="section-intro">
+          Les 3 dernières organisations inscrites au registre de transparence de l'UE dont le nom ou l'objet
+          déclaré mentionne tabac/nicotine/vape, classées par date d'inscription. Veille brute,
+          <strong>tous types d'acteurs confondus</strong> : cette liste n'est pas triée par type d'acteur et peut
+          donc contenir aussi bien des organisations industrielles, des ONG de santé publique que des acteurs
+          neutres. Aucun champ du registre ne permet de distinguer ces catégories de façon fiable (voir
+          NOTES.md). Complétée au fil des exécutions nocturnes ; le flux étant rare, moins de 3 organisations
+          peuvent apparaître ici pour l'instant.
+        </p>
+        <div class="card" style="overflow: hidden;">
+          <table>
+            <thead>
+              <tr>
+                <th>Organisation</th>
+                <th>Date d'inscription</th>
+              </tr>
+            </thead>
+            <tbody id="new-registrants-table-body"></tbody>
+          </table>
+        </div>
       </div>
     </div>
   </section>
@@ -157,24 +207,38 @@
   <section id="statistiques">
     <h2>Statistiques sur le lobby du tabac</h2>
 
-    <h3 class="title-stamp chart-subheading">Nombre de réunions par mois depuis janvier 2025</h3>
-    <p class="section-intro">Réunions déclarées chaque mois par les organisations suivies, Parlement européen et Commission confondus (un point = le nombre de réunions ce mois-là, pas un cumul).</p>
-    <div class="card chart-wrapper">
-      <div id="monthly-chart"></div>
+    <div class="card">
+      <button class="collapsible-toggle" id="monthly-chart-toggle" aria-expanded="false">
+        <span class="collapsible-icon">▸</span>
+        <span class="title-stamp">Nombre de réunions par mois depuis janvier 2025</span>
+      </button>
+      <div class="collapsible-body" id="monthly-chart-body">
+        <p class="section-intro">Réunions déclarées chaque mois par les organisations suivies, Parlement européen et Commission confondus (un point = le nombre de réunions ce mois-là, pas un cumul).</p>
+        <div class="chart-wrapper">
+          <div id="monthly-chart"></div>
+        </div>
+      </div>
     </div>
 
-    <h3 class="title-stamp chart-subheading" id="budget-chart-heading">Évolution du budget lobby des principales organisations en Europe</h3>
-    <p class="section-intro">Historique du budget annuel déclaré par cinq organisations parmi les plus actives, tel que publié par LobbyFacts.</p>
-    <div class="card chart-wrapper">
-      <div id="budget-chart"></div>
+    <div class="card" style="margin-top: 1.5rem;">
+      <button class="collapsible-toggle" id="budget-chart-toggle" aria-expanded="false">
+        <span class="collapsible-icon">▸</span>
+        <span class="title-stamp" id="budget-chart-heading">Évolution du budget lobby des principales organisations en Europe</span>
+      </button>
+      <div class="collapsible-body" id="budget-chart-body">
+        <p class="section-intro">Historique du budget annuel déclaré par cinq organisations parmi les plus actives, tel que publié par LobbyFacts.</p>
+        <div class="chart-wrapper">
+          <div id="budget-chart"></div>
+        </div>
+        <p class="section-intro">
+          Ces chiffres correspondent à la borne basse des fourchettes de budget déclarées par les organisations,
+          telle que publiée par LobbyFacts pour chaque année. Le total affiché en page d'accueil utilise la borne
+          haute de la fourchette la plus récente ; aucun historique n'existe pour cette borne haute sur les années
+          passées, les deux chiffres ne sont donc pas directement comparables.
+        </p>
+        <p class="updated-note" id="budget-updated-note"></p>
+      </div>
     </div>
-    <p class="section-intro">
-      Ces chiffres correspondent à la borne basse des fourchettes de budget déclarées par les organisations,
-      telle que publiée par LobbyFacts pour chaque année. Le total affiché en page d'accueil utilise la borne
-      haute de la fourchette la plus récente ; aucun historique n'existe pour cette borne haute sur les années
-      passées, les deux chiffres ne sont donc pas directement comparables.
-    </p>
-    <p class="updated-note" id="budget-updated-note"></p>
   </section>
 </main>
 
@@ -205,6 +269,8 @@ function renderStats(aggregate, nbEntities) {
 const INITIAL_ORG_PREVIEW_COUNT = 5;
 const INITIAL_MEP_COUNT = 3;
 const TOP_MEP_COUNT = 20;
+const INITIAL_MEETINGS_COUNT = 5;
+const MEETINGS_LIMIT = 20;
 
 /* ---------- Graphique réunions par mois ---------- */
 
@@ -442,6 +508,10 @@ function renderPilotBudgetChart(organisations) {
   setupCollapsible('orgs-preview-toggle', 'orgs-preview-body');
   setupCollapsible('meetings-toggle', 'meetings-body');
   setupCollapsible('meps-toggle', 'meps-body');
+  setupCollapsible('monthly-chart-toggle', 'monthly-chart-body');
+  setupCollapsible('budget-chart-toggle', 'budget-chart-body');
+  setupCollapsible('accreditations-toggle', 'accreditations-body');
+  setupCollapsible('new-registrants-toggle', 'new-registrants-body');
 
   let orgs = [];
   try {
@@ -454,8 +524,17 @@ function renderPilotBudgetChart(organisations) {
     const ecOutside = aggregate.ec_meetings_outside_our_46;
     renderStats(computeCombinedMeetingTotals(aggregate, epOutside, ecOutside), entities.length);
 
-    const latest = computeLatestMeetings(orgs, epOutside, ecOutside);
-    renderLatestMeetings(latest, 'latest-meetings');
+    const latest = computeLatestMeetings(orgs, epOutside, ecOutside, MEETINGS_LIMIT);
+    renderLatestMeetings(latest, 'latest-meetings', INITIAL_MEETINGS_COUNT);
+    setupTableToggle({
+      tbodyId: 'latest-meetings',
+      wrapperId: 'meetings-toggle-wrapper',
+      btnId: 'toggle-meetings-btn',
+      total: latest.length,
+      initialCount: INITIAL_MEETINGS_COUNT,
+      labelPrefix: `Voir les ${latest.length} dernières réunions`,
+      appendTotal: false,
+    });
 
     const top5ByBudget = sortedByBudget.slice(0, INITIAL_ORG_PREVIEW_COUNT);
     renderOrgTable(top5ByBudget, 'orgs-preview-table-body', top5ByBudget.length);
@@ -472,6 +551,9 @@ function renderPilotBudgetChart(organisations) {
     });
 
     renderMonthlyChart(computeMonthlyMeetingCounts(orgs, epOutside, ecOutside));
+
+    renderNewAccreditations(computeRecentAccreditations(orgs, 3), 'new-accreditations-table-body');
+    renderNewRegistrants((aggregate.new_tobacco_registrants || []).slice(0, 3), 'new-registrants-table-body');
 
     const updatedAt = aggregate.computed_at ? new Date(aggregate.computed_at) : null;
     document.getElementById('updated-note').textContent = updatedAt

@@ -45,6 +45,7 @@ function mergeOrg(entity, liveData) {
     ecMeetings,
     epMeetingsList,
     ecMeetingsList,
+    accreditedPersons: (live && live.accredited_persons) ? live.accredited_persons : [],
     lobbyfactsStatus: live && live.lobbyfacts ? live.lobbyfacts.status : null,
     lobbyfactsSnapshot: live && live.lobbyfacts ? live.lobbyfacts.snapshot_date : null,
   };
@@ -78,7 +79,7 @@ function formatFullDate(isoDate) {
   return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
 }
 
-function setupTableToggle({ tbodyId, wrapperId, btnId, total, initialCount, labelPrefix }) {
+function setupTableToggle({ tbodyId, wrapperId, btnId, total, initialCount, labelPrefix, appendTotal = true }) {
   const wrapper = document.getElementById(wrapperId);
   const btn = document.getElementById(btnId);
   const tbody = document.getElementById(tbodyId);
@@ -88,7 +89,7 @@ function setupTableToggle({ tbodyId, wrapperId, btnId, total, initialCount, labe
     return;
   }
 
-  const collapsedLabel = `${labelPrefix} (${total})`;
+  const collapsedLabel = appendTotal ? `${labelPrefix} (${total})` : labelPrefix;
   btn.textContent = collapsedLabel;
 
   btn.addEventListener('click', () => {
@@ -370,7 +371,7 @@ function isExcludedFromLobbySearch(name) {
   return EXCLUDED_LOBBY_SEARCH_NAMES.some(excluded => lower.includes(excluded.toLowerCase()));
 }
 
-function computeLatestMeetings(orgs, epOutsideList, ecOutsideList) {
+function computeLatestMeetings(orgs, epOutsideList, ecOutsideList, limit) {
   const combined = [];
 
   orgs.forEach(org => {
@@ -440,10 +441,10 @@ function computeLatestMeetings(orgs, epOutsideList, ecOutsideList) {
   });
 
   deduped.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
-  return deduped.slice(0, 5);
+  return deduped.slice(0, limit ?? 5);
 }
 
-function renderLatestMeetings(latest, containerId) {
+function renderLatestMeetings(latest, containerId, initialCount) {
   const container = document.getElementById(containerId);
 
   if (!latest.length) {
@@ -454,9 +455,10 @@ function renderLatestMeetings(latest, containerId) {
   const rows = [];
   latest.forEach((m, i) => {
     const institutionLabel = m.institution === 'parliament' ? 'Parlement européen' : 'Commission européenne';
+    const extraClass = initialCount && i >= initialCount ? ' extra-row' : '';
 
     rows.push(`
-      <div class="meeting-item" data-index="${i}">
+      <div class="meeting-item${extraClass}" data-index="${i}">
         <span class="meeting-date">${formatDate(m.date)}</span>
         <span class="meeting-org">
           ${m.orgName}
@@ -467,7 +469,7 @@ function renderLatestMeetings(latest, containerId) {
     `);
 
     rows.push(`
-      <div class="meeting-detail" id="${containerId}-detail-${i}">
+      <div class="meeting-detail${extraClass}" id="${containerId}-detail-${i}">
         <div class="detail-grid">
           <div>
             <dt>Organisation</dt><dd>${m.orgName}</dd>
@@ -590,4 +592,58 @@ function renderOutsideOrganisations(list, tbodyId, initialCount) {
       detail.classList.toggle('open');
     });
   });
+}
+
+/* ---------- Nouvelles inscriptions au registre (veille brute, non triée) ---------- */
+
+function renderNewRegistrants(list, tbodyId) {
+  const tbody = document.getElementById(tbodyId);
+
+  if (!list || !list.length) {
+    tbody.innerHTML = '<tr><td colspan="2" class="muted">Aucune nouvelle inscription détectée pour l\'instant.</td></tr>';
+    return;
+  }
+
+  tbody.innerHTML = list.map(r => `
+    <tr>
+      <td data-label="Organisation"><a href="${r.register_url}" target="_blank" rel="noopener">${r.name}</a></td>
+      <td data-label="Date d'inscription">${formatDate(r.registration_date)}</td>
+    </tr>
+  `).join('');
+}
+
+/* ---------- Nouveaux lobbyistes accrédités (nos 48 organisations) ---------- */
+
+function computeRecentAccreditations(orgs, limit) {
+  const all = [];
+  orgs.forEach(org => {
+    (org.accreditedPersons || []).forEach(p => {
+      if (!p.start_date) return;
+      all.push({
+        surname: p.surname,
+        first_name: p.first_name,
+        start_date: p.start_date,
+        org_name: org.name,
+      });
+    });
+  });
+  all.sort((a, b) => (b.start_date || '').localeCompare(a.start_date || ''));
+  return all.slice(0, limit);
+}
+
+function renderNewAccreditations(list, tbodyId) {
+  const tbody = document.getElementById(tbodyId);
+
+  if (!list || !list.length) {
+    tbody.innerHTML = '<tr><td colspan="3" class="muted">Aucune personne accréditée trouvée.</td></tr>';
+    return;
+  }
+
+  tbody.innerHTML = list.map(a => `
+    <tr>
+      <td data-label="Personne">${a.first_name} ${a.surname}</td>
+      <td data-label="Organisation">${a.org_name}</td>
+      <td data-label="Date de début">${formatDate(a.start_date)}</td>
+    </tr>
+  `).join('');
 }
