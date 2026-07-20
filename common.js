@@ -45,6 +45,7 @@ function mergeOrg(entity, liveData) {
     ecMeetings,
     epMeetingsList,
     ecMeetingsList,
+    accreditedPersons: (live && live.accredited_persons) ? live.accredited_persons : [],
     lobbyfactsStatus: live && live.lobbyfacts ? live.lobbyfacts.status : null,
     lobbyfactsSnapshot: live && live.lobbyfacts ? live.lobbyfacts.snapshot_date : null,
   };
@@ -613,11 +614,28 @@ function renderNewRegistrants(list, tbodyId) {
 
 /* ---------- Nouveaux lobbyistes accrédités (nos 48 organisations) ---------- */
 
+function computeRecentAccreditations(orgs, limit) {
+  const all = [];
+  orgs.forEach(org => {
+    (org.accreditedPersons || []).forEach(p => {
+      if (!p.start_date) return;
+      all.push({
+        surname: p.surname,
+        first_name: p.first_name,
+        start_date: p.start_date,
+        org_name: org.name,
+      });
+    });
+  });
+  all.sort((a, b) => (b.start_date || '').localeCompare(a.start_date || ''));
+  return all.slice(0, limit);
+}
+
 function renderNewAccreditations(list, tbodyId) {
   const tbody = document.getElementById(tbodyId);
 
   if (!list || !list.length) {
-    tbody.innerHTML = '<tr><td colspan="3" class="muted">Aucune nouvelle accréditation détectée pour l\'instant.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="3" class="muted">Aucune personne accréditée trouvée.</td></tr>';
     return;
   }
 

@@ -156,10 +156,8 @@
       </button>
       <div class="collapsible-body" id="accreditations-body">
         <p class="section-intro">
-          Nouvelles personnes accréditées pour l'accès aux bâtiments du Parlement européen, détectées parmi nos
-          48 organisations suivies (nom, organisation, date de début de l'accréditation). Liste cumulée au fil
-          des exécutions nocturnes : aucune donnée n'apparaît lors de la toute première détection pour une
-          organisation, le temps d'établir une référence de comparaison.
+          Les 3 personnes les plus récemment accréditées pour l'accès aux bâtiments du Parlement européen, tous
+          organismes confondus parmi nos 48 organisations suivies, classées par date de début d'accréditation.
         </p>
         <div class="card" style="overflow: hidden;">
           <table>
@@ -183,11 +181,13 @@
       </button>
       <div class="collapsible-body" id="new-registrants-body">
         <p class="section-intro">
-          Veille brute des nouvelles organisations inscrites au registre de transparence de l'UE dont le nom ou
-          l'objet déclaré mentionne tabac/nicotine/vape, <strong>tous types d'acteurs confondus</strong> : cette
-          liste n'est pas triée par type d'acteur et peut donc contenir aussi bien des organisations industrielles,
-          des ONG de santé publique que des acteurs neutres. Aucun champ du registre ne permet de distinguer ces
-          catégories de façon fiable (voir NOTES.md). Liste cumulée au fil des exécutions nocturnes.
+          Les 3 dernières organisations inscrites au registre de transparence de l'UE dont le nom ou l'objet
+          déclaré mentionne tabac/nicotine/vape, classées par date d'inscription. Veille brute,
+          <strong>tous types d'acteurs confondus</strong> : cette liste n'est pas triée par type d'acteur et peut
+          donc contenir aussi bien des organisations industrielles, des ONG de santé publique que des acteurs
+          neutres. Aucun champ du registre ne permet de distinguer ces catégories de façon fiable (voir
+          NOTES.md). Complétée au fil des exécutions nocturnes ; le flux étant rare, moins de 3 organisations
+          peuvent apparaître ici pour l'instant.
         </p>
         <div class="card" style="overflow: hidden;">
           <table>
@@ -552,8 +552,8 @@ function renderPilotBudgetChart(organisations) {
 
     renderMonthlyChart(computeMonthlyMeetingCounts(orgs, epOutside, ecOutside));
 
-    renderNewAccreditations(aggregate.new_lobbyist_accreditations, 'new-accreditations-table-body');
-    renderNewRegistrants(aggregate.new_tobacco_registrants, 'new-registrants-table-body');
+    renderNewAccreditations(computeRecentAccreditations(orgs, 3), 'new-accreditations-table-body');
+    renderNewRegistrants((aggregate.new_tobacco_registrants || []).slice(0, 3), 'new-registrants-table-body');
 
     const updatedAt = aggregate.computed_at ? new Date(aggregate.computed_at) : null;
     document.getElementById('updated-note').textContent = updatedAt
