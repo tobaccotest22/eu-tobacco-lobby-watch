@@ -148,6 +148,60 @@
         </div>
       </div>
     </div>
+
+    <div class="card" style="margin-top: 1.5rem;">
+      <button class="collapsible-toggle" id="accreditations-toggle" aria-expanded="false">
+        <span class="collapsible-icon">▸</span>
+        <span class="title-stamp">Nouveaux lobbyistes accrédités</span>
+      </button>
+      <div class="collapsible-body" id="accreditations-body">
+        <p class="section-intro">
+          Nouvelles personnes accréditées pour l'accès aux bâtiments du Parlement européen, détectées parmi nos
+          48 organisations suivies (nom, organisation, date de début de l'accréditation). Liste cumulée au fil
+          des exécutions nocturnes : aucune donnée n'apparaît lors de la toute première détection pour une
+          organisation, le temps d'établir une référence de comparaison.
+        </p>
+        <div class="card" style="overflow: hidden;">
+          <table>
+            <thead>
+              <tr>
+                <th>Personne</th>
+                <th>Organisation</th>
+                <th>Date de début</th>
+              </tr>
+            </thead>
+            <tbody id="new-accreditations-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 1.5rem;">
+      <button class="collapsible-toggle" id="new-registrants-toggle" aria-expanded="false">
+        <span class="collapsible-icon">▸</span>
+        <span class="title-stamp">Dernières inscriptions au registre mentionnant tabac, nicotine ou vape</span>
+      </button>
+      <div class="collapsible-body" id="new-registrants-body">
+        <p class="section-intro">
+          Veille brute des nouvelles organisations inscrites au registre de transparence de l'UE dont le nom ou
+          l'objet déclaré mentionne tabac/nicotine/vape, <strong>tous types d'acteurs confondus</strong> : cette
+          liste n'est pas triée par type d'acteur et peut donc contenir aussi bien des organisations industrielles,
+          des ONG de santé publique que des acteurs neutres. Aucun champ du registre ne permet de distinguer ces
+          catégories de façon fiable (voir NOTES.md). Liste cumulée au fil des exécutions nocturnes.
+        </p>
+        <div class="card" style="overflow: hidden;">
+          <table>
+            <thead>
+              <tr>
+                <th>Organisation</th>
+                <th>Date d'inscription</th>
+              </tr>
+            </thead>
+            <tbody id="new-registrants-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="statistiques">
@@ -456,6 +510,8 @@ function renderPilotBudgetChart(organisations) {
   setupCollapsible('meps-toggle', 'meps-body');
   setupCollapsible('monthly-chart-toggle', 'monthly-chart-body');
   setupCollapsible('budget-chart-toggle', 'budget-chart-body');
+  setupCollapsible('accreditations-toggle', 'accreditations-body');
+  setupCollapsible('new-registrants-toggle', 'new-registrants-body');
 
   let orgs = [];
   try {
@@ -495,6 +551,9 @@ function renderPilotBudgetChart(organisations) {
     });
 
     renderMonthlyChart(computeMonthlyMeetingCounts(orgs, epOutside, ecOutside));
+
+    renderNewAccreditations(aggregate.new_lobbyist_accreditations, 'new-accreditations-table-body');
+    renderNewRegistrants(aggregate.new_tobacco_registrants, 'new-registrants-table-body');
 
     const updatedAt = aggregate.computed_at ? new Date(aggregate.computed_at) : null;
     document.getElementById('updated-note').textContent = updatedAt

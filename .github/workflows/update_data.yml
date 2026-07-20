@@ -41,6 +41,9 @@ jobs:
       - name: Réunions Commission par recherche mot-clé (hors organisations suivies)
         run: python scripts/fetch_ec_keyword_meetings.py
 
+      - name: Nouvelles inscriptions au registre mentionnant tabac/nicotine/vape
+        run: python scripts/fetch_new_registrants.py
+
       - name: Sauvegarder le résultat dans le dépôt
         run: |
           git config user.name "github-actions"

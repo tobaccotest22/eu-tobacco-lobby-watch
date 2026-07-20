@@ -592,3 +592,40 @@ function renderOutsideOrganisations(list, tbodyId, initialCount) {
     });
   });
 }
+
+/* ---------- Nouvelles inscriptions au registre (veille brute, non triée) ---------- */
+
+function renderNewRegistrants(list, tbodyId) {
+  const tbody = document.getElementById(tbodyId);
+
+  if (!list || !list.length) {
+    tbody.innerHTML = '<tr><td colspan="2" class="muted">Aucune nouvelle inscription détectée pour l\'instant.</td></tr>';
+    return;
+  }
+
+  tbody.innerHTML = list.map(r => `
+    <tr>
+      <td data-label="Organisation"><a href="${r.register_url}" target="_blank" rel="noopener">${r.name}</a></td>
+      <td data-label="Date d'inscription">${formatDate(r.registration_date)}</td>
+    </tr>
+  `).join('');
+}
+
+/* ---------- Nouveaux lobbyistes accrédités (nos 48 organisations) ---------- */
+
+function renderNewAccreditations(list, tbodyId) {
+  const tbody = document.getElementById(tbodyId);
+
+  if (!list || !list.length) {
+    tbody.innerHTML = '<tr><td colspan="3" class="muted">Aucune nouvelle accréditation détectée pour l\'instant.</td></tr>';
+    return;
+  }
+
+  tbody.innerHTML = list.map(a => `
+    <tr>
+      <td data-label="Personne">${a.first_name} ${a.surname}</td>
+      <td data-label="Organisation">${a.org_name}</td>
+      <td data-label="Date de début">${formatDate(a.start_date)}</td>
+    </tr>
+  `).join('');
+}
