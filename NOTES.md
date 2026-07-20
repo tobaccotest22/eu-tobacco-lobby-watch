@@ -47,3 +47,14 @@ de classer à tort ces réunions comme provenant d'un acteur "hors liste".
    (`#acteurs`, `#actualites`, `#statistiques`) et sections dépliables ;
    `organisations.html` reste une page séparée pour la liste complète des
    organisations.
+4. ✅ Fait (2026-07-20) : `scripts/fetch_new_registrants.py` alimente la
+   sous-section "Dernières inscriptions au registre..." de la section
+   Actualités. Aucun champ structuré du registre de transparence de l'UE
+   ne permet de distinguer fiablement un lobby tabac d'une ONG anti-tabac
+   ou d'un acteur neutre : "Domaines d'intérêt" est une liste fixe d'une
+   vingtaine de grandes thématiques UE (dont "Santé publique") que les
+   organisations industrielles cochent tout autant que les ONG ; "Catégorie
+   d'enregistrement" ne distingue que le type d'acteur (société, ONG,
+   cabinet...), pas le secteur. C'est pourquoi cette sous-section est une
+   veille brute non triée, tous types d'acteurs confondus, plutôt qu'une
+   liste filtrée par catégorie.

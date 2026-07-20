@@ -5454,6 +5454,506 @@
     ],
     "new_lobbyist_accreditations": [],
     "new_lobbyist_accreditations_count": 0,
-    "new_lobbyist_accreditations_computed_at": "2026-07-20T10:17:28.627117+00:00"
+    "new_lobbyist_accreditations_computed_at": "2026-07-20T10:17:28.627117+00:00",
+    "new_tobacco_registrants": [
+      {
+        "id": "6574268105267-21",
+        "name": "Compañía Canariense de Tabacos, SA",
+        "registration_date": "2026-07-16",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=6574268105267-21",
+        "matched_via": "recherche historique (cigar)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "0234482103435-18",
+        "name": "GEjSER ApS",
+        "registration_date": "2026-04-09",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=0234482103435-18",
+        "matched_via": "recherche historique (vape)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "2546541102855-58",
+        "name": "No More Butts",
+        "registration_date": "2026-03-05",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=2546541102855-58",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "3624972102470-93",
+        "name": "WNC Global Ltd",
+        "registration_date": "2026-02-09",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=3624972102470-93",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "6079335102465-07",
+        "name": "KŪB \"Vento Nuovo Partneriai\"",
+        "registration_date": "2026-02-09",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=6079335102465-07",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "6232985102346-24",
+        "name": "Asociación de Productores de Productos del Tabaco con Filtro y de Productores de Filtros Comercializados para Utilizarse en Combinación con Productos del Tabaco Sujetos a Responsabilidad Ampliada del Productor",
+        "registration_date": "2026-02-04",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=6232985102346-24",
+        "matched_via": "recherche historique (tabac)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "2845373100785-82",
+        "name": "Nofumadores.org",
+        "registration_date": "2025-10-14",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=2845373100785-82",
+        "matched_via": "recherche historique (nicotine)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "324603699802-81",
+        "name": "HG Innovation Ltd",
+        "registration_date": "2025-07-24",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=324603699802-81",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "042560099426-95",
+        "name": "LPV COMPANY",
+        "registration_date": "2025-06-30",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=042560099426-95",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "174447099137-38",
+        "name": "Smoke Free Sweden",
+        "registration_date": "2025-06-16",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=174447099137-38",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "347372799139-19",
+        "name": "HEATED COMMUNITY HUB",
+        "registration_date": "2025-06-16",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=347372799139-19",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "207263897934-45",
+        "name": "Global Institute for Novel Nicotine",
+        "registration_date": "2025-04-25",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=207263897934-45",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "751145797684-62",
+        "name": "DNF-Demain sera Non-Fumeur",
+        "registration_date": "2025-04-14",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=751145797684-62",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "491937195894-38",
+        "name": "SkrufSnusAB",
+        "registration_date": "2025-01-28",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=491937195894-38",
+        "matched_via": "recherche historique (snus)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "028246494181-15",
+        "name": "Turkish Green Crescent Society",
+        "registration_date": "2024-10-14",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=028246494181-15",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "711749092340-34",
+        "name": "TerraCycle, Inc.",
+        "registration_date": "2024-06-26",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=711749092340-34",
+        "matched_via": "recherche historique (cigarette)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "009188192222-11",
+        "name": "Gebr. Heinemann SE & Co. KG",
+        "registration_date": "2024-06-08",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=009188192222-11",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "699117449519-84",
+        "name": "European Network for Smoking andTobaccoPrevention",
+        "registration_date": "2023-03-22",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=699117449519-84",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "432272548963-49",
+        "name": "Nordic Nicotine Pouches Alliance",
+        "registration_date": "2023-02-20",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=432272548963-49",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "967176048226-12",
+        "name": "Nissha Metallizing Solutions",
+        "registration_date": "2022-11-30",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=967176048226-12",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "461250348032-23",
+        "name": "Fossil Free Politics",
+        "registration_date": "2022-11-16",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=461250348032-23",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "324431447370-28",
+        "name": "EUROPEAN EXCISE ASSOCIATION",
+        "registration_date": "2022-08-26",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=324431447370-28",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "036866245389-48",
+        "name": "Association Indépendante Des Utilisateurs deCigaretteElectronique",
+        "registration_date": "2022-02-03",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=036866245389-48",
+        "matched_via": "recherche historique (cigarette)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "666766243768-51",
+        "name": "Bündnis für Tabakfreien Genuss e.V.",
+        "registration_date": "2021-08-03",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=666766243768-51",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "395191843166-76",
+        "name": "Asociación Española de Usuarios de Vaporizadores Personales",
+        "registration_date": "2021-06-15",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=395191843166-76",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "049139043109-57",
+        "name": "Unión de Promotores y Empresarios del Vapeo",
+        "registration_date": "2021-06-11",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=049139043109-57",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "363299842989-87",
+        "name": "Contre-feu",
+        "registration_date": "2021-06-02",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=363299842989-87",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "203577642776-25",
+        "name": "Slovenian NCD Alliance",
+        "registration_date": "2021-05-14",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=203577642776-25",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "066314042392-60",
+        "name": "MESA DEL TABACO",
+        "registration_date": "2021-04-20",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=066314042392-60",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "642478741759-44",
+        "name": "New Nicotine Alliance UK",
+        "registration_date": "2021-04-01",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=642478741759-44",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "680379741539-17",
+        "name": "Center of Excellence for the acceleration of Harm Reduction",
+        "registration_date": "2021-02-23",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=680379741539-17",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "923722741363-26",
+        "name": "New Nicotine Alliance Ireland",
+        "registration_date": "2021-02-09",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=923722741363-26",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "876337940850-36",
+        "name": "European Shisha Community Alliance",
+        "registration_date": "2021-01-05",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=876337940850-36",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "244225040481-16",
+        "name": "Fonds de Dotation Vital Strategies",
+        "registration_date": "2020-12-16",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=244225040481-16",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "775494740511-57",
+        "name": "Bundesverband der Zigarrenindustrie e.V.",
+        "registration_date": "2020-11-30",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=775494740511-57",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "691767940011-92",
+        "name": "ERION COMPLIANCE ORGANIZATION S.C.A R.L.",
+        "registration_date": "2020-10-22",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=691767940011-92",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "102135939541-25",
+        "name": "TOBACCOAND NICOTINE PRODUCTS CHEMICALS GROUP",
+        "registration_date": "2020-09-10",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=102135939541-25",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "583622337776-40",
+        "name": "DOS SANTOS",
+        "registration_date": "2020-04-06",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=583622337776-40",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "354946837243-73",
+        "name": "EuropeanTobaccoHarm Reduction Advocates",
+        "registration_date": "2020-02-06",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=354946837243-73",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "132577234842-10",
+        "name": "Independent European Vape Alliance",
+        "registration_date": "2019-05-16",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=132577234842-10",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "607621632219-36",
+        "name": "JUUL Labs UK Ltd",
+        "registration_date": "2018-08-01",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=607621632219-36",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "220201831871-76",
+        "name": "Dansk e-Damper Forening",
+        "registration_date": "2018-06-23",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=220201831871-76",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "561774327473-01",
+        "name": "ANPAA",
+        "registration_date": "2017-06-15",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=561774327473-01",
+        "matched_via": "recherche historique (tabac)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "124135527355-29",
+        "name": "J.CORTES CIGARS N.V.",
+        "registration_date": "2017-06-02",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=124135527355-29",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "923856024330-39",
+        "name": "Manufacture de Tabacs Heintz van Landewyck",
+        "registration_date": "2016-11-05",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=923856024330-39",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "224656024222-52",
+        "name": "KARELIATOBACCOCOMPANY INC",
+        "registration_date": "2016-10-31",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=224656024222-52",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "462081624095-48",
+        "name": "LOGISTA INTEGRAL, S.A.",
+        "registration_date": "2016-10-26",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=462081624095-48",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "792847423808-38",
+        "name": "Unión de Asociaciones de Estanqueros de España",
+        "registration_date": "2016-10-10",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=792847423808-38",
+        "matched_via": "recherche historique (tabac)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "220895323207-46",
+        "name": "Comité national contre le tabagisme",
+        "registration_date": "2016-09-05",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=220895323207-46",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "389796615375-43",
+        "name": "Asociación Empresarial del Tabaco",
+        "registration_date": "2014-12-23",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=389796615375-43",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "835059415132-95",
+        "name": "Fédération Européenne des Transformateurs de Tabac",
+        "registration_date": "2014-12-03",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=835059415132-95",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "78764438624-42",
+        "name": "Federazione Italiana Tabaccai",
+        "registration_date": "2012-04-18",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=78764438624-42",
+        "matched_via": "recherche historique (tabac)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "71175716023-03",
+        "name": "JT International",
+        "registration_date": "2011-06-14",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=71175716023-03",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "62460931291-40",
+        "name": "Imperial Brands PLC",
+        "registration_date": "2011-02-08",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=62460931291-40",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "85326064523-94",
+        "name": "Confédération Européenne des Détaillants enTabac",
+        "registration_date": "2010-11-12",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=85326064523-94",
+        "matched_via": "recherche historique (tabac)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "19265592757-25",
+        "name": "Association of European Cancer Leagues",
+        "registration_date": "2009-12-10",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=19265592757-25",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "51925911965-76",
+        "name": "Philip Morris International Inc.",
+        "registration_date": "2009-07-07",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=51925911965-76",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "92802501097-37",
+        "name": "European Cigar Manufacturers Association",
+        "registration_date": "2009-02-09",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=92802501097-37",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "2427500988-58",
+        "name": "British AmericanTobacco",
+        "registration_date": "2009-01-21",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=2427500988-58",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "0138855852-93",
+        "name": "European SmokingTobaccoAssociation",
+        "registration_date": "2009-01-05",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=0138855852-93",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "1496873833-97",
+        "name": "TobaccoEurope AISBL",
+        "registration_date": "2008-12-19",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=1496873833-97",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      },
+      {
+        "id": "6403725595-50",
+        "name": "The Smoke Free Partnership",
+        "registration_date": "2008-10-31",
+        "register_url": "https://transparency-register.europa.eu/search-register-or-update/organisation-detail_fr?id=6403725595-50",
+        "matched_via": "recherche historique (tobacco)",
+        "detected_at": "2026-07-20T14:23:54.130360+00:00"
+      }
+    ],
+    "new_tobacco_registrants_count": 62,
+    "new_tobacco_registrants_computed_at": "2026-07-20T14:23:54.130360+00:00"
   }
 }
