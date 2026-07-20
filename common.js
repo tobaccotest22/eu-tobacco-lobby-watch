@@ -78,7 +78,7 @@ function formatFullDate(isoDate) {
   return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
 }
 
-function setupTableToggle({ tbodyId, wrapperId, btnId, total, initialCount, labelPrefix }) {
+function setupTableToggle({ tbodyId, wrapperId, btnId, total, initialCount, labelPrefix, appendTotal = true }) {
   const wrapper = document.getElementById(wrapperId);
   const btn = document.getElementById(btnId);
   const tbody = document.getElementById(tbodyId);
@@ -88,7 +88,7 @@ function setupTableToggle({ tbodyId, wrapperId, btnId, total, initialCount, labe
     return;
   }
 
-  const collapsedLabel = `${labelPrefix} (${total})`;
+  const collapsedLabel = appendTotal ? `${labelPrefix} (${total})` : labelPrefix;
   btn.textContent = collapsedLabel;
 
   btn.addEventListener('click', () => {
@@ -370,7 +370,7 @@ function isExcludedFromLobbySearch(name) {
   return EXCLUDED_LOBBY_SEARCH_NAMES.some(excluded => lower.includes(excluded.toLowerCase()));
 }
 
-function computeLatestMeetings(orgs, epOutsideList, ecOutsideList) {
+function computeLatestMeetings(orgs, epOutsideList, ecOutsideList, limit) {
   const combined = [];
 
   orgs.forEach(org => {
@@ -440,10 +440,10 @@ function computeLatestMeetings(orgs, epOutsideList, ecOutsideList) {
   });
 
   deduped.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
-  return deduped.slice(0, 5);
+  return deduped.slice(0, limit ?? 5);
 }
 
-function renderLatestMeetings(latest, containerId) {
+function renderLatestMeetings(latest, containerId, initialCount) {
   const container = document.getElementById(containerId);
 
   if (!latest.length) {
@@ -454,9 +454,10 @@ function renderLatestMeetings(latest, containerId) {
   const rows = [];
   latest.forEach((m, i) => {
     const institutionLabel = m.institution === 'parliament' ? 'Parlement européen' : 'Commission européenne';
+    const extraClass = initialCount && i >= initialCount ? ' extra-row' : '';
 
     rows.push(`
-      <div class="meeting-item" data-index="${i}">
+      <div class="meeting-item${extraClass}" data-index="${i}">
         <span class="meeting-date">${formatDate(m.date)}</span>
         <span class="meeting-org">
           ${m.orgName}
@@ -467,7 +468,7 @@ function renderLatestMeetings(latest, containerId) {
     `);
 
     rows.push(`
-      <div class="meeting-detail" id="${containerId}-detail-${i}">
+      <div class="meeting-detail${extraClass}" id="${containerId}-detail-${i}">
         <div class="detail-grid">
           <div>
             <dt>Organisation</dt><dd>${m.orgName}</dd>

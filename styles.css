@@ -386,6 +386,10 @@ tr.extra-row { display: none; }
 tbody.show-all tr.extra-row.org-row { display: table-row; }
 tbody.show-all tr.extra-row.detail-row.open { display: table-row; }
 
+.meeting-item.extra-row, .meeting-detail.extra-row { display: none; }
+.meetings-list.show-all .meeting-item.extra-row { display: grid; }
+.meetings-list.show-all .meeting-detail.extra-row.open { display: block; }
+
 .table-toggle-wrapper {
   text-align: center;
   margin-top: 1.5rem;
