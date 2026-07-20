@@ -42,6 +42,8 @@ de classer à tort ces réunions comme provenant d'un acteur "hors liste".
    "hors liste" si son `lobbyist_id` est vide sur une réunion donnée (dans ce
    cas elle s'affiche simplement sous son nom, sans lien vers sa fiche
    registre, ce qui n'est pas trompeur mais reste une piste d'amélioration).
-3. `index.html`, `statistiques.html`, `organisations.html` : tableau de bord
-   réparti sur 3 pages (accueil condensé avec sections dépliables,
-   statistiques/tendances, liste complète des organisations).
+3. ✅ Fait (2026-07-20) : fusion de `statistiques.html` dans `index.html`.
+   `index.html` est désormais une page unique de type "one-page" avec ancres
+   (`#acteurs`, `#actualites`, `#statistiques`) et sections dépliables ;
+   `organisations.html` reste une page séparée pour la liste complète des
+   organisations.

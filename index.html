@@ -14,16 +14,25 @@
     color: var(--blue-dark);
     width: 3rem;
   }
+  .chart-axis-line { stroke: var(--grey-border); stroke-width: 1; }
+  .chart-subheading {
+    display: block;
+    margin: 0 0 0.35rem;
+  }
+  section#statistiques .chart-subheading:not(:first-of-type) {
+    margin-top: 2.5rem;
+  }
 </style>
 </head>
 <body>
 
-<nav class="site-nav">
+<nav class="site-nav" id="top">
   <div class="banner-inner">
     <a href="index.html" class="nav-brand">EU <span class="redacted">████</span> TOBACCO WATCH</a>
     <div class="nav-links">
-      <a href="index.html" class="nav-link active">Accueil</a>
-      <a href="statistiques.html" class="nav-link">Statistiques</a>
+      <a href="#top" class="nav-link active">Accueil</a>
+      <a href="#actualites" class="nav-link">Actualités</a>
+      <a href="#statistiques" class="nav-link">Statistiques</a>
       <a href="organisations.html" class="nav-link">Organisations suivies</a>
     </div>
   </div>
@@ -61,17 +70,14 @@
   </div>
 </div>
 
-<div class="photo-band" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/European_Parliament_Strasbourg_Hemicycle_-_Diliff.jpg/1280px-European_Parliament_Strasbourg_Hemicycle_-_Diliff.jpg');">
-  <div class="photo-band-overlay"></div>
-  <p class="photo-credit">Hémicycle du Parlement européen, Strasbourg — photo : David Iliff, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>, via Wikimedia Commons</p>
-</div>
-
 <main>
-  <section>
+  <section id="acteurs">
+    <h2>Les acteurs du lobby du tabac en Europe</h2>
+
     <div class="card">
       <button class="collapsible-toggle" id="orgs-preview-toggle" aria-expanded="false">
         <span class="collapsible-icon">▸</span>
-        <span class="title-stamp">Quelles sont les principales organisations de lobby du tabac en Europe ?</span>
+        <span class="title-stamp">Principales organisations de lobby</span>
       </button>
       <div class="collapsible-body" id="orgs-preview-body">
         <p class="section-intro">Les 5 organisations suivies au budget annuel déclaré le plus élevé. Cliquez sur une ligne pour voir sa fiche détaillée.</p>
@@ -94,30 +100,11 @@
         <p style="margin: 1rem 0 0;"><a class="register-link" href="organisations.html">Voir toutes les organisations →</a></p>
       </div>
     </div>
-  </section>
 
-  <section>
-    <div class="card">
-      <button class="collapsible-toggle" id="meetings-toggle" aria-expanded="false">
-        <span class="collapsible-icon">▸</span>
-        <span class="title-stamp">Quelles sont les dernières réunions ?</span>
-      </button>
-      <div class="collapsible-body" id="meetings-body">
-        <p class="section-intro">
-          Les 5 réunions les plus récentes déclarées par des lobbies concernant le tabac : réunions
-          des organisations suivies (Parlement et Commission) et, côté Parlement uniquement, réunions
-          trouvées par recherche mot-clé impliquant d'autres acteurs. Cliquez sur une réunion pour voir le détail.
-        </p>
-        <div class="meetings-list" id="latest-meetings"></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="card">
+    <div class="card" style="margin-top: 1.5rem;">
       <button class="collapsible-toggle" id="meps-toggle" aria-expanded="false">
         <span class="collapsible-icon">▸</span>
-        <span class="title-stamp">Quels sont les eurodéputés les plus rencontrés ?</span>
+        <span class="title-stamp">Eurodéputés les plus rencontrés</span>
       </button>
       <div class="collapsible-body" id="meps-body">
         <p class="section-intro">Top 20 des eurodéputés ayant déclaré le plus de réunions avec les organisations suivies, toutes organisations confondues, depuis le 1er janvier 2025. Cliquez sur un eurodéputé pour voir le détail de sa réunion la plus récente.</p>
@@ -146,6 +133,48 @@
         </div>
       </div>
     </div>
+  </section>
+
+  <section id="actualites">
+    <h2>Actualités de ce lobby</h2>
+
+    <div class="card">
+      <button class="collapsible-toggle" id="meetings-toggle" aria-expanded="false">
+        <span class="collapsible-icon">▸</span>
+        <span class="title-stamp">Quelles sont les dernières réunions ?</span>
+      </button>
+      <div class="collapsible-body" id="meetings-body">
+        <p class="section-intro">
+          Les 5 réunions les plus récentes déclarées par des lobbies concernant le tabac : réunions
+          des organisations suivies (Parlement et Commission) et, côté Parlement uniquement, réunions
+          trouvées par recherche mot-clé impliquant d'autres acteurs. Cliquez sur une réunion pour voir le détail.
+        </p>
+        <div class="meetings-list" id="latest-meetings"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="statistiques">
+    <h2>Statistiques sur le lobby du tabac</h2>
+
+    <h3 class="title-stamp chart-subheading">Nombre de réunions par mois depuis janvier 2025</h3>
+    <p class="section-intro">Réunions déclarées chaque mois par les organisations suivies, Parlement européen et Commission confondus (un point = le nombre de réunions ce mois-là, pas un cumul).</p>
+    <div class="card chart-wrapper">
+      <div id="monthly-chart"></div>
+    </div>
+
+    <h3 class="title-stamp chart-subheading" id="budget-chart-heading">Évolution du budget lobby des principales organisations en Europe</h3>
+    <p class="section-intro">Historique du budget annuel déclaré par cinq organisations parmi les plus actives, tel que publié par LobbyFacts.</p>
+    <div class="card chart-wrapper">
+      <div id="budget-chart"></div>
+    </div>
+    <p class="section-intro">
+      Ces chiffres correspondent à la borne basse des fourchettes de budget déclarées par les organisations,
+      telle que publiée par LobbyFacts pour chaque année. Le total affiché en page d'accueil utilise la borne
+      haute de la fourchette la plus récente ; aucun historique n'existe pour cette borne haute sur les années
+      passées, les deux chiffres ne sont donc pas directement comparables.
+    </p>
+    <p class="updated-note" id="budget-updated-note"></p>
   </section>
 </main>
 
@@ -176,6 +205,238 @@ function renderStats(aggregate, nbEntities) {
 const INITIAL_ORG_PREVIEW_COUNT = 5;
 const INITIAL_MEP_COUNT = 3;
 const TOP_MEP_COUNT = 20;
+
+/* ---------- Graphique réunions par mois ---------- */
+
+const MONTH_LABELS_FR = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'];
+
+function computeMonthlyMeetingCounts(orgs, epOutsideList, ecOutsideList) {
+  const counts = new Map();
+
+  const now = new Date();
+  const endYear = now.getFullYear();
+  const endMonth = now.getMonth() + 1;
+
+  const months = [];
+  for (let y = 2025, m = 1; y < endYear || (y === endYear && m <= endMonth); m++) {
+    if (m > 12) { m = 1; y++; }
+    months.push(`${y}-${String(m).padStart(2, '0')}`);
+  }
+  months.forEach(key => counts.set(key, 0));
+
+  orgs.forEach(org => {
+    org.epMeetingsList.concat(org.ecMeetingsList).forEach(meeting => {
+      if (!meeting.date) return;
+      const key = meeting.date.slice(0, 7);
+      if (counts.has(key)) counts.set(key, counts.get(key) + 1);
+    });
+  });
+
+  (epOutsideList || []).forEach(m => {
+    if (!m.date || (m.attendees || []).some(isExcludedFromLobbySearch)) return;
+    const key = m.date.slice(0, 7);
+    if (counts.has(key)) counts.set(key, counts.get(key) + 1);
+  });
+
+  (ecOutsideList || []).forEach(m => {
+    if (!m.date || isExcludedFromLobbySearch(m.org)) return;
+    const key = m.date.slice(0, 7);
+    if (counts.has(key)) counts.set(key, counts.get(key) + 1);
+  });
+
+  return months.map(key => {
+    const [year, month] = key.split('-');
+    return { key, label: `${MONTH_LABELS_FR[Number(month) - 1]} ${year.slice(2)}`, count: counts.get(key) };
+  });
+}
+
+function renderMonthlyChart(monthlyData) {
+  const container = document.getElementById('monthly-chart');
+
+  if (!monthlyData.length) {
+    container.innerHTML = '<p class="muted">Aucune réunion disponible sur la période.</p>';
+    return;
+  }
+
+  const maxCount = Math.max(...monthlyData.map(d => d.count), 1);
+  const yMax = Math.ceil(maxCount / 5) * 5 || 5;
+  const TICK_COUNT = 5;
+
+  const paddingLeft = 40;
+  const paddingRight = 24;
+  const paddingTop = 20;
+  const paddingBottom = 46;
+  const chartHeight = 220;
+  const step = 44;
+  const width = paddingLeft + paddingRight + (monthlyData.length - 1) * step;
+  const height = paddingTop + chartHeight + paddingBottom;
+
+  const xFor = i => paddingLeft + i * step;
+  const yFor = value => paddingTop + chartHeight - (value / yMax) * chartHeight;
+
+  let gridlines = '';
+  for (let t = 0; t <= TICK_COUNT; t++) {
+    const value = (yMax / TICK_COUNT) * t;
+    const y = yFor(value);
+    gridlines += `
+      <line class="chart-axis-line" x1="${paddingLeft}" y1="${y.toFixed(1)}" x2="${(width - paddingRight).toFixed(1)}" y2="${y.toFixed(1)}" />
+      <text class="chart-axis-label" x="${(paddingLeft - 8).toFixed(1)}" y="${(y + 3).toFixed(1)}" text-anchor="end">${Math.round(value)}</text>
+    `;
+  }
+
+  let xLabels = '';
+  monthlyData.forEach((d, i) => {
+    xLabels += `<text class="chart-axis-label" x="${xFor(i).toFixed(1)}" y="${(paddingTop + chartHeight + 18).toFixed(1)}" text-anchor="middle" transform="rotate(-45 ${xFor(i).toFixed(1)} ${(paddingTop + chartHeight + 14).toFixed(1)})">${d.label}</text>`;
+  });
+
+  const points = monthlyData.map((d, i) => ({ x: xFor(i), y: yFor(d.count), label: d.label, count: d.count }));
+  const polylinePoints = points.map(p => `${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
+  const circles = points.map(p => `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="3.5" fill="#0038FF"><title>${p.label} : ${p.count} réunion${p.count === 1 ? '' : 's'}</title></circle>`).join('');
+
+  container.innerHTML = `
+    <svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" class="chart-svg-container" style="width: 100%; height: auto;">
+      ${gridlines}
+      <polyline points="${polylinePoints}" fill="none" stroke="#0038FF" stroke-width="2.5" />
+      ${circles}
+      ${xLabels}
+    </svg>
+  `;
+}
+
+/* ---------- Graphique budget des organisations pilotes ---------- */
+
+const PILOT_ORGS = [
+  { registerId: '51925911965-76', name: 'Philip Morris International', color: '#0038FF' },
+  { registerId: '2427500988-58', name: 'British American Tobacco', color: '#e8590c' },
+  { registerId: '62460931291-40', name: 'Imperial Brands', color: '#10b981' },
+  { registerId: '71175716023-03', name: 'JT International', color: '#7c3aed' },
+  { registerId: '1496873833-97', name: 'Tobacco Europe AISBL', color: '#d63384' },
+];
+
+function niceCeil(value) {
+  if (value <= 0) return 1;
+  const exponent = Math.floor(Math.log10(value));
+  const base = Math.pow(10, exponent);
+  const fraction = value / base;
+  const niceFractions = [1, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10];
+  const niceFraction = niceFractions.find(f => f >= fraction) || 10;
+  return niceFraction * base;
+}
+
+function formatCompactEuro(value) {
+  if (value >= 1e6) return `${(value / 1e6).toFixed(1)}M€`;
+  return `${Math.round(value / 1000)}k€`;
+}
+
+function renderPilotBudgetChart(organisations) {
+  const container = document.getElementById('budget-chart');
+  const heading = document.getElementById('budget-chart-heading');
+
+  const series = PILOT_ORGS.map(org => {
+    const entry = organisations[org.registerId];
+    const byYear = (entry && entry.budget_by_year && typeof entry.budget_by_year === 'object' && !Array.isArray(entry.budget_by_year))
+      ? entry.budget_by_year
+      : {};
+    return Object.assign({}, org, { byYear });
+  });
+
+  const yearsSet = new Set();
+  series.forEach(s => Object.keys(s.byYear).forEach(y => yearsSet.add(y)));
+  const years = Array.from(yearsSet).sort((a, b) => Number(a) - Number(b));
+
+  heading.textContent = years.length
+    ? `Évolution sur ${years.length} années du budget lobby des principales organisations en Europe`
+    : `Évolution du budget lobby des principales organisations en Europe`;
+
+  if (!years.length) {
+    container.innerHTML = '<p class="muted">Aucune donnée d\'historique de budget disponible.</p>';
+    return;
+  }
+
+  const totalByYear = {};
+  years.forEach(year => {
+    totalByYear[year] = series.reduce((sum, s) => sum + (typeof s.byYear[year] === 'number' ? s.byYear[year] : 0), 0);
+  });
+  const totalSeries = { name: 'Total des 5 organisations', color: '#1c2b39', byYear: totalByYear, dashed: true };
+
+  const allValues = series.flatMap(s => years.map(y => s.byYear[y]).filter(v => typeof v === 'number'))
+    .concat(years.map(y => totalByYear[y]));
+  const yMax = niceCeil(Math.max(...allValues, 1));
+  const TICK_COUNT = 5;
+
+  const paddingLeft = 56;
+  const paddingRight = 24;
+  const paddingTop = 20;
+  const paddingBottom = 46;
+  const chartHeight = 260;
+  const step = 56;
+  const width = paddingLeft + paddingRight + (years.length - 1) * step;
+  const height = paddingTop + chartHeight + paddingBottom;
+
+  const xFor = i => paddingLeft + i * step;
+  const yFor = value => paddingTop + chartHeight - (value / yMax) * chartHeight;
+
+  let gridlines = '';
+  for (let t = 0; t <= TICK_COUNT; t++) {
+    const value = (yMax / TICK_COUNT) * t;
+    const y = yFor(value);
+    gridlines += `
+      <line class="chart-axis-line" x1="${paddingLeft}" y1="${y.toFixed(1)}" x2="${(width - paddingRight).toFixed(1)}" y2="${y.toFixed(1)}" />
+      <text class="chart-axis-label" x="${(paddingLeft - 8).toFixed(1)}" y="${(y + 3).toFixed(1)}" text-anchor="end">${formatCompactEuro(value)}</text>
+    `;
+  }
+
+  let xLabels = '';
+  years.forEach((year, i) => {
+    xLabels += `<text class="chart-axis-label" x="${xFor(i).toFixed(1)}" y="${(paddingTop + chartHeight + 18).toFixed(1)}" text-anchor="middle">${year}</text>`;
+  });
+
+  let linesAndPoints = '';
+  const drawSeries = allSeries => allSeries.forEach(s => {
+    let currentRun = [];
+    const strokeWidth = s.dashed ? 3.5 : 2.5;
+    const dashAttr = s.dashed ? ' stroke-dasharray="7 5"' : '';
+
+    const flushRun = () => {
+      if (currentRun.length > 1) {
+        const points = currentRun.map(p => `${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
+        linesAndPoints += `<polyline points="${points}" fill="none" stroke="${s.color}" stroke-width="${strokeWidth}"${dashAttr} />`;
+      }
+      currentRun.forEach(p => {
+        linesAndPoints += `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="3.5" fill="${s.color}"><title>${s.name} — ${p.year} : ${formatEuro(p.value)}</title></circle>`;
+      });
+      currentRun = [];
+    };
+
+    years.forEach((year, i) => {
+      const value = s.byYear[year];
+      if (typeof value === 'number') {
+        currentRun.push({ x: xFor(i), y: yFor(value), year, value });
+      } else {
+        flushRun();
+      }
+    });
+    flushRun();
+  });
+
+  drawSeries(series);
+  drawSeries([totalSeries]);
+
+  container.innerHTML = `
+    <svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" class="chart-svg-container" style="width: 100%; height: auto;">
+      ${gridlines}
+      ${linesAndPoints}
+      ${xLabels}
+    </svg>
+    <div class="chart-legend">
+      ${series.concat([totalSeries]).map(s => `<span class="chart-legend-item">${
+        s.dashed
+          ? `<span class="chart-legend-dash" style="border-color:${s.color}"></span>`
+          : `<span class="chart-legend-dot" style="background:${s.color}"></span>`
+      }${s.name}</span>`).join('')}
+    </div>
+  `;
+}
 
 (async function init() {
   setupCollapsible('orgs-preview-toggle', 'orgs-preview-body');
@@ -210,6 +471,8 @@ const TOP_MEP_COUNT = 20;
       labelPrefix: 'Voir tous les eurodéputés',
     });
 
+    renderMonthlyChart(computeMonthlyMeetingCounts(orgs, epOutside, ecOutside));
+
     const updatedAt = aggregate.computed_at ? new Date(aggregate.computed_at) : null;
     document.getElementById('updated-note').textContent = updatedAt
       ? `Dernière mise à jour des données live : ${updatedAt.toLocaleString('fr-FR')}`
@@ -217,6 +480,8 @@ const TOP_MEP_COUNT = 20;
   } catch (err) {
     document.getElementById('latest-meetings').innerHTML =
       `<div class="meeting-item"><span class="muted">Erreur de chargement des données : ${err.message}</span></div>`;
+    document.getElementById('monthly-chart').innerHTML =
+      `<p class="muted">Erreur de chargement des données : ${err.message}</p>`;
   }
 
   try {
@@ -227,6 +492,25 @@ const TOP_MEP_COUNT = 20;
   } catch (err) {
     document.getElementById('mep-nationality-chart').innerHTML =
       `<p class="muted">Erreur de chargement des données : ${err.message}</p>`;
+  }
+
+  try {
+    const budgetRes = await fetch('data/budget_history.json');
+    const budgetData = await budgetRes.json();
+    renderPilotBudgetChart(budgetData.organisations || {});
+
+    const computedAt = budgetData.computed_at ? new Date(budgetData.computed_at) : null;
+    document.getElementById('budget-updated-note').textContent = computedAt
+      ? `Historique de budget calculé le : ${computedAt.toLocaleString('fr-FR')}`
+      : '';
+  } catch (err) {
+    document.getElementById('budget-chart').innerHTML =
+      `<p class="muted">Erreur de chargement de l'historique de budget : ${err.message}</p>`;
+  }
+
+  if (location.hash) {
+    const target = document.querySelector(location.hash);
+    if (target) target.scrollIntoView();
   }
 })();
 </script>
