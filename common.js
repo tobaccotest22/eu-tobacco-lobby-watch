@@ -13,6 +13,22 @@ function formatEuro(n) {
   return n.toLocaleString('fr-FR') + ' €';
 }
 
+/* ---------- Compteur animé (bandeau principal) ---------- */
+
+function animateCounter(el, target, duration) {
+  if (!el || !Number.isFinite(target)) return;
+  const start = performance.now();
+
+  function tick(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(eased * target).toLocaleString('fr-FR');
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+
+  requestAnimationFrame(tick);
+}
+
 function mergeOrg(entity, liveData) {
   const live = entity.register_id ? liveData[entity.register_id] : null;
   const hasRegisterId = !!entity.register_id;
@@ -63,6 +79,14 @@ function ecMeetingPerson(representativeOrDg) {
   const raw = representativeOrDg || '';
   const parts = raw.split(',').map(s => s.trim()).filter(Boolean);
   return parts.length ? parts[0] : null;
+}
+
+function ecMeetingPersonWithRole(representativeOrDg) {
+  const raw = representativeOrDg || '';
+  const parts = raw.split(',').map(s => s.trim()).filter(Boolean);
+  if (!parts.length) return null;
+  const [name, ...rest] = parts;
+  return rest.length ? `${name} (${rest.join(', ')})` : name;
 }
 
 function formatDate(isoDate) {
@@ -393,7 +417,7 @@ function computeLatestMeetings(orgs, epOutsideList, ecOutsideList, limit) {
         orgName: org.name,
         institution: 'commission',
         dg: ecMeetingDG(m.representative_or_dg),
-        withWhom: ecMeetingPerson(m.representative_or_dg),
+        withWhom: ecMeetingPersonWithRole(m.representative_or_dg),
         subject: null,
         procedureRef: null,
         registerUrl: org.registerUrl,
@@ -456,15 +480,14 @@ function renderLatestMeetings(latest, containerId, initialCount) {
   latest.forEach((m, i) => {
     const institutionLabel = m.institution === 'parliament' ? 'Parlement européen' : 'Commission européenne';
     const extraClass = initialCount && i >= initialCount ? ' extra-row' : '';
+    const sentence = m.withWhom
+      ? `${m.orgName} — avec ${m.withWhom}${m.institution === 'commission' ? ' (Commission)' : ''}`
+      : `${m.orgName} (${institutionLabel})`;
 
     rows.push(`
       <div class="meeting-item${extraClass}" data-index="${i}">
         <span class="meeting-date">${formatDate(m.date)}</span>
-        <span class="meeting-org">
-          ${m.orgName}
-          ${m.dg ? `<span class="meeting-dg">${m.dg}</span>` : ''}
-        </span>
-        <span class="institution-badge ${m.institution}">${m.institution === 'parliament' ? 'Parlement' : 'Commission'}</span>
+        <span class="meeting-org">${sentence}</span>
       </div>
     `);
 
