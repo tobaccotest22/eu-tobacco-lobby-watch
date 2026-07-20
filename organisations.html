@@ -42,8 +42,16 @@
     <use href="#eu-star" transform="translate(67.5,43.7)"/>
   </svg>
   <div class="banner-inner">
-    <h1>EU <span class="redacted">████</span> TOBACCO WATCH</h1>
-    <p class="description">Détail des organisations suivies, triées par budget annuel déclaré.</p>
+    <p class="banner-lead">Plateforme de suivi des organisations de lobby du tabac en Europe.</p>
+    <p class="banner-sub">Sources : registres de transparence, LobbyFacts, Integrity Watch.</p>
+  </div>
+</div>
+
+<div class="stats-banner">
+  <div class="banner-inner">
+    <h2>Chiffres consolidés sur le lobbying du tabac en Europe</h2>
+    <div class="stats" id="stats"></div>
+    <p class="updated-note" id="updated-note"></p>
   </div>
 </div>
 
@@ -73,6 +81,9 @@
         <tbody id="table-body"></tbody>
       </table>
     </div>
+    <div class="table-toggle-wrapper" id="orgs-table-toggle-wrapper">
+      <button class="toggle-btn" id="toggle-orgs-table-btn"></button>
+    </div>
   </section>
 
   <section>
@@ -80,8 +91,8 @@
     <p class="section-intro">
       Organisations détectées par recherche mot-clé (tabac/nicotine) auprès du Parlement européen et/ou de la
       Commission, en dehors des 48 organisations suivies ci-dessus, hors ONG de santé publique. Ces données
-      n'ayant pas été vérifiées individuellement pour ces organisations, seuls le nom et la date du dernier
-      rendez-vous connu sont affichés.
+      n'ayant pas été vérifiées individuellement pour ces organisations. Cliquez sur une ligne pour voir le
+      détail de son dernier rendez-vous connu.
     </p>
     <div class="card" style="overflow: hidden;">
       <table>
@@ -94,6 +105,9 @@
         <tbody id="outside-orgs-table-body"></tbody>
       </table>
     </div>
+    <div class="table-toggle-wrapper" id="outside-orgs-toggle-wrapper">
+      <button class="toggle-btn" id="toggle-outside-orgs-btn"></button>
+    </div>
   </section>
 </main>
 
@@ -104,17 +118,61 @@
 
 <script src="common.js"></script>
 <script>
+function renderStats(aggregate, nbEntities) {
+  const stats = document.getElementById('stats');
+  const tiles = [
+    { value: nbEntities, label: 'Organisations suivies' },
+    { value: formatEuro(aggregate.budget_high_total) || '—', label: 'Budget annuel déclaré (2025, total)' },
+    { value: aggregate.people_involved_total ?? '—', label: 'Personnes concernées (2025, total)' },
+    { value: aggregate.ep_meetings_since_2025_total ?? '—', label: 'Réunions Parlement (depuis 2025)' },
+    { value: aggregate.ec_meetings_since_2025_total ?? '—', label: 'Réunions Commission (depuis 2025)' },
+  ];
+  stats.innerHTML = tiles.map(t => `
+    <div class="stat-tile">
+      <div class="value">${t.value}</div>
+      <div class="label">${t.label}</div>
+    </div>
+  `).join('');
+}
+
+const INITIAL_TABLE_COUNT = 10;
+
 (async function init() {
   try {
     const { entities, liveData } = await loadData();
     const orgs = entities.map(e => mergeOrg(e, liveData));
     const sortedByBudget = [...orgs].sort((a, b) => (b.budgetHigh ?? -1) - (a.budgetHigh ?? -1));
 
-    renderOrgTable(sortedByBudget, 'table-body', sortedByBudget.length);
-
     const aggregate = liveData._aggregate || {};
-    const outsideOrgs = computeOutsideOrganisations(aggregate.ep_meetings_outside_our_46, aggregate.ec_meetings_outside_our_46);
-    renderOutsideOrganisations(outsideOrgs, 'outside-orgs-table-body');
+    const epOutside = aggregate.ep_meetings_outside_our_46;
+    const ecOutside = aggregate.ec_meetings_outside_our_46;
+    renderStats(computeCombinedMeetingTotals(aggregate, epOutside, ecOutside), entities.length);
+
+    const updatedAt = aggregate.computed_at ? new Date(aggregate.computed_at) : null;
+    document.getElementById('updated-note').textContent = updatedAt
+      ? `Dernière mise à jour des données live : ${updatedAt.toLocaleString('fr-FR')}`
+      : 'Date de dernière mise à jour inconnue.';
+
+    renderOrgTable(sortedByBudget, 'table-body', INITIAL_TABLE_COUNT);
+    setupTableToggle({
+      tbodyId: 'table-body',
+      wrapperId: 'orgs-table-toggle-wrapper',
+      btnId: 'toggle-orgs-table-btn',
+      total: sortedByBudget.length,
+      initialCount: INITIAL_TABLE_COUNT,
+      labelPrefix: 'Voir toutes les organisations',
+    });
+
+    const outsideOrgs = computeOutsideOrganisations(epOutside, ecOutside);
+    renderOutsideOrganisations(outsideOrgs, 'outside-orgs-table-body', INITIAL_TABLE_COUNT);
+    setupTableToggle({
+      tbodyId: 'outside-orgs-table-body',
+      wrapperId: 'outside-orgs-toggle-wrapper',
+      btnId: 'toggle-outside-orgs-btn',
+      total: outsideOrgs.length,
+      initialCount: INITIAL_TABLE_COUNT,
+      labelPrefix: 'Voir toutes les organisations',
+    });
   } catch (err) {
     document.getElementById('table-body').innerHTML =
       `<tr><td colspan="7">Erreur de chargement des données : ${err.message}</td></tr>`;

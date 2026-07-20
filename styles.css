@@ -23,6 +23,10 @@ body {
 .site-nav {
   background: var(--blue-dark);
   padding: 0.55rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(16, 24, 40, 0.2);
 }
 .site-nav .banner-inner {
   display: flex;
@@ -172,6 +176,9 @@ main {
 }
 section {
   margin: 3rem 0;
+}
+section[id] {
+  scroll-margin-top: 60px;
 }
 section h2 {
   display: inline-block;
@@ -459,6 +466,9 @@ footer {
 }
 
 @media (max-width: 720px) {
+  section[id] {
+    scroll-margin-top: 150px;
+  }
   .meps-columns {
     grid-template-columns: 1fr;
   }
