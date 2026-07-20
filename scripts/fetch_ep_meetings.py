@@ -98,7 +98,11 @@ def main():
         entry["ep_meetings_last_fetched"] = now
         time.sleep(SLEEP_BETWEEN_REQUESTS)
 
-    live_data["_aggregate"] = compute_aggregate(live_data)
+    # Fusionne (plutôt que remplace) : les scripts de recherche mot-clé
+    # (fetch_keyword_meetings.py, fetch_ec_keyword_meetings.py) et
+    # fetch_mep_countries.py écrivent aussi des clés dans _aggregate,
+    # potentiellement avant ce script selon l'ordre d'exécution.
+    live_data.setdefault("_aggregate", {}).update(compute_aggregate(live_data))
 
     with open(LIVE_DATA_PATH, "w", encoding="utf-8") as f:
         json.dump(live_data, f, ensure_ascii=False, indent=2)

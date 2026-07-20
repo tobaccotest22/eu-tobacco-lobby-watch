@@ -167,7 +167,7 @@ function renderOrgTable(orgs, tbodyId, initialCount) {
 
 /* ---------- Eurodéputés les plus rencontrés ---------- */
 
-function computeTopMeps(orgs, limit) {
+function computeTopMeps(orgs, limit, epOutsideList) {
   const meps = new Map();
 
   orgs.forEach(org => {
@@ -186,6 +186,25 @@ function computeTopMeps(orgs, limit) {
       }
       meps.set(m.member_name, entry);
     });
+  });
+
+  (epOutsideList || []).forEach(m => {
+    if (!m.member_name) return;
+    const attendees = m.attendees || [];
+    if (attendees.some(isExcludedFromLobbySearch)) return;
+
+    const entry = meps.get(m.member_name) || { count: 0, latest: null };
+    entry.count += 1;
+    if (!entry.latest || (m.date || '') > (entry.latest.date || '')) {
+      entry.latest = {
+        date: m.date,
+        orgName: attendees.length ? attendees.join(', ') : 'Acteur non identifié',
+        registerUrl: null,
+        subject: m.title || null,
+        procedureRef: m.procedure_reference || null,
+      };
+    }
+    meps.set(m.member_name, entry);
   });
 
   return Array.from(meps.entries())
@@ -227,7 +246,7 @@ function renderTopMeps(topMeps, tbodyId, initialCount) {
           </div>
           ${latest.registerUrl
             ? `<a class="register-link" href="${latest.registerUrl}" target="_blank" rel="noopener">Voir la fiche officielle du registre de transparence →</a>`
-            : ''}
+            : '<p class="muted" style="margin: 0.5rem 0 0;">Organisation non enregistrée au registre de transparence de l\'UE.</p>'}
         </td>
       </tr>
     `);
@@ -320,11 +339,22 @@ function renderNationalityPieChart(breakdown, containerId) {
 const EXCLUDED_LOBBY_SEARCH_NAMES = [
   'Smoke Free Partnership',
   'Contre-Feu',
+  'Contre feu', // variante sans tiret utilisée par certaines entrées Commission
   'European Respiratory Society',
   'Association of European Cancer Leagues',
   'European Society of Cardiology',
   'European Cancer Organisation',
   'European Alcohol Policy Alliance',
+  'Danish Cancer Society',
+  'Kræftens Bekæmpelse', // Danish Cancer Society, nom danois
+  'European Chronic Disease Alliance',
+  'Lung Cancer Europe',
+  'Fondation Cancer',
+  'Swedish Childhood Cancer Fund',
+  'Terveyden ja hyvinvoinnin laitos', // institut finlandais de santé publique (THL)
+  'No Plastic Filter',
+  'Corporate Europe Observatory', // ONG de veille sur le lobbying, pas santé mais adversaire du lobbying industriel
+  'Recycling Netwerk Benelux', // ONG environnementale (mégots/pollution), pas santé mais non lié à l'industrie
 ];
 
 function isExcludedFromLobbySearch(name) {
@@ -332,7 +362,7 @@ function isExcludedFromLobbySearch(name) {
   return EXCLUDED_LOBBY_SEARCH_NAMES.some(excluded => lower.includes(excluded.toLowerCase()));
 }
 
-function computeLatestMeetings(orgs, keywordMeetingsOutsideOurList) {
+function computeLatestMeetings(orgs, epOutsideList, ecOutsideList) {
   const combined = [];
 
   orgs.forEach(org => {
@@ -360,7 +390,7 @@ function computeLatestMeetings(orgs, keywordMeetingsOutsideOurList) {
     });
   });
 
-  (keywordMeetingsOutsideOurList || []).forEach(m => {
+  (epOutsideList || []).forEach(m => {
     const attendees = m.attendees || [];
     if (attendees.some(isExcludedFromLobbySearch)) return;
 
@@ -371,6 +401,20 @@ function computeLatestMeetings(orgs, keywordMeetingsOutsideOurList) {
       dg: null,
       subject: m.title || null,
       procedureRef: m.procedure_reference || null,
+      registerUrl: null,
+    });
+  });
+
+  (ecOutsideList || []).forEach(m => {
+    if (isExcludedFromLobbySearch(m.org)) return;
+
+    combined.push({
+      date: m.date,
+      orgName: m.org || 'Acteur non identifié',
+      institution: 'commission',
+      dg: m.dg || null,
+      subject: m.subject || null,
+      procedureRef: null,
       registerUrl: null,
     });
   });
@@ -437,4 +481,57 @@ function renderLatestMeetings(latest, containerId) {
       detail.classList.toggle('open');
     });
   });
+}
+
+/* ---------- Totaux combinés (organisations suivies + acteurs hors liste) ---------- */
+
+function computeCombinedMeetingTotals(aggregate, epOutsideList, ecOutsideList) {
+  const epExtra = (epOutsideList || []).filter(m => !(m.attendees || []).some(isExcludedFromLobbySearch)).length;
+  const ecExtra = (ecOutsideList || []).filter(m => !isExcludedFromLobbySearch(m.org)).length;
+
+  return Object.assign({}, aggregate, {
+    ep_meetings_since_2025_total: (aggregate.ep_meetings_since_2025_total || 0) + epExtra,
+    ec_meetings_since_2025_total: (aggregate.ec_meetings_since_2025_total || 0) + ecExtra,
+  });
+}
+
+/* ---------- Organisations hors liste (organisations.html) ---------- */
+
+function computeOutsideOrganisations(epOutsideList, ecOutsideList) {
+  const orgs = new Map();
+
+  (epOutsideList || []).forEach(m => {
+    (m.attendees || []).forEach(name => {
+      if (!name || isExcludedFromLobbySearch(name)) return;
+      const current = orgs.get(name);
+      if (!current || (m.date || '') > current) orgs.set(name, m.date || '');
+    });
+  });
+
+  (ecOutsideList || []).forEach(m => {
+    const name = m.org;
+    if (!name || isExcludedFromLobbySearch(name)) return;
+    const current = orgs.get(name);
+    if (!current || (m.date || '') > current) orgs.set(name, m.date || '');
+  });
+
+  return Array.from(orgs.entries())
+    .map(([name, lastDate]) => ({ name, lastDate }))
+    .sort((a, b) => (b.lastDate || '').localeCompare(a.lastDate || ''));
+}
+
+function renderOutsideOrganisations(list, tbodyId) {
+  const tbody = document.getElementById(tbodyId);
+
+  if (!list.length) {
+    tbody.innerHTML = '<tr><td colspan="2" class="muted">Aucune organisation détectée.</td></tr>';
+    return;
+  }
+
+  tbody.innerHTML = list.map(org => `
+    <tr>
+      <td data-label="Organisation">${org.name}</td>
+      <td data-label="Dernier rendez-vous">${formatDate(org.lastDate)}</td>
+    </tr>
+  `).join('');
 }
