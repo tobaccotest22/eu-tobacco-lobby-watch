@@ -355,6 +355,8 @@ const EXCLUDED_LOBBY_SEARCH_NAMES = [
   'No Plastic Filter',
   'Corporate Europe Observatory', // ONG de veille sur le lobbying, pas santé mais adversaire du lobbying industriel
   'Recycling Netwerk Benelux', // ONG environnementale (mégots/pollution), pas santé mais non lié à l'industrie
+  'Alliance contre le tabac', // ONG de santé publique française (déjà l'une de nos 46 organisations suivies)
+  'Representación Permanente de España en la Unión Europea', // représentation officielle du gouvernement espagnol, pas un lobby
 ];
 
 function isExcludedFromLobbySearch(name) {
