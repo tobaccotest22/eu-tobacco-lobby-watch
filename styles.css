@@ -246,7 +246,11 @@ main.page-bands {
 .page-band-grey { background: var(--grey-bg); }
 .page-band-white {
   background: #fff;
-  box-shadow: 0 2px 6px rgba(16, 24, 40, 0.06);
+  padding-top: 2rem;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.08), 0 1px 2px rgba(16, 24, 40, 0.06);
+}
+.page-band-white .page-band-inner > section {
+  margin-top: 0;
 }
 section {
   margin: 3rem 0;
