@@ -1,0 +1,858 @@
+{
+  "_readme": "Brouillon de candidats de liens entre organisations. La plupart proviennent de data/raw_links_text.json (texte brut des 3 champs de la fiche officielle du registre de transparence, pour les 48 organisations de data/entities.json) - source_type: registre_officiel. Certains ont ete ajoutes ou confirmes par une verification en dehors du registre (site officiel de l'organisation, Wikipedia, etc.) - source_type: verification_externe, avec le detail des sources dans external_sources. Ce fichier reste un brouillon de travail avant la construction du graphe D3 : clear_candidates = rapprochements confirmes ou juges raisonnablement surs, hub_highlights = organisations qui concentrent plusieurs liens, ambiguous_cases = rapprochements encore a trancher, data_notes = anomalies/limites constatees.",
+  "generated_from": "data/raw_links_text.json",
+  "clear_candidates": [
+    {
+      "source": "Tobacco Europe AISBL",
+      "source_id": "1496873833-97",
+      "target": "British American Tobacco",
+      "target_id": "2427500988-58",
+      "link_type": "membre (association)",
+      "evidence": [
+        {
+          "org": "Tobacco Europe AISBL",
+          "field": "members_affiliates",
+          "text": "3 Full members: British American Tobacco / Imperial Tobacco Limited / JT International"
+        },
+        {
+          "org": "British American Tobacco",
+          "field": "associations_networks",
+          "text": "British American Tobacco is a member of various associations and networks around the world, including: Tobacco Europe, ..."
+        }
+      ],
+      "confidence": "haute (nom exact, confirme des deux cotes)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Tobacco Europe AISBL",
+      "source_id": "1496873833-97",
+      "target": "Imperial Brands",
+      "target_id": "62460931291-40",
+      "link_type": "membre (association)",
+      "evidence": [
+        {
+          "org": "Tobacco Europe AISBL",
+          "field": "members_affiliates",
+          "text": "3 Full members: ... Imperial Tobacco Limited ..."
+        },
+        {
+          "org": "Imperial Brands",
+          "field": "associations_networks",
+          "text": "Tobacco Europe (TE)"
+        }
+      ],
+      "confidence": "haute (variante de nom historique 'Imperial Tobacco Limited', confirme des deux cotes, deja mentionne comme exemple pilote)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Tobacco Europe AISBL",
+      "source_id": "1496873833-97",
+      "target": "JT International",
+      "target_id": "71175716023-03",
+      "link_type": "membre (association)",
+      "evidence": [
+        {
+          "org": "Tobacco Europe AISBL",
+          "field": "members_affiliates",
+          "text": "3 Full members: ... JT International"
+        },
+        {
+          "org": "JT International",
+          "field": "associations_networks",
+          "text": "Tobacco Europe (TE)"
+        }
+      ],
+      "confidence": "haute (nom exact, confirme des deux cotes)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Imperial Brands",
+      "source_id": "62460931291-40",
+      "target": "European Smoking Tobacco Association ESTA",
+      "target_id": "0138855852-93",
+      "link_type": "membre (association)",
+      "evidence": [
+        {
+          "org": "Imperial Brands",
+          "field": "associations_networks",
+          "text": "European Smoking Tobacco Association (ESTA)"
+        }
+      ],
+      "confidence": "haute (nom exact + acronyme standard du secteur)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Deutscher Zigarettenverband",
+      "source_id": "78982871558-95",
+      "target": "Tobacco Europe AISBL",
+      "target_id": "1496873833-97",
+      "link_type": "membre (association)",
+      "evidence": [
+        {
+          "org": "Deutscher Zigarettenverband",
+          "field": "associations_networks",
+          "text": "Tobacco Europe (former CECCM)"
+        }
+      ],
+      "confidence": "haute (nom exact ; revele au passage l'ancien nom CECCM de Tobacco Europe, utile pour reperer d'autres mentions)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Deutscher Zigarettenverband",
+      "source_id": "78982871558-95",
+      "target": "Bundesverband der Tabakwirtschaft und neuartiger Erzeugnisse",
+      "target_id": "893796741802-11",
+      "link_type": "membre (association)",
+      "evidence": [
+        {
+          "org": "Deutscher Zigarettenverband",
+          "field": "associations_networks",
+          "text": "Bundesverband der Tabakwirtschaft und neuartiger Erzeugnisse (BVTE)"
+        }
+      ],
+      "confidence": "haute (nom exact)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Vereniging Nederlandse Sigaretten- en Kerftabakfabrikanten",
+      "source_id": "209043544083-79",
+      "target": "European Smoking Tobacco Association ESTA",
+      "target_id": "0138855852-93",
+      "link_type": "membre (association)",
+      "evidence": [
+        {
+          "org": "Vereniging Nederlandse Sigaretten- en Kerftabakfabrikanten",
+          "field": "associations_networks",
+          "text": "ESTA"
+        }
+      ],
+      "confidence": "haute (acronyme standard, coherent avec plusieurs autres citations d'ESTA dans le jeu de donnees)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Vereniging Nederlandse Sigaretten- en Kerftabakfabrikanten",
+      "source_id": "209043544083-79",
+      "target": "Tobacco Europe AISBL",
+      "target_id": "1496873833-97",
+      "link_type": "membre (association)",
+      "evidence": [
+        {
+          "org": "Vereniging Nederlandse Sigaretten- en Kerftabakfabrikanten",
+          "field": "associations_networks",
+          "text": "Tobacco Europe"
+        }
+      ],
+      "confidence": "haute (nom exact)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "TTI Magyarorszag Nemzetkozi Dohanykereskedelmi Kft",
+      "source_id": "613360243179-87",
+      "target": "European Smoking Tobacco Association ESTA",
+      "target_id": "0138855852-93",
+      "link_type": "membre (association)",
+      "evidence": [
+        {
+          "org": "TTI Magyarorszag",
+          "field": "associations_networks",
+          "text": "ESTA / https://www.esta.be/members/"
+        }
+      ],
+      "confidence": "haute (acronyme + URL du domaine officiel d'ESTA)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Manufacture de Tabacs Heintz van Landewyck",
+      "source_id": "923856024330-39",
+      "target": "European Smoking Tobacco Association ESTA",
+      "target_id": "0138855852-93",
+      "link_type": "membre (association)",
+      "evidence": [
+        {
+          "org": "Manufacture de Tabacs Heintz van Landewyck",
+          "field": "associations_networks",
+          "text": "ESTA European Smoking Tobacco Association / www.esta.be / TR n°0138855852-93"
+        }
+      ],
+      "confidence": "tres haute (le numero de registre 0138855852-93 est cite explicitement et correspond exactement a l'ID d'ESTA dans nos donnees)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Asociacion Empresarial del Tabaco",
+      "source_id": "389796615375-43",
+      "target": "Tobacco Europe AISBL",
+      "target_id": "1496873833-97",
+      "link_type": "membre (association, ex-CECCM)",
+      "evidence": [
+        {
+          "org": "Asociacion Empresarial del Tabaco",
+          "field": "associations_networks",
+          "text": "Confederation of European Community Cigarrette Manufacturers (CECCM)"
+        }
+      ],
+      "confidence": "haute (via alias historique CECCM, confirme independamment par Deutscher Zigarettenverband)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Asociacion Empresarial del Tabaco",
+      "source_id": "389796615375-43",
+      "target": "European Smoking Tobacco Association ESTA",
+      "target_id": "0138855852-93",
+      "link_type": "membre (association)",
+      "evidence": [
+        {
+          "org": "Asociacion Empresarial del Tabaco",
+          "field": "associations_networks",
+          "text": "European Smoking Tobacco Association (ESTA)"
+        }
+      ],
+      "confidence": "haute (nom exact)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Asociacion Empresarial del Tabaco",
+      "source_id": "389796615375-43",
+      "target": "European Cigar Manufacturers Association",
+      "target_id": "92802501097-37",
+      "link_type": "membre associe (association)",
+      "evidence": [
+        {
+          "org": "Asociacion Empresarial del Tabaco",
+          "field": "associations_networks",
+          "text": "European Cigar Manufacturers Association (ECMA)"
+        },
+        {
+          "org": "European Cigar Manufacturers Association",
+          "field": "members_affiliates",
+          "text": "Associated members: ... Asociacion Empresarial del Tabaco (Spain) ..."
+        }
+      ],
+      "confidence": "haute (confirme des deux cotes)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Asociacion Empresarial del Tabaco",
+      "source_id": "389796615375-43",
+      "target": "British American Tobacco",
+      "target_id": "2427500988-58",
+      "link_type": "membre",
+      "evidence": [
+        {
+          "org": "Asociacion Empresarial del Tabaco",
+          "field": "members_affiliates",
+          "text": "Altadis, BAT, Compañia Canariense de Tabacos, ..."
+        }
+      ],
+      "confidence": "haute (acronyme BAT universellement reconnu dans le secteur)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Asociacion Empresarial del Tabaco",
+      "source_id": "389796615375-43",
+      "target": "JT International",
+      "target_id": "71175716023-03",
+      "link_type": "membre",
+      "evidence": [
+        {
+          "org": "Asociacion Empresarial del Tabaco",
+          "field": "members_affiliates",
+          "text": "... JTI, Landewyck, LP Promociones, Scandinavian Tobacco, ..."
+        }
+      ],
+      "confidence": "haute (acronyme JTI standard)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Asociacion Empresarial del Tabaco",
+      "source_id": "389796615375-43",
+      "target": "DOS SANTOS",
+      "target_id": "583622337776-40",
+      "link_type": "membre",
+      "evidence": [
+        {
+          "org": "Asociacion Empresarial del Tabaco",
+          "field": "members_affiliates",
+          "text": "... Davidoff, Dos Santos, Ibertabac Comercial, ..."
+        }
+      ],
+      "confidence": "haute (nom exact)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Asociacion Empresarial del Tabaco",
+      "source_id": "389796615375-43",
+      "target": "Manufacture de Tabacs Heintz van Landewyck",
+      "target_id": "923856024330-39",
+      "link_type": "membre",
+      "evidence": [
+        {
+          "org": "Asociacion Empresarial del Tabaco",
+          "field": "members_affiliates",
+          "text": "... JTI, Landewyck, LP Promociones, ..."
+        }
+      ],
+      "confidence": "moyenne-haute (raccourci de marque reconnaissable, corrobore par 2 autres citations independantes de 'Landewyck' ailleurs dans le jeu de donnees)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Asociacion Empresarial del Tabaco",
+      "source_id": "389796615375-43",
+      "target": "Scandinavian Tobacco Group",
+      "target_id": "891734924313-39",
+      "link_type": "membre",
+      "evidence": [
+        {
+          "org": "Asociacion Empresarial del Tabaco",
+          "field": "members_affiliates",
+          "text": "... Scandinavian Tobacco, Tabacalera y Tabacos El Guajiro."
+        }
+      ],
+      "confidence": "haute",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "J CORTES CIGARS",
+      "source_id": "124135527355-29",
+      "target": "European Cigar Manufacturers Association",
+      "target_id": "92802501097-37",
+      "link_type": "membre (association)",
+      "evidence": [
+        {
+          "org": "J CORTES CIGARS",
+          "field": "associations_networks",
+          "text": "E.C.M.A."
+        }
+      ],
+      "confidence": "haute (acronyme ECMA standard du secteur, egalement cite par 2 autres organisations pour designer ce meme registre)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "J CORTES CIGARS",
+      "source_id": "124135527355-29",
+      "target": "Bundesverband der Zigarrenindustrie e.V.",
+      "target_id": "775494740511-57",
+      "link_type": "membre (association)",
+      "evidence": [
+        {
+          "org": "J CORTES CIGARS",
+          "field": "associations_networks",
+          "text": "BdZ"
+        }
+      ],
+      "confidence": "haute (acronyme BdZ confirme par l'URL propre de Bundesverband der Zigarrenindustrie : zigarren-verband.de/bdz/...)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Manifatture Sigaro Toscano",
+      "source_id": "189661446368-32",
+      "target": "European Cigar Manufacturers Association",
+      "target_id": "92802501097-37",
+      "link_type": "membre (association)",
+      "evidence": [
+        {
+          "org": "Manifatture Sigaro Toscano",
+          "field": "associations_networks",
+          "text": "European Cigar Manufacturers Association"
+        },
+        {
+          "org": "European Cigar Manufacturers Association",
+          "field": "members_affiliates",
+          "text": "Full members: ... Manifatture Sigaro Toscano (Italy) ..."
+        }
+      ],
+      "confidence": "tres haute (nom exact, confirme des deux cotes)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Bundesverband der Zigarrenindustrie e.V.",
+      "source_id": "775494740511-57",
+      "target": "European Cigar Manufacturers Association",
+      "target_id": "92802501097-37",
+      "link_type": "membre associe (association)",
+      "evidence": [
+        {
+          "org": "Bundesverband der Zigarrenindustrie e.V.",
+          "field": "associations_networks",
+          "text": "ECMA https://cigars-europe.eu/"
+        },
+        {
+          "org": "European Cigar Manufacturers Association",
+          "field": "members_affiliates",
+          "text": "Associated members: ... Bundesverband der Zigarrenindustrie (Germany) ..."
+        }
+      ],
+      "confidence": "tres haute (confirme des deux cotes)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "European Cigar Manufacturers Association",
+      "source_id": "92802501097-37",
+      "target": "Scandinavian Tobacco Group",
+      "target_id": "891734924313-39",
+      "link_type": "membre (Full member)",
+      "evidence": [
+        {
+          "org": "European Cigar Manufacturers Association",
+          "field": "members_affiliates",
+          "text": "Full members: ... Scandinavian Tobacco Group (Netherlands, Denmark, Belgium) ..."
+        }
+      ],
+      "confidence": "haute (Scandinavian Tobacco Group n'a lui-meme rien declare, mais est cite par 4 organisations differentes, voir note hub)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Bundesverband der Zigarrenindustrie e.V.",
+      "source_id": "775494740511-57",
+      "target": "Scandinavian Tobacco Group",
+      "target_id": "891734924313-39",
+      "link_type": "membre",
+      "evidence": [
+        {
+          "org": "Bundesverband der Zigarrenindustrie e.V.",
+          "field": "members_affiliates",
+          "text": "... Scandinavian Tobacco Group, VCF Woermann, ..."
+        }
+      ],
+      "confidence": "haute",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Mesa Del Tobacco",
+      "source_id": "066314042392-60",
+      "target": "Philip Morris International Inc.",
+      "target_id": "51925911965-76",
+      "link_type": "membre",
+      "evidence": [
+        {
+          "org": "Mesa Del Tobacco",
+          "field": "members_affiliates",
+          "text": "Philip Morris Spain, S.L."
+        }
+      ],
+      "confidence": "haute",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Mesa Del Tobacco",
+      "source_id": "066314042392-60",
+      "target": "JT International",
+      "target_id": "71175716023-03",
+      "link_type": "membre",
+      "evidence": [
+        {
+          "org": "Mesa Del Tobacco",
+          "field": "members_affiliates",
+          "text": "JT INTERNATIONAL IBERIA, S.L."
+        }
+      ],
+      "confidence": "haute",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Mesa Del Tobacco",
+      "source_id": "066314042392-60",
+      "target": "British American Tobacco",
+      "target_id": "2427500988-58",
+      "link_type": "membre",
+      "evidence": [
+        {
+          "org": "Mesa Del Tobacco",
+          "field": "members_affiliates",
+          "text": "British American Tobacco España, S.A."
+        }
+      ],
+      "confidence": "haute",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Mesa Del Tobacco",
+      "source_id": "066314042392-60",
+      "target": "Imperial Brands",
+      "target_id": "62460931291-40",
+      "link_type": "membre",
+      "evidence": [
+        {
+          "org": "Mesa Del Tobacco",
+          "field": "members_affiliates",
+          "text": "Tabacalera, SLU GRUPO IMPERIAL TOBACCO"
+        }
+      ],
+      "confidence": "moyenne-haute (mention explicite du groupe 'GRUPO IMPERIAL TOBACCO' mais l'entite legale nommee est 'Tabacalera')",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Mesa Del Tobacco",
+      "source_id": "066314042392-60",
+      "target": "Manufacture de Tabacs Heintz van Landewyck",
+      "target_id": "923856024330-39",
+      "link_type": "membre",
+      "evidence": [
+        {
+          "org": "Mesa Del Tobacco",
+          "field": "members_affiliates",
+          "text": "LANDEWYCK TABACOS ESPAÑA,S.L."
+        }
+      ],
+      "confidence": "haute",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Mesa Del Tobacco",
+      "source_id": "066314042392-60",
+      "target": "Scandinavian Tobacco Group",
+      "target_id": "891734924313-39",
+      "link_type": "membre",
+      "evidence": [
+        {
+          "org": "Mesa Del Tobacco",
+          "field": "members_affiliates",
+          "text": "SCANDINAVIAN TOBACCO GROUP SPAIN, S.A.U."
+        }
+      ],
+      "confidence": "haute",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Mesa Del Tobacco",
+      "source_id": "066314042392-60",
+      "target": "DOS SANTOS",
+      "target_id": "583622337776-40",
+      "link_type": "membre",
+      "evidence": [
+        {
+          "org": "Mesa Del Tobacco",
+          "field": "members_affiliates",
+          "text": "DOS SANTOS, S.A.U."
+        }
+      ],
+      "confidence": "tres haute (confirme des deux cotes, voir aussi entree DOS SANTOS)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Mesa Del Tobacco",
+      "source_id": "066314042392-60",
+      "target": "Logista (part of Imperial brand)",
+      "target_id": "462081624095-48",
+      "link_type": "membre",
+      "evidence": [
+        {
+          "org": "Mesa Del Tobacco",
+          "field": "members_affiliates",
+          "text": "Grupo Logista"
+        }
+      ],
+      "confidence": "tres haute (confirme des deux cotes)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Logista (part of Imperial brand)",
+      "source_id": "462081624095-48",
+      "target": "Mesa Del Tobacco",
+      "target_id": "066314042392-60",
+      "link_type": "membre (association)",
+      "evidence": [
+        {
+          "org": "Logista",
+          "field": "associations_networks",
+          "text": "Mesa del Tabaco"
+        }
+      ],
+      "confidence": "tres haute (confirme des deux cotes)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "DOS SANTOS",
+      "source_id": "583622337776-40",
+      "target": "Mesa Del Tobacco",
+      "target_id": "066314042392-60",
+      "link_type": "membre (association)",
+      "evidence": [
+        {
+          "org": "DOS SANTOS",
+          "field": "associations_networks",
+          "text": "MESA DEL TABACO http://www.mesadeltabaco.es/"
+        }
+      ],
+      "confidence": "tres haute (confirme des deux cotes)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Philip Morris International Inc.",
+      "source_id": "51925911965-76",
+      "target": "Tabaqueira (subsidiary of PMI in Portugal)",
+      "target_id": "701118397425-19",
+      "link_type": "filiale/entite affiliee",
+      "evidence": [
+        {
+          "org": "Philip Morris International Inc.",
+          "field": "members_affiliates",
+          "text": "Relevant affiliated entities are listed individually in the EU Transparency Register. Listed: Tabaqueira II, SA"
+        }
+      ],
+      "confidence": "moyenne-haute (nom cite est 'Tabaqueira II, SA', pas exactement 'Tabaqueira' ; coherent avec l'annotation deja presente dans nos donnees '(subsidiary of PMI in Portugal)')",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Skruf Snus (Imperial subsidary)",
+      "source_id": "491937195894-38",
+      "target": "Imperial Brands",
+      "target_id": "62460931291-40",
+      "link_type": "filiale (declaration explicite)",
+      "evidence": [
+        {
+          "org": "Skruf Snus",
+          "field": "associations_networks",
+          "text": "Helägt dotter bolag till Imperial Brands plc (= filiale a 100% d'Imperial Brands plc)"
+        }
+      ],
+      "confidence": "tres haute (declaration explicite de filiation sur la fiche registre ET confirmee par une source externe independante ; aucune annotation Skruf...BAT erronee trouvee dans data/entities.json, data/live_data.json, data/matches.json ou data/budget_history.json lors d'une recherche dediee - rien a corriger)",
+      "source_type": "registre_officiel + verification_externe",
+      "external_sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Skruf",
+          "description": "Imperial Tobacco a acquis 43,5 pourcent de Skruf Snus AB en 2005 puis les parts restantes en juillet 2008, devenant proprietaire a 100 pourcent. Verifie independamment le 2026-07-21."
+        }
+      ]
+    },
+    {
+      "source": "TOBACCO AND NICOTINE PRODUCTS CHEMICALS GROUP",
+      "source_id": "102135939541-25",
+      "target": "British American Tobacco",
+      "target_id": "2427500988-58",
+      "link_type": "membre",
+      "evidence": [
+        {
+          "org": "TOBACCO AND NICOTINE PRODUCTS CHEMICALS GROUP",
+          "field": "members_affiliates",
+          "text": "British American Tobacco Limited"
+        }
+      ],
+      "confidence": "haute",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "TOBACCO AND NICOTINE PRODUCTS CHEMICALS GROUP",
+      "source_id": "102135939541-25",
+      "target": "Imperial Brands",
+      "target_id": "62460931291-40",
+      "link_type": "membre",
+      "evidence": [
+        {
+          "org": "TOBACCO AND NICOTINE PRODUCTS CHEMICALS GROUP",
+          "field": "members_affiliates",
+          "text": "Imperial Tobacco Ltd."
+        }
+      ],
+      "confidence": "haute",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "TOBACCO AND NICOTINE PRODUCTS CHEMICALS GROUP",
+      "source_id": "102135939541-25",
+      "target": "JT International",
+      "target_id": "71175716023-03",
+      "link_type": "membre",
+      "evidence": [
+        {
+          "org": "TOBACCO AND NICOTINE PRODUCTS CHEMICALS GROUP",
+          "field": "members_affiliates",
+          "text": "Japan Tobacco International S.A."
+        }
+      ],
+      "confidence": "haute",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "TOBACCO AND NICOTINE PRODUCTS CHEMICALS GROUP",
+      "source_id": "102135939541-25",
+      "target": "Philip Morris International Inc.",
+      "target_id": "51925911965-76",
+      "link_type": "membre",
+      "evidence": [
+        {
+          "org": "TOBACCO AND NICOTINE PRODUCTS CHEMICALS GROUP",
+          "field": "members_affiliates",
+          "text": "Philip Morris International Management S.A."
+        }
+      ],
+      "confidence": "haute",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "TOBACCO AND NICOTINE PRODUCTS CHEMICALS GROUP",
+      "source_id": "102135939541-25",
+      "target": "Tobacco Europe AISBL",
+      "target_id": "1496873833-97",
+      "link_type": "membre observateur",
+      "evidence": [
+        {
+          "org": "TOBACCO AND NICOTINE PRODUCTS CHEMICALS GROUP",
+          "field": "members_affiliates",
+          "text": "Tobacco Europe (Observer Member)"
+        }
+      ],
+      "confidence": "haute (statut d'observateur explicitement precise, a distinguer d'un membre plein)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "Fédération Européenne des Transformateurs de Tabac",
+      "source_id": "835059415132-95",
+      "target": "Alliance One International, LLC",
+      "target_id": "756303940554-19",
+      "link_type": "membre",
+      "evidence": [
+        {
+          "org": "Fédération Européenne des Transformateurs de Tabac",
+          "field": "members_affiliates",
+          "text": "Alliance One International Bulgaria, Bulgaria"
+        },
+        {
+          "org": "Alliance One International, LLC",
+          "field": "associations_networks",
+          "text": "Federation Europeenne des Transformateurs de Tabac (Fetratab)"
+        }
+      ],
+      "confidence": "tres haute (confirme des deux cotes)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "New Nicotine Alliance UK",
+      "source_id": "642478741759-44",
+      "target": "ETHRA European Tobacco Harm Reduction Advocates",
+      "target_id": "354946837243-73",
+      "link_type": "affilie / partenaire",
+      "evidence": [
+        {
+          "org": "New Nicotine Alliance UK",
+          "field": "members_affiliates",
+          "text": "European Tobacco Harm Reduction Advocates (ETHRA) - ethra.co"
+        }
+      ],
+      "confidence": "haute (nom+acronyme exacts ; note : cite dans le champ 'membres et organisations affiliees' de New Nicotine Alliance UK, alors que la relation semble plutot etre 'New Nicotine Alliance UK est affilie a ETHRA' - sens de la fleche a confirmer)",
+      "source_type": "registre_officiel"
+    },
+    {
+      "source": "British American Tobacco",
+      "source_id": "2427500988-58",
+      "target": "Nordic Nicotine Pouches Alliance",
+      "target_id": "432272548963-49",
+      "link_type": "membre (verifie via site officiel, malgre la fiche registre de NNPA qui dit n'avoir aucun membre)",
+      "evidence": [
+        {
+          "org": "British American Tobacco",
+          "field": "associations_networks",
+          "text": "... Nordic Nicotine Pouch Alliance (NNPA) ..."
+        }
+      ],
+      "confidence": "tres haute (site officiel actuel de l'organisation elle-meme, prime sur sa fiche registre probablement non mise a jour depuis son changement de nom)",
+      "source_type": "verification_externe",
+      "external_sources": [
+        {
+          "url": "https://www.nnpa.eu",
+          "description": "Page Members du site officiel (desormais renomme ENPA - European Nicotine Pouches Alliance) : logos British American Tobacco et JT International affiches nommement dans la section membres. Verifie independamment le 2026-07-21."
+        }
+      ],
+      "note": "L'organisation s'appelait Nordic Nicotine Pouches Alliance (NNPA) au moment de son enregistrement au registre de transparence (d'ou le nom dans data/entities.json et le contenu de sa fiche officielle, non mis a jour). Elle s'appelle desormais European Nicotine Pouches Alliance (ENPA). ATTENTION : le domaine enpa.eu correspond a une toute autre organisation (European Newspaper Publishers Association, presse europeenne) - collision d'acronyme rencontree lors de la verification, ne pas confondre. Le site correct reste accessible via nnpa.eu."
+    },
+    {
+      "source": "JT International",
+      "source_id": "71175716023-03",
+      "target": "Nordic Nicotine Pouches Alliance",
+      "target_id": "432272548963-49",
+      "link_type": "membre (verifie via site officiel, malgre la fiche registre de NNPA qui dit n'avoir aucun membre)",
+      "evidence": [
+        {
+          "org": "JT International",
+          "field": "associations_networks",
+          "text": "Nordic Nicotine Pouches Alliance (NNPA)"
+        }
+      ],
+      "confidence": "tres haute (site officiel actuel de l'organisation elle-meme, prime sur sa fiche registre probablement non mise a jour depuis son changement de nom)",
+      "source_type": "verification_externe",
+      "external_sources": [
+        {
+          "url": "https://www.nnpa.eu",
+          "description": "Page Members du site officiel (desormais renomme ENPA - European Nicotine Pouches Alliance) : logos British American Tobacco et JT International affiches nommement dans la section membres. Verifie independamment le 2026-07-21."
+        }
+      ],
+      "note": "Voir la note identique sur l'entree British American Tobacco -> Nordic Nicotine Pouches Alliance : meme changement de nom NNPA -> ENPA, meme mise en garde sur la collision de domaine enpa.eu."
+    },
+    {
+      "source": "Bundesverband der Zigarrenindustrie e.V.",
+      "source_id": "775494740511-57",
+      "target": "J CORTES CIGARS",
+      "target_id": "124135527355-29",
+      "link_type": "membre",
+      "evidence": [
+        {
+          "org": "Bundesverband der Zigarrenindustrie e.V.",
+          "field": "members_affiliates",
+          "text": "... Cortes ..."
+        }
+      ],
+      "confidence": "haute (nom court 'Cortes' leve par verification externe : entreprise familiale belge du secteur, coherente avec J CORTES CIGARS)",
+      "source_type": "verification_externe",
+      "external_sources": [
+        {
+          "url": "http://www.zigarren-verband.de/bdz/ueber-den-bdz/mitglieder",
+          "description": "Page membres officielle du BdZ, entree J. Cortes ist ein belgisches Familienunternehmen mit einer Leidenschaft fur Zigarren. Verifie independamment le 2026-07-21."
+        },
+        {
+          "url": "https://cigars-europe.eu",
+          "description": "Liste de membres de l'ECMA citant J. Cortes Cigars (Belgium) - source apportee par l'utilisateur ; la page racine du site consultee independamment ne montre qu'une description generale sans roster nominatif (le roster est probablement sur une sous-page non verifiee ici)."
+        }
+      ]
+    },
+    {
+      "source": "Sweditch Match (PMI Subsidary)",
+      "source_id": "56705163713-93",
+      "target": "Philip Morris International Inc.",
+      "target_id": "51925911965-76",
+      "link_type": "filiale (rachat integral)",
+      "evidence": [],
+      "confidence": "tres haute (fait de notoriete publique, aucune trace dans le texte du registre car absent des 3 champs scrapes pour cette organisation)",
+      "source_type": "verification_externe",
+      "external_sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Swedish_Match",
+          "description": "PMI a lance une OPA en mai 2022 (valorisation 16 Md dollars), depasse 90 pourcent des parts fin novembre 2022 et retire Swedish Match de la bourse ; PMI detient 100 pourcent de Swedish Match AB depuis 2023. Verifie independamment le 2026-07-21."
+        }
+      ],
+      "note": "Le nom deja present dans data/entities.json (Sweditch Match (PMI Subsidary), avec une coquille sur Sweditch) indiquait deja cette filiation ; ce candidat formalise le lien avec une source externe verifiee plutot que de se fier uniquement au nom de l'entite."
+    }
+  ],
+  "hub_highlights": [
+    {
+      "organisation": "Tobacco Europe AISBL",
+      "register_id": "1496873833-97",
+      "note": "Deja identifie comme hub lors de l'echantillon pilote. Confirme a l'echelle des 48 : cite comme association d'appartenance par Imperial Brands, JT International, British American Tobacco, Deutscher Zigarettenverband, Bundesverband der Tabakwirtschaft, Vereniging Nederlandse Sigaretten-, Asociacion Empresarial del Tabaco (via l'alias historique CECCM) ; et se cite elle-meme membre plein de BAT/Imperial/JTI. Egalement citee comme 'Observer Member' du groupe TOBACCO AND NICOTINE PRODUCTS CHEMICALS GROUP."
+    },
+    {
+      "organisation": "Mesa Del Tobacco",
+      "register_id": "066314042392-60",
+      "note": "Hub non identifie dans l'echantillon pilote de 10 (l'organisation n'y figurait probablement pas). Liste elle-meme comme membres : Philip Morris Spain, JT International Iberia, British American Tobacco Espana, Tabacalera/Grupo Imperial Tobacco, Landewyck Tabacos Espana, Scandinavian Tobacco Group Spain, DOS SANTOS et Grupo Logista - soit 8 des organisations suivies. Plusieurs de ces memes organisations (Logista, DOS SANTOS) confirment independamment leur appartenance a Mesa Del Tobacco depuis leur propre fiche."
+    },
+    {
+      "organisation": "TOBACCO AND NICOTINE PRODUCTS CHEMICALS GROUP",
+      "register_id": "102135939541-25",
+      "note": "Plateforme reglementaire (ex-TIP/e-CIP fusionnes en 2013) qui reunit explicitement BAT, Imperial, JTI, PMI comme membres et Tobacco Europe comme membre observateur - les 4 grands cigarettiers + le hub associatif, tous cites nommement dans le meme champ."
+    }
+  ],
+  "ambiguous_cases": [
+    {
+      "description": "France Vapotage est nommee dans data/entities.json avec l'annotation '(includes Imperial and BAT)', mais le champ 'membres et organisations affiliees/partenaires' scrape sur sa fiche officielle ne cite aucune filiale Imperial ou BAT explicite - seulement 'LANDWYCK FRANCE (Dean&Simmons)' (rapprochable avec Manufacture de Tabacs Heintz van Landewyck) et des marques de vape independantes (AIRMUST, BIO CONCEPT, D'LICE, etc.) sans lien apparent avec Imperial/BAT.",
+      "orgs_involved": [
+        "France Vapotage (203595432279-89)"
+      ],
+      "why_ambiguous": "L'annotation existante dans nos donnees n'est pas corroboree par le texte officiel du registre extrait ici - a verifier aupres de la source qui a produit cette annotation avant de l'utiliser comme lien confirme."
+    }
+  ],
+  "data_notes": [
+    "Taux de remplissage constate sur les 45 organisations effectivement recuperees (register_id present et fiche accessible) : champ 1 (associations/reseaux) rempli pour 33/45 (73%), champ 2 (membres/affilies) pour 28/45 (62%), champ 3 (intermediaires exercice en cours) pour 8/45 (18%). Coherent avec l'estimation faite sur l'echantillon pilote de 10 (90% / 70% / 20%).",
+    "2 organisations de data/entities.json n'ont pas de register_id renseigne et n'ont donc pas pu etre recuperees du tout : 'Confédération des buralistes de France' et 'UNITAB'. Aucune mention croisee de ces deux noms (ni d'UNITAB, ni de 'buraliste') n'a ete trouvee dans le texte des 45 autres organisations.",
+    "data/entities.json contient une entree en double : 'Association of Independent Tobacco Specialists' apparait 2 fois avec le meme register_id (30971284469-05). Sa fiche officielle est vide (aucun des 3 champs rempli). Signale pour information, hors perimetre de cette tache.",
+    "Plusieurs organisations partagent le meme cabinet de lobbying en intermediaire (champ 3), par exemple 'UTOPIA LAB S.R.L.' cite par Philip Morris International, Manifatture Sigaro Toscano et European Cigar Manufacturers Association. Ce n'est pas un lien d'association/membre au sens des champs 1 et 2 mais peut interesser un autre type d'arete (fournisseur partage) - laisse de cote du graphe pour l'instant, a discuter separement.",
+    "Plusieurs noms d'organisations dans data/entities.json portent deja une annotation de lien suppose entre parentheses (ex: 'Sweditch Match (PMI Subsidary)', 'Association of Swedish Snus Manufacturers (includes PMI in its Member)', 'Villanypara Egyesulet (via INNCO)', 'World vapers alliance (financed by the industry)', 'Smoke Free Sweden (directly linked to the industry)', 'The Internation Association on Smoking Control & Harm Reduction (links with the TI, see Tobacco Tactics)'). Ces annotations proviennent visiblement d'une source externe (Tobacco Tactics ou autre) et ne sont PAS corroborees par le texte scrape sur le registre officiel dans cette passe (fiches vides ou champs ne mentionnant pas la relation). A ne pas confondre avec les candidats ci-dessus qui, eux, sont bases sur le texte officiel du registre.",
+    "Verification externe (2026-07-21) : le domaine enpa.eu correspond a une toute autre organisation (European Newspaper Publishers Association, presse europeenne) et NE DOIT PAS etre confondu avec l'ENPA du secteur nicotine pouches (European Nicotine Pouches Alliance, ex-Nordic Nicotine Pouches Alliance / NNPA), accessible via nnpa.eu. Exemple concret du risque de collision d'acronyme deja signale comme probleme methodologique."
+  ]
+}

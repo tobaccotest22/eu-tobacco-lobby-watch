@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script src="https://d3js.org/d3.v7.min.js"></script>
 <style>
   table.meps-table tbody td.rank {
     font-weight: 700;
@@ -26,6 +27,7 @@
       <a href="#top" class="nav-link active">Accueil</a>
       <a href="#actualites" class="nav-link">Actualités</a>
       <a href="#statistiques" class="nav-link">Statistiques</a>
+      <a href="#liens" class="nav-link">Liens</a>
       <a href="organisations.html" class="nav-link">Organisations suivies</a>
     </div>
   </div>
@@ -253,6 +255,40 @@
           passées, les deux chiffres ne sont donc pas directement comparables.
         </p>
         <p class="updated-note" id="budget-updated-note"></p>
+      </div>
+    </div>
+  </section>
+  </div>
+  </div>
+
+  <div class="page-band page-band-white">
+  <div class="page-band-inner">
+  <section id="liens">
+    <h2>Comment ces acteurs sont-ils liés ?</h2>
+
+    <div class="card">
+      <button class="collapsible-toggle" id="org-links-toggle" aria-expanded="false">
+        <span class="collapsible-icon">▸</span>
+        <span class="title-stamp">Réseau d'associations, de filiales et de partenariats</span>
+      </button>
+      <div class="collapsible-body" id="org-links-body">
+        <p class="section-intro">
+          Liens identifiés entre organisations suivies : appartenance à une même association ou fédération,
+          filiation capitalistique, ou partenariat déclaré. Construit à partir du texte brut de trois champs
+          de la fiche officielle de chaque organisation sur le registre de transparence de l'UE ("associations,
+          (con)fédérations, réseaux...", "membres et organisations affiliées/partenaires", "intermédiaires"),
+          complété dans quelques cas par une vérification indépendante en dehors du registre lorsque celui-ci
+          semblait obsolète ou incomplet (voir légende). Faites glisser un nœud pour le déplacer, pincez/zoomez
+          pour naviguer, cliquez sur une organisation pour mettre en évidence ses liens directs.
+        </p>
+        <div class="graph-wrapper">
+          <svg id="org-links-graph"></svg>
+        </div>
+        <div class="chart-legend" id="org-links-legend"></div>
+        <div class="table-toggle-wrapper" id="org-links-toggle-wrapper">
+          <button class="toggle-btn" id="toggle-org-links-btn"></button>
+        </div>
+        <div class="org-links-detail" id="org-links-detail"></div>
       </div>
     </div>
   </section>
@@ -527,6 +563,165 @@ function renderPilotBudgetChart(organisations) {
   `;
 }
 
+/* ---------- Graphe reseau (section Liens entre organisations) ---------- */
+
+const ORG_LINKS_SECTION_COLORS = {
+  'Tobacco Business Organisations': '#0038FF',
+  'Harm reduction organisations': '#e8590c',
+};
+
+function orgLinksSectionColor(section) {
+  const key = Object.keys(ORG_LINKS_SECTION_COLORS).find(k => (section || '').startsWith(k));
+  return key ? ORG_LINKS_SECTION_COLORS[key] : '#8a949c';
+}
+
+function orgLinksNodeRadius(d) {
+  return 5 + Math.min(d.degree, 8) * 1.8;
+}
+
+let orgLinksData = null;
+let orgLinksSelections = null;
+const orgLinksState = { selectedId: null, showIsolated: false };
+
+function renderOrgLinksLegend() {
+  document.getElementById('org-links-legend').innerHTML = `
+    <span class="chart-legend-item"><span class="chart-legend-dot" style="background:${ORG_LINKS_SECTION_COLORS['Tobacco Business Organisations']}"></span>Organisation de lobbying du tabac</span>
+    <span class="chart-legend-item"><span class="chart-legend-dot" style="background:${ORG_LINKS_SECTION_COLORS['Harm reduction organisations']}"></span>Acteur "réduction des risques" / nicotine</span>
+    <span class="chart-legend-item"><span class="chart-legend-line"></span>Lien confirmé sur la fiche officielle du registre de transparence</span>
+    <span class="chart-legend-item"><span class="chart-legend-dash"></span>Lien confirmé uniquement par une vérification externe (hors registre — source citée au clic)</span>
+  `;
+}
+
+function selectOrgLinksNode(id) {
+  orgLinksState.selectedId = (orgLinksState.selectedId === id) ? null : id;
+  applyOrgLinksHighlight();
+  renderOrgLinksDetail();
+}
+
+function applyOrgLinksHighlight() {
+  if (!orgLinksSelections) return;
+  const { nodeSel, linkSel, labelSel, links } = orgLinksSelections;
+  const selectedId = orgLinksState.selectedId;
+  if (!selectedId) {
+    nodeSel.classed('dimmed', false).classed('active', false);
+    linkSel.classed('dimmed', false).classed('active', false);
+    labelSel.classed('dimmed', false);
+    return;
+  }
+  const connected = new Set([selectedId]);
+  links.forEach(l => {
+    if (l.source.id === selectedId) connected.add(l.target.id);
+    if (l.target.id === selectedId) connected.add(l.source.id);
+  });
+  nodeSel.classed('dimmed', d => !connected.has(d.id)).classed('active', d => d.id === selectedId);
+  labelSel.classed('dimmed', d => !connected.has(d.id));
+  linkSel
+    .classed('dimmed', d => d.source.id !== selectedId && d.target.id !== selectedId)
+    .classed('active', d => d.source.id === selectedId || d.target.id === selectedId);
+}
+
+function renderOrgLinksDetail() {
+  const panel = document.getElementById('org-links-detail');
+  const id = orgLinksState.selectedId;
+  if (!id || !orgLinksData) {
+    panel.classList.remove('open');
+    panel.innerHTML = '';
+    return;
+  }
+  const allNodes = orgLinksData.nodes.concat(orgLinksData.isolated_nodes);
+  const node = allNodes.find(n => n.id === id);
+  if (!node) return;
+
+  const related = orgLinksData.links.filter(l => l.source === id || l.target === id);
+  const items = related.map(l => {
+    const otherId = l.source === id ? l.target : l.source;
+    const other = allNodes.find(n => n.id === otherId);
+    const isExterne = l.style === 'dashed';
+    return `<li><strong>${other ? other.name : otherId}</strong> — ${l.link_type}
+      <span class="link-source-badge ${isExterne ? 'externe' : 'registre'}">${isExterne ? 'vérification externe' : 'registre officiel'}</span></li>`;
+  }).join('');
+
+  panel.innerHTML = `
+    <h4>${node.name}</h4>
+    <ul>${items || '<li class="muted">Aucun lien identifié.</li>'}</ul>
+  `;
+  panel.classList.add('open');
+}
+
+function renderOrgLinksGraph(data) {
+  const svgEl = document.getElementById('org-links-graph');
+  const width = 880;
+  const height = 520;
+
+  const nodes = data.nodes.map(d => Object.assign({}, d));
+  const extraNodes = orgLinksState.showIsolated ? data.isolated_nodes.map(d => Object.assign({}, d)) : [];
+  const allNodes = nodes.concat(extraNodes);
+  const links = data.links.map(d => Object.assign({}, d));
+
+  const svg = d3.select(svgEl);
+  svg.selectAll('*').remove();
+  svg.attr('viewBox', `0 0 ${width} ${height}`).attr('xmlns', 'http://www.w3.org/2000/svg');
+
+  const zoomLayer = svg.append('g').attr('class', 'zoom-layer');
+  svg.call(
+    d3.zoom()
+      .scaleExtent([0.4, 4])
+      .on('zoom', (event) => zoomLayer.attr('transform', event.transform))
+  );
+  svg.on('click', () => selectOrgLinksNode(null));
+
+  const linkSel = zoomLayer.append('g').attr('class', 'links')
+    .selectAll('line')
+    .data(links)
+    .join('line')
+    .attr('class', d => 'org-link-line' + (d.style === 'dashed' ? ' dashed' : ''));
+  linkSel.append('title').text(d => d.link_type);
+
+  const nodeSel = zoomLayer.append('g').attr('class', 'nodes')
+    .selectAll('circle')
+    .data(allNodes, d => d.id)
+    .join('circle')
+    .attr('class', 'org-node-circle')
+    .attr('r', orgLinksNodeRadius)
+    .attr('fill', d => orgLinksSectionColor(d.section))
+    .on('click', (event, d) => { event.stopPropagation(); selectOrgLinksNode(d.id); });
+  nodeSel.append('title').text(d => `${d.name} — ${d.degree} lien${d.degree === 1 ? '' : 's'}`);
+
+  const labelSel = zoomLayer.append('g').attr('class', 'labels')
+    .selectAll('text')
+    .data(allNodes, d => d.id)
+    .join('text')
+    .attr('class', 'org-node-label')
+    .attr('dy', 3)
+    .text(d => d.label);
+
+  const simulation = d3.forceSimulation(allNodes)
+    .force('link', d3.forceLink(links).id(d => d.id).distance(85).strength(0.35))
+    .force('charge', d3.forceManyBody().strength(-220))
+    .force('center', d3.forceCenter(width / 2, height / 2))
+    .force('collide', d3.forceCollide(d => orgLinksNodeRadius(d) + 6))
+    .force('x', d3.forceX(width / 2).strength(0.04))
+    .force('y', d3.forceY(height / 2).strength(0.04));
+
+  simulation.on('tick', () => {
+    linkSel
+      .attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+      .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+    nodeSel.attr('cx', d => d.x).attr('cy', d => d.y);
+    labelSel.attr('x', d => d.x + orgLinksNodeRadius(d) + 4).attr('y', d => d.y);
+  });
+
+  nodeSel.call(
+    d3.drag()
+      .on('start', (event, d) => { if (!event.active) simulation.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
+      .on('drag', (event, d) => { d.fx = event.x; d.fy = event.y; })
+      .on('end', (event, d) => { if (!event.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; })
+  );
+
+  orgLinksSelections = { nodeSel, linkSel, labelSel, links };
+  applyOrgLinksHighlight();
+}
+
 (async function init() {
   setupCollapsible('orgs-preview-toggle', 'orgs-preview-body');
   setupCollapsible('meetings-toggle', 'meetings-body');
@@ -535,6 +730,7 @@ function renderPilotBudgetChart(organisations) {
   setupCollapsible('budget-chart-toggle', 'budget-chart-body');
   setupCollapsible('accreditations-toggle', 'accreditations-body');
   setupCollapsible('new-registrants-toggle', 'new-registrants-body');
+  setupCollapsible('org-links-toggle', 'org-links-body');
 
   let orgs = [];
   try {
@@ -617,6 +813,35 @@ function renderPilotBudgetChart(organisations) {
   } catch (err) {
     document.getElementById('budget-chart').innerHTML =
       `<p class="muted">Erreur de chargement de l'historique de budget : ${err.message}</p>`;
+  }
+
+  try {
+    const orgLinksRes = await fetch('data/org_links.json');
+    orgLinksData = await orgLinksRes.json();
+    renderOrgLinksLegend();
+
+    const toggleBtn = document.getElementById('toggle-org-links-btn');
+    const toggleWrapper = document.getElementById('org-links-toggle-wrapper');
+    const isolatedCount = (orgLinksData.isolated_nodes || []).length;
+    if (isolatedCount) {
+      toggleBtn.textContent = `Afficher aussi les ${isolatedCount} organisations sans lien connu`;
+      toggleBtn.addEventListener('click', () => {
+        orgLinksState.showIsolated = !orgLinksState.showIsolated;
+        orgLinksState.selectedId = null;
+        toggleBtn.textContent = orgLinksState.showIsolated
+          ? 'Masquer les organisations sans lien connu'
+          : `Afficher aussi les ${isolatedCount} organisations sans lien connu`;
+        renderOrgLinksGraph(orgLinksData);
+        renderOrgLinksDetail();
+      });
+    } else {
+      toggleWrapper.style.display = 'none';
+    }
+
+    renderOrgLinksGraph(orgLinksData);
+  } catch (err) {
+    document.getElementById('org-links-graph').outerHTML =
+      `<p class="muted">Erreur de chargement des données : ${err.message}</p>`;
   }
 
   if (location.hash) {
