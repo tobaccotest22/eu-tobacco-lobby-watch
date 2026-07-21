@@ -69,7 +69,9 @@
   </div>
 </div>
 
-<main>
+<main class="page-bands">
+  <div class="page-band page-band-grey">
+  <div class="page-band-inner">
   <section id="acteurs">
     <h2>Les acteurs du lobby du tabac en Europe</h2>
 
@@ -133,7 +135,11 @@
       </div>
     </div>
   </section>
+  </div>
+  </div>
 
+  <div class="page-band page-band-white">
+  <div class="page-band-inner">
   <section id="actualites">
     <h2>Actualités de ce lobby</h2>
 
@@ -209,7 +215,11 @@
       </div>
     </div>
   </section>
+  </div>
+  </div>
 
+  <div class="page-band page-band-grey">
+  <div class="page-band-inner">
   <section id="statistiques">
     <h2>Statistiques sur le lobby du tabac</h2>
 
@@ -246,6 +256,8 @@
       </div>
     </div>
   </section>
+  </div>
+  </div>
 </main>
 
 <footer>
@@ -258,18 +270,23 @@
 function renderStats(aggregate, nbEntities) {
   const stats = document.getElementById('stats');
   const tiles = [
-    { value: nbEntities, label: 'Organisations suivies' },
+    { value: nbEntities, label: 'Organisations suivies', href: 'organisations.html' },
     { value: formatEuro(aggregate.budget_high_total) || '—', label: 'Budget annuel déclaré (2025, total)' },
     { value: aggregate.people_involved_total ?? '—', label: 'Personnes concernées (2025, total)' },
     { value: aggregate.ep_meetings_since_2025_total ?? '—', label: 'Réunions Parlement (depuis 2025)' },
     { value: aggregate.ec_meetings_since_2025_total ?? '—', label: 'Réunions Commission (depuis 2025)' },
   ];
-  stats.innerHTML = tiles.map(t => `
-    <div class="stat-tile">
+  stats.innerHTML = tiles.map(t => {
+    const tag = t.href ? 'a' : 'div';
+    const hrefAttr = t.href ? ` href="${t.href}"` : '';
+    const cls = t.href ? 'stat-tile stat-tile-link' : 'stat-tile';
+    return `
+    <${tag} class="${cls}"${hrefAttr}>
       <div class="value">${t.value}</div>
       <div class="label">${t.label}</div>
-    </div>
-  `).join('');
+    </${tag}>
+  `;
+  }).join('');
 }
 
 const INITIAL_ORG_PREVIEW_COUNT = 5;

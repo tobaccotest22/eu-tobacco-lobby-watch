@@ -203,6 +203,19 @@ body {
   color: var(--muted);
   margin-top: 0.15rem;
 }
+a.stat-tile-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+a.stat-tile-link:hover,
+a.stat-tile-link:focus-visible {
+  border-color: var(--blue);
+  box-shadow: 0 3px 10px rgba(16, 24, 40, 0.12);
+  transform: translateY(-2px);
+}
 .updated-note {
   margin: 0.85rem 0 0;
   font-size: 0.8rem;
@@ -214,6 +227,21 @@ main {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 1.5rem;
+}
+main.page-bands {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+.page-band-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.page-band-grey { background: var(--grey-bg); }
+.page-band-white {
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(16, 24, 40, 0.06);
 }
 section {
   margin: 3rem 0;
