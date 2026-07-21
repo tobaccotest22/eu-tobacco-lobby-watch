@@ -112,13 +112,18 @@ body {
 }
 .banner-lead {
   margin: 0 0 0.2rem;
-  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
   color: #fff;
 }
 .banner-sub {
   margin: 0;
-  font-size: clamp(0.7rem, 0.85vw, 0.78rem);
+  font-family: var(--font-heading);
+  font-size: clamp(0.78rem, 0.95vw, 0.85rem);
+  font-weight: 600;
+  letter-spacing: 0.01em;
   color: #dbe4ff;
 }
 .banner-inner-with-counter {
