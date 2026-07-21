@@ -502,6 +502,79 @@ tbody.show-all tr.extra-row.detail-row.open { display: table-row; }
   display: inline-block;
   flex: 0 0 auto;
 }
+.chart-legend-line {
+  width: 16px;
+  height: 2px;
+  background: var(--muted);
+  display: inline-block;
+  flex: 0 0 auto;
+}
+
+/* ---------- Graphe reseau (section Liens) ---------- */
+.graph-wrapper {
+  border-radius: 12px;
+  background: var(--grey-bg);
+  overflow: hidden;
+  touch-action: none;
+}
+.graph-wrapper svg {
+  display: block;
+  width: 100%;
+  height: clamp(320px, 55vh, 480px);
+  cursor: grab;
+}
+.graph-wrapper svg:active { cursor: grabbing; }
+.org-link-line {
+  stroke: rgba(85, 96, 107, 0.45);
+  stroke-width: 1.5;
+  transition: stroke-opacity 0.15s ease, stroke-width 0.15s ease;
+}
+.org-link-line.dashed { stroke-dasharray: 5 4; }
+.org-link-line.dimmed { stroke-opacity: 0.08; }
+.org-link-line.active { stroke: var(--blue-dark); stroke-width: 2.5; stroke-opacity: 1; }
+.org-node-circle {
+  stroke: #fff;
+  stroke-width: 1.5;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+.org-node-circle.dimmed { opacity: 0.18; }
+.org-node-circle.active { stroke: var(--text); stroke-width: 2.5; }
+.org-node-label {
+  font-size: 0.62rem;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  fill: var(--text);
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+.org-node-label.dimmed { opacity: 0.15; }
+.org-links-detail {
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  background: #f9fbfc;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  display: none;
+}
+.org-links-detail.open { display: block; }
+.org-links-detail h4 {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  color: var(--blue-dark);
+}
+.org-links-detail ul { margin: 0; padding-left: 1.1rem; }
+.org-links-detail li { margin-bottom: 0.4rem; }
+.link-source-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.05rem 0.4rem;
+  border-radius: 8px;
+  margin-left: 0.4rem;
+  white-space: nowrap;
+}
+.link-source-badge.registre { background: #e1e9ff; color: var(--blue-dark); }
+.link-source-badge.externe { background: #fdece3; color: #b6410a; }
 
 /* ---------- Colonnes eurodéputés (accueil) ---------- */
 .meps-columns {
