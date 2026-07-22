@@ -570,6 +570,24 @@ const ORG_LINKS_CATEGORIES = {
   isolated: { label: 'Organisations sans lien connu', color: '#8a949c', shape: 'circle', defaultChecked: false },
 };
 
+// Filet de securite : si data/org_links.json contient une categorie
+// inconnue (ex: fichier de donnees perime servi par un cache alors que le
+// code JS a change de schema), on retombe sur ce profil neutre plutot que
+// de planter tout le rendu du graphe (et on le signale une seule fois en
+// console pour faciliter le diagnostic).
+const ORG_LINKS_UNKNOWN_CATEGORY = { label: 'Autre', color: '#8a949c', shape: 'circle', defaultChecked: true };
+let orgLinksUnknownCategoryWarned = false;
+
+function orgLinksCategoryMeta(category) {
+  const meta = ORG_LINKS_CATEGORIES[category];
+  if (meta) return meta;
+  if (!orgLinksUnknownCategoryWarned) {
+    orgLinksUnknownCategoryWarned = true;
+    console.warn(`org_links.json : categorie de noeud inconnue "${category}" (schema perime ou cache obsolete ?), utilisation d'un profil par defaut.`);
+  }
+  return ORG_LINKS_UNKNOWN_CATEGORY;
+}
+
 // Etiquette affichee en permanence a partir de ce nombre de connexions (les
 // autres noeuds n'affichent leur etiquette qu'au survol ou au clic).
 const HUB_LABEL_MIN_DEGREE = 4;
@@ -778,8 +796,8 @@ function renderOrgLinksGraph(data) {
     .attr('class', d => 'org-link-line' + (d.style === 'dashed' ? ' dashed' : ''));
   linkSel.append('title').text(d => d.link_type);
 
-  const circleNodes = allNodes.filter(n => ORG_LINKS_CATEGORIES[n.category].shape === 'circle');
-  const squareNodes = allNodes.filter(n => ORG_LINKS_CATEGORIES[n.category].shape === 'square');
+  const circleNodes = allNodes.filter(n => orgLinksCategoryMeta(n.category).shape === 'circle');
+  const squareNodes = allNodes.filter(n => orgLinksCategoryMeta(n.category).shape === 'square');
 
   const nodesLayer = zoomLayer.append('g').attr('class', 'nodes');
 
@@ -788,7 +806,7 @@ function renderOrgLinksGraph(data) {
     .join('circle')
     .attr('class', 'org-node-circle')
     .attr('r', orgLinksNodeRadius)
-    .attr('fill', d => ORG_LINKS_CATEGORIES[d.category].color);
+    .attr('fill', d => orgLinksCategoryMeta(d.category).color);
 
   const squareSel = nodesLayer.selectAll('rect')
     .data(squareNodes, d => d.id)
@@ -797,7 +815,7 @@ function renderOrgLinksGraph(data) {
     .attr('width', d => orgLinksNodeRadius(d) * 2)
     .attr('height', d => orgLinksNodeRadius(d) * 2)
     .attr('rx', 2)
-    .attr('fill', d => ORG_LINKS_CATEGORIES[d.category].color);
+    .attr('fill', d => orgLinksCategoryMeta(d.category).color);
 
   const allNodeSel = nodesLayer.selectAll('circle, rect');
 
@@ -949,7 +967,7 @@ function renderOrgLinksGraph(data) {
   }
 
   try {
-    const orgLinksRes = await fetch('data/org_links.json');
+    const orgLinksRes = await fetch('data/org_links.json', { cache: 'no-cache' });
     orgLinksData = await orgLinksRes.json();
     renderOrgLinksLegend();
     renderOrgLinksFilters(orgLinksData);
