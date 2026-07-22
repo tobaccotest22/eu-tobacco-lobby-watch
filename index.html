@@ -588,6 +588,7 @@ function renderOrgLinksLegend() {
     <span class="chart-legend-item"><span class="chart-legend-dot" style="background:${ORG_LINKS_SECTION_COLORS['Harm reduction organisations']}"></span>Acteur "réduction des risques" / nicotine</span>
     <span class="chart-legend-item"><span class="chart-legend-line"></span>Lien confirmé sur la fiche officielle du registre de transparence</span>
     <span class="chart-legend-item"><span class="chart-legend-dash"></span>Lien confirmé uniquement par une vérification externe (hors registre — source citée au clic)</span>
+    <span class="chart-legend-item"><span class="chart-legend-dotted"></span>Cabinet de lobbying commun (même intermédiaire déclaré par au moins 2 organisations)</span>
   `;
 }
 
@@ -635,9 +636,13 @@ function renderOrgLinksDetail() {
   const items = related.map(l => {
     const otherId = l.source === id ? l.target : l.source;
     const other = allNodes.find(n => n.id === otherId);
-    const isExterne = l.style === 'dashed';
+    const badge = l.style === 'dotted'
+      ? { cls: 'cabinet', label: 'cabinet commun' }
+      : l.style === 'dashed'
+      ? { cls: 'externe', label: 'vérification externe' }
+      : { cls: 'registre', label: 'registre officiel' };
     return `<li><strong>${other ? other.name : otherId}</strong> — ${l.link_type}
-      <span class="link-source-badge ${isExterne ? 'externe' : 'registre'}">${isExterne ? 'vérification externe' : 'registre officiel'}</span></li>`;
+      <span class="link-source-badge ${badge.cls}">${badge.label}</span></li>`;
   }).join('');
 
   panel.innerHTML = `
@@ -673,7 +678,7 @@ function renderOrgLinksGraph(data) {
     .selectAll('line')
     .data(links)
     .join('line')
-    .attr('class', d => 'org-link-line' + (d.style === 'dashed' ? ' dashed' : ''));
+    .attr('class', d => 'org-link-line' + (d.style === 'dashed' ? ' dashed' : d.style === 'dotted' ? ' dotted' : ''));
   linkSel.append('title').text(d => d.link_type);
 
   const nodeSel = zoomLayer.append('g').attr('class', 'nodes')

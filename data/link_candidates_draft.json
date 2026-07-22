@@ -819,6 +819,69 @@
         }
       ],
       "note": "Le nom deja present dans data/entities.json (Sweditch Match (PMI Subsidary), avec une coquille sur Sweditch) indiquait deja cette filiation ; ce candidat formalise le lien avec une source externe verifiee plutot que de se fier uniquement au nom de l'entite."
+    },
+    {
+      "source": "Philip Morris International Inc.",
+      "source_id": "51925911965-76",
+      "target": "Manifatture Sigaro Toscano",
+      "target_id": "189661446368-32",
+      "link_type": "cabinet de lobbying commun",
+      "evidence": [
+        {
+          "org": "Philip Morris International Inc.",
+          "field": "intermediaries_current_year",
+          "text": "UTOPIA LAB S.R.L."
+        },
+        {
+          "org": "Manifatture Sigaro Toscano",
+          "field": "intermediaries_current_year",
+          "text": "UTOPIA LAB S.R.L."
+        }
+      ],
+      "confidence": "tres haute (nom de cabinet identique, champ structure data/live_data.json)",
+      "source_type": "cabinet_commun"
+    },
+    {
+      "source": "Philip Morris International Inc.",
+      "source_id": "51925911965-76",
+      "target": "European Cigar Manufacturers Association",
+      "target_id": "92802501097-37",
+      "link_type": "cabinet de lobbying commun",
+      "evidence": [
+        {
+          "org": "Philip Morris International Inc.",
+          "field": "intermediaries_current_year",
+          "text": "UTOPIA LAB S.R.L."
+        },
+        {
+          "org": "European Cigar Manufacturers Association",
+          "field": "intermediaries_current_year",
+          "text": "UTOPIA LAB S.R.L."
+        }
+      ],
+      "confidence": "tres haute (nom de cabinet identique, champ structure data/live_data.json)",
+      "source_type": "cabinet_commun"
+    },
+    {
+      "source": "Manifatture Sigaro Toscano",
+      "source_id": "189661446368-32",
+      "target": "European Cigar Manufacturers Association",
+      "target_id": "92802501097-37",
+      "link_type": "cabinet de lobbying commun",
+      "evidence": [
+        {
+          "org": "Manifatture Sigaro Toscano",
+          "field": "intermediaries_current_year",
+          "text": "UTOPIA LAB S.R.L."
+        },
+        {
+          "org": "European Cigar Manufacturers Association",
+          "field": "intermediaries_current_year",
+          "text": "UTOPIA LAB S.R.L."
+        }
+      ],
+      "confidence": "tres haute (nom de cabinet identique, champ structure data/live_data.json ; s'ajoute au lien d'association deja confirme entre ces deux organisations)",
+      "source_type": "cabinet_commun"
     }
   ],
   "hub_highlights": [
@@ -853,6 +916,7 @@
     "data/entities.json contient une entree en double : 'Association of Independent Tobacco Specialists' apparait 2 fois avec le meme register_id (30971284469-05). Sa fiche officielle est vide (aucun des 3 champs rempli). Signale pour information, hors perimetre de cette tache.",
     "Plusieurs organisations partagent le meme cabinet de lobbying en intermediaire (champ 3), par exemple 'UTOPIA LAB S.R.L.' cite par Philip Morris International, Manifatture Sigaro Toscano et European Cigar Manufacturers Association. Ce n'est pas un lien d'association/membre au sens des champs 1 et 2 mais peut interesser un autre type d'arete (fournisseur partage) - laisse de cote du graphe pour l'instant, a discuter separement.",
     "Plusieurs noms d'organisations dans data/entities.json portent deja une annotation de lien suppose entre parentheses (ex: 'Sweditch Match (PMI Subsidary)', 'Association of Swedish Snus Manufacturers (includes PMI in its Member)', 'Villanypara Egyesulet (via INNCO)', 'World vapers alliance (financed by the industry)', 'Smoke Free Sweden (directly linked to the industry)', 'The Internation Association on Smoking Control & Harm Reduction (links with the TI, see Tobacco Tactics)'). Ces annotations proviennent visiblement d'une source externe (Tobacco Tactics ou autre) et ne sont PAS corroborees par le texte scrape sur le registre officiel dans cette passe (fiches vides ou champs ne mentionnant pas la relation). A ne pas confondre avec les candidats ci-dessus qui, eux, sont bases sur le texte officiel du registre.",
-    "Verification externe (2026-07-21) : le domaine enpa.eu correspond a une toute autre organisation (European Newspaper Publishers Association, presse europeenne) et NE DOIT PAS etre confondu avec l'ENPA du secteur nicotine pouches (European Nicotine Pouches Alliance, ex-Nordic Nicotine Pouches Alliance / NNPA), accessible via nnpa.eu. Exemple concret du risque de collision d'acronyme deja signale comme probleme methodologique."
+    "Verification externe (2026-07-21) : le domaine enpa.eu correspond a une toute autre organisation (European Newspaper Publishers Association, presse europeenne) et NE DOIT PAS etre confondu avec l'ENPA du secteur nicotine pouches (European Nicotine Pouches Alliance, ex-Nordic Nicotine Pouches Alliance / NNPA), accessible via nnpa.eu. Exemple concret du risque de collision d'acronyme deja signale comme probleme methodologique.",
+    "2026-07-22 : ajout de 3 liens 'cabinet_commun' bases sur data/live_data.json (champ intermediaries_current_year, deja structure - liste de noms - plutot que le texte brut du registre) : Philip Morris International Inc., Manifatture Sigaro Toscano et European Cigar Manufacturers Association citent toutes les trois exactement le meme intermediaire 'UTOPIA LAB S.R.L.'. Sur les 45 organisations recuperees, seules 8 ont au moins un intermediaire renseigne dans ce champ et 'UTOPIA LAB S.R.L.' est le seul nom exactement partage entre au moins 2 organisations (comparaison normalisee espaces/casse, aucun autre cas trouve)."
   ]
 }
