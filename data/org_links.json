@@ -41,7 +41,7 @@
       "name": "Manifatture Sigaro Toscano",
       "label": "Manifatture Sigaro Toscano",
       "section": "Tobacco Business Organisations",
-      "degree": 1
+      "degree": 2
     },
     {
       "id": "209043544083-79",
@@ -97,7 +97,7 @@
       "name": "Philip Morris International Inc.",
       "label": "Philip Morris International Inc.",
       "section": "Tobacco Business Organisations",
-      "degree": 4
+      "degree": 6
     },
     {
       "id": "56705163713-93",
@@ -202,7 +202,7 @@
       "name": "European Cigar Manufacturers Association",
       "label": "European Cigar Manufacturers Association",
       "section": "Tobacco Business Organisations",
-      "degree": 5
+      "degree": 6
     }
   ],
   "links": [
@@ -526,9 +526,9 @@
     {
       "source": "189661446368-32",
       "target": "92802501097-37",
-      "link_type": "membre (association)",
-      "style": "solid",
-      "source_type": "registre_officiel",
+      "link_type": "membre (association); cabinet de lobbying commun",
+      "style": "dotted",
+      "source_type": "registre_officiel + cabinet_commun",
       "evidence": [
         {
           "org": "Manifatture Sigaro Toscano",
@@ -539,6 +539,16 @@
           "org": "European Cigar Manufacturers Association",
           "field": "members_affiliates",
           "text": "Full members: ... Manifatture Sigaro Toscano (Italy) ..."
+        },
+        {
+          "org": "Manifatture Sigaro Toscano",
+          "field": "intermediaries_current_year",
+          "text": "UTOPIA LAB S.R.L."
+        },
+        {
+          "org": "European Cigar Manufacturers Association",
+          "field": "intermediaries_current_year",
+          "text": "UTOPIA LAB S.R.L."
         }
       ]
     },
@@ -900,6 +910,44 @@
           "field": "verification_externe",
           "text": "PMI a lance une OPA en mai 2022 (valorisation 16 Md dollars), depasse 90 pourcent des parts fin novembre 2022 et retire Swedish Match de la bourse ; PMI detient 100 pourcent de Swedish Match AB depuis 2023. Verifie independamment le 2026-07-21.",
           "url": "https://en.wikipedia.org/wiki/Swedish_Match"
+        }
+      ]
+    },
+    {
+      "source": "189661446368-32",
+      "target": "51925911965-76",
+      "link_type": "cabinet de lobbying commun",
+      "style": "dotted",
+      "source_type": "cabinet_commun",
+      "evidence": [
+        {
+          "org": "Philip Morris International Inc.",
+          "field": "intermediaries_current_year",
+          "text": "UTOPIA LAB S.R.L."
+        },
+        {
+          "org": "Manifatture Sigaro Toscano",
+          "field": "intermediaries_current_year",
+          "text": "UTOPIA LAB S.R.L."
+        }
+      ]
+    },
+    {
+      "source": "51925911965-76",
+      "target": "92802501097-37",
+      "link_type": "cabinet de lobbying commun",
+      "style": "dotted",
+      "source_type": "cabinet_commun",
+      "evidence": [
+        {
+          "org": "Philip Morris International Inc.",
+          "field": "intermediaries_current_year",
+          "text": "UTOPIA LAB S.R.L."
+        },
+        {
+          "org": "European Cigar Manufacturers Association",
+          "field": "intermediaries_current_year",
+          "text": "UTOPIA LAB S.R.L."
         }
       ]
     }

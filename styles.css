@@ -489,6 +489,13 @@ tbody.show-all tr.extra-row.detail-row.open { display: table-row; }
   display: inline-block;
   flex: 0 0 auto;
 }
+.chart-legend-dotted {
+  width: 16px;
+  height: 0;
+  border-top: 3px dotted #9333ea;
+  display: inline-block;
+  flex: 0 0 auto;
+}
 
 /* ---------- Graphe reseau (section Liens) ---------- */
 .graph-wrapper {
@@ -510,6 +517,12 @@ tbody.show-all tr.extra-row.detail-row.open { display: table-row; }
   transition: stroke-opacity 0.15s ease, stroke-width 0.15s ease;
 }
 .org-link-line.dashed { stroke-dasharray: 5 4; }
+.org-link-line.dotted {
+  stroke: #9333ea;
+  stroke-opacity: 0.7;
+  stroke-dasharray: 1.5 3.5;
+  stroke-linecap: round;
+}
 .org-link-line.dimmed { stroke-opacity: 0.08; }
 .org-link-line.active { stroke: var(--blue-dark); stroke-width: 2.5; stroke-opacity: 1; }
 .org-node-circle {
@@ -555,6 +568,7 @@ tbody.show-all tr.extra-row.detail-row.open { display: table-row; }
 }
 .link-source-badge.registre { background: #e1e9ff; color: var(--blue-dark); }
 .link-source-badge.externe { background: #fdece3; color: #b6410a; }
+.link-source-badge.cabinet { background: #f1e3fd; color: #6b21a8; }
 
 /* ---------- Colonnes eurodéputés (accueil) ---------- */
 .meps-columns {

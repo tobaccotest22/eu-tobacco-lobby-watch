@@ -8,10 +8,16 @@ France Vapotage, sont volontairement exclus tant qu'ils ne sont pas tranches).
 
 Deux entrees de clear_candidates qui decrivent la meme relation vue des deux
 cotes (ex: "Mesa Del Tobacco -> Logista" et "Logista -> Mesa Del Tobacco")
-sont fusionnees en un seul lien nom-oriente, en conservant toutes les preuves
-et en gardant "registre_officiel" des qu'au moins un des deux cotes vient du
-registre (le tirete dans le graphe ne doit marquer QUE les liens reposant
-uniquement sur une verification externe).
+sont fusionnees en un seul lien nom-oriente, en conservant toutes les preuves.
+
+Le style de trait ("style") est determine par priorite : "dotted" des qu'un
+cabinet de lobbying commun est implique (meme quand l'organisation partage
+par ailleurs un lien d'association confirme - le partage de cabinet reste
+l'information la plus notable a distinguer visuellement) ; sinon "solid" des
+qu'au moins un cote vient du registre officiel ; sinon "dashed" (verification
+externe uniquement). Le champ "source_type" liste en revanche TOUTES les
+methodes ayant contribue au lien, meme quand le style visuel n'en retient
+qu'une - le detail complet reste visible au clic dans le panneau du site.
 
 A relancer avec `python scripts/build_org_links.py` a chaque fois que
 data/link_candidates_draft.json change (nouvelle validation, cas ambigu
@@ -46,6 +52,7 @@ def main():
             "link_types": [],
             "has_registre_officiel": False,
             "has_verification_externe": False,
+            "has_cabinet_commun": False,
             "evidence": [],
         })
         entry["link_types"].append(c["link_type"])
@@ -53,6 +60,8 @@ def main():
             entry["has_registre_officiel"] = True
         if "verification_externe" in c["source_type"]:
             entry["has_verification_externe"] = True
+        if "cabinet_commun" in c["source_type"]:
+            entry["has_cabinet_commun"] = True
         entry["evidence"].extend(c.get("evidence") or [])
         for ext in c.get("external_sources") or []:
             entry["evidence"].append({"org": None, "field": "verification_externe", "text": ext["description"], "url": ext["url"]})
@@ -62,18 +71,28 @@ def main():
     for (source_id, target_id), entry in edges.items():
         node_ids.add(source_id)
         node_ids.add(target_id)
+
+        if entry["has_cabinet_commun"]:
+            style = "dotted"
+        elif entry["has_registre_officiel"]:
+            style = "solid"
+        else:
+            style = "dashed"
+
+        source_types = []
+        if entry["has_registre_officiel"]:
+            source_types.append("registre_officiel")
+        if entry["has_verification_externe"]:
+            source_types.append("verification_externe")
+        if entry["has_cabinet_commun"]:
+            source_types.append("cabinet_commun")
+
         links.append({
             "source": source_id,
             "target": target_id,
             "link_type": "; ".join(dict.fromkeys(entry["link_types"])),
-            "style": "solid" if entry["has_registre_officiel"] else "dashed",
-            "source_type": (
-                "registre_officiel"
-                if entry["has_registre_officiel"] and not entry["has_verification_externe"]
-                else "verification_externe"
-                if entry["has_verification_externe"] and not entry["has_registre_officiel"]
-                else "registre_officiel + verification_externe"
-            ),
+            "style": style,
+            "source_type": " + ".join(source_types),
             "evidence": entry["evidence"],
         })
 
