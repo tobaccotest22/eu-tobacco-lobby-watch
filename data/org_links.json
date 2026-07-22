@@ -1,208 +1,501 @@
 {
-  "_readme": "Genere par scripts/build_org_links.py a partir de data/link_candidates_draft.json (clear_candidates uniquement). 'nodes'/'links' = organisations liees a au moins une autre ; 'isolated_nodes' = organisations suivies sans lien identifie a ce jour (affichees sur le site via un bouton optionnel).",
+  "_readme": "Genere par scripts/build_org_links.py. 'nodes' = tout noeud ayant au moins un lien (organisations suivies + reseaux generalistes + cabinets intermediaires) ; 'isolated_nodes' = organisations suivies sans lien identifie a ce jour. Chaque noeud a un champ 'category' (manufacturer / trade_association / harm_reduction / generalist_network / intermediary) pour les filtres du site, et 'shape' (circle / square).",
+  "generalist_networks_excluded_single_mention": [
+    "ICC - International Chamber of Commerce (Tabaqueira uniquement)",
+    "Confederacao Empresarial Portuguesa / CIP (Tabaqueira uniquement)",
+    "Associacao Industrial Portuguesa / AIP (Tabaqueira uniquement)",
+    "CONFINDUSTRIA (Logista uniquement)",
+    "MEDEF de l'Est Parisien (Logista uniquement)",
+    "Bundesverband der Deutschen Industrie / BDI (Bundesverband der Tabakwirtschaft uniquement)",
+    "Verband der bayerischen Wirtschaft / vbw (Bundesverband der Tabakwirtschaft uniquement)",
+    "VNO-NCW (Vereniging Nederlandse Sigaretten- en Kerftabakfabrikanten uniquement)",
+    "CEOE (Mesa Del Tobacco / Asociacion Empresarial del Tabaco - meme organisation espagnole faitiere que CEOE, deja mentionnee une seule fois par citation distincte)",
+    "Confcommercio (Federazione Italiana Tabaccai uniquement)",
+    "Japan Business Council in Europe / JBCE (JT International uniquement)",
+    "European Society of Association Executives / ESAE (Tobacco Europe AISBL uniquement)",
+    "Trans-Atlantic Policy Network, European Business Summit, The European House Ambrosetti (PMI uniquement)",
+    "Spanish Chamber of Commerce in Belgium, BCCB (British American Tobacco uniquement)"
+  ],
   "nodes": [
     {
-      "id": "0138855852-93",
-      "name": "European Smoking Tobacco Association ESTA",
-      "label": "European Smoking Tobacco Association ESTA",
-      "section": "Tobacco Business Organisations",
+      "id": "51925911965-76",
+      "name": "Philip Morris International Inc.",
+      "label": "Philip Morris International Inc.",
+      "category": "manufacturer",
+      "shape": "circle",
+      "degree": 17
+    },
+    {
+      "id": "62460931291-40",
+      "name": "Imperial Brands",
+      "label": "Imperial Brands",
+      "category": "manufacturer",
+      "shape": "circle",
       "degree": 5
     },
     {
-      "id": "066314042392-60",
-      "name": "Mesa Del Tobacco",
-      "label": "Mesa Del Tobacco",
-      "section": "Tobacco Business Organisations",
-      "degree": 8
-    },
-    {
-      "id": "102135939541-25",
-      "name": "TOBACCO AND NICOTINE PRODUCTS CHEMICALS GROUP",
-      "label": "TOBACCO AND NICOTINE PRODUCTS CHEMICALS GROUP",
-      "section": "Tobacco Business Organisations",
-      "degree": 5
+      "id": "71175716023-03",
+      "name": "JT International",
+      "label": "JT International",
+      "category": "manufacturer",
+      "shape": "circle",
+      "degree": 10
     },
     {
       "id": "124135527355-29",
       "name": "J CORTES CIGARS",
       "label": "J CORTES CIGARS",
-      "section": "Tobacco Business Organisations",
-      "degree": 2
-    },
-    {
-      "id": "1496873833-97",
-      "name": "Tobacco Europe AISBL",
-      "label": "Tobacco Europe AISBL",
-      "section": "Tobacco Business Organisations",
-      "degree": 7
-    },
-    {
-      "id": "189661446368-32",
-      "name": "Manifatture Sigaro Toscano",
-      "label": "Manifatture Sigaro Toscano",
-      "section": "Tobacco Business Organisations",
-      "degree": 2
-    },
-    {
-      "id": "209043544083-79",
-      "name": "Vereniging Nederlandse Sigaretten- en Kerftabakfabrikanten",
-      "label": "Vereniging Nederlandse Sigaretten- en Kerftabakfabrikanten",
-      "section": "Tobacco Business Organisations",
+      "category": "manufacturer",
+      "shape": "circle",
       "degree": 2
     },
     {
       "id": "2427500988-58",
       "name": "British American Tobacco",
       "label": "British American Tobacco",
-      "section": "Tobacco Business Organisations",
-      "degree": 5
-    },
-    {
-      "id": "354946837243-73",
-      "name": "ETHRA European Tobacco Harm Reduction Advocates (Members defending SNUS and nicotine pouches)",
-      "label": "ETHRA European Tobacco Harm Reduction Advocates",
-      "section": "Harm reduction organisations \n\n(including the promotion of heating tobacco or nicotine sachets, being directly or indirectly related to the tobacco industry)",
-      "degree": 1
-    },
-    {
-      "id": "389796615375-43",
-      "name": "Asociación Empresarial del Tabaco",
-      "label": "Asociación Empresarial del Tabaco",
-      "section": "Tobacco Business Organisations",
-      "degree": 8
-    },
-    {
-      "id": "432272548963-49",
-      "name": "Nordic Nicotine Pouches Alliance",
-      "label": "Nordic Nicotine Pouches Alliance",
-      "section": "Harm reduction organisations \n\n(including the promotion of heating tobacco or nicotine sachets, being directly or indirectly related to the tobacco industry)",
-      "degree": 2
-    },
-    {
-      "id": "462081624095-48",
-      "name": "Logista (part of Imperial brand)",
-      "label": "Logista",
-      "section": "Tobacco Business Organisations",
-      "degree": 1
-    },
-    {
-      "id": "491937195894-38",
-      "name": "Skruf Snus (Imperial subsidary)",
-      "label": "Skruf Snus",
-      "section": "Harm reduction organisations \n\n(including the promotion of heating tobacco or nicotine sachets, being directly or indirectly related to the tobacco industry)",
-      "degree": 1
-    },
-    {
-      "id": "51925911965-76",
-      "name": "Philip Morris International Inc.",
-      "label": "Philip Morris International Inc.",
-      "section": "Tobacco Business Organisations",
-      "degree": 6
-    },
-    {
-      "id": "56705163713-93",
-      "name": "Sweditch Match (PMI Subsidary)",
-      "label": "Sweditch Match",
-      "section": "Harm reduction organisations \n\n(including the promotion of heating tobacco or nicotine sachets, being directly or indirectly related to the tobacco industry)",
-      "degree": 1
-    },
-    {
-      "id": "583622337776-40",
-      "name": "DOS SANTOS",
-      "label": "DOS SANTOS",
-      "section": "Tobacco Business Organisations",
-      "degree": 2
+      "category": "manufacturer",
+      "shape": "circle",
+      "degree": 18
     },
     {
       "id": "613360243179-87",
       "name": "TTI Magyarország Nemzetközi Dohánykereskedelmi Kft",
       "label": "TTI Magyarország Nemzetközi Dohánykereskedelmi Kft",
-      "section": "Tobacco Business Organisations",
+      "category": "manufacturer",
+      "shape": "circle",
       "degree": 1
     },
     {
-      "id": "62460931291-40",
-      "name": "Imperial Brands",
-      "label": "Imperial Brands",
-      "section": "Tobacco Business Organisations",
-      "degree": 5
+      "id": "462081624095-48",
+      "name": "Logista (part of Imperial brand)",
+      "label": "Logista",
+      "category": "manufacturer",
+      "shape": "circle",
+      "degree": 1
     },
     {
-      "id": "642478741759-44",
-      "name": "New Nicotine Alliance UK (has been directly linked to PMI in investigative reports)",
-      "label": "New Nicotine Alliance UK",
-      "section": "Harm reduction organisations \n\n(including the promotion of heating tobacco or nicotine sachets, being directly or indirectly related to the tobacco industry)",
-      "degree": 1
+      "id": "78982871558-95",
+      "name": "Deutscher Zigarettenverband",
+      "label": "Deutscher Zigarettenverband",
+      "category": "manufacturer",
+      "shape": "circle",
+      "degree": 2
+    },
+    {
+      "id": "189661446368-32",
+      "name": "Manifatture Sigaro Toscano",
+      "label": "Manifatture Sigaro Toscano",
+      "category": "manufacturer",
+      "shape": "circle",
+      "degree": 2
+    },
+    {
+      "id": "583622337776-40",
+      "name": "DOS SANTOS",
+      "label": "DOS SANTOS",
+      "category": "manufacturer",
+      "shape": "circle",
+      "degree": 2
+    },
+    {
+      "id": "891734924313-39",
+      "name": "Scandinavian Tobacco Group",
+      "label": "Scandinavian Tobacco Group",
+      "category": "manufacturer",
+      "shape": "circle",
+      "degree": 4
     },
     {
       "id": "701118397425-19",
       "name": "Tabaqueira (subsidiary of PMI in Portugal)",
       "label": "Tabaqueira",
-      "section": "Tobacco Business Organisations",
+      "category": "manufacturer",
+      "shape": "circle",
+      "degree": 3
+    },
+    {
+      "id": "923856024330-39",
+      "name": "Manufacture de Tabacs Heintz van Landewyck",
+      "label": "Manufacture de Tabacs Heintz van Landewyck",
+      "category": "manufacturer",
+      "shape": "circle",
+      "degree": 3
+    },
+    {
+      "id": "1496873833-97",
+      "name": "Tobacco Europe AISBL",
+      "label": "Tobacco Europe AISBL",
+      "category": "trade_association",
+      "shape": "circle",
+      "degree": 10
+    },
+    {
+      "id": "0138855852-93",
+      "name": "European Smoking Tobacco Association ESTA",
+      "label": "European Smoking Tobacco Association ESTA",
+      "category": "trade_association",
+      "shape": "circle",
+      "degree": 6
+    },
+    {
+      "id": "92802501097-37",
+      "name": "European Cigar Manufacturers Association",
+      "label": "European Cigar Manufacturers Association",
+      "category": "trade_association",
+      "shape": "circle",
+      "degree": 8
+    },
+    {
+      "id": "893796741802-11",
+      "name": "Bundesverband der Tabakwirtschaft und neuartiger Erzeugnisse",
+      "label": "Bundesverband der Tabakwirtschaft und neuartiger Erzeugnisse",
+      "category": "trade_association",
+      "shape": "circle",
       "degree": 1
     },
     {
-      "id": "71175716023-03",
-      "name": "JT International",
-      "label": "JT International",
-      "section": "Tobacco Business Organisations",
-      "degree": 5
+      "id": "102135939541-25",
+      "name": "TOBACCO AND NICOTINE PRODUCTS CHEMICALS GROUP",
+      "label": "TOBACCO AND NICOTINE PRODUCTS CHEMICALS GROUP",
+      "category": "trade_association",
+      "shape": "circle",
+      "degree": 6
     },
     {
-      "id": "756303940554-19",
-      "name": "Alliance One International, LLC",
-      "label": "Alliance One International, LLC",
-      "section": "Tobacco Business Organisations",
+      "id": "209043544083-79",
+      "name": "Vereniging Nederlandse Sigaretten- en Kerftabakfabrikanten",
+      "label": "Vereniging Nederlandse Sigaretten- en Kerftabakfabrikanten",
+      "category": "trade_association",
+      "shape": "circle",
+      "degree": 2
+    },
+    {
+      "id": "389796615375-43",
+      "name": "Asociación Empresarial del Tabaco",
+      "label": "Asociación Empresarial del Tabaco",
+      "category": "trade_association",
+      "shape": "circle",
+      "degree": 8
+    },
+    {
+      "id": "835059415132-95",
+      "name": "Fédération Européenne des Transformateurs de Tabac",
+      "label": "Fédération Européenne des Transformateurs de Tabac",
+      "category": "trade_association",
+      "shape": "circle",
       "degree": 1
     },
     {
       "id": "775494740511-57",
       "name": "Bundesverband der Zigarrenindustrie e.V.",
       "label": "Bundesverband der Zigarrenindustrie e.V.",
-      "section": "Tobacco Business Organisations",
+      "category": "trade_association",
+      "shape": "circle",
       "degree": 3
     },
     {
-      "id": "78982871558-95",
-      "name": "Deutscher Zigarettenverband",
-      "label": "Deutscher Zigarettenverband",
-      "section": "Tobacco Business Organisations",
+      "id": "066314042392-60",
+      "name": "Mesa Del Tobacco",
+      "label": "Mesa Del Tobacco",
+      "category": "trade_association",
+      "shape": "circle",
+      "degree": 8
+    },
+    {
+      "id": "756303940554-19",
+      "name": "Alliance One International, LLC",
+      "label": "Alliance One International, LLC",
+      "category": "trade_association",
+      "shape": "circle",
+      "degree": 1
+    },
+    {
+      "id": "56705163713-93",
+      "name": "Sweditch Match (PMI Subsidary)",
+      "label": "Sweditch Match",
+      "category": "harm_reduction",
+      "shape": "circle",
+      "degree": 1
+    },
+    {
+      "id": "491937195894-38",
+      "name": "Skruf Snus (Imperial subsidary)",
+      "label": "Skruf Snus",
+      "category": "harm_reduction",
+      "shape": "circle",
+      "degree": 1
+    },
+    {
+      "id": "207263897934-45",
+      "name": "Global Institute for Novel Nicotine (promotes heated tobacco and nicotine pouches)",
+      "label": "Global Institute for Novel Nicotine",
+      "category": "harm_reduction",
+      "shape": "circle",
+      "degree": 1
+    },
+    {
+      "id": "354946837243-73",
+      "name": "ETHRA European Tobacco Harm Reduction Advocates (Members defending SNUS and nicotine pouches)",
+      "label": "ETHRA European Tobacco Harm Reduction Advocates",
+      "category": "harm_reduction",
+      "shape": "circle",
+      "degree": 1
+    },
+    {
+      "id": "642478741759-44",
+      "name": "New Nicotine Alliance UK (has been directly linked to PMI in investigative reports)",
+      "label": "New Nicotine Alliance UK",
+      "category": "harm_reduction",
+      "shape": "circle",
+      "degree": 1
+    },
+    {
+      "id": "432272548963-49",
+      "name": "Nordic Nicotine Pouches Alliance",
+      "label": "Nordic Nicotine Pouches Alliance",
+      "category": "harm_reduction",
+      "shape": "circle",
       "degree": 2
     },
     {
-      "id": "835059415132-95",
-      "name": "Fédération Européenne des Transformateurs de Tabac",
-      "label": "Fédération Européenne des Transformateurs de Tabac",
-      "section": "Tobacco Business Organisations",
-      "degree": 1
-    },
-    {
-      "id": "891734924313-39",
-      "name": "Scandinavian Tobacco Group",
-      "label": "Scandinavian Tobacco Group",
-      "section": "Tobacco Business Organisations",
-      "degree": 4
-    },
-    {
-      "id": "893796741802-11",
-      "name": "Bundesverband der Tabakwirtschaft und neuartiger Erzeugnisse",
-      "label": "Bundesverband der Tabakwirtschaft und neuartiger Erzeugnisse",
-      "section": "Tobacco Business Organisations",
-      "degree": 1
-    },
-    {
-      "id": "923856024330-39",
-      "name": "Manufacture de Tabacs Heintz van Landewyck",
-      "label": "Manufacture de Tabacs Heintz van Landewyck",
-      "section": "Tobacco Business Organisations",
+      "id": "gen:businesseurope",
+      "name": "BusinessEurope",
+      "label": "BusinessEurope",
+      "category": "generalist_network",
+      "shape": "circle",
       "degree": 3
     },
     {
-      "id": "92802501097-37",
-      "name": "European Cigar Manufacturers Association",
-      "label": "European Cigar Manufacturers Association",
-      "section": "Tobacco Business Organisations",
-      "degree": 6
+      "id": "gen:amcham-eu",
+      "name": "AmCham EU",
+      "label": "AmCham EU",
+      "category": "generalist_network",
+      "shape": "circle",
+      "degree": 3
+    },
+    {
+      "id": "gen:kangaroo-group",
+      "name": "The Kangaroo Group",
+      "label": "The Kangaroo Group",
+      "category": "generalist_network",
+      "shape": "circle",
+      "degree": 3
+    },
+    {
+      "id": "gen:wirtschaftsrat-cdu",
+      "name": "Wirtschaftsrat der CDU",
+      "label": "Wirtschaftsrat der CDU",
+      "category": "generalist_network",
+      "shape": "circle",
+      "degree": 2
+    },
+    {
+      "id": "gen:seap",
+      "name": "Society of European Affairs Professionals (SEAP)",
+      "label": "Society of European Affairs Professionals (SEAP)",
+      "category": "generalist_network",
+      "shape": "circle",
+      "degree": 3
+    },
+    {
+      "id": "gen:aeca",
+      "name": "American European Community Association (AECA)",
+      "label": "American European Community Association (AECA)",
+      "category": "generalist_network",
+      "shape": "circle",
+      "degree": 2
+    },
+    {
+      "id": "gen:consumer-choice-center",
+      "name": "Consumer Choice Center",
+      "label": "Consumer Choice Center",
+      "category": "generalist_network",
+      "shape": "circle",
+      "degree": 2
+    },
+    {
+      "id": "cab:dannhof hoff advisors gmbh",
+      "name": "Dannhof Hoff Advisors GmbH",
+      "label": "Dannhof Hoff Advisors GmbH",
+      "category": "intermediary",
+      "shape": "square",
+      "degree": 1
+    },
+    {
+      "id": "cab:llorente y cuenca, s.l",
+      "name": "LLORENTE Y CUENCA, S.L",
+      "label": "LLORENTE Y CUENCA, S.L",
+      "category": "intermediary",
+      "shape": "square",
+      "degree": 1
+    },
+    {
+      "id": "cab:mp-public affairs",
+      "name": "MP-Public Affairs",
+      "label": "MP-Public Affairs",
+      "category": "intermediary",
+      "shape": "square",
+      "degree": 1
+    },
+    {
+      "id": "cab:must & partners",
+      "name": "MUST & Partners",
+      "label": "MUST & Partners",
+      "category": "intermediary",
+      "shape": "square",
+      "degree": 1
+    },
+    {
+      "id": "cab:paradigm corporate affairs, s.l.",
+      "name": "Paradigm Corporate Affairs, S.L.",
+      "label": "Paradigm Corporate Affairs, S.L.",
+      "category": "intermediary",
+      "shape": "square",
+      "degree": 1
+    },
+    {
+      "id": "cab:strategic research corporation",
+      "name": "Strategic Research Corporation",
+      "label": "Strategic Research Corporation",
+      "category": "intermediary",
+      "shape": "square",
+      "degree": 1
+    },
+    {
+      "id": "cab:transatlantic public affairs",
+      "name": "Transatlantic Public Affairs",
+      "label": "Transatlantic Public Affairs",
+      "category": "intermediary",
+      "shape": "square",
+      "degree": 1
+    },
+    {
+      "id": "cab:utopia lab s.r.l.",
+      "name": "UTOPIA LAB S.R.L.",
+      "label": "UTOPIA LAB S.R.L.",
+      "category": "intermediary",
+      "shape": "square",
+      "degree": 3
+    },
+    {
+      "id": "cab:bernstein public policy",
+      "name": "Bernstein Public Policy",
+      "label": "Bernstein Public Policy",
+      "category": "intermediary",
+      "shape": "square",
+      "degree": 1
+    },
+    {
+      "id": "cab:business platform europe",
+      "name": "Business Platform Europe",
+      "label": "Business Platform Europe",
+      "category": "intermediary",
+      "shape": "square",
+      "degree": 1
+    },
+    {
+      "id": "cab:euk consulting",
+      "name": "EUK Consulting",
+      "label": "EUK Consulting",
+      "category": "intermediary",
+      "shape": "square",
+      "degree": 1
+    },
+    {
+      "id": "cab:eutop europe gmbh",
+      "name": "EUTOP Europe GmbH",
+      "label": "EUTOP Europe GmbH",
+      "category": "intermediary",
+      "shape": "square",
+      "degree": 1
+    },
+    {
+      "id": "cab:meseuro srl",
+      "name": "Meseuro srl",
+      "label": "Meseuro srl",
+      "category": "intermediary",
+      "shape": "square",
+      "degree": 1
+    },
+    {
+      "id": "cab:n+c",
+      "name": "N+C",
+      "label": "N+C",
+      "category": "intermediary",
+      "shape": "square",
+      "degree": 1
+    },
+    {
+      "id": "cab:red flag",
+      "name": "Red Flag",
+      "label": "Red Flag",
+      "category": "intermediary",
+      "shape": "square",
+      "degree": 1
+    },
+    {
+      "id": "cab:sec newgate eu",
+      "name": "SEC NEWGATE EU",
+      "label": "SEC NEWGATE EU",
+      "category": "intermediary",
+      "shape": "square",
+      "degree": 1
+    },
+    {
+      "id": "cab:savoir eu advocacy & legal consulting",
+      "name": "Savoir EU Advocacy & Legal Consulting",
+      "label": "Savoir EU Advocacy & Legal Consulting",
+      "category": "intermediary",
+      "shape": "square",
+      "degree": 1
+    },
+    {
+      "id": "cab:trade & access consulting",
+      "name": "Trade & Access Consulting",
+      "label": "Trade & Access Consulting",
+      "category": "intermediary",
+      "shape": "square",
+      "degree": 1
+    },
+    {
+      "id": "cab:eupportunity (qb, lda.)",
+      "name": "EUPPORTUNITY (QB, Lda.)",
+      "label": "EUPPORTUNITY (QB, Lda.)",
+      "category": "intermediary",
+      "shape": "square",
+      "degree": 1
+    },
+    {
+      "id": "cab:james ramsay",
+      "name": "James Ramsay",
+      "label": "James Ramsay",
+      "category": "intermediary",
+      "shape": "square",
+      "degree": 1
+    },
+    {
+      "id": "cab:aretera pa ug (haftungsbeschränkt)",
+      "name": "Aretera PA UG (haftungsbeschränkt)",
+      "label": "Aretera PA UG (haftungsbeschränkt)",
+      "category": "intermediary",
+      "shape": "square",
+      "degree": 1
+    },
+    {
+      "id": "cab:mayer brown europe-brussels llp",
+      "name": "Mayer Brown Europe-Brussels LLP",
+      "label": "Mayer Brown Europe-Brussels LLP",
+      "category": "intermediary",
+      "shape": "square",
+      "degree": 1
+    },
+    {
+      "id": "cab:eppa sa",
+      "name": "EPPA SA",
+      "label": "EPPA SA",
+      "category": "intermediary",
+      "shape": "square",
+      "degree": 1
     }
   ],
   "links": [
@@ -526,9 +819,9 @@
     {
       "source": "189661446368-32",
       "target": "92802501097-37",
-      "link_type": "membre (association); cabinet de lobbying commun",
-      "style": "dotted",
-      "source_type": "registre_officiel + cabinet_commun",
+      "link_type": "membre (association)",
+      "style": "solid",
+      "source_type": "registre_officiel",
       "evidence": [
         {
           "org": "Manifatture Sigaro Toscano",
@@ -539,16 +832,6 @@
           "org": "European Cigar Manufacturers Association",
           "field": "members_affiliates",
           "text": "Full members: ... Manifatture Sigaro Toscano (Italy) ..."
-        },
-        {
-          "org": "Manifatture Sigaro Toscano",
-          "field": "intermediaries_current_year",
-          "text": "UTOPIA LAB S.R.L."
-        },
-        {
-          "org": "European Cigar Manufacturers Association",
-          "field": "intermediaries_current_year",
-          "text": "UTOPIA LAB S.R.L."
         }
       ]
     },
@@ -914,17 +1197,516 @@
       ]
     },
     {
-      "source": "189661446368-32",
-      "target": "51925911965-76",
-      "link_type": "cabinet de lobbying commun",
-      "style": "dotted",
-      "source_type": "cabinet_commun",
+      "source": "51925911965-76",
+      "target": "gen:businesseurope",
+      "link_type": "membre (reseau generaliste)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "Philip Morris International Inc.",
+          "field": "associations_networks",
+          "text": "BusinessEurope"
+        }
+      ]
+    },
+    {
+      "source": "71175716023-03",
+      "target": "gen:businesseurope",
+      "link_type": "membre (reseau generaliste)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "JT International",
+          "field": "associations_networks",
+          "text": "Business Europe"
+        }
+      ]
+    },
+    {
+      "source": "2427500988-58",
+      "target": "gen:businesseurope",
+      "link_type": "membre (reseau generaliste)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "British American Tobacco",
+          "field": "associations_networks",
+          "text": "BusinessEurope"
+        }
+      ]
+    },
+    {
+      "source": "51925911965-76",
+      "target": "gen:amcham-eu",
+      "link_type": "membre (reseau generaliste)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "Philip Morris International Inc.",
+          "field": "associations_networks",
+          "text": "AmCham EU"
+        }
+      ]
+    },
+    {
+      "source": "2427500988-58",
+      "target": "gen:amcham-eu",
+      "link_type": "membre (reseau generaliste)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "British American Tobacco",
+          "field": "associations_networks",
+          "text": "AmCham EU"
+        }
+      ]
+    },
+    {
+      "source": "701118397425-19",
+      "target": "gen:amcham-eu",
+      "link_type": "membre (reseau generaliste)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "Tabaqueira (subsidiary of PMI in Portugal)",
+          "field": "associations_networks",
+          "text": "AmCham"
+        }
+      ]
+    },
+    {
+      "source": "51925911965-76",
+      "target": "gen:kangaroo-group",
+      "link_type": "membre (reseau generaliste)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "Philip Morris International Inc.",
+          "field": "associations_networks",
+          "text": "The Kangaroo Group"
+        }
+      ]
+    },
+    {
+      "source": "71175716023-03",
+      "target": "gen:kangaroo-group",
+      "link_type": "membre (reseau generaliste)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "JT International",
+          "field": "associations_networks",
+          "text": "The Kangaroo Group"
+        }
+      ]
+    },
+    {
+      "source": "1496873833-97",
+      "target": "gen:kangaroo-group",
+      "link_type": "membre (reseau generaliste)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "Tobacco Europe AISBL",
+          "field": "associations_networks",
+          "text": "Kangaroo"
+        }
+      ]
+    },
+    {
+      "source": "51925911965-76",
+      "target": "gen:wirtschaftsrat-cdu",
+      "link_type": "membre (reseau generaliste)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "Philip Morris International Inc.",
+          "field": "associations_networks",
+          "text": "Wirtschaftsrat der CDU"
+        }
+      ]
+    },
+    {
+      "source": "71175716023-03",
+      "target": "gen:wirtschaftsrat-cdu",
+      "link_type": "membre (reseau generaliste)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "JT International",
+          "field": "associations_networks",
+          "text": "Wirtschaftsrat der CDU"
+        }
+      ]
+    },
+    {
+      "source": "51925911965-76",
+      "target": "gen:seap",
+      "link_type": "membre (reseau generaliste)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "Philip Morris International Inc.",
+          "field": "associations_networks",
+          "text": "Society of European Affairs Professionals"
+        }
+      ]
+    },
+    {
+      "source": "1496873833-97",
+      "target": "gen:seap",
+      "link_type": "membre (reseau generaliste)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "Tobacco Europe AISBL",
+          "field": "associations_networks",
+          "text": "SEAP : Society of European Affairs Professionals"
+        }
+      ]
+    },
+    {
+      "source": "92802501097-37",
+      "target": "gen:seap",
+      "link_type": "membre (reseau generaliste) - representant individuel, pas l'organisation elle-meme",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "European Cigar Manufacturers Association",
+          "field": "associations_networks",
+          "text": "Paul Varakas is a member of the Society of European Affairs Professionals (SEAP)"
+        }
+      ]
+    },
+    {
+      "source": "71175716023-03",
+      "target": "gen:aeca",
+      "link_type": "membre (reseau generaliste)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "JT International",
+          "field": "associations_networks",
+          "text": "American European Community Association (AECA)"
+        }
+      ]
+    },
+    {
+      "source": "1496873833-97",
+      "target": "gen:aeca",
+      "link_type": "membre (reseau generaliste)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "Tobacco Europe AISBL",
+          "field": "associations_networks",
+          "text": "AECA: The American European Community Association"
+        }
+      ]
+    },
+    {
+      "source": "71175716023-03",
+      "target": "gen:consumer-choice-center",
+      "link_type": "membre (reseau generaliste) - soutien revendique, pas une adhesion",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "JT International",
+          "field": "associations_networks",
+          "text": "While not a member, JT International supports the Consumer Choice Center"
+        }
+      ]
+    },
+    {
+      "source": "2427500988-58",
+      "target": "gen:consumer-choice-center",
+      "link_type": "membre (reseau generaliste) - soutien revendique, pas une adhesion",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "British American Tobacco",
+          "field": "associations_networks",
+          "text": "While not a member, BAT also supports the Consumer Choice Center"
+        }
+      ]
+    },
+    {
+      "source": "51925911965-76",
+      "target": "cab:dannhof hoff advisors gmbh",
+      "link_type": "intermediaire declare (registre officiel)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "Philip Morris International Inc.",
+          "field": "intermediaries_current_year",
+          "text": "Dannhof Hoff Advisors GmbH"
+        }
+      ]
+    },
+    {
+      "source": "51925911965-76",
+      "target": "cab:llorente y cuenca, s.l",
+      "link_type": "intermediaire declare (registre officiel)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "Philip Morris International Inc.",
+          "field": "intermediaries_current_year",
+          "text": "LLORENTE Y CUENCA, S.L"
+        }
+      ]
+    },
+    {
+      "source": "51925911965-76",
+      "target": "cab:mp-public affairs",
+      "link_type": "intermediaire declare (registre officiel)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "Philip Morris International Inc.",
+          "field": "intermediaries_current_year",
+          "text": "MP-Public Affairs"
+        }
+      ]
+    },
+    {
+      "source": "51925911965-76",
+      "target": "cab:must & partners",
+      "link_type": "intermediaire declare (registre officiel)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "Philip Morris International Inc.",
+          "field": "intermediaries_current_year",
+          "text": "MUST & Partners"
+        }
+      ]
+    },
+    {
+      "source": "51925911965-76",
+      "target": "cab:paradigm corporate affairs, s.l.",
+      "link_type": "intermediaire declare (registre officiel)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "Philip Morris International Inc.",
+          "field": "intermediaries_current_year",
+          "text": "Paradigm Corporate Affairs, S.L."
+        }
+      ]
+    },
+    {
+      "source": "51925911965-76",
+      "target": "cab:strategic research corporation",
+      "link_type": "intermediaire declare (registre officiel)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "Philip Morris International Inc.",
+          "field": "intermediaries_current_year",
+          "text": "Strategic Research Corporation"
+        }
+      ]
+    },
+    {
+      "source": "51925911965-76",
+      "target": "cab:transatlantic public affairs",
+      "link_type": "intermediaire declare (registre officiel)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "Philip Morris International Inc.",
+          "field": "intermediaries_current_year",
+          "text": "Transatlantic Public Affairs"
+        }
+      ]
+    },
+    {
+      "source": "51925911965-76",
+      "target": "cab:utopia lab s.r.l.",
+      "link_type": "intermediaire declare (registre officiel)",
+      "style": "solid",
+      "source_type": "registre_officiel",
       "evidence": [
         {
           "org": "Philip Morris International Inc.",
           "field": "intermediaries_current_year",
           "text": "UTOPIA LAB S.R.L."
-        },
+        }
+      ]
+    },
+    {
+      "source": "2427500988-58",
+      "target": "cab:bernstein public policy",
+      "link_type": "intermediaire declare (registre officiel)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "British American Tobacco",
+          "field": "intermediaries_current_year",
+          "text": "Bernstein Public Policy"
+        }
+      ]
+    },
+    {
+      "source": "2427500988-58",
+      "target": "cab:business platform europe",
+      "link_type": "intermediaire declare (registre officiel)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "British American Tobacco",
+          "field": "intermediaries_current_year",
+          "text": "Business Platform Europe"
+        }
+      ]
+    },
+    {
+      "source": "2427500988-58",
+      "target": "cab:euk consulting",
+      "link_type": "intermediaire declare (registre officiel)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "British American Tobacco",
+          "field": "intermediaries_current_year",
+          "text": "EUK Consulting"
+        }
+      ]
+    },
+    {
+      "source": "2427500988-58",
+      "target": "cab:eutop europe gmbh",
+      "link_type": "intermediaire declare (registre officiel)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "British American Tobacco",
+          "field": "intermediaries_current_year",
+          "text": "EUTOP Europe GmbH"
+        }
+      ]
+    },
+    {
+      "source": "2427500988-58",
+      "target": "cab:meseuro srl",
+      "link_type": "intermediaire declare (registre officiel)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "British American Tobacco",
+          "field": "intermediaries_current_year",
+          "text": "Meseuro srl"
+        }
+      ]
+    },
+    {
+      "source": "2427500988-58",
+      "target": "cab:n+c",
+      "link_type": "intermediaire declare (registre officiel)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "British American Tobacco",
+          "field": "intermediaries_current_year",
+          "text": "N+C"
+        }
+      ]
+    },
+    {
+      "source": "2427500988-58",
+      "target": "cab:red flag",
+      "link_type": "intermediaire declare (registre officiel)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "British American Tobacco",
+          "field": "intermediaries_current_year",
+          "text": "Red Flag"
+        }
+      ]
+    },
+    {
+      "source": "2427500988-58",
+      "target": "cab:sec newgate eu",
+      "link_type": "intermediaire declare (registre officiel)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "British American Tobacco",
+          "field": "intermediaries_current_year",
+          "text": "SEC NEWGATE EU"
+        }
+      ]
+    },
+    {
+      "source": "2427500988-58",
+      "target": "cab:savoir eu advocacy & legal consulting",
+      "link_type": "intermediaire declare (registre officiel)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "British American Tobacco",
+          "field": "intermediaries_current_year",
+          "text": "Savoir EU Advocacy & Legal Consulting"
+        }
+      ]
+    },
+    {
+      "source": "2427500988-58",
+      "target": "cab:trade & access consulting",
+      "link_type": "intermediaire declare (registre officiel)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "British American Tobacco",
+          "field": "intermediaries_current_year",
+          "text": "Trade & Access Consulting"
+        }
+      ]
+    },
+    {
+      "source": "189661446368-32",
+      "target": "cab:utopia lab s.r.l.",
+      "link_type": "intermediaire declare (registre officiel)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
         {
           "org": "Manifatture Sigaro Toscano",
           "field": "intermediaries_current_year",
@@ -933,21 +1715,86 @@
       ]
     },
     {
-      "source": "51925911965-76",
-      "target": "92802501097-37",
-      "link_type": "cabinet de lobbying commun",
-      "style": "dotted",
-      "source_type": "cabinet_commun",
+      "source": "701118397425-19",
+      "target": "cab:eupportunity (qb, lda.)",
+      "link_type": "intermediaire declare (registre officiel)",
+      "style": "solid",
+      "source_type": "registre_officiel",
       "evidence": [
         {
-          "org": "Philip Morris International Inc.",
+          "org": "Tabaqueira (subsidiary of PMI in Portugal)",
           "field": "intermediaries_current_year",
-          "text": "UTOPIA LAB S.R.L."
-        },
+          "text": "EUPPORTUNITY (QB, Lda.)"
+        }
+      ]
+    },
+    {
+      "source": "0138855852-93",
+      "target": "cab:james ramsay",
+      "link_type": "intermediaire declare (registre officiel)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "European Smoking Tobacco Association ESTA",
+          "field": "intermediaries_current_year",
+          "text": "James Ramsay"
+        }
+      ]
+    },
+    {
+      "source": "92802501097-37",
+      "target": "cab:aretera pa ug (haftungsbeschränkt)",
+      "link_type": "intermediaire declare (registre officiel)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "European Cigar Manufacturers Association",
+          "field": "intermediaries_current_year",
+          "text": "Aretera PA UG (haftungsbeschränkt)"
+        }
+      ]
+    },
+    {
+      "source": "92802501097-37",
+      "target": "cab:utopia lab s.r.l.",
+      "link_type": "intermediaire declare (registre officiel)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
         {
           "org": "European Cigar Manufacturers Association",
           "field": "intermediaries_current_year",
           "text": "UTOPIA LAB S.R.L."
+        }
+      ]
+    },
+    {
+      "source": "102135939541-25",
+      "target": "cab:mayer brown europe-brussels llp",
+      "link_type": "intermediaire declare (registre officiel)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "TOBACCO AND NICOTINE PRODUCTS CHEMICALS GROUP",
+          "field": "intermediaries_current_year",
+          "text": "Mayer Brown Europe-Brussels LLP"
+        }
+      ]
+    },
+    {
+      "source": "207263897934-45",
+      "target": "cab:eppa sa",
+      "link_type": "intermediaire declare (registre officiel)",
+      "style": "solid",
+      "source_type": "registre_officiel",
+      "evidence": [
+        {
+          "org": "Global Institute for Novel Nicotine (promotes heated tobacco and nicotine pouches)",
+          "field": "intermediaries_current_year",
+          "text": "EPPA SA"
         }
       ]
     }
@@ -957,112 +1804,120 @@
       "id": "224656024222-52",
       "name": "KARELIA TOBACCO COMPANY INC",
       "label": "KARELIA TOBACCO COMPANY INC",
-      "section": "Tobacco Business Organisations",
+      "category": "manufacturer",
+      "shape": "circle",
       "degree": 0
     },
     {
       "id": "30971284469-05",
       "name": "Association of Independent Tobacco Specialists",
       "label": "Association of Independent Tobacco Specialists",
-      "section": "Tobacco Business Organisations",
+      "category": "trade_association",
+      "shape": "circle",
       "degree": 0
     },
     {
       "id": "876337940850-36",
       "name": "European Shisha Community Alliance",
       "label": "European Shisha Community Alliance",
-      "section": "Tobacco Business Organisations",
+      "category": "trade_association",
+      "shape": "circle",
       "degree": 0
     },
     {
       "id": "665729842737-11",
       "name": "Association of Tobacco Sellers, Convenience Stores and Kiosks of Macedonia",
       "label": "Association of Tobacco Sellers, Convenience Stores and Kiosks of Macedonia",
-      "section": "Tobacco Business Organisations",
+      "category": "trade_association",
+      "shape": "circle",
       "degree": 0
     },
     {
       "id": "27567784437-46",
       "name": "Tobaksindustrien, (Tobacco Manufactures Association of Denmark)",
       "label": "Tobaksindustrien,",
-      "section": "Tobacco Business Organisations",
+      "category": "trade_association",
+      "shape": "circle",
       "degree": 0
     },
     {
       "id": "87594253741-94",
       "name": "BDTA e V",
       "label": "BDTA e V",
-      "section": "Tobacco Business Organisations",
+      "category": "trade_association",
+      "shape": "circle",
       "degree": 0
     },
     {
       "id": "78764438624-42",
       "name": "Federazione Italiana Tabaccai",
       "label": "Federazione Italiana Tabaccai",
-      "section": "Tobacco Business Organisations",
+      "category": "trade_association",
+      "shape": "circle",
       "degree": 0
     },
     {
       "id": "220858648398-48",
       "name": "Association of Swedish Snus Manufacturers (includes PMI in its Member)",
       "label": "Association of Swedish Snus Manufacturers",
-      "section": "Harm reduction organisations \n\n(including the promotion of heating tobacco or nicotine sachets, being directly or indirectly related to the tobacco industry)",
+      "category": "harm_reduction",
+      "shape": "circle",
       "degree": 0
     },
     {
       "id": "203595432279-89",
       "name": "France Vapotage (includes Imperial and BAT)",
       "label": "France Vapotage",
-      "section": "Harm reduction organisations \n\n(including the promotion of heating tobacco or nicotine sachets, being directly or indirectly related to the tobacco industry)",
+      "category": "harm_reduction",
+      "shape": "circle",
       "degree": 0
     },
     {
       "id": "105924642733-12",
       "name": "The Internation Association on Smoking Control & Harm Reduction (links with the TI, see Tobacco Tactics)",
       "label": "The Internation Association on Smoking Control & Harm Reduction",
-      "section": "Harm reduction organisations \n\n(including the promotion of heating tobacco or nicotine sachets, being directly or indirectly related to the tobacco industry)",
-      "degree": 0
-    },
-    {
-      "id": "207263897934-45",
-      "name": "Global Institute for Novel Nicotine (promotes heated tobacco and nicotine pouches)",
-      "label": "Global Institute for Novel Nicotine",
-      "section": "Harm reduction organisations \n\n(including the promotion of heating tobacco or nicotine sachets, being directly or indirectly related to the tobacco industry)",
+      "category": "harm_reduction",
+      "shape": "circle",
       "degree": 0
     },
     {
       "id": "680379741539-17",
       "name": "Center of Excellence for the acceleration of Harm Reduction (financed by the TI - see Tobacco Tactics)",
       "label": "Center of Excellence for the acceleration of Harm Reduction",
-      "section": "Harm reduction organisations \n\n(including the promotion of heating tobacco or nicotine sachets, being directly or indirectly related to the tobacco industry)",
+      "category": "harm_reduction",
+      "shape": "circle",
       "degree": 0
     },
     {
       "id": "347372799139-19",
       "name": "HEATED COMMUNITY HUB (promotes heated tobacco and nicotine pouches)",
       "label": "HEATED COMMUNITY HUB",
-      "section": "Harm reduction organisations \n\n(including the promotion of heating tobacco or nicotine sachets, being directly or indirectly related to the tobacco industry)",
+      "category": "harm_reduction",
+      "shape": "circle",
       "degree": 0
     },
     {
       "id": "530382045552-40",
       "name": "Villanypára Egyesület (via INNCO)",
       "label": "Villanypára Egyesület",
-      "section": "Harm reduction organisations \n\n(including the promotion of heating tobacco or nicotine sachets, being directly or indirectly related to the tobacco industry)",
+      "category": "harm_reduction",
+      "shape": "circle",
       "degree": 0
     },
     {
       "id": "766884047993-79",
       "name": "World vapers' alliance (financed by the industry)",
       "label": "World vapers' alliance",
-      "section": "Harm reduction organisations \n\n(including the promotion of heating tobacco or nicotine sachets, being directly or indirectly related to the tobacco industry)",
+      "category": "harm_reduction",
+      "shape": "circle",
       "degree": 0
     },
     {
       "id": "174447099137-38",
       "name": "Smoke Free Sweden (directly linked to the industry)",
       "label": "Smoke Free Sweden",
-      "section": "Harm reduction organisations \n\n(including the promotion of heating tobacco or nicotine sachets, being directly or indirectly related to the tobacco industry)",
+      "category": "harm_reduction",
+      "shape": "circle",
       "degree": 0
     }
   ]
