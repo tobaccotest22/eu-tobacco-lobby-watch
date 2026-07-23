@@ -1,0 +1,397 @@
+[
+  {
+    "org_name_pdf": "Association des Fournisseurs de Tabacs à Fumer",
+    "montant_employes": 0,
+    "cabinets": [
+      {
+        "name": "Accompagnement institutionnel vers les Pouvoirs publics",
+        "amount": 129600
+      }
+    ],
+    "nb_cabinets": 1,
+    "total_cabinets": 129600,
+    "total_declare": 129600,
+    "source_file": "AFTF declaration 2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": null,
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Arnold Andre_declaration 2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "British American Tobacco France",
+    "montant_employes": 10436,
+    "cabinets": [
+      {
+        "name": "FORWARD PARTNERS",
+        "amount": 100000
+      },
+      {
+        "name": "A.M.C",
+        "amount": 24000
+      },
+      {
+        "name": "EY CONSEIL",
+        "amount": 65000
+      }
+    ],
+    "nb_cabinets": 3,
+    "total_cabinets": 189000,
+    "total_declare": 199436,
+    "source_file": "BAT_déclaration2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "BOUTTIER",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "BOUTTIER déclaration_depenses 2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "BURGER SOHNE TRADING AG",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "BST_declaration2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "SN CASA DE FRANCIA",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Casa de Francia Déclaration 2023 .pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "CIGARES DU MONDE",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "CigareDuMonde_declaration2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "COPROVA SAS",
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Coprova_Déclaration2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "SA COULAUD",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Coulaud_Declaration2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "DAVIDOFF OF GENEVA France",
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Davidoff_Declaration2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "EUROTAB France SARL",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Eurotab_declaration2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "Fédération des Fabricants de Cigares",
+    "montant_employes": 0,
+    "cabinets": [
+      {
+        "name": "Accompagnement institutionnel vers les pouvoirs publics",
+        "amount": 228031
+      }
+    ],
+    "nb_cabinets": 1,
+    "total_cabinets": 228031,
+    "total_declare": 228031,
+    "source_file": "FFC_Déclaration Dépenses 2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "SAS FIMAR",
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Fimar_Declaration2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "FInLtOroRd DuEc tSioEnLV eAt",
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "FlordeSelva_Declaration2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "",
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "France Shisha_Declaration2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "IDVPC",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "IDVPC_Declaration2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "JT International France SAS",
+    "montant_employes": 52405,
+    "cabinets": [
+      {
+        "name": "Communication et Institutions",
+        "amount": 11085
+      }
+    ],
+    "nb_cabinets": 1,
+    "total_cabinets": 11085,
+    "total_declare": 63490,
+    "source_file": "JTI_Declaration2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "La Roche Royale",
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "LaRocheRoyale_Declaration2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "Landewyck France",
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Landewyck_Declaration2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "LOGISTA France",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Logista_Déclaration 2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": null,
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Mac Baren Tobacco Company 2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "SPP PIPAL",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "PIPAL_Declaration2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "Philip Morris France SAS",
+    "montant_employes": 14395,
+    "cabinets": [
+      {
+        "name": "TMA SAS",
+        "amount": 28800
+      },
+      {
+        "name": "CILAB",
+        "amount": 36000
+      },
+      {
+        "name": "LYSIOS",
+        "amount": 15000
+      },
+      {
+        "name": "SALS ERNST & YOUNG SOCIETE D'AVOCATS",
+        "amount": 9865
+      }
+    ],
+    "nb_cabinets": 4,
+    "total_cabinets": 89665,
+    "total_declare": 104060,
+    "source_file": "PMI_Declaration2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "PEYRET SAS",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Peyret_déclaration2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "ROYAL DISTRIBUTION T.D.N",
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "RoyalDistrib_Declaration2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "SED",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "SED_Declaration2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "SCANDINAVIAN TOBACCO GROUP France",
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Scandinavian-Declaration2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "INDUSTRIELLE DES TABACS ET ALLUMETTES",
+    "montant_employes": 17055,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 17055,
+    "source_file": "Seita_declaration2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "SODIP",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Sodip_declaration2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "STACI",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Staci_Declaration2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "TOURN'FEUILLE SARL",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Tourn'feuille_declaration2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": null,
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Traditab_Declaration2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "VANDERMARLIERE CIGARS FAMILY France",
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "VCF_Declaration2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "VILLIGER France SARL",
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Villiger_declaration2023.pdf",
+    "source_year": 2023
+  },
+  {
+    "org_name_pdf": "SAS VON EICKEN France",
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "VonEicken_declaration2023.pdf",
+    "source_year": 2023
+  }
+]

@@ -1,0 +1,182 @@
+{
+  "organisations": {
+    "Philip Morris International (PMI)": {
+      "budget_by_year": {
+        "2019": 300000,
+        "2020": 200000,
+        "2021": 400000,
+        "2022": 400000,
+        "2023": 500000,
+        "2024": 700000,
+        "2025": 500000
+      },
+      "in_chart_7": true
+    },
+    "British American Tobacco (BAT)": {
+      "budget_by_year": {
+        "2019": 300000,
+        "2020": 300000,
+        "2021": 200000,
+        "2022": 200000,
+        "2023": 300000,
+        "2024": 400000,
+        "2025": 300000
+      },
+      "in_chart_7": true
+    },
+    "JT International (JTI)": {
+      "budget_by_year": {
+        "2019": 200000,
+        "2020": 200000,
+        "2021": 100000,
+        "2022": 100000,
+        "2023": 75000,
+        "2024": 75000,
+        "2025": 75000
+      },
+      "in_chart_7": true
+    },
+    "Seita (Imperial Brands)": {
+      "budget_by_year": {
+        "2019": 400000,
+        "2020": 400000,
+        "2021": 400000,
+        "2022": 400000,
+        "2023": 500000,
+        "2024": 500000,
+        "2025": 200000
+      },
+      "in_chart_7": true
+    },
+    "Logista": {
+      "budget_by_year": {
+        "2023": 50000,
+        "2024": 50000,
+        "2025": 50000
+      },
+      "in_chart_7": false
+    },
+    "France Vapotage": {
+      "budget_by_year": {
+        "2019": 100000,
+        "2020": 100000,
+        "2021": 75000,
+        "2022": 75000,
+        "2023": 75000,
+        "2024": 75000,
+        "2025": 75000
+      },
+      "in_chart_7": false
+    },
+    "Fivape (CACE)": {
+      "budget_by_year": {
+        "2019": 200000,
+        "2020": 200000,
+        "2021": 200000,
+        "2022": 200000,
+        "2023": 200000,
+        "2024": 200000
+      },
+      "in_chart_7": false
+    },
+    "LPV Company": {
+      "budget_by_year": {
+        "2025": 200000
+      },
+      "in_chart_7": false
+    },
+    "Sovape": {
+      "budget_by_year": {
+        "2020": 10000,
+        "2021": 10000,
+        "2022": 10000,
+        "2023": 10000
+      },
+      "in_chart_7": false
+    },
+    "Confederation des buralistes": {
+      "budget_by_year": {
+        "2019": 400000,
+        "2020": 300000,
+        "2021": 300000,
+        "2022": 300000,
+        "2023": 300000,
+        "2024": 300000,
+        "2025": 300000
+      },
+      "in_chart_7": true
+    },
+    "Association des fournisseurs de tabac a fumer (AFTF)": {
+      "budget_by_year": {
+        "2019": 50000,
+        "2020": 50000,
+        "2021": 50000,
+        "2022": 50000,
+        "2023": 50000,
+        "2024": 100000,
+        "2025": 200000
+      },
+      "in_chart_7": true
+    },
+    "Aiduce": {
+      "budget_by_year": {
+        "2024": 10000,
+        "2025": 10000
+      },
+      "in_chart_7": false
+    },
+    "Federation des fabricants de cigares": {
+      "budget_by_year": {
+        "2019": 100000,
+        "2020": 100000,
+        "2021": 100000,
+        "2022": 100000,
+        "2023": 100000,
+        "2024": 100000,
+        "2025": 100000
+      },
+      "in_chart_7": true
+    },
+    "Association Francaise des Industriels du Tabac (Unifab)": {
+      "budget_by_year": {
+        "2020": 10000,
+        "2021": 10000,
+        "2022": 10000,
+        "2023": 10000,
+        "2024": 10000,
+        "2025": 10000
+      },
+      "in_chart_7": false
+    }
+  },
+  "yearly_totals": {
+    "2019": {
+      "total": 1750000,
+      "nb_organisations": 7
+    },
+    "2020": {
+      "total": 1550000,
+      "nb_organisations": 7
+    },
+    "2021": {
+      "total": 1550000,
+      "nb_organisations": 7
+    },
+    "2022": {
+      "total": 1550000,
+      "nb_organisations": 7
+    },
+    "2023": {
+      "total": 1825000,
+      "nb_organisations": 7
+    },
+    "2024": {
+      "total": 2175000,
+      "nb_organisations": 7
+    },
+    "2025": {
+      "total": 1675000,
+      "nb_organisations": 7
+    }
+  }
+}

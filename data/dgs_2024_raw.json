@@ -1,0 +1,487 @@
+[
+  {
+    "org_name_pdf": "Albana Tobacco",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "source_file": "ALBANA TOBACCO-23222736.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "ARNOLD ANDRE SARL",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [
+      {
+        "name": "Membre de la Federation des Fabricants de Cigares FFC",
+        "amount": 0
+      }
+    ],
+    "nb_cabinets": 1,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "source_file": "ARNOLD ANDRE SARL-22971783.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "Association des Fournisseurs de Tabacs a Fumer",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [
+      {
+        "name": "Ai2P",
+        "amount": 273600
+      }
+    ],
+    "nb_cabinets": 1,
+    "total_cabinets": 273600,
+    "montant_avantages": 0,
+    "total_declare": 273600,
+    "source_file": "ASSOCIATION DES FOURNISSEURS DE TABACS A FUMER-23109149.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "BOUTTIER SAS",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "source_file": "BOUTTIER SAS-22903428.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "BRITISH AMERICAN TOBACCO FRANCE",
+    "montant_employes": 422392,
+    "nb_personnels": 3,
+    "cabinets": [
+      {
+        "name": "A.M.C",
+        "amount": 36000
+      },
+      {
+        "name": "EY CONSEIL",
+        "amount": 40000
+      },
+      {
+        "name": "AI2P",
+        "amount": 120000
+      },
+      {
+        "name": "FORWARD PARTNERS",
+        "amount": 100000
+      }
+    ],
+    "nb_cabinets": 4,
+    "total_cabinets": 296000,
+    "montant_avantages": 0,
+    "total_declare": 718392,
+    "source_file": "BRITISH AMERICAN TOBACCO FRANCE-23329288.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "Burger Sohne Trading AG",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "source_file": "BURGER SOHNE TRADING-22966341.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "Cigares du Monde",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "source_file": "CIGARES DU MONDE-23356885.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "COPROVA SAS",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "source_file": "COPROVA SAS-23186526.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "EUROTAB France",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "source_file": "EUROTAB FRANCE-23297318.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "Federation des Fabricants de Cigares",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [
+      {
+        "name": "Ai2P",
+        "amount": 224540
+      }
+    ],
+    "nb_cabinets": 1,
+    "total_cabinets": 224540,
+    "montant_avantages": 0,
+    "total_declare": 224540,
+    "source_file": "FEDERATION DES FABRICANTS DE CIGARES-22963788.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "Flandria sa",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "source_file": "FLANDIRA SA-22933511.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "FLOR DE SELVA",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "source_file": "FLOR DE SELVA-22894544.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "IDVPC",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "source_file": "IDVPC-23009388.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "JT INTERNATIONAL FRANCE SAS",
+    "montant_employes": 51868,
+    "nb_personnels": 2,
+    "cabinets": [
+      {
+        "name": "Artcher",
+        "amount": 15594
+      }
+    ],
+    "nb_cabinets": 1,
+    "total_cabinets": 15594,
+    "montant_avantages": 0,
+    "total_declare": 67462,
+    "source_file": "JT INTERNATIONAL FRANCE SAS-22951426.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "KT INTERNATIONAL",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "source_file": "KT INTERNATIONAL-23360101.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "LANDEWYCK FRANCE",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "source_file": "LANDEWYCK FRANCE-23127705.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "LOGISTA FRANCE SAS",
+    "montant_employes": 5000,
+    "nb_personnels": 1,
+    "cabinets": [
+      {
+        "name": "BOURRY, TALLON ET ASSOCIES",
+        "amount": 45000
+      }
+    ],
+    "nb_cabinets": 1,
+    "total_cabinets": 45000,
+    "montant_avantages": 0,
+    "total_declare": 50000,
+    "source_file": "LOGISTA FRANCE SAS-23315363.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "PEYRET SAS",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "source_file": "PEYRET SAS-22949280.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "Philip Morris France SAS",
+    "montant_employes": 13996,
+    "nb_personnels": 7,
+    "cabinets": [
+      {
+        "name": "TMA SAS",
+        "amount": 28800
+      },
+      {
+        "name": "LYSIOS",
+        "amount": 27000
+      },
+      {
+        "name": "SALS ERNST & YOUNG SOCIETE D'AVOCATS",
+        "amount": 20000
+      }
+    ],
+    "nb_cabinets": 3,
+    "total_cabinets": 75800,
+    "montant_avantages": 0,
+    "total_declare": 89796,
+    "source_file": "PHILIP MORRIS FRANCE SAS-23356340.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "Poeschl Tobacco France",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "source_file": "POESCHL TOBACCO FRANCE-23359589.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "ROYAL DISTRIBUTION T.D.N",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "source_file": "ROYAL DISTRIBUTION T.D.N-23594566.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "S.A.S TRADITAB",
+    "montant_employes": 800,
+    "nb_personnels": 1,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 800,
+    "source_file": "S.A.S TRADITAB-23011855.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "sa coulaud",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "source_file": "SA COULAUD-22966384.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "SAS FIMAR",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "source_file": "SAS FIMAR-23370598.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "SCANDINAVIAN TOBACCO GROUP FRANCE",
+    "montant_employes": 0,
+    "nb_personnels": 0,
+    "cabinets": [
+      {
+        "name": "Membre de la Federation des Fabricants de Cigares (FFC)",
+        "amount": 0
+      }
+    ],
+    "nb_cabinets": 1,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "source_file": "SCANDINAVIAN TOBACCO GROUP FRANCE-23011496.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "SED",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "source_file": "SED-22957925.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "sn casa de francia",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "source_file": "SN CASA  DE FRANCIA-22911399.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "SOCIETE NATIONALE D'EXPLOITATION INDUSTRIELLE DES TABACS ET ALLUMETTES",
+    "montant_employes": 5746,
+    "nb_personnels": 4,
+    "cabinets": [
+      {
+        "name": "STRATEGIES & PUBLICS",
+        "amount": 64260
+      }
+    ],
+    "nb_cabinets": 1,
+    "total_cabinets": 64260,
+    "montant_avantages": 0,
+    "total_declare": 70006,
+    "source_file": "SOCIETE NATIONALE D'EXPLOITATION INDUSTRIELLE DES TABACS ET ALL-23089803.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "SODIP",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "source_file": "SODIP-23292733.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "SPP-PIPAL SAS",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "source_file": "SPP-PIPAL SAS-22931510.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "STACI",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "source_file": "STACI-23089857.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "TOURN'FEUILLE SARL",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "source_file": "TOURN'FEUILLE SARL-22936572.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "VANDERMARLIERE CIGARS FAMILY FRANCE",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "source_file": "VANDERMARLIERE CIGARS FAMILY FRANCE-23654139.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "VILLIGER FRANCE",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "source_file": "VILLIGER FRANCE-23053088.pdf",
+    "source_year": 2024
+  },
+  {
+    "org_name_pdf": "von Eicken France",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "source_file": "VON EICKEN FRANCE22976280.pdf",
+    "source_year": 2024
+  }
+]
