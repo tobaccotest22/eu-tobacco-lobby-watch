@@ -1,0 +1,456 @@
+[
+  {
+    "org_name_pdf": "JT International France SAS",
+    "montant_employes": 52032,
+    "nb_personnels": 2,
+    "cabinets": [
+      {
+        "name": "Artcher",
+        "amount": 13894
+      }
+    ],
+    "nb_cabinets": 1,
+    "total_cabinets": 13894,
+    "montant_avantages": 0,
+    "total_declare": 65926,
+    "dossier_id": "30178075",
+    "folder_org_name": "JTI France"
+  },
+  {
+    "org_name_pdf": "EUROTAB France",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "dossier_id": "30198392",
+    "folder_org_name": "Eurotab France"
+  },
+  {
+    "org_name_pdf": "Federation des Fabricants de Cigares",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [
+      {
+        "name": "Ai2P",
+        "amount": 221955
+      }
+    ],
+    "nb_cabinets": 1,
+    "total_cabinets": 221955,
+    "montant_avantages": 0,
+    "total_declare": 221955,
+    "dossier_id": "30199131",
+    "folder_org_name": "Fédération des fabricants de cigares"
+  },
+  {
+    "org_name_pdf": "SPP-PIPAL SAS",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "dossier_id": "30199679",
+    "folder_org_name": "SPP Pipal SAS"
+  },
+  {
+    "org_name_pdf": "British American Tobacco France",
+    "montant_employes": 31274,
+    "nb_personnels": 3,
+    "cabinets": [
+      {
+        "name": "FSTRAT - FORWARD PARTNERS",
+        "amount": 55200
+      },
+      {
+        "name": "A.I.2.P.",
+        "amount": 36000
+      },
+      {
+        "name": "Adrien Morenas Conseil",
+        "amount": 24000
+      }
+    ],
+    "nb_cabinets": 3,
+    "total_cabinets": 115200,
+    "montant_avantages": 0,
+    "total_declare": 146474,
+    "dossier_id": "30200555",
+    "folder_org_name": "BAT France"
+  },
+  {
+    "org_name_pdf": "Association des Fournisseurs de Tabac a Fumer",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [
+      {
+        "name": "Ai2P",
+        "amount": 174000
+      }
+    ],
+    "nb_cabinets": 1,
+    "total_cabinets": 174000,
+    "montant_avantages": 0,
+    "total_declare": 174000,
+    "dossier_id": "30201116",
+    "folder_org_name": "AFTF"
+  },
+  {
+    "org_name_pdf": "COPROVA SAS",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "dossier_id": "30201686",
+    "folder_org_name": "COPROVA"
+  },
+  {
+    "org_name_pdf": "SN CASA DE FRANCIA",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "dossier_id": "30203183",
+    "folder_org_name": "CASA DE FRANCIA"
+  },
+  {
+    "org_name_pdf": "BOUTTIER SAS",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "dossier_id": "30203356",
+    "folder_org_name": "Bouttier SAS"
+  },
+  {
+    "org_name_pdf": "IDVPC",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "dossier_id": "30203952",
+    "folder_org_name": "IDVPC"
+  },
+  {
+    "org_name_pdf": "ARNOLD ANDRE SARL",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [
+      {
+        "name": "Membre de la Federation des Fabricants de Cigares FFC",
+        "amount": 0
+      }
+    ],
+    "nb_cabinets": 1,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "dossier_id": "30205680",
+    "folder_org_name": "ARNOLD ANDRE SARL"
+  },
+  {
+    "org_name_pdf": "VILLIGER FRANCE",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "dossier_id": "30213313",
+    "folder_org_name": "Villiger France"
+  },
+  {
+    "org_name_pdf": "LANDEWYCK FRANCE",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "dossier_id": "30215395",
+    "folder_org_name": "LANDEWYCK FRANCE"
+  },
+  {
+    "org_name_pdf": "S.A.S. TRADITAB",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "dossier_id": "30222765",
+    "folder_org_name": "Traditab"
+  },
+  {
+    "org_name_pdf": "FLOR DE SELVA",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "dossier_id": "30222993",
+    "folder_org_name": "FLOR DE SELVA"
+  },
+  {
+    "org_name_pdf": "TOURN'FEUILLE SARL",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "dossier_id": "30224104",
+    "folder_org_name": "TOURN'FEUILLE SARL"
+  },
+  {
+    "org_name_pdf": "CHAPUIS-COMOY & CIE SARL",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "dossier_id": "30229490",
+    "folder_org_name": "CHAPUIS-COMOY & CIE SARL"
+  },
+  {
+    "org_name_pdf": "Flandria sa",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "dossier_id": "30231767",
+    "folder_org_name": "Flandria SA"
+  },
+  {
+    "org_name_pdf": "Societe nationale d'exploitation industrielle des tabacs et allumettes",
+    "montant_employes": 11796,
+    "nb_personnels": 4,
+    "cabinets": [
+      {
+        "name": "Euros Agency Group",
+        "amount": 20600
+      },
+      {
+        "name": "Forward Global",
+        "amount": 45480
+      }
+    ],
+    "nb_cabinets": 2,
+    "total_cabinets": 66080,
+    "montant_avantages": 0,
+    "total_declare": 77876,
+    "dossier_id": "30240599",
+    "folder_org_name": "SEITA"
+  },
+  {
+    "org_name_pdf": "Volutes et Vitoles SAS",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "dossier_id": "30254145",
+    "folder_org_name": "Volutes et Vitoles SAS"
+  },
+  {
+    "org_name_pdf": "CIGARES DU MONDE",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "dossier_id": "30259583",
+    "folder_org_name": "Cigares du monde"
+  },
+  {
+    "org_name_pdf": "Philip Morris France SAS",
+    "montant_employes": 22862,
+    "nb_personnels": 8,
+    "cabinets": [
+      {
+        "name": "TMA SAS",
+        "amount": 46650
+      },
+      {
+        "name": "The Arcane",
+        "amount": 43800
+      },
+      {
+        "name": "ESL RIVINGTON",
+        "amount": 3500
+      }
+    ],
+    "nb_cabinets": 3,
+    "total_cabinets": 93950,
+    "montant_avantages": 0,
+    "total_declare": 116812,
+    "dossier_id": "30263138",
+    "folder_org_name": "Philip Morris France"
+  },
+  {
+    "org_name_pdf": "FUMAN DISTRIBUTION",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "dossier_id": "30265615",
+    "folder_org_name": "Fuman Distribution"
+  },
+  {
+    "org_name_pdf": "BURGER SOHNE TRADING AG",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [
+      {
+        "name": "Federation des Fabricants de Cigares",
+        "amount": 0
+      }
+    ],
+    "nb_cabinets": 1,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "dossier_id": "30270356",
+    "folder_org_name": "BURGER SOHNE TRADING AG"
+  },
+  {
+    "org_name_pdf": "VCF FRANCE",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "dossier_id": "30307335",
+    "folder_org_name": "VCF France"
+  },
+  {
+    "org_name_pdf": "SODIP",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "dossier_id": "30317084",
+    "folder_org_name": "SODIP"
+  },
+  {
+    "org_name_pdf": "von Eicken France",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "dossier_id": "30326876",
+    "folder_org_name": "Von Eicken France"
+  },
+  {
+    "org_name_pdf": "ROYAL DISTRIBUTION T.D.N",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "dossier_id": "30332932",
+    "folder_org_name": "ROYAL DISTRIBUTION"
+  },
+  {
+    "org_name_pdf": "SAS FIMAR",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "dossier_id": "30351005",
+    "folder_org_name": "SAS FIMAR"
+  },
+  {
+    "org_name_pdf": "LOGISTA FRANCE SAS",
+    "montant_employes": 7000,
+    "nb_personnels": 2,
+    "cabinets": [
+      {
+        "name": "BOURRY, TALLON ET ASSOCIES",
+        "amount": 96000
+      }
+    ],
+    "nb_cabinets": 1,
+    "total_cabinets": 96000,
+    "montant_avantages": 0,
+    "total_declare": 103000,
+    "dossier_id": "30373044",
+    "folder_org_name": "Logista France"
+  },
+  {
+    "org_name_pdf": "SCANDINAVIAN TOBACCO GROUP FRANCE",
+    "montant_employes": 0,
+    "nb_personnels": 0,
+    "cabinets": [
+      {
+        "name": "Membre de la Federation des Fabricants de Cigares (FFC)",
+        "amount": 0
+      }
+    ],
+    "nb_cabinets": 1,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "dossier_id": "30407371",
+    "folder_org_name": "Scandinavian Tobacco Group France"
+  },
+  {
+    "org_name_pdf": "POESCHL TOBACCO FRANCE",
+    "montant_employes": 0,
+    "nb_personnels": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "montant_avantages": 0,
+    "total_declare": 0,
+    "dossier_id": "30496541",
+    "folder_org_name": "POESCHL TOBACCO FRANCE"
+  }
+]

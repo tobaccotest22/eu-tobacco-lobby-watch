@@ -1,0 +1,331 @@
+{
+  "_notes": [
+    "Perimetre legal DGS (article L.3512-7 du code de la sante publique, verifie sur Legifrance) : l'obligation de declaration vise explicitement les 'fabricants, importateurs et distributeurs de produits du tabac' et les organisations les representant - aucune mention des cigarettes electroniques/produits du vapotage, regis par un cadre distinct en droit francais. Ceci explique l'absence de declaration DGS 2025 pour les acteurs vapotage (France Vapotage, Fivape/CACE, Sovape, LPV Company) et pour Aiduce (association d'utilisateurs de cigarette electronique) : ils sont hors perimetre legal, pas des organisations qui auraient omis de declarer. En revanche, l'absence de declaration de la Confederation des buralistes N'EST PAS expliquee par ce meme motif (les buralistes vendent bien des produits du tabac, ils devraient a priori entrer dans le perimetre) - reste une question ouverte, non elucidee par cette extraction."
+  ],
+  "acteurs": [
+    {
+      "acteur": "Philip Morris International (PMI)",
+      "categorie": "Industriels du tabac",
+      "hatvp_trouve": true,
+      "budget_hatvp_bas_2025": 400000,
+      "budget_hatvp_haut_2025": 500000,
+      "nb_salaries_hatvp_2025": 6,
+      "cabinets_hatvp": [
+        "CILAB",
+        "ENOTIKO",
+        "ERNST & YOUNG SOCIETE D' AVOCATS",
+        "ESL & NETWORK FRANCE SAS",
+        "LYSIOS",
+        "PLEAD",
+        "RHEA CONSEIL",
+        "RIVINGTON",
+        "TMA"
+      ],
+      "nb_cabinets_hatvp": 9,
+      "dgs_2025_montant_total": 116812,
+      "dgs_2025_detail": {
+        "montant_employes": 22862,
+        "cabinets": [
+          {
+            "name": "TMA SAS",
+            "amount": 46650
+          },
+          {
+            "name": "The Arcane",
+            "amount": 43800
+          },
+          {
+            "name": "ESL RIVINGTON",
+            "amount": 3500
+          }
+        ],
+        "montant_avantages": 0
+      },
+      "note": null
+    },
+    {
+      "acteur": "British American Tobacco (BAT)",
+      "categorie": "Industriels du tabac",
+      "hatvp_trouve": true,
+      "budget_hatvp_bas_2025": 200000,
+      "budget_hatvp_haut_2025": 300000,
+      "nb_salaries_hatvp_2025": 3,
+      "cabinets_hatvp": [
+        "ASSOCIATION DES FOURNISSEURS DE TABACS A FUMER",
+        "ENOTIKO",
+        "ERNST & YOUNG SOCIETE D' AVOCATS",
+        "FORWARD PARTNERS",
+        "France Vapotage",
+        "MORENAS ADRIEN"
+      ],
+      "nb_cabinets_hatvp": 6,
+      "dgs_2025_montant_total": 146474,
+      "dgs_2025_detail": {
+        "montant_employes": 31274,
+        "cabinets": [
+          {
+            "name": "FSTRAT - FORWARD PARTNERS",
+            "amount": 55200
+          },
+          {
+            "name": "A.I.2.P.",
+            "amount": 36000
+          },
+          {
+            "name": "Adrien Morenas Conseil",
+            "amount": 24000
+          }
+        ],
+        "montant_avantages": 0
+      },
+      "note": null
+    },
+    {
+      "acteur": "JT International (JTI)",
+      "categorie": "Industriels du tabac",
+      "hatvp_trouve": true,
+      "budget_hatvp_bas_2025": 50000,
+      "budget_hatvp_haut_2025": 75000,
+      "nb_salaries_hatvp_2025": 0,
+      "cabinets_hatvp": [
+        "ARTCHER",
+        "COMMUNICATION & INSTITUTIONS",
+        "ENOTIKO",
+        "France Vapotage",
+        "LYSIOS"
+      ],
+      "nb_cabinets_hatvp": 5,
+      "dgs_2025_montant_total": 65926,
+      "dgs_2025_detail": {
+        "montant_employes": 52032,
+        "cabinets": [
+          {
+            "name": "Artcher",
+            "amount": 13894
+          }
+        ],
+        "montant_avantages": 0
+      },
+      "note": null
+    },
+    {
+      "acteur": "Seita (Imperial Brands)",
+      "categorie": "Industriels du tabac",
+      "hatvp_trouve": true,
+      "budget_hatvp_bas_2025": 100000,
+      "budget_hatvp_haut_2025": 200000,
+      "nb_salaries_hatvp_2025": 1,
+      "cabinets_hatvp": [
+        "ASSOCIATION DES FOURNISSEURS DE TABACS A FUMER",
+        "ENOTIKO",
+        "EUROS AGENCY",
+        "France Vapotage",
+        "FÉDÉRATION DES FABRICANTS DE CIGARES",
+        "PUBLICIS CONSULTANTS FRANCE",
+        "STRATEGIES & PUBLICS"
+      ],
+      "nb_cabinets_hatvp": 7,
+      "dgs_2025_montant_total": 77876,
+      "dgs_2025_detail": {
+        "montant_employes": 11796,
+        "cabinets": [
+          {
+            "name": "Euros Agency Group",
+            "amount": 20600
+          },
+          {
+            "name": "Forward Global",
+            "amount": 45480
+          }
+        ],
+        "montant_avantages": 0
+      },
+      "note": "Budget/salaries HATVP 2025 different du fichier Excel de reference pour cet acteur (exercice a cheval octobre-septembre) - ecart de fraicheur des donnees probable ; actions et cabinets HATVP restent coherents avec le fichier."
+    },
+    {
+      "acteur": "Logista",
+      "categorie": "Industriels du tabac",
+      "hatvp_trouve": true,
+      "budget_hatvp_bas_2025": 25000,
+      "budget_hatvp_haut_2025": 50000,
+      "nb_salaries_hatvp_2025": 1,
+      "cabinets_hatvp": [
+        "BOURY TALLON & ASSOCIES",
+        "CAP CORELI, COMMUNICATION & RELATIONS INSTITUTIONNELLES",
+        "M&M CONSEIL"
+      ],
+      "nb_cabinets_hatvp": 3,
+      "dgs_2025_montant_total": 103000,
+      "dgs_2025_detail": {
+        "montant_employes": 7000,
+        "cabinets": [
+          {
+            "name": "BOURRY, TALLON ET ASSOCIES",
+            "amount": 96000
+          }
+        ],
+        "montant_avantages": 0
+      },
+      "note": "Budget/salaries HATVP 2025 different du fichier Excel de reference pour cet acteur (exercice a cheval octobre-septembre) - ecart de fraicheur des donnees probable ; actions et cabinets HATVP restent coherents avec le fichier."
+    },
+    {
+      "acteur": "France Vapotage",
+      "categorie": "Vapotage",
+      "hatvp_trouve": true,
+      "budget_hatvp_bas_2025": 50000,
+      "budget_hatvp_haut_2025": 75000,
+      "nb_salaries_hatvp_2025": 0,
+      "cabinets_hatvp": [],
+      "nb_cabinets_hatvp": 0,
+      "dgs_2025_montant_total": null,
+      "dgs_2025_detail": null,
+      "note": null
+    },
+    {
+      "acteur": "Fivape (CACE)",
+      "categorie": "Vapotage",
+      "hatvp_trouve": true,
+      "budget_hatvp_bas_2025": 0,
+      "budget_hatvp_haut_2025": 0,
+      "nb_salaries_hatvp_2025": null,
+      "cabinets_hatvp": [
+        "ARCTURUS FRANCE",
+        "STRATEGIES & PUBLICS"
+      ],
+      "nb_cabinets_hatvp": 2,
+      "dgs_2025_montant_total": null,
+      "dgs_2025_detail": null,
+      "note": "Exercice 2025 pas encore publie sur HATVP au moment de cette extraction (0 activite, budget 0EUR, salaries non renseignes) - ne pas lire comme un montant declare a zero, juste une donnee pas encore disponible."
+    },
+    {
+      "acteur": "LPV Company",
+      "categorie": "Vapotage",
+      "hatvp_trouve": true,
+      "budget_hatvp_bas_2025": 100000,
+      "budget_hatvp_haut_2025": 200000,
+      "nb_salaries_hatvp_2025": 0,
+      "cabinets_hatvp": [
+        "EUROS AGENCY"
+      ],
+      "nb_cabinets_hatvp": 1,
+      "dgs_2025_montant_total": null,
+      "dgs_2025_detail": null,
+      "note": null
+    },
+    {
+      "acteur": "Sovape",
+      "categorie": "Vapotage",
+      "hatvp_trouve": true,
+      "budget_hatvp_bas_2025": null,
+      "budget_hatvp_haut_2025": null,
+      "nb_salaries_hatvp_2025": null,
+      "cabinets_hatvp": [],
+      "nb_cabinets_hatvp": 0,
+      "dgs_2025_montant_total": null,
+      "dgs_2025_detail": null,
+      "note": null
+    },
+    {
+      "acteur": "Confederation des buralistes",
+      "categorie": "Association/Federation",
+      "hatvp_trouve": true,
+      "budget_hatvp_bas_2025": 200000,
+      "budget_hatvp_haut_2025": 300000,
+      "nb_salaries_hatvp_2025": 1,
+      "cabinets_hatvp": [
+        "IMAGE 7"
+      ],
+      "nb_cabinets_hatvp": 1,
+      "dgs_2025_montant_total": null,
+      "dgs_2025_detail": null,
+      "note": null
+    },
+    {
+      "acteur": "Association des fournisseurs de tabac a fumer (AFTF)",
+      "categorie": "Association/Federation",
+      "hatvp_trouve": true,
+      "budget_hatvp_bas_2025": 100000,
+      "budget_hatvp_haut_2025": 200000,
+      "nb_salaries_hatvp_2025": 0,
+      "cabinets_hatvp": [
+        "AI2P"
+      ],
+      "nb_cabinets_hatvp": 1,
+      "dgs_2025_montant_total": 174000,
+      "dgs_2025_detail": {
+        "montant_employes": 0,
+        "cabinets": [
+          {
+            "name": "Ai2P",
+            "amount": 174000
+          }
+        ],
+        "montant_avantages": 0
+      },
+      "note": null
+    },
+    {
+      "acteur": "Aiduce",
+      "categorie": "Association/Federation",
+      "hatvp_trouve": true,
+      "budget_hatvp_bas_2025": 0,
+      "budget_hatvp_haut_2025": 10000,
+      "nb_salaries_hatvp_2025": 0,
+      "cabinets_hatvp": [],
+      "nb_cabinets_hatvp": 0,
+      "dgs_2025_montant_total": null,
+      "dgs_2025_detail": null,
+      "note": null
+    },
+    {
+      "acteur": "Federation des fabricants de cigares",
+      "categorie": "Association/Federation",
+      "hatvp_trouve": true,
+      "budget_hatvp_bas_2025": 75000,
+      "budget_hatvp_haut_2025": 100000,
+      "nb_salaries_hatvp_2025": 0,
+      "cabinets_hatvp": [
+        "AI2P"
+      ],
+      "nb_cabinets_hatvp": 1,
+      "dgs_2025_montant_total": 221955,
+      "dgs_2025_detail": {
+        "montant_employes": 0,
+        "cabinets": [
+          {
+            "name": "Ai2P",
+            "amount": 221955
+          }
+        ],
+        "montant_avantages": 0
+      },
+      "note": null
+    },
+    {
+      "acteur": "Cigusto / HDDB Holding",
+      "categorie": "Cas particulier (actions via un tiers)",
+      "hatvp_trouve": false,
+      "budget_hatvp_bas_2025": null,
+      "budget_hatvp_haut_2025": null,
+      "nb_salaries_hatvp_2025": null,
+      "cabinets_hatvp": [],
+      "nb_cabinets_hatvp": 0,
+      "dgs_2025_montant_total": null,
+      "dgs_2025_detail": null,
+      "note": null
+    },
+    {
+      "acteur": "Association Francaise des Industriels du Tabac (Unifab)",
+      "categorie": "Association/Federation",
+      "hatvp_trouve": true,
+      "budget_hatvp_bas_2025": 0,
+      "budget_hatvp_haut_2025": 10000,
+      "nb_salaries_hatvp_2025": 0,
+      "cabinets_hatvp": [],
+      "nb_cabinets_hatvp": 0,
+      "dgs_2025_montant_total": null,
+      "dgs_2025_detail": null,
+      "note": null
+    }
+  ]
+}
