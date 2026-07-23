@@ -1,0 +1,63 @@
+{
+  "organisations": {
+    "Philip Morris International (PMI)": {
+      "2022": 111150,
+      "2023": 104060,
+      "2024": 89796,
+      "2025": 116812
+    },
+    "British American Tobacco (BAT)": {
+      "2022": 105227,
+      "2023": 199436,
+      "2024": 718392,
+      "2025": 146474
+    },
+    "JT International (JTI)": {
+      "2022": 25830,
+      "2023": 63490,
+      "2024": 67462,
+      "2025": 65926
+    },
+    "Seita (Imperial Brands)": {
+      "2022": 8352,
+      "2023": 17055,
+      "2024": 70006,
+      "2025": 77876
+    },
+    "Confederation des buralistes": {},
+    "Federation des fabricants de cigares": {
+      "2022": 212191,
+      "2023": 228031,
+      "2024": 224540,
+      "2025": 221955
+    },
+    "Association des fournisseurs de tabac a fumer (AFTF)": {
+      "2022": 119520,
+      "2023": 129600,
+      "2024": 273600,
+      "2025": 174000
+    }
+  },
+  "yearly_totals": {
+    "2022": {
+      "total": 582270,
+      "nb_organisations": 6
+    },
+    "2023": {
+      "total": 741672,
+      "nb_organisations": 6
+    },
+    "2024": {
+      "total": 1443796,
+      "nb_organisations": 6
+    },
+    "2025": {
+      "total": 803043,
+      "nb_organisations": 6
+    }
+  },
+  "_notes": [
+    "Confederation des buralistes : aucune declaration DGS trouvee sur 2022-2025 (les 4 annees ont ete cherchees) - coherent avec le statut de 'prepose de l'administration des douanes' (hors perimetre de l'article L.3512-7 qui vise les 'distributeurs'), deja documente dans data/fr_summary_table.json.",
+    "BAT : le montant declare au titre de la remuneration des personnels passe de 10 436EUR (2023) a 422 392EUR (2024), soit x40. Verification faite sur le nombre de salaries declares (pas seulement le montant) : il reste stable (3 personnes en 2023 comme en 2024, source : 'Nombre de personnes/personnels remunerees' dans chaque PDF) - l'ecart n'est donc PAS explique par un changement de perimetre (plus de personnes comptees). Aucune autre explication verifiee trouvee a ce stade : le chiffre est repris tel que declare, sans correction ni interpretation."
+  ]
+}

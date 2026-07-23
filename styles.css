@@ -608,6 +608,32 @@ tbody.show-all tr.extra-row.detail-row.open { display: table-row; }
 .fr-notes sup { font-weight: 700; margin-right: 0.1rem; }
 table sup { font-weight: 700; color: var(--orange); margin-left: 0.1rem; }
 
+.fr-history-toggle {
+  display: inline-block;
+  margin-right: 0.5rem;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--blue-dark);
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.fr-history-toggle:hover { background: #dbe4ff; }
+.fr-history-row td {
+  background: #f9fbfc;
+  padding: 0.7rem 1rem;
+}
+.fr-history-years { margin: 0; font-size: 0.85rem; }
+.fr-history-year { white-space: nowrap; margin-right: 0.4rem; }
+.fr-history-delta { color: #6b7280; font-size: 0.8rem; }
+
+.fr-total-row td {
+  background: #eef2ff;
+  border-bottom: 2px solid var(--blue);
+}
+
 .org-links-detail {
   margin-top: 1rem;
   padding: 1rem 1.25rem;

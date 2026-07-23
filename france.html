@@ -14,15 +14,16 @@
 <nav class="site-nav" id="top">
   <div class="banner-inner">
     <div class="nav-brand-group">
-      <a href="index.html" class="nav-brand">EU <span class="redacted">████</span> TOBACCO WATCH</a>
+      <a href="index.html" class="nav-brand">Outil Veille <span class="redacted">█████</span> du Tabac</a>
       <div class="site-tabs">
-        <a href="index.html" class="site-tab">EU Tobacco Watch</a>
+        <a href="index.html" class="site-tab">UE</a>
         <a href="france.html" class="site-tab active">France</a>
       </div>
     </div>
     <div class="nav-links">
       <a href="#top" class="nav-link active">Accueil</a>
       <a href="#acteurs" class="nav-link">Les acteurs</a>
+      <a href="#historique" class="nav-link">Historique</a>
     </div>
   </div>
 </nav>
@@ -106,6 +107,49 @@
   </section>
   </div>
   </div>
+
+  <div class="page-band page-band-white">
+  <div class="page-band-inner">
+  <section id="historique">
+    <h2>Historique / Statistiques</h2>
+
+    <div class="card">
+      <button class="collapsible-toggle" id="fr-hatvp-history-toggle" aria-expanded="false">
+        <span class="collapsible-icon">▸</span>
+        <span class="title-stamp">Historique du budget HATVP (2019-2025)</span>
+      </button>
+      <div class="collapsible-body" id="fr-hatvp-history-body">
+        <p class="section-intro">
+          Budget annuel déclaré (borne haute de la fourchette HATVP) pour 7 acteurs suivis depuis 2019, plus le
+          total de ces 7 acteurs. Les exercices pas encore publiés au moment de l'extraction sont omis (pas
+          affichés comme un budget nul).
+        </p>
+        <div class="chart-wrapper">
+          <div id="fr-hatvp-history-chart"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 1.5rem;">
+      <button class="collapsible-toggle" id="fr-dgs-history-toggle" aria-expanded="false">
+        <span class="collapsible-icon">▸</span>
+        <span class="title-stamp">Historique des déclarations DGS (2022-2025)</span>
+      </button>
+      <div class="collapsible-body" id="fr-dgs-history-body">
+        <p class="section-intro">
+          Total déclaré au titre de la loi Transparence Tabac (salariés + cabinets + avantages) pour les mêmes 7
+          acteurs, plus leur total. La Confédération des buralistes n'apparaît sur aucune des 4 années (cohérent
+          avec l'absence de déclaration DGS déjà documentée dans le tableau des acteurs, note<sup>4</sup>).
+        </p>
+        <div class="chart-wrapper">
+          <div id="fr-dgs-history-chart"></div>
+        </div>
+        <div class="fr-notes" id="fr-dgs-history-notes"></div>
+      </div>
+    </div>
+  </section>
+  </div>
+  </div>
 </main>
 
 <footer>
@@ -162,6 +206,42 @@ function frNoteMarker(row) {
   return '';
 }
 
+let FR_HATVP_HISTORY = null;
+
+function frHistoryContent(acteurName) {
+  const entry = FR_HATVP_HISTORY && FR_HATVP_HISTORY.organisations[acteurName];
+  const byYear = entry && entry.budget_by_year;
+  if (!byYear || !Object.keys(byYear).length) {
+    return '<p class="muted">Historique HATVP non disponible pour cet acteur.</p>';
+  }
+  const years = Object.keys(byYear).map(Number).sort((a, b) => a - b);
+  const items = years.map((year, i) => {
+    const value = byYear[year];
+    let delta = '';
+    if (i > 0) {
+      const prev = byYear[years[i - 1]];
+      if (typeof prev === 'number' && prev > 0) {
+        const pct = Math.round(((value - prev) / prev) * 100);
+        const arrow = pct > 0 ? '▲' : (pct < 0 ? '▼' : '=');
+        delta = ` <span class="fr-history-delta">(${arrow} ${pct > 0 ? '+' : ''}${pct}% vs ${years[i - 1]})</span>`;
+      }
+    }
+    return `<span class="fr-history-year"><strong>${year}</strong> : ${formatEuro(value)}${delta}</span>`;
+  });
+  return `<p class="fr-history-years">Budget HATVP (borne haute) par exercice : ${items.join(' · ')}</p>`;
+}
+
+function computeFrTotals(rows) {
+  const withBudget = rows.filter(r => !(r.budget_hatvp_bas_2025 === 0 && r.budget_hatvp_haut_2025 === 0));
+  const totalBudgetBas = withBudget.reduce((sum, r) => sum + (r.budget_hatvp_bas_2025 || 0), 0);
+  const totalBudgetHaut = withBudget.reduce((sum, r) => sum + (r.budget_hatvp_haut_2025 || 0), 0);
+  const totalSalaries = rows.reduce((sum, r) => sum + (r.nb_salaries_hatvp_2025 || 0), 0);
+  const totalDgs = rows.reduce((sum, r) => sum + (r.dgs_2025_montant_total || 0), 0);
+  const cabinetsSet = new Set();
+  rows.forEach(r => (r.cabinets_hatvp || []).forEach(c => cabinetsSet.add(c)));
+  return { totalBudgetBas, totalBudgetHaut, totalSalaries, totalDgs, cabinetsCount: cabinetsSet.size };
+}
+
 function renderFrActeursTable(data) {
   const rows = [...data.acteurs].sort((a, b) => {
     const bb = b.budget_hatvp_haut_2025 ?? -1;
@@ -169,16 +249,48 @@ function renderFrActeursTable(data) {
     return bb - ab;
   });
 
-  document.getElementById('fr-acteurs-table-body').innerHTML = rows.map(row => `
+  const totals = computeFrTotals(rows);
+  const totalRowHtml = `
+    <tr class="fr-total-row">
+      <td data-label="Acteur"><strong>Total (${rows.length} acteurs)</strong></td>
+      <td data-label="Catégorie">—</td>
+      <td class="num" data-label="Budget HATVP 2025"><strong>${formatEuro(totals.totalBudgetBas)} – ${formatEuro(totals.totalBudgetHaut)}</strong></td>
+      <td data-label="Cabinets utilisés"><strong>${totals.cabinetsCount} cabinets distincts</strong></td>
+      <td class="num" data-label="Salariés"><strong>${totals.totalSalaries}</strong></td>
+      <td class="num" data-label="DGS 2025"><strong>${formatEuro(totals.totalDgs)}</strong></td>
+    </tr>
+  `;
+
+  document.getElementById('fr-acteurs-table-body').innerHTML = totalRowHtml + rows.map((row, i) => `
     <tr>
-      <td data-label="Acteur">${row.acteur}${frNoteMarker(row)}</td>
+      <td data-label="Acteur">
+        <button class="fr-history-toggle" data-idx="${i}" aria-expanded="false" aria-label="Voir l'historique">▸ Historique</button>
+        ${row.acteur}${frNoteMarker(row)}
+      </td>
       <td data-label="Catégorie">${row.categorie}</td>
       <td class="num" data-label="Budget HATVP 2025">${frBudgetDisplay(row)}</td>
       <td data-label="Cabinets utilisés">${row.nb_cabinets_hatvp ? `${row.cabinets_hatvp.join(', ')} (${row.nb_cabinets_hatvp})` : '<span class="muted">—</span>'}</td>
       <td class="num" data-label="Salariés">${row.nb_salaries_hatvp_2025 ?? '<span class="muted">—</span>'}</td>
       <td class="num" data-label="DGS 2025">${frDgsDisplay(row)}</td>
     </tr>
+    <tr class="fr-history-row" id="fr-history-row-${i}" style="display:none">
+      <td colspan="6">${frHistoryContent(row.acteur)}</td>
+    </tr>
   `).join('');
+
+  const tbody = document.getElementById('fr-acteurs-table-body');
+  if (!tbody.dataset.historyBound) {
+    tbody.addEventListener('click', (e) => {
+      const btn = e.target.closest('.fr-history-toggle');
+      if (!btn) return;
+      const detailRow = document.getElementById(`fr-history-row-${btn.dataset.idx}`);
+      const isOpen = detailRow.style.display !== 'none';
+      detailRow.style.display = isOpen ? 'none' : 'table-row';
+      btn.textContent = isOpen ? '▸ Historique' : '▾ Historique';
+      btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+    });
+    tbody.dataset.historyBound = 'true';
+  }
 
   const notesHtml = `
     <p><sup>1</sup> Seita et Logista déclarent sur un exercice HATVP octobre-septembre (pas l'année civile) :
@@ -206,17 +318,13 @@ function renderFrActeursTable(data) {
 
 function renderFrStats(data) {
   const rows = data.acteurs;
-  const withBudget = rows.filter(r => !(r.budget_hatvp_bas_2025 === 0 && r.budget_hatvp_haut_2025 === 0));
-  const totalBudgetHaut = withBudget.reduce((sum, r) => sum + (r.budget_hatvp_haut_2025 || 0), 0);
-  const totalDgs = rows.reduce((sum, r) => sum + (r.dgs_2025_montant_total || 0), 0);
-  const cabinetsSet = new Set();
-  rows.forEach(r => (r.cabinets_hatvp || []).forEach(c => cabinetsSet.add(c)));
+  const totals = computeFrTotals(rows);
 
   const tiles = [
     { value: rows.length, label: 'Acteurs suivis' },
-    { value: formatEuro(totalBudgetHaut), label: 'Budget HATVP total déclaré (2025, borne haute)' },
-    { value: formatEuro(totalDgs), label: 'Total déclaré DGS (2025)' },
-    { value: cabinetsSet.size, label: 'Cabinets de lobbying distincts recensés' },
+    { value: formatEuro(totals.totalBudgetHaut), label: 'Budget HATVP total déclaré (2025, borne haute)' },
+    { value: formatEuro(totals.totalDgs), label: 'Total déclaré DGS (2025)' },
+    { value: totals.cabinetsCount, label: 'Cabinets de lobbying distincts recensés' },
   ];
   document.getElementById('stats').innerHTML = tiles.map(t => `
     <div class="stat-tile">
@@ -225,11 +333,180 @@ function renderFrStats(data) {
     </div>
   `).join('');
 
-  animateCounter(document.getElementById('banner-counter-value'), totalBudgetHaut, 1800);
+  animateCounter(document.getElementById('banner-counter-value'), totals.totalBudgetHaut, 1800);
+}
+
+/* ---------- Historique / Statistiques (courbes HATVP et DGS) ---------- */
+
+const FR_HISTORY_ORGS = [
+  { name: 'Philip Morris International (PMI)', color: '#0038FF' },
+  { name: 'British American Tobacco (BAT)', color: '#e8590c' },
+  { name: 'JT International (JTI)', color: '#7c3aed' },
+  { name: 'Seita (Imperial Brands)', color: '#10b981' },
+  { name: 'Confederation des buralistes', color: '#d63384' },
+  { name: 'Federation des fabricants de cigares', color: '#f59e0b' },
+  { name: 'Association des fournisseurs de tabac a fumer (AFTF)', color: '#0d9488' },
+];
+
+function niceCeil(value) {
+  if (value <= 0) return 1;
+  const exponent = Math.floor(Math.log10(value));
+  const base = Math.pow(10, exponent);
+  const fraction = value / base;
+  const niceFractions = [1, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10];
+  const niceFraction = niceFractions.find(f => f >= fraction) || 10;
+  return niceFraction * base;
+}
+
+function formatCompactEuro(value) {
+  if (value >= 1e6) return `${(value / 1e6).toFixed(1)}M€`;
+  return `${Math.round(value / 1000)}k€`;
+}
+
+function renderHistoryLineChart(containerId, series, totalSeries) {
+  const container = document.getElementById(containerId);
+  const allSeries = totalSeries ? series.concat([totalSeries]) : series;
+  const yearsSet = new Set();
+  allSeries.forEach(s => Object.keys(s.byYear).forEach(y => yearsSet.add(y)));
+  const years = Array.from(yearsSet).sort((a, b) => Number(a) - Number(b));
+
+  if (!years.length) {
+    container.innerHTML = '<p class="muted">Aucune donnée disponible.</p>';
+    return;
+  }
+
+  const allValues = allSeries.flatMap(s => years.map(y => s.byYear[y]).filter(v => typeof v === 'number'));
+  const yMax = niceCeil(Math.max(...allValues, 1));
+  const TICK_COUNT = 5;
+
+  const paddingLeft = 56;
+  const paddingRight = 24;
+  const paddingTop = 20;
+  const paddingBottom = 46;
+  const chartHeight = 260;
+  const step = 56;
+  const width = paddingLeft + paddingRight + (years.length - 1) * step;
+  const height = paddingTop + chartHeight + paddingBottom;
+
+  const xFor = i => paddingLeft + i * step;
+  const yFor = value => paddingTop + chartHeight - (value / yMax) * chartHeight;
+
+  let gridlines = '';
+  for (let t = 0; t <= TICK_COUNT; t++) {
+    const value = (yMax / TICK_COUNT) * t;
+    const y = yFor(value);
+    gridlines += `
+      <line class="chart-axis-line" x1="${paddingLeft}" y1="${y.toFixed(1)}" x2="${(width - paddingRight).toFixed(1)}" y2="${y.toFixed(1)}" />
+      <text class="chart-axis-label" x="${(paddingLeft - 8).toFixed(1)}" y="${(y + 3).toFixed(1)}" text-anchor="end">${formatCompactEuro(value)}</text>
+    `;
+  }
+
+  let xLabels = '';
+  years.forEach((year, i) => {
+    xLabels += `<text class="chart-axis-label" x="${xFor(i).toFixed(1)}" y="${(paddingTop + chartHeight + 18).toFixed(1)}" text-anchor="middle">${year}</text>`;
+  });
+
+  let linesAndPoints = '';
+  const drawSeries = list => list.forEach(s => {
+    let currentRun = [];
+    const strokeWidth = s.dashed ? 3.5 : 2.5;
+    const dashAttr = s.dashed ? ' stroke-dasharray="7 5"' : '';
+
+    const flushRun = () => {
+      if (currentRun.length > 1) {
+        const points = currentRun.map(p => `${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
+        linesAndPoints += `<polyline points="${points}" fill="none" stroke="${s.color}" stroke-width="${strokeWidth}"${dashAttr} />`;
+      }
+      currentRun.forEach(p => {
+        linesAndPoints += `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="3.5" fill="${s.color}"><title>${s.name} — ${p.year} : ${formatEuro(p.value)}</title></circle>`;
+      });
+      currentRun = [];
+    };
+
+    years.forEach((year, i) => {
+      const value = s.byYear[year];
+      if (typeof value === 'number') {
+        currentRun.push({ x: xFor(i), y: yFor(value), year, value });
+      } else {
+        flushRun();
+      }
+    });
+    flushRun();
+  });
+
+  drawSeries(series);
+  if (totalSeries) drawSeries([totalSeries]);
+
+  container.innerHTML = `
+    <svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" class="chart-svg-container" style="width: 100%; height: auto;">
+      ${gridlines}
+      ${linesAndPoints}
+      ${xLabels}
+    </svg>
+    <div class="chart-legend">
+      ${allSeries.map(s => `<span class="chart-legend-item">${
+        s.dashed
+          ? `<span class="chart-legend-dash" style="border-color:${s.color}"></span>`
+          : `<span class="chart-legend-dot" style="background:${s.color}"></span>`
+      }${s.name}</span>`).join('')}
+    </div>
+  `;
+}
+
+function buildSeriesFromHistory(history) {
+  const series = FR_HISTORY_ORGS.map(org => {
+    const entry = history.organisations[org.name];
+    return Object.assign({}, org, { byYear: (entry && entry.budget_by_year) || {} });
+  });
+  const totalByYear = {};
+  Object.entries(history.yearly_totals || {}).forEach(([year, t]) => {
+    totalByYear[year] = t.total;
+  });
+  const totalSeries = { name: `Total (${FR_HISTORY_ORGS.length} acteurs)`, color: '#1c2b39', byYear: totalByYear, dashed: true };
+  return { series, totalSeries };
+}
+
+function buildSeriesFromDgsHistory(history) {
+  const series = FR_HISTORY_ORGS.map(org => {
+    const budget_by_year = history.organisations[org.name] || {};
+    return Object.assign({}, org, { byYear: budget_by_year });
+  });
+  const totalByYear = {};
+  Object.entries(history.yearly_totals || {}).forEach(([year, t]) => {
+    totalByYear[year] = t.total;
+  });
+  const totalSeries = { name: `Total (${FR_HISTORY_ORGS.length} acteurs)`, color: '#1c2b39', byYear: totalByYear, dashed: true };
+  return { series, totalSeries };
 }
 
 (async function init() {
   setupCollapsible('fr-acteurs-toggle', 'fr-acteurs-body');
+  setupCollapsible('fr-hatvp-history-toggle', 'fr-hatvp-history-body');
+  setupCollapsible('fr-dgs-history-toggle', 'fr-dgs-history-body');
+
+  try {
+    const historyRes = await fetch('data/hatvp_history.json', { cache: 'no-cache' });
+    FR_HATVP_HISTORY = await historyRes.json();
+    const { series, totalSeries } = buildSeriesFromHistory(FR_HATVP_HISTORY);
+    renderHistoryLineChart('fr-hatvp-history-chart', series, totalSeries);
+  } catch (err) {
+    document.getElementById('fr-hatvp-history-chart').innerHTML =
+      `<p class="muted">Erreur de chargement : ${err.message}</p>`;
+  }
+
+  try {
+    const dgsHistoryRes = await fetch('data/dgs_history.json', { cache: 'no-cache' });
+    const dgsHistory = await dgsHistoryRes.json();
+    const { series, totalSeries } = buildSeriesFromDgsHistory(dgsHistory);
+    renderHistoryLineChart('fr-dgs-history-chart', series, totalSeries);
+    if (dgsHistory._notes && dgsHistory._notes.length) {
+      document.getElementById('fr-dgs-history-notes').innerHTML =
+        dgsHistory._notes.map(n => `<p>${n}</p>`).join('');
+    }
+  } catch (err) {
+    document.getElementById('fr-dgs-history-chart').innerHTML =
+      `<p class="muted">Erreur de chargement : ${err.message}</p>`;
+  }
 
   try {
     const res = await fetch('data/fr_summary_table.json', { cache: 'no-cache' });

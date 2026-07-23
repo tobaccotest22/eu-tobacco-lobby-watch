@@ -1,0 +1,489 @@
+[
+  {
+    "org_name_pdf": "Association des Fournisseurs de Tabacs à Fumer",
+    "montant_employes": 0,
+    "cabinets": [
+      {
+        "name": "Accompagnement institutionnel vers les Pouvoirs publics",
+        "amount": 119520
+      }
+    ],
+    "nb_cabinets": 1,
+    "total_cabinets": 119520,
+    "total_declare": 119520,
+    "source_file": "AFTF_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "SARL Ai2P",
+    "montant_employes": 62186,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 62186,
+    "source_file": "Ai2P_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "Air Global Brands",
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Air Global Brands_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "Albana Tocacco",
+    "montant_employes": 0,
+    "cabinets": [
+      {
+        "name": "NA",
+        "amount": 0
+      }
+    ],
+    "nb_cabinets": 1,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Albana Tobaco_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": null,
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Arnold Andre_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "British American Tobacco France",
+    "montant_employes": 5727,
+    "cabinets": [
+      {
+        "name": "FORWARD PARTNERS",
+        "amount": 99500
+      }
+    ],
+    "nb_cabinets": 1,
+    "total_cabinets": 99500,
+    "total_declare": 105227,
+    "source_file": "BAT_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "BURGER SOHNE TRADING AG",
+    "montant_employes": 415,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 415,
+    "source_file": "BST_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "BOUTTIER",
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Bouttier_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "BRIGHT LEAF CIGAR FRANCE",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Bright leaf cigar_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "CIGARES DU MONDE",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Cigares du Monde_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "COPROVA SAS",
+    "montant_employes": 0,
+    "cabinets": [
+      {
+        "name": "Fédération des Fabricants de cigares",
+        "amount": 0
+      }
+    ],
+    "nb_cabinets": 1,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Coprova_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "SA",
+    "montant_employes": 0,
+    "cabinets": [
+      {
+        "name": "0",
+        "amount": 0
+      }
+    ],
+    "nb_cabinets": 1,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Coulaud_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "DAVIDOFF OF GENEVA France",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Davidoff_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "EUROTAB France",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Eurotab_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "Fédération des Fabricants de Cigares",
+    "montant_employes": 0,
+    "cabinets": [
+      {
+        "name": "Accompagnement institutionnel vers les pouvoirs publics",
+        "amount": 212191
+      }
+    ],
+    "nb_cabinets": 1,
+    "total_cabinets": 212191,
+    "total_declare": 212191,
+    "source_file": "FFC_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "SAS FIMAR",
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Fimar_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "FLOR DE SELVA",
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Flor de selva_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "France SHSISHA",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "France shisha_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "IDVPC",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "IDVPC_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "JT International France",
+    "montant_employes": 12830,
+    "cabinets": [
+      {
+        "name": "Communication et Institutions",
+        "amount": 13000
+      }
+    ],
+    "nb_cabinets": 1,
+    "total_cabinets": 13000,
+    "total_declare": 25830,
+    "source_file": "Japan Tobacco_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "KT International",
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "KTI_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "Landewyck France",
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Landewyck_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "LOGISTA France",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Logista_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": null,
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Mac Baren_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "MASSIS IMPORT EXPORT EUROPE",
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Massis_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "PEYRET SAS",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Peyret_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "Philip Morris France SAS",
+    "montant_employes": 10199,
+    "cabinets": [
+      {
+        "name": "VERA SA",
+        "amount": 23400
+      },
+      {
+        "name": "TMA S.A.S.",
+        "amount": 26460
+      },
+      {
+        "name": "Cilab",
+        "amount": 17217
+      },
+      {
+        "name": "SALS ERNST & YOUNG SOCIETE D'AVOCATS",
+        "amount": 33874
+      }
+    ],
+    "nb_cabinets": 4,
+    "total_cabinets": 100951,
+    "total_declare": 111150,
+    "source_file": "Philip Morris_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "PIPAL SAS",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Pipal_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "PIPIERE DE PARIS SAS",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Pipière de Paris_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "Poeschl Tobacco France",
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Poeschl Tobacco_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "ROYAL DISTRIBUTION T.D.N",
+    "montant_employes": null,
+    "cabinets": [
+      {
+        "name": "Néant",
+        "amount": null
+      }
+    ],
+    "nb_cabinets": 1,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Royal distribution_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "SED",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "SED_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "SN CASA DE FRANCIA",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "SN Casa de Francia_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "SCANDINAVIAN TOBACCO GROUP France",
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Scandinavian tobacco group_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "INDUSTRIELLE DES TABACS ET ALLUMETTES",
+    "montant_employes": 8352,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 8352,
+    "source_file": "Seita_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "SHELDOR DISTRIBUTION",
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Sheldor Distribution_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "SODIP",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Sodip_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "STACI",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Staci_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "TOURN'FEUILLE SARL",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Tournfeuille_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": null,
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Traditab_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "VANDERMARLIERE CIGARS FAMILY France",
+    "montant_employes": null,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Vandermarliere Cigar Family_Déclaration dépenses2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "VILLIGER France",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Villigier France_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  },
+  {
+    "org_name_pdf": "SAS VON EICKEN France",
+    "montant_employes": 0,
+    "cabinets": [],
+    "nb_cabinets": 0,
+    "total_cabinets": 0,
+    "total_declare": 0,
+    "source_file": "Von Eicken_Déclaration dépenses 2022.pdf",
+    "source_year": 2022
+  }
+]
