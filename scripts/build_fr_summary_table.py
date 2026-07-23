@@ -142,6 +142,20 @@ def main():
                         "probable ; actions et cabinets HATVP restent coherents avec le fichier."
                     )
 
+        if display_name == "Confederation des buralistes":
+            row["note"] = (
+                "Absence de declaration DGS 2025 : les buralistes ont un statut de 'preposes de "
+                "l'administration des douanes' agissant sous contrat de gerance (article 568 du Code "
+                "general des impots + arrete du 8 juillet 2010), juridiquement distinct de la categorie "
+                "'distributeurs' visee par l'article L.3512-7 - confirme par un rapport d'ACT-Alliance "
+                "contre le tabac (2025, 'Ressources et strategies d'influence des buralistes en France') "
+                "qui demande explicitement d'etendre aux buralistes les obligations de transparence "
+                "'deja imposees a l'industrie du tabac au titre de l'article L.3512-7', ce qui confirme "
+                "qu'ils n'y sont actuellement pas soumis. Reste une deduction raisonnable et non une "
+                "position officielle explicite de la DGS/HATVP elle-meme : aucune jurisprudence ni "
+                "circulaire administrative etablissant formellement ce lien causal n'a ete trouvee."
+            )
+
         if dgs_folder and dgs_folder in dgs_by_folder:
             d = dgs_by_folder[dgs_folder]
             row["dgs_2025_montant_total"] = d["total_declare"]
