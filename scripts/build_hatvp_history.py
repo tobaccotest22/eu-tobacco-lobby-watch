@@ -50,7 +50,6 @@ ACTEURS_HATVP_DENOM = [
     ("Association des fournisseurs de tabac a fumer (AFTF)", "ASSOCIATION DES FOURNISSEURS DE TABACS A FUMER"),
     ("Aiduce", "ASSOCIATION INDEPENDANTE DES UTILISATEURS DE CIGARETTE ELECTRONIQUE (AIDUCE)"),
     ("Federation des fabricants de cigares", "FÉDÉRATION DES FABRICANTS DE CIGARES"),
-    ("Association Francaise des Industriels du Tabac (Unifab)", "ASSOCIATION FRANCAISE DES INDUSTRIELS DU TABAC"),
 ]
 
 # sous-ensemble demande explicitement pour la courbe "Historique / Statistiques"

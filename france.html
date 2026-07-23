@@ -78,10 +78,11 @@
       </button>
       <div class="collapsible-body" id="fr-acteurs-body">
         <p class="section-intro">
-          15 acteurs suivis : les 19 organisations d'une recherche de référence, ajustées après vérification
+          14 acteurs suivis : les 19 organisations d'une recherche de référence, ajustées après vérification
           (Fivape et le Collectif des Acteurs de la Cigarette Électronique ne sont qu'une seule et même
-          organisation, inscrite sous ce second nom auprès de la HATVP ; l'Association Française des
-          Industriels du Tabac — Unifab — a été ajoutée après avoir été repérée dans les déclarations HATVP).
+          organisation, inscrite sous ce second nom auprès de la HATVP). L'Association Française des Industriels
+          du Tabac (Unifab), un temps ajoutée, a été retirée : son activité déborde du périmètre actuel de ce
+          tableau (lobbying tabac au sens strict) — à réexaminer plus tard, pas exclue définitivement.
           Budget et cabinets viennent du registre HATVP (exercice 2025) ; la colonne DGS reprend le montant
           total déclaré au titre de la loi Transparence Tabac (détail par poste — salariés, cabinets, avantages —
           disponible au survol). Trié par budget HATVP décroissant.
@@ -202,7 +203,7 @@ function frDgsDisplay(row) {
 
 function frBudgetDisplay(row) {
   if (row.acteur.startsWith('Fivape')) {
-    return `<span class="muted">Non publié pour 2025<sup>3</sup></span>`;
+    return `100 000 € – 200 000 €<sup>3</sup> <span class="fr-estimate-tag">(estimation, d'après leur dernière déclaration 2024 — exercice 2025 pas encore publié)</span>`;
   }
   if (row.budget_hatvp_bas_2025 == null) {
     return '<span class="muted">—</span>';
@@ -328,7 +329,10 @@ function renderFrActeursTable(data) {
     Électronique" (CACE) — même organisation, un seul identifiant. Son exercice 2025 n'était pas encore publié
     au moment de cette extraction (pas un budget déclaré à zéro, une donnée pas encore disponible) ; son
     dernier exercice publié (2024) indique 0,5 ETP et un budget de 100 000 – 200 000 €.</p>
-    <p><sup>3</sup> Le budget HATVP 2025 de Fivape n'est pas encore publié (voir note 2) — pas un montant nul.</p>
+    <p><sup>3</sup> Le budget HATVP 2025 de Fivape n'étant pas encore publié (voir note 2), la fourchette affichée
+    est une estimation de référence reprenant leur dernier exercice connu (2024) — pas une donnée 2025 confirmée.
+    Elle n'est volontairement PAS comptée dans la ligne "Total" du tableau, qui ne retient que des budgets 2025
+    confirmés (Fivape y reste à 0 €, comme une organisation sans exercice publié).</p>
     <p><sup>4</sup> Les buralistes ont un statut de "préposés de l'administration des douanes" sous contrat de
     gérance (article 568 du code général des impôts, arrêté du 8 juillet 2010), juridiquement distinct de la
     catégorie "distributeurs" visée par l'article L.3512-7 du code de la santé publique (déclarations DGS). Un
