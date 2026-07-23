@@ -102,7 +102,7 @@
                 <th class="num fr-history-col">Budget 2023</th>
                 <th class="num fr-history-col">Budget 2022</th>
                 <th>Cabinets utilisés</th>
-                <th class="num">Salariés</th>
+                <th class="num">Salariés (ETP)</th>
                 <th class="num">DGS 2025</th>
               </tr>
             </thead>
@@ -214,7 +214,13 @@ function frBudgetDisplay(row) {
 function frNoteMarker(row) {
   if (row.acteur.startsWith('Seita') || row.acteur === 'Logista') return '<sup>1</sup>';
   if (row.acteur.startsWith('Fivape')) return '<sup>2</sup>';
+  if (row.acteur === 'LPV Company') return '<sup>5</sup>';
   return '';
+}
+
+function formatEtp(value) {
+  if (value == null) return '<span class="muted">—</span>';
+  return value.toLocaleString('fr-FR', { maximumFractionDigits: 2 });
 }
 
 let FR_HATVP_HISTORY = null;
@@ -271,7 +277,7 @@ function renderFrActeursTable(data) {
       <td class="num" data-label="Budget HATVP 2025"><strong>${formatEuro(totals.totalBudgetBas)} – ${formatEuro(totals.totalBudgetHaut)}</strong></td>
       ${totalHistoryCells}
       <td data-label="Cabinets utilisés"><strong>${totals.cabinetsCount} cabinets distincts</strong></td>
-      <td class="num" data-label="Salariés"><strong>${totals.totalSalaries}</strong></td>
+      <td class="num" data-label="Salariés (ETP)"><strong>${formatEtp(Math.round(totals.totalSalaries * 100) / 100)}</strong></td>
       <td class="num" data-label="DGS 2025"><strong>${formatEuro(totals.totalDgs)}</strong></td>
     </tr>
   `;
@@ -288,7 +294,7 @@ function renderFrActeursTable(data) {
       <td class="num" data-label="Budget HATVP 2025">${frBudgetDisplay(row)}</td>
       ${historyCells}
       <td data-label="Cabinets utilisés">${row.nb_cabinets_hatvp ? `${row.cabinets_hatvp.join(', ')} (${row.nb_cabinets_hatvp})` : '<span class="muted">—</span>'}</td>
-      <td class="num" data-label="Salariés">${row.nb_salaries_hatvp_2025 ?? '<span class="muted">—</span>'}</td>
+      <td class="num" data-label="Salariés (ETP)">${formatEtp(row.nb_salaries_hatvp_2025)}</td>
       <td class="num" data-label="DGS 2025">${frDgsDisplay(row)}</td>
     </tr>
   `;
@@ -323,8 +329,8 @@ function renderFrActeursTable(data) {
 
   const notesHtml = `
     <p><sup>1</sup> Seita et Logista déclarent sur un exercice HATVP octobre-septembre (pas l'année civile) :
-    le budget/nombre de salariés affiché ici peut différer légèrement de versions antérieures de ce tableau
-    selon la date d'extraction — le nombre d'actions et les cabinets utilisés restent, eux, cohérents.</p>
+    le budget/ETP affiché ici peut différer légèrement de versions antérieures de ce tableau selon la date
+    d'extraction — le nombre d'actions et les cabinets utilisés restent, eux, cohérents.</p>
     <p><sup>2</sup> Fivape est inscrite à la HATVP sous le nom "Collectif des Acteurs de la Cigarette
     Électronique" (CACE) — même organisation, un seul identifiant. Son exercice 2025 n'était pas encore publié
     au moment de cette extraction (pas un budget déclaré à zéro, une donnée pas encore disponible) ; son
@@ -340,6 +346,10 @@ function renderFrActeursTable(data) {
     obligations "déjà imposées à l'industrie du tabac au titre de l'article L.3512-7" — confirmant qu'ils n'y
     sont pas actuellement soumis. Cette explication reste une déduction raisonnable : aucune position
     officielle explicite de la DGS ou de la HATVP établissant ce lien n'a été trouvée.</p>
+    <p><sup>5</sup> LPV Company n'a déclaré aucune action de lobbying pour l'exercice 2025 sur HATVP (0 activité) —
+    mais a bien déclaré ses moyens (budget 100 000 – 200 000 €, 0,25 ETP) : ce sont deux déclarations distinctes
+    sur HATVP, l'absence de la première n'invalide pas la seconde. Une vérification systématique sur les 14
+    acteurs suivis confirme que LPV Company est le seul dans ce cas.</p>
     <p>Les acteurs "Vapotage" et Aiduce n'apparaissent pas dans les déclarations DGS 2025 : l'article L.3512-7
     vise explicitement les "fabricants, importateurs et distributeurs de produits du tabac", sans mention de la
     cigarette électronique, régie par un cadre distinct en droit français — ils sont donc hors du périmètre

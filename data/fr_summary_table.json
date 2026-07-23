@@ -9,7 +9,7 @@
       "hatvp_trouve": true,
       "budget_hatvp_bas_2025": 400000,
       "budget_hatvp_haut_2025": 500000,
-      "nb_salaries_hatvp_2025": 6,
+      "nb_salaries_hatvp_2025": 6.0,
       "cabinets_hatvp": [
         "CILAB",
         "ENOTIKO",
@@ -49,7 +49,7 @@
       "hatvp_trouve": true,
       "budget_hatvp_bas_2025": 200000,
       "budget_hatvp_haut_2025": 300000,
-      "nb_salaries_hatvp_2025": 3,
+      "nb_salaries_hatvp_2025": 3.0,
       "cabinets_hatvp": [
         "ASSOCIATION DES FOURNISSEURS DE TABACS A FUMER",
         "ENOTIKO",
@@ -86,7 +86,7 @@
       "hatvp_trouve": true,
       "budget_hatvp_bas_2025": 50000,
       "budget_hatvp_haut_2025": 75000,
-      "nb_salaries_hatvp_2025": 0,
+      "nb_salaries_hatvp_2025": 0.11,
       "cabinets_hatvp": [
         "ARTCHER",
         "COMMUNICATION & INSTITUTIONS",
@@ -114,7 +114,7 @@
       "hatvp_trouve": true,
       "budget_hatvp_bas_2025": 100000,
       "budget_hatvp_haut_2025": 200000,
-      "nb_salaries_hatvp_2025": 1,
+      "nb_salaries_hatvp_2025": 1.0,
       "cabinets_hatvp": [
         "ASSOCIATION DES FOURNISSEURS DE TABACS A FUMER",
         "ENOTIKO",
@@ -148,7 +148,7 @@
       "hatvp_trouve": true,
       "budget_hatvp_bas_2025": 25000,
       "budget_hatvp_haut_2025": 50000,
-      "nb_salaries_hatvp_2025": 1,
+      "nb_salaries_hatvp_2025": 1.0,
       "cabinets_hatvp": [
         "BOURY TALLON & ASSOCIES",
         "CAP CORELI, COMMUNICATION & RELATIONS INSTITUTIONNELLES",
@@ -174,7 +174,7 @@
       "hatvp_trouve": true,
       "budget_hatvp_bas_2025": 50000,
       "budget_hatvp_haut_2025": 75000,
-      "nb_salaries_hatvp_2025": 0,
+      "nb_salaries_hatvp_2025": 0.2,
       "cabinets_hatvp": [],
       "nb_cabinets_hatvp": 0,
       "dgs_2025_montant_total": null,
@@ -203,14 +203,14 @@
       "hatvp_trouve": true,
       "budget_hatvp_bas_2025": 100000,
       "budget_hatvp_haut_2025": 200000,
-      "nb_salaries_hatvp_2025": 0,
+      "nb_salaries_hatvp_2025": 0.25,
       "cabinets_hatvp": [
         "EUROS AGENCY"
       ],
       "nb_cabinets_hatvp": 1,
       "dgs_2025_montant_total": null,
       "dgs_2025_detail": null,
-      "note": null
+      "note": "Aucune action de lobbying declaree pour cet exercice sur HATVP (0 activite), mais les moyens (budget/ETP) ont bien ete declares - ce sont deux declarations distinctes sur HATVP ; le budget/ETP affiches ici sont donc valides."
     },
     {
       "acteur": "Sovape",
@@ -231,7 +231,7 @@
       "hatvp_trouve": true,
       "budget_hatvp_bas_2025": 200000,
       "budget_hatvp_haut_2025": 300000,
-      "nb_salaries_hatvp_2025": 1,
+      "nb_salaries_hatvp_2025": 1.5,
       "cabinets_hatvp": [
         "IMAGE 7"
       ],
@@ -246,7 +246,7 @@
       "hatvp_trouve": true,
       "budget_hatvp_bas_2025": 100000,
       "budget_hatvp_haut_2025": 200000,
-      "nb_salaries_hatvp_2025": 0,
+      "nb_salaries_hatvp_2025": 0.3,
       "cabinets_hatvp": [
         "AI2P"
       ],
@@ -270,7 +270,7 @@
       "hatvp_trouve": true,
       "budget_hatvp_bas_2025": 0,
       "budget_hatvp_haut_2025": 10000,
-      "nb_salaries_hatvp_2025": 0,
+      "nb_salaries_hatvp_2025": 0.1,
       "cabinets_hatvp": [],
       "nb_cabinets_hatvp": 0,
       "dgs_2025_montant_total": null,
@@ -283,7 +283,7 @@
       "hatvp_trouve": true,
       "budget_hatvp_bas_2025": 75000,
       "budget_hatvp_haut_2025": 100000,
-      "nb_salaries_hatvp_2025": 0,
+      "nb_salaries_hatvp_2025": 0.3,
       "cabinets_hatvp": [
         "AI2P"
       ],

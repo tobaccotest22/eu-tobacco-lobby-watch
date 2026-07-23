@@ -121,12 +121,29 @@ def main():
                     e = ex2025.iloc[0]
                     row["budget_hatvp_bas_2025"] = None if pd.isna(e["montant_depense_inf"]) else int(e["montant_depense_inf"])
                     row["budget_hatvp_haut_2025"] = None if pd.isna(e["montant_depense_sup"]) else int(e["montant_depense_sup"])
-                    row["nb_salaries_hatvp_2025"] = None if pd.isna(e["nombre_salaries"]) else int(e["nombre_salaries"])
+                    # nombre_salaries est en fait un ETP (equivalent temps plein), pas un
+                    # effectif entier - un cast int() tronquait silencieusement toute valeur
+                    # fractionnaire a 0 (ex. 0.25 -> 0), voire a une valeur fausse pour un ETP
+                    # > 1 (ex. 1.5 -> 1). Corrige : on garde la valeur decimale (arrondie a 2
+                    # decimales pour l'affichage).
+                    row["nb_salaries_hatvp_2025"] = None if pd.isna(e["nombre_salaries"]) else round(float(e["nombre_salaries"]), 2)
                     if e["nombre_activites"] == 0 and pd.isna(e["nombre_salaries"]) and (e["montant_depense_inf"] or 0) == 0:
                         row["note"] = (
                             "Exercice 2025 pas encore publie sur HATVP au moment de cette extraction "
                             "(0 activite, budget 0EUR, salaries non renseignes) - ne pas lire comme un "
                             "montant declare a zero, juste une donnee pas encore disponible."
+                        )
+                    elif e["nombre_activites"] == 0 and not (pd.isna(e["montant_depense_inf"]) or e["montant_depense_inf"] == 0):
+                        # Cas LPV Company (identifie via verification systematique sur les 14
+                        # acteurs, cf. conversation) : HATVP distingue la declaration des
+                        # "actions" (activites concretes) de celle des "moyens" (budget/ETP).
+                        # Une organisation peut n'avoir declare aucune action pour l'exercice
+                        # tout en ayant bien declare ses moyens - le budget/ETP affiches ici
+                        # restent donc valides, ce n'est pas une donnee manquante.
+                        row["note"] = (
+                            "Aucune action de lobbying declaree pour cet exercice sur HATVP (0 activite), "
+                            "mais les moyens (budget/ETP) ont bien ete declares - ce sont deux declarations "
+                            "distinctes sur HATVP ; le budget/ETP affiches ici sont donc valides."
                         )
 
                 cabinet_names = cabinets_for_org(clients, info, org_siret)
