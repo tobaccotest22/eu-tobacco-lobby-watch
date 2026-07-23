@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>France Tobacco Lobby Watch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="site-nav" id="top">
+  <div class="banner-inner">
+    <div class="nav-brand-group">
+      <a href="index.html" class="nav-brand">EU <span class="redacted">████</span> TOBACCO WATCH</a>
+      <div class="site-tabs">
+        <a href="index.html" class="site-tab">EU Tobacco Watch</a>
+        <a href="france.html" class="site-tab active">France</a>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#top" class="nav-link active">Accueil</a>
+      <a href="#acteurs" class="nav-link">Les acteurs</a>
+    </div>
+  </div>
+</nav>
+
+<div class="banner">
+  <svg class="banner-watermark" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+    <defs>
+      <polygon id="eu-star" points="0,-6 1.4,-1.9 5.7,-1.9 2.3,0.7 3.5,4.9 0,2.3 -3.5,4.9 -2.3,0.7 -5.7,-1.9 -1.4,-1.9" fill="#FFD700"/>
+    </defs>
+    <use href="#eu-star" transform="translate(100,35)"/>
+    <use href="#eu-star" transform="translate(132.5,43.7)"/>
+    <use href="#eu-star" transform="translate(156.3,67.5)"/>
+    <use href="#eu-star" transform="translate(165,100)"/>
+    <use href="#eu-star" transform="translate(156.3,132.5)"/>
+    <use href="#eu-star" transform="translate(132.5,156.3)"/>
+    <use href="#eu-star" transform="translate(100,165)"/>
+    <use href="#eu-star" transform="translate(67.5,156.3)"/>
+    <use href="#eu-star" transform="translate(43.7,132.5)"/>
+    <use href="#eu-star" transform="translate(35,100)"/>
+    <use href="#eu-star" transform="translate(43.7,67.5)"/>
+    <use href="#eu-star" transform="translate(67.5,43.7)"/>
+  </svg>
+  <div class="banner-inner banner-inner-with-counter">
+    <div>
+      <p class="banner-lead">Surveillance du lobby du tabac et de la nicotine en France.</p>
+    </div>
+    <div class="banner-counter">
+      <div class="banner-counter-value" id="banner-counter-value">0</div>
+      <div class="banner-counter-label">€ déclarés au titre du lobbying en 2025 (HATVP)</div>
+    </div>
+  </div>
+</div>
+
+<div class="stats-banner">
+  <div class="banner-inner">
+    <h2>Chiffres consolidés sur le lobbying du tabac et de la nicotine en France</h2>
+    <div class="stats" id="stats"></div>
+    <p class="updated-note" id="updated-note"></p>
+  </div>
+</div>
+
+<main class="page-bands">
+  <div class="page-band page-band-grey">
+  <div class="page-band-inner">
+  <section id="acteurs">
+    <h2>Les acteurs du lobby du tabac et de la nicotine en France</h2>
+
+    <div class="card">
+      <button class="collapsible-toggle" id="fr-acteurs-toggle" aria-expanded="false">
+        <span class="collapsible-icon">▸</span>
+        <span class="title-stamp">Tableau des acteurs suivis</span>
+      </button>
+      <div class="collapsible-body" id="fr-acteurs-body">
+        <p class="section-intro">
+          15 acteurs suivis : les 19 organisations d'une recherche de référence, ajustées après vérification
+          (Fivape et le Collectif des Acteurs de la Cigarette Électronique ne sont qu'une seule et même
+          organisation, inscrite sous ce second nom auprès de la HATVP ; l'Association Française des
+          Industriels du Tabac — Unifab — a été ajoutée après avoir été repérée dans les déclarations HATVP).
+          Budget et cabinets viennent du registre HATVP (exercice 2025) ; la colonne DGS reprend le montant
+          total déclaré au titre de la loi Transparence Tabac (détail par poste — salariés, cabinets, avantages —
+          disponible au survol). Trié par budget HATVP décroissant.
+        </p>
+        <div style="overflow: hidden; border-radius: 12px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Acteur</th>
+                <th>Catégorie</th>
+                <th class="num">Budget HATVP 2025</th>
+                <th>Cabinets utilisés</th>
+                <th class="num">Salariés</th>
+                <th class="num">DGS 2025</th>
+              </tr>
+            </thead>
+            <tbody id="fr-acteurs-table-body"></tbody>
+          </table>
+        </div>
+        <div class="fr-notes" id="fr-notes"></div>
+      </div>
+    </div>
+  </section>
+  </div>
+  </div>
+</main>
+
+<footer>
+  Sources : HATVP (répertoire des représentants d'intérêts), déclarations DGS "Transparence Tabac".
+  Données HATVP mises à jour automatiquement chaque nuit ; déclarations DGS relevées manuellement (page
+  source protégée, non automatisable).
+</footer>
+
+<script src="common.js"></script>
+<script>
+const FR_DGS_LEGAL_SCOPE_NOTE =
+  "Hors périmètre légal (vapotage)";
+
+function frDgsDisplay(row) {
+  if (row.dgs_2025_montant_total) {
+    let title = '';
+    if (row.dgs_2025_detail) {
+      const d = row.dgs_2025_detail;
+      const parts = [];
+      if (d.montant_employes) parts.push(`salariés : ${formatEuro(d.montant_employes)}`);
+      if (d.cabinets && d.cabinets.length) {
+        parts.push('cabinets : ' + d.cabinets.map(c => `${c.name} (${formatEuro(c.amount)})`).join(', '));
+      }
+      if (d.montant_avantages) parts.push(`avantages : ${formatEuro(d.montant_avantages)}`);
+      title = parts.join(' · ');
+    }
+    return `<span title="${title}">${formatEuro(row.dgs_2025_montant_total)}</span>`;
+  }
+  if (row.categorie === 'Vapotage' || row.acteur === 'Aiduce') {
+    return `<span class="muted">${FR_DGS_LEGAL_SCOPE_NOTE}</span>`;
+  }
+  if (row.acteur.startsWith('Confédération des buralistes') || row.acteur.startsWith('Confederation des buralistes')) {
+    return `<span class="muted">Non soumis (statut préposé douane)<sup>4</sup></span>`;
+  }
+  if (row.acteur.startsWith('Cigusto')) {
+    return `<span class="muted">Via un tiers (Coalitio)</span>`;
+  }
+  return `<span class="muted">Aucune déclaration</span>`;
+}
+
+function frBudgetDisplay(row) {
+  if (row.acteur.startsWith('Fivape')) {
+    return `<span class="muted">Non publié pour 2025<sup>3</sup></span>`;
+  }
+  if (row.budget_hatvp_bas_2025 == null) {
+    return '<span class="muted">—</span>';
+  }
+  return `${formatEuro(row.budget_hatvp_bas_2025)} – ${formatEuro(row.budget_hatvp_haut_2025)}`;
+}
+
+function frNoteMarker(row) {
+  if (row.acteur.startsWith('Seita') || row.acteur === 'Logista') return '<sup>1</sup>';
+  if (row.acteur.startsWith('Fivape')) return '<sup>2</sup>';
+  return '';
+}
+
+function renderFrActeursTable(data) {
+  const rows = [...data.acteurs].sort((a, b) => {
+    const bb = b.budget_hatvp_haut_2025 ?? -1;
+    const ab = a.budget_hatvp_haut_2025 ?? -1;
+    return bb - ab;
+  });
+
+  document.getElementById('fr-acteurs-table-body').innerHTML = rows.map(row => `
+    <tr>
+      <td data-label="Acteur">${row.acteur}${frNoteMarker(row)}</td>
+      <td data-label="Catégorie">${row.categorie}</td>
+      <td class="num" data-label="Budget HATVP 2025">${frBudgetDisplay(row)}</td>
+      <td data-label="Cabinets utilisés">${row.nb_cabinets_hatvp ? `${row.cabinets_hatvp.join(', ')} (${row.nb_cabinets_hatvp})` : '<span class="muted">—</span>'}</td>
+      <td class="num" data-label="Salariés">${row.nb_salaries_hatvp_2025 ?? '<span class="muted">—</span>'}</td>
+      <td class="num" data-label="DGS 2025">${frDgsDisplay(row)}</td>
+    </tr>
+  `).join('');
+
+  const notesHtml = `
+    <p><sup>1</sup> Seita et Logista déclarent sur un exercice HATVP octobre-septembre (pas l'année civile) :
+    le budget/nombre de salariés affiché ici peut différer légèrement de versions antérieures de ce tableau
+    selon la date d'extraction — le nombre d'actions et les cabinets utilisés restent, eux, cohérents.</p>
+    <p><sup>2</sup> Fivape est inscrite à la HATVP sous le nom "Collectif des Acteurs de la Cigarette
+    Électronique" (CACE) — même organisation, un seul identifiant. Son exercice 2025 n'était pas encore publié
+    au moment de cette extraction (pas un budget déclaré à zéro, une donnée pas encore disponible) ; son
+    dernier exercice publié (2024) indique 0,5 ETP et un budget de 100 000 – 200 000 €.</p>
+    <p><sup>3</sup> Le budget HATVP 2025 de Fivape n'est pas encore publié (voir note 2) — pas un montant nul.</p>
+    <p><sup>4</sup> Les buralistes ont un statut de "préposés de l'administration des douanes" sous contrat de
+    gérance (article 568 du code général des impôts, arrêté du 8 juillet 2010), juridiquement distinct de la
+    catégorie "distributeurs" visée par l'article L.3512-7 du code de la santé publique (déclarations DGS). Un
+    rapport 2025 d'ACT-Alliance contre le tabac demande d'ailleurs explicitement d'étendre aux buralistes les
+    obligations "déjà imposées à l'industrie du tabac au titre de l'article L.3512-7" — confirmant qu'ils n'y
+    sont pas actuellement soumis. Cette explication reste une déduction raisonnable : aucune position
+    officielle explicite de la DGS ou de la HATVP établissant ce lien n'a été trouvée.</p>
+    <p>Les acteurs "Vapotage" et Aiduce n'apparaissent pas dans les déclarations DGS 2025 : l'article L.3512-7
+    vise explicitement les "fabricants, importateurs et distributeurs de produits du tabac", sans mention de la
+    cigarette électronique, régie par un cadre distinct en droit français — ils sont donc hors du périmètre
+    légal de cette déclaration, pas des organisations qui auraient omis de déclarer.</p>
+  `;
+  document.getElementById('fr-notes').innerHTML = notesHtml;
+}
+
+function renderFrStats(data) {
+  const rows = data.acteurs;
+  const withBudget = rows.filter(r => !(r.budget_hatvp_bas_2025 === 0 && r.budget_hatvp_haut_2025 === 0));
+  const totalBudgetHaut = withBudget.reduce((sum, r) => sum + (r.budget_hatvp_haut_2025 || 0), 0);
+  const totalDgs = rows.reduce((sum, r) => sum + (r.dgs_2025_montant_total || 0), 0);
+  const cabinetsSet = new Set();
+  rows.forEach(r => (r.cabinets_hatvp || []).forEach(c => cabinetsSet.add(c)));
+
+  const tiles = [
+    { value: rows.length, label: 'Acteurs suivis' },
+    { value: formatEuro(totalBudgetHaut), label: 'Budget HATVP total déclaré (2025, borne haute)' },
+    { value: formatEuro(totalDgs), label: 'Total déclaré DGS (2025)' },
+    { value: cabinetsSet.size, label: 'Cabinets de lobbying distincts recensés' },
+  ];
+  document.getElementById('stats').innerHTML = tiles.map(t => `
+    <div class="stat-tile">
+      <div class="value">${t.value}</div>
+      <div class="label">${t.label}</div>
+    </div>
+  `).join('');
+
+  animateCounter(document.getElementById('banner-counter-value'), totalBudgetHaut, 1800);
+}
+
+(async function init() {
+  setupCollapsible('fr-acteurs-toggle', 'fr-acteurs-body');
+
+  try {
+    const res = await fetch('data/fr_summary_table.json', { cache: 'no-cache' });
+    const data = await res.json();
+    renderFrStats(data);
+    renderFrActeursTable(data);
+    document.getElementById('updated-note').textContent =
+      'Budget/cabinets/salariés : registre HATVP (mis à jour chaque nuit). Déclarations DGS : relevé manuel des 32 dossiers publiés en 2026 pour l\'exercice 2025.';
+  } catch (err) {
+    document.getElementById('fr-acteurs-table-body').innerHTML =
+      `<tr><td colspan="6">Erreur de chargement des données : ${err.message}</td></tr>`;
+  }
+})();
+</script>
+
+</body>
+</html>
