@@ -480,6 +480,7 @@ tbody.show-all tr.extra-row.detail-row.open { display: table-row; }
 }
 .chart-svg-container {
   min-width: 560px;
+  max-height: 360px;
 }
 .chart-axis-label {
   font-size: 0.68rem;
@@ -608,31 +609,42 @@ tbody.show-all tr.extra-row.detail-row.open { display: table-row; }
 .fr-notes sup { font-weight: 700; margin-right: 0.1rem; }
 table sup { font-weight: 700; color: var(--orange); margin-left: 0.1rem; }
 
-.fr-history-toggle {
-  display: inline-block;
-  margin-right: 0.5rem;
-  padding: 0.1rem 0.5rem;
-  font-size: 0.75rem;
+.fr-history-col-toggle {
+  display: block;
+  margin-top: 0.35rem;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.68rem;
   font-weight: 600;
+  text-transform: none;
+  letter-spacing: normal;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.fr-history-col-toggle:hover { background: rgba(255, 255, 255, 0.3); }
+.fr-history-col { display: none; }
+table.show-history .fr-history-col { display: table-cell; }
+
+/* Copie du bouton visible uniquement sur mobile (le thead, et donc le
+   bouton place dans l'en-tete "Budget", est masque en dessous de 720px) */
+.fr-history-col-toggle-mobile {
+  display: none;
+  margin: 0 0 1rem;
   color: var(--blue-dark);
   background: #eef2ff;
   border: 1px solid #c7d2fe;
-  border-radius: 999px;
-  cursor: pointer;
 }
-.fr-history-toggle:hover { background: #dbe4ff; }
-.fr-history-row td {
-  background: #f9fbfc;
-  padding: 0.7rem 1rem;
-}
-.fr-history-years { margin: 0; font-size: 0.85rem; }
-.fr-history-year { white-space: nowrap; margin-right: 0.4rem; }
-.fr-history-delta { color: #6b7280; font-size: 0.8rem; }
+.fr-history-col-toggle-mobile:hover { background: #dbe4ff; }
 
 .fr-total-row td {
   background: #eef2ff;
   border-bottom: 2px solid var(--blue);
 }
+
+tbody.show-all tr.extra-row.fr-acteur-row { display: table-row; }
 
 .org-links-detail {
   margin-top: 1rem;
@@ -718,4 +730,7 @@ footer {
   tbody td:first-child::before { content: ""; }
   tr.detail-row.open td { display: block; }
   tr.detail-row.open td::before { content: none; }
+  table.show-history td.fr-history-col { display: flex; }
+  tbody.show-all tr.extra-row.fr-acteur-row { display: block; }
+  .fr-history-col-toggle-mobile { display: inline-block; }
 }
