@@ -86,13 +86,20 @@
           total déclaré au titre de la loi Transparence Tabac (détail par poste — salariés, cabinets, avantages —
           disponible au survol). Trié par budget HATVP décroissant.
         </p>
-        <div style="overflow: hidden; border-radius: 12px;">
-          <table>
+        <button class="fr-history-col-toggle fr-history-col-toggle-mobile" id="fr-history-col-toggle-mobile" aria-expanded="false">Et par rapport à avant ?</button>
+        <div style="overflow: auto; border-radius: 12px;">
+          <table id="fr-acteurs-table">
             <thead>
               <tr>
                 <th>Acteur</th>
                 <th>Catégorie</th>
-                <th class="num">Budget HATVP 2025</th>
+                <th class="num">
+                  Budget HATVP 2025
+                  <button class="fr-history-col-toggle" id="fr-history-col-toggle" aria-expanded="false">Et par rapport à avant ?</button>
+                </th>
+                <th class="num fr-history-col">Budget 2024</th>
+                <th class="num fr-history-col">Budget 2023</th>
+                <th class="num fr-history-col">Budget 2022</th>
                 <th>Cabinets utilisés</th>
                 <th class="num">Salariés</th>
                 <th class="num">DGS 2025</th>
@@ -100,6 +107,9 @@
             </thead>
             <tbody id="fr-acteurs-table-body"></tbody>
           </table>
+        </div>
+        <div class="table-toggle-wrapper" id="fr-acteurs-toggle-wrapper">
+          <button class="toggle-btn" id="fr-acteurs-table-toggle-btn"></button>
         </div>
         <div class="fr-notes" id="fr-notes"></div>
       </div>
@@ -207,28 +217,13 @@ function frNoteMarker(row) {
 }
 
 let FR_HATVP_HISTORY = null;
+const FR_HISTORY_COL_YEARS = [2024, 2023, 2022];
+const INITIAL_FR_ACTEURS_COUNT = 6;
 
-function frHistoryContent(acteurName) {
+function frHistoryCell(acteurName, year) {
   const entry = FR_HATVP_HISTORY && FR_HATVP_HISTORY.organisations[acteurName];
-  const byYear = entry && entry.budget_by_year;
-  if (!byYear || !Object.keys(byYear).length) {
-    return '<p class="muted">Historique HATVP non disponible pour cet acteur.</p>';
-  }
-  const years = Object.keys(byYear).map(Number).sort((a, b) => a - b);
-  const items = years.map((year, i) => {
-    const value = byYear[year];
-    let delta = '';
-    if (i > 0) {
-      const prev = byYear[years[i - 1]];
-      if (typeof prev === 'number' && prev > 0) {
-        const pct = Math.round(((value - prev) / prev) * 100);
-        const arrow = pct > 0 ? '▲' : (pct < 0 ? '▼' : '=');
-        delta = ` <span class="fr-history-delta">(${arrow} ${pct > 0 ? '+' : ''}${pct}% vs ${years[i - 1]})</span>`;
-      }
-    }
-    return `<span class="fr-history-year"><strong>${year}</strong> : ${formatEuro(value)}${delta}</span>`;
-  });
-  return `<p class="fr-history-years">Budget HATVP (borne haute) par exercice : ${items.join(' · ')}</p>`;
+  const value = entry && entry.budget_by_year && entry.budget_by_year[String(year)];
+  return typeof value === 'number' ? formatEuro(value) : '<span class="muted">—</span>';
 }
 
 function computeFrTotals(rows) {
@@ -239,7 +234,20 @@ function computeFrTotals(rows) {
   const totalDgs = rows.reduce((sum, r) => sum + (r.dgs_2025_montant_total || 0), 0);
   const cabinetsSet = new Set();
   rows.forEach(r => (r.cabinets_hatvp || []).forEach(c => cabinetsSet.add(c)));
-  return { totalBudgetBas, totalBudgetHaut, totalSalaries, totalDgs, cabinetsCount: cabinetsSet.size };
+
+  const historyTotals = {};
+  FR_HISTORY_COL_YEARS.forEach(year => {
+    let sum = 0;
+    let found = false;
+    rows.forEach(r => {
+      const entry = FR_HATVP_HISTORY && FR_HATVP_HISTORY.organisations[r.acteur];
+      const value = entry && entry.budget_by_year && entry.budget_by_year[String(year)];
+      if (typeof value === 'number') { sum += value; found = true; }
+    });
+    historyTotals[year] = found ? sum : null;
+  });
+
+  return { totalBudgetBas, totalBudgetHaut, totalSalaries, totalDgs, cabinetsCount: cabinetsSet.size, historyTotals };
 }
 
 function renderFrActeursTable(data) {
@@ -250,47 +258,67 @@ function renderFrActeursTable(data) {
   });
 
   const totals = computeFrTotals(rows);
+  const totalHistoryCells = FR_HISTORY_COL_YEARS.map(year => `
+    <td class="num fr-history-col" data-label="Budget ${year}"><strong>${
+      typeof totals.historyTotals[year] === 'number' ? formatEuro(totals.historyTotals[year]) : '<span class="muted">—</span>'
+    }</strong></td>
+  `).join('');
   const totalRowHtml = `
     <tr class="fr-total-row">
       <td data-label="Acteur"><strong>Total (${rows.length} acteurs)</strong></td>
       <td data-label="Catégorie">—</td>
       <td class="num" data-label="Budget HATVP 2025"><strong>${formatEuro(totals.totalBudgetBas)} – ${formatEuro(totals.totalBudgetHaut)}</strong></td>
+      ${totalHistoryCells}
       <td data-label="Cabinets utilisés"><strong>${totals.cabinetsCount} cabinets distincts</strong></td>
       <td class="num" data-label="Salariés"><strong>${totals.totalSalaries}</strong></td>
       <td class="num" data-label="DGS 2025"><strong>${formatEuro(totals.totalDgs)}</strong></td>
     </tr>
   `;
 
-  document.getElementById('fr-acteurs-table-body').innerHTML = totalRowHtml + rows.map((row, i) => `
-    <tr>
-      <td data-label="Acteur">
-        <button class="fr-history-toggle" data-idx="${i}" aria-expanded="false" aria-label="Voir l'historique">▸ Historique</button>
-        ${row.acteur}${frNoteMarker(row)}
-      </td>
+  document.getElementById('fr-acteurs-table-body').innerHTML = totalRowHtml + rows.map((row, i) => {
+    const historyCells = FR_HISTORY_COL_YEARS.map(year => `
+      <td class="num fr-history-col" data-label="Budget ${year}">${frHistoryCell(row.acteur, year)}</td>
+    `).join('');
+    const extraClass = i >= INITIAL_FR_ACTEURS_COUNT ? ' extra-row fr-acteur-row' : ' fr-acteur-row';
+    return `
+    <tr class="${extraClass.trim()}">
+      <td data-label="Acteur">${row.acteur}${frNoteMarker(row)}</td>
       <td data-label="Catégorie">${row.categorie}</td>
       <td class="num" data-label="Budget HATVP 2025">${frBudgetDisplay(row)}</td>
+      ${historyCells}
       <td data-label="Cabinets utilisés">${row.nb_cabinets_hatvp ? `${row.cabinets_hatvp.join(', ')} (${row.nb_cabinets_hatvp})` : '<span class="muted">—</span>'}</td>
       <td class="num" data-label="Salariés">${row.nb_salaries_hatvp_2025 ?? '<span class="muted">—</span>'}</td>
       <td class="num" data-label="DGS 2025">${frDgsDisplay(row)}</td>
     </tr>
-    <tr class="fr-history-row" id="fr-history-row-${i}" style="display:none">
-      <td colspan="6">${frHistoryContent(row.acteur)}</td>
-    </tr>
-  `).join('');
+  `;
+  }).join('');
 
-  const tbody = document.getElementById('fr-acteurs-table-body');
-  if (!tbody.dataset.historyBound) {
-    tbody.addEventListener('click', (e) => {
-      const btn = e.target.closest('.fr-history-toggle');
-      if (!btn) return;
-      const detailRow = document.getElementById(`fr-history-row-${btn.dataset.idx}`);
-      const isOpen = detailRow.style.display !== 'none';
-      detailRow.style.display = isOpen ? 'none' : 'table-row';
-      btn.textContent = isOpen ? '▸ Historique' : '▾ Historique';
-      btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+  setupTableToggle({
+    tbodyId: 'fr-acteurs-table-body',
+    wrapperId: 'fr-acteurs-toggle-wrapper',
+    btnId: 'fr-acteurs-table-toggle-btn',
+    total: rows.length,
+    initialCount: INITIAL_FR_ACTEURS_COUNT,
+    labelPrefix: 'Voir tous les acteurs',
+  });
+
+  const historyColToggles = [
+    document.getElementById('fr-history-col-toggle'),
+    document.getElementById('fr-history-col-toggle-mobile'),
+  ];
+  historyColToggles.forEach(btn => {
+    if (btn.dataset.bound) return;
+    btn.addEventListener('click', () => {
+      const table = document.getElementById('fr-acteurs-table');
+      const expanded = table.classList.toggle('show-history');
+      const label = expanded ? 'Masquer l\'historique' : 'Et par rapport à avant ?';
+      historyColToggles.forEach(b => {
+        b.textContent = label;
+        b.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      });
     });
-    tbody.dataset.historyBound = 'true';
-  }
+    btn.dataset.bound = 'true';
+  });
 
   const notesHtml = `
     <p><sup>1</sup> Seita et Logista déclarent sur un exercice HATVP octobre-septembre (pas l'année civile) :
@@ -383,8 +411,8 @@ function renderHistoryLineChart(containerId, series, totalSeries) {
   const paddingRight = 24;
   const paddingTop = 20;
   const paddingBottom = 46;
-  const chartHeight = 260;
-  const step = 56;
+  const chartHeight = 190;
+  const step = 90;
   const width = paddingLeft + paddingRight + (years.length - 1) * step;
   const height = paddingTop + chartHeight + paddingBottom;
 
