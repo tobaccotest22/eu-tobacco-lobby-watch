@@ -313,19 +313,6 @@
       "dgs_2025_montant_total": null,
       "dgs_2025_detail": null,
       "note": null
-    },
-    {
-      "acteur": "Association Francaise des Industriels du Tabac (Unifab)",
-      "categorie": "Association/Federation",
-      "hatvp_trouve": true,
-      "budget_hatvp_bas_2025": 0,
-      "budget_hatvp_haut_2025": 10000,
-      "nb_salaries_hatvp_2025": 0,
-      "cabinets_hatvp": [],
-      "nb_cabinets_hatvp": 0,
-      "dgs_2025_montant_total": null,
-      "dgs_2025_detail": null,
-      "note": null
     }
   ]
 }

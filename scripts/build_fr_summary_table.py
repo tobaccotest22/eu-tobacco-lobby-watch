@@ -10,10 +10,10 @@ Construit le tableau resume France (un acteur par ligne) a partir de :
     sont la MEME organisation (CACE est le nom d'inscription legal de Fivape
     sur HATVP, identifiant national 798356911, confirme par l'utilisateur) -
     fusionnes en une seule ligne "Fivape (CACE)".
-  - Association Francaise des Industriels du Tabac (Unifab) ajoutee : c'est
-    une organisation pro-industrie decouverte en marge des 19, pas une ONG de
-    sante publique (celles-ci restent exclues : Comite National Contre
-    Tabagisme, Contre-Feu, Ligue contre le cancer, DNF, etc.)
+  - Association Francaise des Industriels du Tabac (Unifab) : ajoutee puis
+    RETIREE sur demande de l'utilisateur - fait autre chose que du lobbying
+    tabac au sens du perimetre actuel de ce tableau (a revoir/classer dans
+    une autre categorie plus tard, pas pour l'instant).
 
 Colonnes du tableau : Acteur, Categorie, Budget (fourchette HATVP declaree,
 exercice 2025), Cabinets utilises (+nombre), Nombre de salaries declares
@@ -57,8 +57,6 @@ ACTEURS = [
     ("Aiduce", "Association/Federation", "ASSOCIATION INDEPENDANTE DES UTILISATEURS DE CIGARETTE ELECTRONIQUE (AIDUCE)", None),
     ("Federation des fabricants de cigares", "Association/Federation", "FÉDÉRATION DES FABRICANTS DE CIGARES", "Fédération des fabricants de cigares"),
     ("Cigusto / HDDB Holding", "Cas particulier (actions via un tiers)", None, None),  # via Coalitio, voir note
-    # --- ajout (organisation pro-industrie decouverte en marge, pas une ONG de sante) ---
-    ("Association Francaise des Industriels du Tabac (Unifab)", "Association/Federation", "ASSOCIATION FRANCAISE DES INDUSTRIELS DU TABAC", None),
 ]
 
 
