@@ -16,13 +16,18 @@ Construit le tableau resume France (un acteur par ligne) a partir de :
     une autre categorie plus tard, pas pour l'instant).
 
 Colonnes du tableau : Acteur, Categorie, Budget (fourchette HATVP declaree,
-exercice 2025), Cabinets utilises (+nombre), Nombre de salaries declares
-(HATVP, exercice 2025), Declaration DGS 2025 (montant total uniquement -
-detail cabinets/salaries DGS disponible en note a part si besoin).
+exercice 2025), Cabinets utilises (+nombre), Salaries (nombre de personnes
+nommees dans la section "Personnes chargees de la representation d'interets"
+de la fiche HATVP - PAS l'ETP de 15_exercices.csv, juge trop approximatif/
+declaratif), Declaration DGS 2025 (montant total uniquement - detail
+cabinets/salaries DGS disponible en note a part si besoin).
 
-Le budget/salaries/cabinets HATVP sont lus sur l'exercice dont annee_fin =
-2025 (le plus recent), pour rester coherent avec le point de comparaison
-DGS 2025 demande par l'utilisateur.
+Le budget/cabinets HATVP sont lus sur l'exercice dont annee_fin = 2025 (le
+plus recent), pour rester coherent avec le point de comparaison DGS 2025
+demande par l'utilisateur. Les personnes (3_collaborateurs.csv) ne sont en
+revanche PAS specifiques a un exercice - c'est la photo actuelle de la
+fiche HATVP, deduplique par (nom, prenom) car HATVP liste parfois deux fois
+la meme personne (une fois avec sa fonction renseignee, une fois vide).
 """
 
 import glob
@@ -64,7 +69,8 @@ def load_hatvp():
     info = pd.read_csv(f"{HATVP_DIR}/1_informations_generales.csv", sep=";", encoding="utf-8")
     exo = pd.read_csv(f"{HATVP_DIR}/15_exercices.csv", sep=";", encoding="utf-8")
     clients = pd.read_csv(f"{HATVP_DIR}/4_clients.csv", sep=";", encoding="utf-8")
-    return info, exo, clients
+    collab = pd.read_csv(f"{HATVP_DIR}/3_collaborateurs.csv", sep=";", encoding="utf-8")
+    return info, exo, clients, collab
 
 
 def cabinets_for_org(clients, info, org_siret):
@@ -80,8 +86,30 @@ def cabinets_for_org(clients, info, org_siret):
     return sorted(set(names))
 
 
+def personnes_for_org(collab, rid):
+    """Liste des personnes actuellement declarees comme chargees de la
+    representation d'interets pour cet acteur (fiche HATVP, section
+    "Personnes chargees de la representation d'interets") - un simple
+    decompte nominatif, pas l'ETP (equivalent temps plein) de
+    15_exercices.csv qui s'est revele trop approximatif/declaratif pour
+    ce qu'on veut afficher. Deduplique par (nom, prenom) : le CSV HATVP
+    contient parfois la meme personne listee deux fois (une fois avec sa
+    fonction renseignee, une fois vide) - un artefact de saisie, pas deux
+    personnes distinctes (constate sur Seita : "BRABANT Caroline" en double)."""
+    people = collab[collab["representants_id"] == rid]
+    seen = set()
+    names = []
+    for _, p in people.iterrows():
+        key = (str(p["nom_collaborateur"]).strip().upper(), str(p["prenom_collaborateur"]).strip().upper())
+        if key in seen:
+            continue
+        seen.add(key)
+        names.append(f"{p['prenom_collaborateur']} {p['nom_collaborateur']}")
+    return sorted(names)
+
+
 def main():
-    info, exo, clients = load_hatvp()
+    info, exo, clients, collab = load_hatvp()
     dgs = json.load(open(DGS_PATH, encoding="utf-8"))
     dgs_by_folder = {r["folder_org_name"]: r for r in dgs}
 
@@ -93,7 +121,8 @@ def main():
             "hatvp_trouve": bool(hatvp_denom),
             "budget_hatvp_bas_2025": None,
             "budget_hatvp_haut_2025": None,
-            "nb_salaries_hatvp_2025": None,
+            "personnes_hatvp": [],
+            "nb_personnes_hatvp": 0,
             "cabinets_hatvp": [],
             "nb_cabinets_hatvp": 0,
             "dgs_2025_montant_total": None,
@@ -121,16 +150,10 @@ def main():
                     e = ex2025.iloc[0]
                     row["budget_hatvp_bas_2025"] = None if pd.isna(e["montant_depense_inf"]) else int(e["montant_depense_inf"])
                     row["budget_hatvp_haut_2025"] = None if pd.isna(e["montant_depense_sup"]) else int(e["montant_depense_sup"])
-                    # nombre_salaries est en fait un ETP (equivalent temps plein), pas un
-                    # effectif entier - un cast int() tronquait silencieusement toute valeur
-                    # fractionnaire a 0 (ex. 0.25 -> 0), voire a une valeur fausse pour un ETP
-                    # > 1 (ex. 1.5 -> 1). Corrige : on garde la valeur decimale (arrondie a 2
-                    # decimales pour l'affichage).
-                    row["nb_salaries_hatvp_2025"] = None if pd.isna(e["nombre_salaries"]) else round(float(e["nombre_salaries"]), 2)
                     if e["nombre_activites"] == 0 and pd.isna(e["nombre_salaries"]) and (e["montant_depense_inf"] or 0) == 0:
                         row["note"] = (
                             "Exercice 2025 pas encore publie sur HATVP au moment de cette extraction "
-                            "(0 activite, budget 0EUR, salaries non renseignes) - ne pas lire comme un "
+                            "(0 activite, budget 0EUR, moyens non renseignes) - ne pas lire comme un "
                             "montant declare a zero, juste une donnee pas encore disponible."
                         )
                     elif e["nombre_activites"] == 0 and not (pd.isna(e["montant_depense_inf"]) or e["montant_depense_inf"] == 0):
@@ -138,21 +161,30 @@ def main():
                         # acteurs, cf. conversation) : HATVP distingue la declaration des
                         # "actions" (activites concretes) de celle des "moyens" (budget/ETP).
                         # Une organisation peut n'avoir declare aucune action pour l'exercice
-                        # tout en ayant bien declare ses moyens - le budget/ETP affiches ici
-                        # restent donc valides, ce n'est pas une donnee manquante.
+                        # tout en ayant bien declare ses moyens - le budget affiche ici reste
+                        # donc valide, ce n'est pas une donnee manquante.
                         row["note"] = (
                             "Aucune action de lobbying declaree pour cet exercice sur HATVP (0 activite), "
                             "mais les moyens (budget/ETP) ont bien ete declares - ce sont deux declarations "
-                            "distinctes sur HATVP ; le budget/ETP affiches ici sont donc valides."
+                            "distinctes sur HATVP ; le budget affiche ici est donc valide."
                         )
 
                 cabinet_names = cabinets_for_org(clients, info, org_siret)
                 row["cabinets_hatvp"] = cabinet_names
                 row["nb_cabinets_hatvp"] = len(cabinet_names)
 
+                # Personnes chargees de la representation d'interets (fiche HATVP,
+                # section dediee) - remplace l'ancien affichage en ETP (juge trop
+                # approximatif/declaratif), un simple decompte nominatif comme dans
+                # le fichier Excel de reference. Pas specifique a un exercice/annee
+                # (photo actuelle de la fiche HATVP), contrairement au budget.
+                people = personnes_for_org(collab, rid)
+                row["personnes_hatvp"] = people
+                row["nb_personnes_hatvp"] = len(people)
+
                 if display_name.startswith("Seita") or display_name == "Logista":
                     row["note"] = (
-                        "Budget/salaries HATVP 2025 different du fichier Excel de reference pour cet "
+                        "Budget HATVP 2025 different du fichier Excel de reference pour cet "
                         "acteur (exercice a cheval octobre-septembre) - ecart de fraicheur des donnees "
                         "probable ; actions et cabinets HATVP restent coherents avec le fichier."
                     )
@@ -210,7 +242,7 @@ def main():
             budget = f"{r['budget_hatvp_bas_2025']:,} - {r['budget_hatvp_haut_2025']:,} EUR"
         dgs_txt = f"{r['dgs_2025_montant_total']:,} EUR" if r["dgs_2025_montant_total"] else "aucune declaration"
         print(f"{r['acteur']:55s} | {r['categorie']:35s} | budget={budget:25s} | "
-              f"salaries={str(r['nb_salaries_hatvp_2025']):5s} | cabinets={r['nb_cabinets_hatvp']:>2} | DGS2025={dgs_txt}")
+              f"personnes={r['nb_personnes_hatvp']:>2} | cabinets={r['nb_cabinets_hatvp']:>2} | DGS2025={dgs_txt}")
 
 
 if __name__ == "__main__":

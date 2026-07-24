@@ -1,0 +1,615 @@
+[
+  {
+    "acteur": "Philip Morris International (PMI)",
+    "personnes_hatvp": [
+      "Daniel BRUQUEL",
+      "Fabrice LAYER",
+      "Kevin REVA",
+      "Mickael LEROUX",
+      "Solène RANNOU",
+      "Stéphanie MARTEL"
+    ],
+    "nb_personnes_hatvp": 6,
+    "cabinets_hatvp": [
+      "CILAB",
+      "ENOTIKO",
+      "ERNST & YOUNG SOCIETE D' AVOCATS",
+      "ESL & NETWORK FRANCE SAS",
+      "LYSIOS",
+      "PLEAD",
+      "RHEA CONSEIL",
+      "RIVINGTON",
+      "TMA"
+    ],
+    "years": {
+      "2024": {
+        "hatvp": {
+          "budget_bas": 600000,
+          "budget_haut": 700000
+        },
+        "dgs": {
+          "budget": 89796,
+          "nb_personnes": 7,
+          "cabinets": [
+            {
+              "name": "TMA SAS",
+              "amount": 28800
+            },
+            {
+              "name": "LYSIOS",
+              "amount": 27000
+            },
+            {
+              "name": "SALS ERNST & YOUNG SOCIETE D'AVOCATS",
+              "amount": 20000
+            }
+          ],
+          "trouve": true
+        },
+        "mismatches": {
+          "budget": true,
+          "personnes": true,
+          "cabinets": true
+        },
+        "cabinets_comparison": {
+          "hatvp_only": [
+            "CILAB",
+            "ENOTIKO",
+            "ESL & NETWORK FRANCE SAS",
+            "PLEAD",
+            "RHEA CONSEIL",
+            "RIVINGTON"
+          ],
+          "dgs_only": [],
+          "mismatch": true
+        }
+      },
+      "2025": {
+        "hatvp": {
+          "budget_bas": 400000,
+          "budget_haut": 500000
+        },
+        "dgs": {
+          "budget": 116812,
+          "nb_personnes": 8,
+          "cabinets": [
+            {
+              "name": "TMA SAS",
+              "amount": 46650
+            },
+            {
+              "name": "The Arcane",
+              "amount": 43800
+            },
+            {
+              "name": "ESL RIVINGTON",
+              "amount": 3500
+            }
+          ],
+          "trouve": true
+        },
+        "mismatches": {
+          "budget": true,
+          "personnes": true,
+          "cabinets": true
+        },
+        "cabinets_comparison": {
+          "hatvp_only": [
+            "CILAB",
+            "ENOTIKO",
+            "ERNST & YOUNG SOCIETE D' AVOCATS",
+            "ESL & NETWORK FRANCE SAS",
+            "LYSIOS",
+            "PLEAD",
+            "RHEA CONSEIL"
+          ],
+          "dgs_only": [
+            "The Arcane"
+          ],
+          "mismatch": true
+        }
+      }
+    }
+  },
+  {
+    "acteur": "British American Tobacco (BAT)",
+    "personnes_hatvp": [
+      "Charlotte SCALES",
+      "Vincent ZAPPIA"
+    ],
+    "nb_personnes_hatvp": 2,
+    "cabinets_hatvp": [
+      "ASSOCIATION DES FOURNISSEURS DE TABACS A FUMER",
+      "ENOTIKO",
+      "ERNST & YOUNG SOCIETE D' AVOCATS",
+      "FORWARD PARTNERS",
+      "France Vapotage",
+      "MORENAS ADRIEN"
+    ],
+    "years": {
+      "2024": {
+        "hatvp": {
+          "budget_bas": 300000,
+          "budget_haut": 400000
+        },
+        "dgs": {
+          "budget": 718392,
+          "nb_personnes": 3,
+          "cabinets": [
+            {
+              "name": "A.M.C",
+              "amount": 36000
+            },
+            {
+              "name": "EY CONSEIL",
+              "amount": 40000
+            },
+            {
+              "name": "AI2P",
+              "amount": 120000
+            },
+            {
+              "name": "FORWARD PARTNERS",
+              "amount": 100000
+            }
+          ],
+          "trouve": true
+        },
+        "mismatches": {
+          "budget": true,
+          "personnes": true,
+          "cabinets": true
+        },
+        "cabinets_comparison": {
+          "hatvp_only": [
+            "ASSOCIATION DES FOURNISSEURS DE TABACS A FUMER",
+            "ENOTIKO",
+            "ERNST & YOUNG SOCIETE D' AVOCATS",
+            "France Vapotage",
+            "MORENAS ADRIEN"
+          ],
+          "dgs_only": [
+            "A.M.C",
+            "EY CONSEIL",
+            "AI2P"
+          ],
+          "mismatch": true
+        }
+      },
+      "2025": {
+        "hatvp": {
+          "budget_bas": 200000,
+          "budget_haut": 300000
+        },
+        "dgs": {
+          "budget": 146474,
+          "nb_personnes": 3,
+          "cabinets": [
+            {
+              "name": "FSTRAT - FORWARD PARTNERS",
+              "amount": 55200
+            },
+            {
+              "name": "A.I.2.P.",
+              "amount": 36000
+            },
+            {
+              "name": "Adrien Morenas Conseil",
+              "amount": 24000
+            }
+          ],
+          "trouve": true
+        },
+        "mismatches": {
+          "budget": true,
+          "personnes": true,
+          "cabinets": true
+        },
+        "cabinets_comparison": {
+          "hatvp_only": [
+            "ASSOCIATION DES FOURNISSEURS DE TABACS A FUMER",
+            "ENOTIKO",
+            "ERNST & YOUNG SOCIETE D' AVOCATS",
+            "France Vapotage",
+            "MORENAS ADRIEN"
+          ],
+          "dgs_only": [
+            "A.I.2.P.",
+            "Adrien Morenas Conseil"
+          ],
+          "mismatch": true
+        }
+      }
+    }
+  },
+  {
+    "acteur": "JT International (JTI)",
+    "personnes_hatvp": [
+      "Aïna PAGES",
+      "Benoît BAS",
+      "Marine SAUCE"
+    ],
+    "nb_personnes_hatvp": 3,
+    "cabinets_hatvp": [
+      "ARTCHER",
+      "COMMUNICATION & INSTITUTIONS",
+      "ENOTIKO",
+      "France Vapotage",
+      "LYSIOS"
+    ],
+    "years": {
+      "2024": {
+        "hatvp": {
+          "budget_bas": 50000,
+          "budget_haut": 75000
+        },
+        "dgs": {
+          "budget": 67462,
+          "nb_personnes": 2,
+          "cabinets": [
+            {
+              "name": "Artcher",
+              "amount": 15594
+            }
+          ],
+          "trouve": true
+        },
+        "mismatches": {
+          "budget": false,
+          "personnes": true,
+          "cabinets": true
+        },
+        "cabinets_comparison": {
+          "hatvp_only": [
+            "COMMUNICATION & INSTITUTIONS",
+            "ENOTIKO",
+            "France Vapotage",
+            "LYSIOS"
+          ],
+          "dgs_only": [],
+          "mismatch": true
+        }
+      },
+      "2025": {
+        "hatvp": {
+          "budget_bas": 50000,
+          "budget_haut": 75000
+        },
+        "dgs": {
+          "budget": 65926,
+          "nb_personnes": 2,
+          "cabinets": [
+            {
+              "name": "Artcher",
+              "amount": 13894
+            }
+          ],
+          "trouve": true
+        },
+        "mismatches": {
+          "budget": false,
+          "personnes": true,
+          "cabinets": true
+        },
+        "cabinets_comparison": {
+          "hatvp_only": [
+            "COMMUNICATION & INSTITUTIONS",
+            "ENOTIKO",
+            "France Vapotage",
+            "LYSIOS"
+          ],
+          "dgs_only": [],
+          "mismatch": true
+        }
+      }
+    }
+  },
+  {
+    "acteur": "Seita (Imperial Brands)",
+    "personnes_hatvp": [
+      "Caroline BRABANT",
+      "Hervé NATALI",
+      "Jean-Philippe MALLARD",
+      "Mélissa CHELBANI"
+    ],
+    "nb_personnes_hatvp": 4,
+    "cabinets_hatvp": [
+      "ASSOCIATION DES FOURNISSEURS DE TABACS A FUMER",
+      "ENOTIKO",
+      "EUROS AGENCY",
+      "France Vapotage",
+      "FÉDÉRATION DES FABRICANTS DE CIGARES",
+      "PUBLICIS CONSULTANTS FRANCE",
+      "STRATEGIES & PUBLICS"
+    ],
+    "years": {
+      "2024": {
+        "hatvp": {
+          "budget_bas": 400000,
+          "budget_haut": 500000
+        },
+        "dgs": {
+          "budget": 70006,
+          "nb_personnes": 4,
+          "cabinets": [
+            {
+              "name": "STRATEGIES & PUBLICS",
+              "amount": 64260
+            }
+          ],
+          "trouve": true
+        },
+        "mismatches": {
+          "budget": true,
+          "personnes": false,
+          "cabinets": true
+        },
+        "cabinets_comparison": {
+          "hatvp_only": [
+            "ASSOCIATION DES FOURNISSEURS DE TABACS A FUMER",
+            "ENOTIKO",
+            "EUROS AGENCY",
+            "France Vapotage",
+            "FÉDÉRATION DES FABRICANTS DE CIGARES",
+            "PUBLICIS CONSULTANTS FRANCE"
+          ],
+          "dgs_only": [],
+          "mismatch": true
+        }
+      },
+      "2025": {
+        "hatvp": {
+          "budget_bas": 100000,
+          "budget_haut": 200000
+        },
+        "dgs": {
+          "budget": 77876,
+          "nb_personnes": 4,
+          "cabinets": [
+            {
+              "name": "Euros Agency Group",
+              "amount": 20600
+            },
+            {
+              "name": "Forward Global",
+              "amount": 45480
+            }
+          ],
+          "trouve": true
+        },
+        "mismatches": {
+          "budget": true,
+          "personnes": false,
+          "cabinets": true
+        },
+        "cabinets_comparison": {
+          "hatvp_only": [
+            "ASSOCIATION DES FOURNISSEURS DE TABACS A FUMER",
+            "ENOTIKO",
+            "France Vapotage",
+            "FÉDÉRATION DES FABRICANTS DE CIGARES",
+            "PUBLICIS CONSULTANTS FRANCE",
+            "STRATEGIES & PUBLICS"
+          ],
+          "dgs_only": [
+            "Forward Global"
+          ],
+          "mismatch": true
+        }
+      }
+    }
+  },
+  {
+    "acteur": "Logista",
+    "personnes_hatvp": [
+      "Anne DE BEAUMONT",
+      "Mathilde KESZEY-GOFFARD"
+    ],
+    "nb_personnes_hatvp": 2,
+    "cabinets_hatvp": [
+      "BOURY TALLON & ASSOCIES",
+      "CAP CORELI, COMMUNICATION & RELATIONS INSTITUTIONNELLES",
+      "M&M CONSEIL"
+    ],
+    "years": {
+      "2024": {
+        "hatvp": {
+          "budget_bas": 25000,
+          "budget_haut": 50000
+        },
+        "dgs": {
+          "budget": 50000,
+          "nb_personnes": 1,
+          "cabinets": [
+            {
+              "name": "BOURRY, TALLON ET ASSOCIES",
+              "amount": 45000
+            }
+          ],
+          "trouve": true
+        },
+        "mismatches": {
+          "budget": false,
+          "personnes": true,
+          "cabinets": true
+        },
+        "cabinets_comparison": {
+          "hatvp_only": [
+            "BOURY TALLON & ASSOCIES",
+            "CAP CORELI, COMMUNICATION & RELATIONS INSTITUTIONNELLES",
+            "M&M CONSEIL"
+          ],
+          "dgs_only": [
+            "BOURRY, TALLON ET ASSOCIES"
+          ],
+          "mismatch": true
+        }
+      },
+      "2025": {
+        "hatvp": {
+          "budget_bas": 25000,
+          "budget_haut": 50000
+        },
+        "dgs": {
+          "budget": 103000,
+          "nb_personnes": 2,
+          "cabinets": [
+            {
+              "name": "BOURRY, TALLON ET ASSOCIES",
+              "amount": 96000
+            }
+          ],
+          "trouve": true
+        },
+        "mismatches": {
+          "budget": true,
+          "personnes": false,
+          "cabinets": true
+        },
+        "cabinets_comparison": {
+          "hatvp_only": [
+            "BOURY TALLON & ASSOCIES",
+            "CAP CORELI, COMMUNICATION & RELATIONS INSTITUTIONNELLES",
+            "M&M CONSEIL"
+          ],
+          "dgs_only": [
+            "BOURRY, TALLON ET ASSOCIES"
+          ],
+          "mismatch": true
+        }
+      }
+    }
+  },
+  {
+    "acteur": "Association des fournisseurs de tabac a fumer (AFTF)",
+    "personnes_hatvp": [
+      "Fabrice DU REPAIRE"
+    ],
+    "nb_personnes_hatvp": 1,
+    "cabinets_hatvp": [
+      "AI2P"
+    ],
+    "years": {
+      "2024": {
+        "hatvp": {
+          "budget_bas": 75000,
+          "budget_haut": 100000
+        },
+        "dgs": {
+          "budget": 273600,
+          "nb_personnes": null,
+          "cabinets": [
+            {
+              "name": "Ai2P",
+              "amount": 273600
+            }
+          ],
+          "trouve": true
+        },
+        "mismatches": {
+          "budget": true,
+          "personnes": false,
+          "cabinets": false
+        },
+        "cabinets_comparison": {
+          "hatvp_only": [],
+          "dgs_only": [],
+          "mismatch": false
+        }
+      },
+      "2025": {
+        "hatvp": {
+          "budget_bas": 100000,
+          "budget_haut": 200000
+        },
+        "dgs": {
+          "budget": 174000,
+          "nb_personnes": null,
+          "cabinets": [
+            {
+              "name": "Ai2P",
+              "amount": 174000
+            }
+          ],
+          "trouve": true
+        },
+        "mismatches": {
+          "budget": false,
+          "personnes": false,
+          "cabinets": false
+        },
+        "cabinets_comparison": {
+          "hatvp_only": [],
+          "dgs_only": [],
+          "mismatch": false
+        }
+      }
+    }
+  },
+  {
+    "acteur": "Federation des fabricants de cigares",
+    "personnes_hatvp": [
+      "Fabrice DU REPAIRE"
+    ],
+    "nb_personnes_hatvp": 1,
+    "cabinets_hatvp": [
+      "AI2P"
+    ],
+    "years": {
+      "2024": {
+        "hatvp": {
+          "budget_bas": 75000,
+          "budget_haut": 100000
+        },
+        "dgs": {
+          "budget": 224540,
+          "nb_personnes": null,
+          "cabinets": [
+            {
+              "name": "Ai2P",
+              "amount": 224540
+            }
+          ],
+          "trouve": true
+        },
+        "mismatches": {
+          "budget": true,
+          "personnes": false,
+          "cabinets": false
+        },
+        "cabinets_comparison": {
+          "hatvp_only": [],
+          "dgs_only": [],
+          "mismatch": false
+        }
+      },
+      "2025": {
+        "hatvp": {
+          "budget_bas": 75000,
+          "budget_haut": 100000
+        },
+        "dgs": {
+          "budget": 221955,
+          "nb_personnes": null,
+          "cabinets": [
+            {
+              "name": "Ai2P",
+              "amount": 221955
+            }
+          ],
+          "trouve": true
+        },
+        "mismatches": {
+          "budget": true,
+          "personnes": false,
+          "cabinets": false
+        },
+        "cabinets_comparison": {
+          "hatvp_only": [],
+          "dgs_only": [],
+          "mismatch": false
+        }
+      }
+    }
+  }
+]

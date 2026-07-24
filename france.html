@@ -24,6 +24,7 @@
       <a href="#top" class="nav-link active">Accueil</a>
       <a href="#acteurs" class="nav-link">Les acteurs</a>
       <a href="#historique" class="nav-link">Historique</a>
+      <a href="#ecarts" class="nav-link">Écarts HATVP/DGS</a>
     </div>
   </div>
 </nav>
@@ -102,7 +103,7 @@
                 <th class="num fr-history-col">Budget 2023</th>
                 <th class="num fr-history-col">Budget 2022</th>
                 <th>Cabinets utilisés</th>
-                <th class="num">Salariés (ETP)</th>
+                <th class="num">Salariés</th>
                 <th class="num">DGS 2025</th>
               </tr>
             </thead>
@@ -156,6 +157,79 @@
           <div id="fr-dgs-history-chart"></div>
         </div>
         <div class="fr-notes" id="fr-dgs-history-notes"></div>
+      </div>
+    </div>
+  </section>
+  </div>
+  </div>
+
+  <div class="page-band page-band-grey">
+  <div class="page-band-inner">
+  <section id="ecarts">
+    <h2>Écarts entre déclarations HATVP et DGS</h2>
+
+    <p class="section-intro">
+      Pour les 7 acteurs qui ont à la fois une déclaration HATVP et une déclaration DGS (les acteurs vapotage et
+      la Confédération des buralistes sont hors périmètre légal DGS — voir le tableau des acteurs), comparaison
+      du budget, du nombre de personnes déclarées et des cabinets utilisés, pour 2024 et pour 2025 séparément.
+      <strong>Écarts fréquents et attendus</strong> : la HATVP couvre l'ensemble des activités d'influence d'une
+      organisation (tous sujets confondus), alors que la DGS ne couvre que les dépenses liées spécifiquement au
+      tabac — un écart entre les deux n'est donc pas forcément une erreur ou une incohérence, c'est une hypothèse
+      plausible (pas vérifiée formellement organisation par organisation) pour expliquer pourquoi la HATVP est
+      souvent plus large. Le rapprochement des noms de cabinets entre les deux sources est fait par simple
+      recoupement textuel (accents/majuscules ignorés) : deux cabinets identiques dans la réalité peuvent ne pas
+      se recouper si leur nom est écrit différemment d'une source à l'autre — un signalement "non retrouvé" n'est
+      donc pas une preuve d'anomalie. Les personnes HATVP sont une photo actuelle de la fiche (pas spécifique à
+      2024 ou 2025), contrairement au nombre de personnes DGS qui est propre à chaque année déclarée.
+    </p>
+
+    <div class="card">
+      <button class="collapsible-toggle" id="fr-ecarts-2025-toggle" aria-expanded="false">
+        <span class="collapsible-icon">▸</span>
+        <span class="title-stamp">Comparaison 2025</span>
+      </button>
+      <div class="collapsible-body" id="fr-ecarts-2025-body">
+        <div style="overflow: auto; border-radius: 12px;">
+          <table id="fr-ecarts-2025-table">
+            <thead>
+              <tr>
+                <th>Acteur</th>
+                <th class="num">Budget HATVP</th>
+                <th class="num">Budget DGS</th>
+                <th class="num">Personnes HATVP</th>
+                <th class="num">Personnes DGS</th>
+                <th>Cabinets HATVP sans équivalent DGS</th>
+                <th>Cabinets DGS sans équivalent HATVP</th>
+              </tr>
+            </thead>
+            <tbody id="fr-ecarts-2025-body-rows"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 1.5rem;">
+      <button class="collapsible-toggle" id="fr-ecarts-2024-toggle" aria-expanded="false">
+        <span class="collapsible-icon">▸</span>
+        <span class="title-stamp">Comparaison 2024</span>
+      </button>
+      <div class="collapsible-body" id="fr-ecarts-2024-body">
+        <div style="overflow: auto; border-radius: 12px;">
+          <table id="fr-ecarts-2024-table">
+            <thead>
+              <tr>
+                <th>Acteur</th>
+                <th class="num">Budget HATVP</th>
+                <th class="num">Budget DGS</th>
+                <th class="num">Personnes HATVP</th>
+                <th class="num">Personnes DGS</th>
+                <th>Cabinets HATVP sans équivalent DGS</th>
+                <th>Cabinets DGS sans équivalent HATVP</th>
+              </tr>
+            </thead>
+            <tbody id="fr-ecarts-2024-body-rows"></tbody>
+          </table>
+        </div>
       </div>
     </div>
   </section>
@@ -218,9 +292,9 @@ function frNoteMarker(row) {
   return '';
 }
 
-function formatEtp(value) {
+function formatPersonnes(value) {
   if (value == null) return '<span class="muted">—</span>';
-  return value.toLocaleString('fr-FR', { maximumFractionDigits: 2 });
+  return value.toLocaleString('fr-FR');
 }
 
 let FR_HATVP_HISTORY = null;
@@ -237,7 +311,7 @@ function computeFrTotals(rows) {
   const withBudget = rows.filter(r => !(r.budget_hatvp_bas_2025 === 0 && r.budget_hatvp_haut_2025 === 0));
   const totalBudgetBas = withBudget.reduce((sum, r) => sum + (r.budget_hatvp_bas_2025 || 0), 0);
   const totalBudgetHaut = withBudget.reduce((sum, r) => sum + (r.budget_hatvp_haut_2025 || 0), 0);
-  const totalSalaries = rows.reduce((sum, r) => sum + (r.nb_salaries_hatvp_2025 || 0), 0);
+  const totalPersonnes = rows.reduce((sum, r) => sum + (r.nb_personnes_hatvp || 0), 0);
   const totalDgs = rows.reduce((sum, r) => sum + (r.dgs_2025_montant_total || 0), 0);
   const cabinetsSet = new Set();
   rows.forEach(r => (r.cabinets_hatvp || []).forEach(c => cabinetsSet.add(c)));
@@ -254,7 +328,7 @@ function computeFrTotals(rows) {
     historyTotals[year] = found ? sum : null;
   });
 
-  return { totalBudgetBas, totalBudgetHaut, totalSalaries, totalDgs, cabinetsCount: cabinetsSet.size, historyTotals };
+  return { totalBudgetBas, totalBudgetHaut, totalPersonnes, totalDgs, cabinetsCount: cabinetsSet.size, historyTotals };
 }
 
 function renderFrActeursTable(data) {
@@ -277,7 +351,7 @@ function renderFrActeursTable(data) {
       <td class="num" data-label="Budget HATVP 2025"><strong>${formatEuro(totals.totalBudgetBas)} – ${formatEuro(totals.totalBudgetHaut)}</strong></td>
       ${totalHistoryCells}
       <td data-label="Cabinets utilisés"><strong>${totals.cabinetsCount} cabinets distincts</strong></td>
-      <td class="num" data-label="Salariés (ETP)"><strong>${formatEtp(Math.round(totals.totalSalaries * 100) / 100)}</strong></td>
+      <td class="num" data-label="Salariés"><strong>${formatPersonnes(totals.totalPersonnes)}</strong></td>
       <td class="num" data-label="DGS 2025"><strong>${formatEuro(totals.totalDgs)}</strong></td>
     </tr>
   `;
@@ -294,7 +368,7 @@ function renderFrActeursTable(data) {
       <td class="num" data-label="Budget HATVP 2025">${frBudgetDisplay(row)}</td>
       ${historyCells}
       <td data-label="Cabinets utilisés">${row.nb_cabinets_hatvp ? `${row.cabinets_hatvp.join(', ')} (${row.nb_cabinets_hatvp})` : '<span class="muted">—</span>'}</td>
-      <td class="num" data-label="Salariés (ETP)">${formatEtp(row.nb_salaries_hatvp_2025)}</td>
+      <td class="num" data-label="Salariés" title="${(row.personnes_hatvp || []).join(', ')}">${row.nb_personnes_hatvp ? formatPersonnes(row.nb_personnes_hatvp) : '<span class="muted">—</span>'}</td>
       <td class="num" data-label="DGS 2025">${frDgsDisplay(row)}</td>
     </tr>
   `;
@@ -521,10 +595,54 @@ function buildSeriesFromDgsHistory(history) {
   return { series, totalSeries };
 }
 
+/* ---------- Ecarts HATVP vs DGS ---------- */
+
+function fmtCabinetList(names) {
+  if (!names || !names.length) return '<span class="muted">—</span>';
+  return names.join(', ');
+}
+
+function renderEcartsTable(comparison, year) {
+  const tbody = document.getElementById(`fr-ecarts-${year}-body-rows`);
+  tbody.innerHTML = comparison.map(org => {
+    const y = org.years[String(year)];
+    if (!y) return '';
+    const m = y.mismatches;
+    const budgetHatvpTxt = (y.hatvp.budget_bas != null && y.hatvp.budget_haut != null)
+      ? `${formatEuro(y.hatvp.budget_bas)} – ${formatEuro(y.hatvp.budget_haut)}`
+      : '<span class="muted">—</span>';
+    const budgetDgsTxt = y.dgs.budget != null ? formatEuro(y.dgs.budget) : '<span class="muted">—</span>';
+    const personnesDgsTxt = y.dgs.nb_personnes != null ? y.dgs.nb_personnes : '<span class="muted">—</span>';
+    return `
+      <tr>
+        <td data-label="Acteur">${org.acteur}</td>
+        <td class="num${m.budget ? ' fr-mismatch' : ''}" data-label="Budget HATVP">${budgetHatvpTxt}</td>
+        <td class="num${m.budget ? ' fr-mismatch' : ''}" data-label="Budget DGS">${budgetDgsTxt}</td>
+        <td class="num${m.personnes ? ' fr-mismatch' : ''}" data-label="Personnes HATVP" title="photo actuelle de la fiche, pas specifique a ${year}">${org.nb_personnes_hatvp || '<span class="muted">—</span>'}</td>
+        <td class="num${m.personnes ? ' fr-mismatch' : ''}" data-label="Personnes DGS">${personnesDgsTxt}</td>
+        <td data-label="Cabinets HATVP sans équivalent DGS"${m.cabinets && y.cabinets_comparison.hatvp_only.length ? ' class="fr-mismatch"' : ''}>${fmtCabinetList(y.cabinets_comparison.hatvp_only)}</td>
+        <td data-label="Cabinets DGS sans équivalent HATVP"${m.cabinets && y.cabinets_comparison.dgs_only.length ? ' class="fr-mismatch"' : ''}>${fmtCabinetList(y.cabinets_comparison.dgs_only)}</td>
+      </tr>
+    `;
+  }).join('');
+}
+
 (async function init() {
   setupCollapsible('fr-acteurs-toggle', 'fr-acteurs-body');
   setupCollapsible('fr-hatvp-history-toggle', 'fr-hatvp-history-body');
   setupCollapsible('fr-dgs-history-toggle', 'fr-dgs-history-body');
+  setupCollapsible('fr-ecarts-2025-toggle', 'fr-ecarts-2025-body');
+  setupCollapsible('fr-ecarts-2024-toggle', 'fr-ecarts-2024-body');
+
+  try {
+    const comparisonRes = await fetch('data/hatvp_dgs_comparison.json', { cache: 'no-cache' });
+    const comparison = await comparisonRes.json();
+    renderEcartsTable(comparison, 2025);
+    renderEcartsTable(comparison, 2024);
+  } catch (err) {
+    document.getElementById('fr-ecarts-2025-body-rows').innerHTML =
+      `<tr><td colspan="7">Erreur de chargement des données : ${err.message}</td></tr>`;
+  }
 
   try {
     const historyRes = await fetch('data/hatvp_history.json', { cache: 'no-cache' });
