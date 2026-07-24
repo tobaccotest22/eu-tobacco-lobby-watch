@@ -655,6 +655,18 @@ table.show-history .fr-history-col { display: table-cell; }
 
 tbody.show-all tr.extra-row.fr-acteur-row { display: table-row; }
 
+.fr-mismatch {
+  background: #fdecec;
+  color: #a13b2e;
+  font-weight: 600;
+  position: relative;
+}
+.fr-mismatch::after {
+  content: "≠";
+  margin-left: 0.4rem;
+  font-weight: 700;
+}
+
 .org-links-detail {
   margin-top: 1rem;
   padding: 1rem 1.25rem;

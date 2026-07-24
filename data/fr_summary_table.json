@@ -9,7 +9,15 @@
       "hatvp_trouve": true,
       "budget_hatvp_bas_2025": 400000,
       "budget_hatvp_haut_2025": 500000,
-      "nb_salaries_hatvp_2025": 6.0,
+      "personnes_hatvp": [
+        "Daniel BRUQUEL",
+        "Fabrice LAYER",
+        "Kevin REVA",
+        "Mickael LEROUX",
+        "Solène RANNOU",
+        "Stéphanie MARTEL"
+      ],
+      "nb_personnes_hatvp": 6,
       "cabinets_hatvp": [
         "CILAB",
         "ENOTIKO",
@@ -49,7 +57,11 @@
       "hatvp_trouve": true,
       "budget_hatvp_bas_2025": 200000,
       "budget_hatvp_haut_2025": 300000,
-      "nb_salaries_hatvp_2025": 3.0,
+      "personnes_hatvp": [
+        "Charlotte SCALES",
+        "Vincent ZAPPIA"
+      ],
+      "nb_personnes_hatvp": 2,
       "cabinets_hatvp": [
         "ASSOCIATION DES FOURNISSEURS DE TABACS A FUMER",
         "ENOTIKO",
@@ -86,7 +98,12 @@
       "hatvp_trouve": true,
       "budget_hatvp_bas_2025": 50000,
       "budget_hatvp_haut_2025": 75000,
-      "nb_salaries_hatvp_2025": 0.11,
+      "personnes_hatvp": [
+        "Aïna PAGES",
+        "Benoît BAS",
+        "Marine SAUCE"
+      ],
+      "nb_personnes_hatvp": 3,
       "cabinets_hatvp": [
         "ARTCHER",
         "COMMUNICATION & INSTITUTIONS",
@@ -114,7 +131,13 @@
       "hatvp_trouve": true,
       "budget_hatvp_bas_2025": 100000,
       "budget_hatvp_haut_2025": 200000,
-      "nb_salaries_hatvp_2025": 1.0,
+      "personnes_hatvp": [
+        "Caroline BRABANT",
+        "Hervé NATALI",
+        "Jean-Philippe MALLARD",
+        "Mélissa CHELBANI"
+      ],
+      "nb_personnes_hatvp": 4,
       "cabinets_hatvp": [
         "ASSOCIATION DES FOURNISSEURS DE TABACS A FUMER",
         "ENOTIKO",
@@ -140,7 +163,7 @@
         ],
         "montant_avantages": 0
       },
-      "note": "Budget/salaries HATVP 2025 different du fichier Excel de reference pour cet acteur (exercice a cheval octobre-septembre) - ecart de fraicheur des donnees probable ; actions et cabinets HATVP restent coherents avec le fichier."
+      "note": "Budget HATVP 2025 different du fichier Excel de reference pour cet acteur (exercice a cheval octobre-septembre) - ecart de fraicheur des donnees probable ; actions et cabinets HATVP restent coherents avec le fichier."
     },
     {
       "acteur": "Logista",
@@ -148,7 +171,11 @@
       "hatvp_trouve": true,
       "budget_hatvp_bas_2025": 25000,
       "budget_hatvp_haut_2025": 50000,
-      "nb_salaries_hatvp_2025": 1.0,
+      "personnes_hatvp": [
+        "Anne DE BEAUMONT",
+        "Mathilde KESZEY-GOFFARD"
+      ],
+      "nb_personnes_hatvp": 2,
       "cabinets_hatvp": [
         "BOURY TALLON & ASSOCIES",
         "CAP CORELI, COMMUNICATION & RELATIONS INSTITUTIONNELLES",
@@ -166,7 +193,7 @@
         ],
         "montant_avantages": 0
       },
-      "note": "Budget/salaries HATVP 2025 different du fichier Excel de reference pour cet acteur (exercice a cheval octobre-septembre) - ecart de fraicheur des donnees probable ; actions et cabinets HATVP restent coherents avec le fichier."
+      "note": "Budget HATVP 2025 different du fichier Excel de reference pour cet acteur (exercice a cheval octobre-septembre) - ecart de fraicheur des donnees probable ; actions et cabinets HATVP restent coherents avec le fichier."
     },
     {
       "acteur": "France Vapotage",
@@ -174,7 +201,10 @@
       "hatvp_trouve": true,
       "budget_hatvp_bas_2025": 50000,
       "budget_hatvp_haut_2025": 75000,
-      "nb_salaries_hatvp_2025": 0.2,
+      "personnes_hatvp": [
+        "Florence MESLET"
+      ],
+      "nb_personnes_hatvp": 1,
       "cabinets_hatvp": [],
       "nb_cabinets_hatvp": 0,
       "dgs_2025_montant_total": null,
@@ -187,7 +217,18 @@
       "hatvp_trouve": true,
       "budget_hatvp_bas_2025": 0,
       "budget_hatvp_haut_2025": 0,
-      "nb_salaries_hatvp_2025": null,
+      "personnes_hatvp": [
+        "Agnes HEKPAZO",
+        "Aurélien TAGLIONE",
+        "Charly PAIRAUD",
+        "Hervé DELILLE",
+        "Jean MOIROUD",
+        "Nathalie MUTEAU",
+        "Olivier MARTZEL",
+        "Tanguy GREARD",
+        "Yann WILPOTTE"
+      ],
+      "nb_personnes_hatvp": 9,
       "cabinets_hatvp": [
         "ARCTURUS FRANCE",
         "STRATEGIES & PUBLICS"
@@ -195,7 +236,7 @@
       "nb_cabinets_hatvp": 2,
       "dgs_2025_montant_total": null,
       "dgs_2025_detail": null,
-      "note": "Exercice 2025 pas encore publie sur HATVP au moment de cette extraction (0 activite, budget 0EUR, salaries non renseignes) - ne pas lire comme un montant declare a zero, juste une donnee pas encore disponible."
+      "note": "Exercice 2025 pas encore publie sur HATVP au moment de cette extraction (0 activite, budget 0EUR, moyens non renseignes) - ne pas lire comme un montant declare a zero, juste une donnee pas encore disponible."
     },
     {
       "acteur": "LPV Company",
@@ -203,14 +244,18 @@
       "hatvp_trouve": true,
       "budget_hatvp_bas_2025": 100000,
       "budget_hatvp_haut_2025": 200000,
-      "nb_salaries_hatvp_2025": 0.25,
+      "personnes_hatvp": [
+        "Caroline BERTHOU",
+        "Morgan LAISNE"
+      ],
+      "nb_personnes_hatvp": 2,
       "cabinets_hatvp": [
         "EUROS AGENCY"
       ],
       "nb_cabinets_hatvp": 1,
       "dgs_2025_montant_total": null,
       "dgs_2025_detail": null,
-      "note": "Aucune action de lobbying declaree pour cet exercice sur HATVP (0 activite), mais les moyens (budget/ETP) ont bien ete declares - ce sont deux declarations distinctes sur HATVP ; le budget/ETP affiches ici sont donc valides."
+      "note": "Aucune action de lobbying declaree pour cet exercice sur HATVP (0 activite), mais les moyens (budget/ETP) ont bien ete declares - ce sont deux declarations distinctes sur HATVP ; le budget affiche ici est donc valide."
     },
     {
       "acteur": "Sovape",
@@ -218,7 +263,8 @@
       "hatvp_trouve": true,
       "budget_hatvp_bas_2025": null,
       "budget_hatvp_haut_2025": null,
-      "nb_salaries_hatvp_2025": null,
+      "personnes_hatvp": [],
+      "nb_personnes_hatvp": 0,
       "cabinets_hatvp": [],
       "nb_cabinets_hatvp": 0,
       "dgs_2025_montant_total": null,
@@ -231,7 +277,10 @@
       "hatvp_trouve": true,
       "budget_hatvp_bas_2025": 200000,
       "budget_hatvp_haut_2025": 300000,
-      "nb_salaries_hatvp_2025": 1.5,
+      "personnes_hatvp": [
+        "Léopold PINAULT"
+      ],
+      "nb_personnes_hatvp": 1,
       "cabinets_hatvp": [
         "IMAGE 7"
       ],
@@ -246,7 +295,10 @@
       "hatvp_trouve": true,
       "budget_hatvp_bas_2025": 100000,
       "budget_hatvp_haut_2025": 200000,
-      "nb_salaries_hatvp_2025": 0.3,
+      "personnes_hatvp": [
+        "Fabrice DU REPAIRE"
+      ],
+      "nb_personnes_hatvp": 1,
       "cabinets_hatvp": [
         "AI2P"
       ],
@@ -270,7 +322,10 @@
       "hatvp_trouve": true,
       "budget_hatvp_bas_2025": 0,
       "budget_hatvp_haut_2025": 10000,
-      "nb_salaries_hatvp_2025": 0.1,
+      "personnes_hatvp": [
+        "Claude BAMBERGER"
+      ],
+      "nb_personnes_hatvp": 1,
       "cabinets_hatvp": [],
       "nb_cabinets_hatvp": 0,
       "dgs_2025_montant_total": null,
@@ -283,7 +338,10 @@
       "hatvp_trouve": true,
       "budget_hatvp_bas_2025": 75000,
       "budget_hatvp_haut_2025": 100000,
-      "nb_salaries_hatvp_2025": 0.3,
+      "personnes_hatvp": [
+        "Fabrice DU REPAIRE"
+      ],
+      "nb_personnes_hatvp": 1,
       "cabinets_hatvp": [
         "AI2P"
       ],
@@ -307,7 +365,8 @@
       "hatvp_trouve": false,
       "budget_hatvp_bas_2025": null,
       "budget_hatvp_haut_2025": null,
-      "nb_salaries_hatvp_2025": null,
+      "personnes_hatvp": [],
+      "nb_personnes_hatvp": 0,
       "cabinets_hatvp": [],
       "nb_cabinets_hatvp": 0,
       "dgs_2025_montant_total": null,
