@@ -1,5 +1,5 @@
 {
-  "computed_at": "2026-07-20T12:35:17.347048+00:00",
+  "computed_at": "2026-07-27T13:53:27.701207+00:00",
   "meps": {
     "103246": {
       "country_code": "NLD",
@@ -524,6 +524,10 @@
     "98582": {
       "country_code": "ROU",
       "country_name": "Roumanie"
+    },
+    "96812": {
+      "country_code": "ESP",
+      "country_name": "Espagne"
     }
   }
 }
