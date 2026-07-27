@@ -22,38 +22,31 @@ d'elles correspond à une de nos 46 organisations suivies.
 - ep_meetings_keyword_terms : les mots-clés utilisés
 - ep_meetings_outside_our_46 : réunions ne correspondant à AUCUNE de nos 46
   organisations (pour voir qui sont ces acteurs "hors liste")
+
+Passe par scripts/ep_meetings_client.py (Playwright) pour résoudre le
+challenge JS AWS WAF posé depuis ~juillet 2026 sur ce endpoint.
 """
 
-import csv
-import io
 import json
 import time
-import urllib.parse
-import urllib.request
 from datetime import datetime, timezone
+
+from ep_meetings_client import ep_meetings_session
 
 ENTITIES_PATH = "data/entities.json"
 LIVE_DATA_PATH = "data/live_data.json"
-EP_SEARCH_URL = "https://www.europarl.europa.eu/meps/en/search-meetings"
 SINCE_DATE = datetime(2025, 1, 1)
 KEYWORDS = ["tobacco", "nicotine", "cigarette", "cigar", "vape", "snus", "tabac"]
-USER_AGENT = "Mozilla/5.0 (compatible; eu-tobacco-lobby-watch/0.4)"
-REQUEST_TIMEOUT = 30
 SLEEP_BETWEEN_REQUESTS = 1
 
 
-def fetch_keyword_csv(keyword: str) -> list[dict]:
+def fetch_keyword_csv(fetch_csv, keyword: str) -> list[dict]:
     params = {
         "textualSearch": keyword,
         "fromDate": SINCE_DATE.strftime("%d/%m/%Y"),
         "toDate": datetime.now(timezone.utc).strftime("%d/%m/%Y"),
-        "exportFormat": "CSV",
     }
-    url = f"{EP_SEARCH_URL}?{urllib.parse.urlencode(params)}"
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as response:
-        raw = response.read().decode("utf-8-sig")
-    return list(csv.DictReader(io.StringIO(raw)))
+    return fetch_csv(params)
 
 
 def load_our_register_ids() -> set[str]:
@@ -92,14 +85,15 @@ def main():
     our_register_ids = load_our_register_ids()
 
     rows_by_keyword = {}
-    for keyword in KEYWORDS:
-        print(f"Recherche mot-clé : {keyword}")
-        try:
-            rows_by_keyword[keyword] = fetch_keyword_csv(keyword)
-        except Exception as exc:
-            print(f"  échec pour '{keyword}' : {exc}")
-            rows_by_keyword[keyword] = []
-        time.sleep(SLEEP_BETWEEN_REQUESTS)
+    with ep_meetings_session() as fetch_csv:
+        for keyword in KEYWORDS:
+            print(f"Recherche mot-clé : {keyword}")
+            try:
+                rows_by_keyword[keyword] = fetch_keyword_csv(fetch_csv, keyword)
+            except Exception as exc:
+                print(f"  échec pour '{keyword}' : {exc}")
+                rows_by_keyword[keyword] = []
+            time.sleep(SLEEP_BETWEEN_REQUESTS)
 
     meetings = dedupe_meetings(rows_by_keyword)
 

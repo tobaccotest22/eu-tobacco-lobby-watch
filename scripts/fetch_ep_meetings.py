@@ -9,6 +9,11 @@ recherche via /search-meetings/facets) permet un filtrage exact par numéro de
 registre de transparence, avec un export CSV directement exploitable
 (&exportFormat=CSV).
 
+Depuis ~juillet 2026, ce endpoint est protégé par un challenge JS AWS WAF
+qu'une requête HTTP simple ne peut pas résoudre (voir docstring de
+scripts/ep_meetings_client.py) : on passe donc par Playwright pour
+obtenir un cookie de session valide avant chaque export CSV.
+
 Le script fusionne ses résultats dans data/live_data.json sans écraser les
 clés "lobbyfacts"/"ec_meetings" qu'écrit scripts/fetch_lobbyfacts.py.
 
@@ -19,39 +24,31 @@ somme de people_involved, et nombre total de réunions Parlement/Commission
 depuis 2025.
 """
 
-import csv
-import io
 import json
 import time
 import urllib.parse
-import urllib.request
 from datetime import datetime, timezone
+
+from ep_meetings_client import EP_SEARCH_URL, ep_meetings_session
 
 ENTITIES_PATH = "data/entities.json"
 LIVE_DATA_PATH = "data/live_data.json"
-EP_SEARCH_URL = "https://www.europarl.europa.eu/meps/en/search-meetings"
 SINCE_DATE = datetime(2025, 1, 1)
-USER_AGENT = "Mozilla/5.0 (compatible; eu-tobacco-lobby-watch/0.3)"
-REQUEST_TIMEOUT = 30
 SLEEP_BETWEEN_REQUESTS = 1
 
 
-def fetch_ep_meetings(register_id: str) -> dict:
+def fetch_ep_meetings(fetch_csv, register_id: str) -> dict:
     params = {
         "transparencyRegisterIds": register_id,
         "fromDate": SINCE_DATE.strftime("%d/%m/%Y"),
         "toDate": datetime.now(timezone.utc).strftime("%d/%m/%Y"),
-        "exportFormat": "CSV",
     }
-    url = f"{EP_SEARCH_URL}?{urllib.parse.urlencode(params)}"
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    url = f"{EP_SEARCH_URL}?{urllib.parse.urlencode({**params, 'exportFormat': 'CSV'})}"
     try:
-        with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as response:
-            raw = response.read().decode("utf-8-sig")
+        rows = fetch_csv(params)
     except Exception as exc:
         return {"error": f"export CSV échoué : {exc}", "source_url": url}
 
-    reader = csv.DictReader(io.StringIO(raw))
     meetings = [
         {
             "date": row.get("meeting_date"),
@@ -61,7 +58,7 @@ def fetch_ep_meetings(register_id: str) -> dict:
             "title": row.get("title"),
             "procedure_reference": row.get("procedure_reference") or None,
         }
-        for row in reader
+        for row in rows
     ]
     meetings.sort(key=lambda m: m["date"] or "", reverse=True)
 
@@ -84,19 +81,20 @@ def main():
 
     now = datetime.now(timezone.utc).isoformat()
 
-    for entity in entities:
-        register_id = entity.get("register_id")
-        name = entity["name"]
-        if not register_id:
-            print(f"(pas de register_id, ignoré) {name}")
-            continue
+    with ep_meetings_session() as fetch_csv:
+        for entity in entities:
+            register_id = entity.get("register_id")
+            name = entity["name"]
+            if not register_id:
+                print(f"(pas de register_id, ignoré) {name}")
+                continue
 
-        print(f"Réunions PE : {name} ({register_id})")
-        entry = live_data.setdefault(register_id, {"name": name, "register_id": register_id})
-        entry["name"] = name
-        entry["ep_meetings"] = fetch_ep_meetings(register_id)
-        entry["ep_meetings_last_fetched"] = now
-        time.sleep(SLEEP_BETWEEN_REQUESTS)
+            print(f"Réunions PE : {name} ({register_id})")
+            entry = live_data.setdefault(register_id, {"name": name, "register_id": register_id})
+            entry["name"] = name
+            entry["ep_meetings"] = fetch_ep_meetings(fetch_csv, register_id)
+            entry["ep_meetings_last_fetched"] = now
+            time.sleep(SLEEP_BETWEEN_REQUESTS)
 
     # Fusionne (plutôt que remplace) : les scripts de recherche mot-clé
     # (fetch_keyword_meetings.py, fetch_ec_keyword_meetings.py) et
