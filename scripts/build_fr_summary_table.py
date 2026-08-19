@@ -83,19 +83,49 @@ def load_hatvp():
 
 CABINETS_YEARS = (2024, 2025)
 
+# Cas ou deux inscriptions HATVP distinctes (representants_id differents)
+# correspondent en realite a la meme organisation, suite a un changement de
+# marque/fusion - signale par l'utilisateur pour Rivington/ESL & Network,
+# verifie sur la fiche HATVP de ESL & NETWORK FRANCE SAS (SIREN 431853530) :
+# c'est bien l'organisation "ESL Rivington", et l'ancienne inscription
+# "RIVINGTON" (SIREN 533445318) a ete fermee le 01/01/2023 sur son propre
+# 1_informations_generales.csv (dateCessation) - coherent avec une
+# absorption/rebranding, pas deux cabinets distincts. Cle = denomination
+# HATVP brute, valeur = nom affiche fusionne. Verifie qu'aucun autre cabinet
+# de la liste des 14 acteurs ne presente le meme profil (une inscription avec
+# dateCessation propre + une autre visiblement liee) - RIVINGTON est, a ce
+# jour, le seul cas trouve dans les 26 cabinets jamais declares pour ces 14
+# organisations (cf. conversation).
+CABINET_NAME_ALIASES = {
+    "RIVINGTON": "ESL Rivington",
+    "ESL & NETWORK FRANCE SAS": "ESL Rivington",
+}
+
 
 def cabinets_by_year_for_org(clients, info, org_siret, years=CABINETS_YEARS):
     """Cabinets ayant declare cet acteur comme client sur 4_clients.csv, avec
-    le ou les annees (parmi `years`) ou la relation etait active. Une
-    relation est consideree active sur une annee civile Y si elle a
-    commence au plus tard le 31/12/Y (dateAjout) et n'a pas cesse avant le
-    01/01/Y (dateCessation vide ou posterieure). C'est le seul niveau de
-    granularite temporelle disponible dans l'export HATVP pour les clients :
-    contrairement aux exercices/activites, 4_clients.csv ne rattache pas
-    une relation client a une annee ou une action precise, seulement a une
-    periode de declaration (dateAjout -> dateCessation). Donc "cabinet actif
-    pour X en 2024" signifie "relation client declaree comme active a un
-    moment de 2024", pas "a facture une action pour X en 2024"."""
+    le ou les annees (parmi `years`) ou la relation pouvait etre active. Une
+    annee Y est retenue si la relation a commence au plus tard le 31/12/Y
+    (dateAjout, la seule date fiable du cote relation - voir plus bas) ET si
+    le cabinet lui-meme etait encore inscrit a la HATVP a un moment de
+    l'annee Y (dateCessation propre du cabinet sur 1_informations_generales.csv,
+    NaN ou posterieure au 01/01/Y).
+
+    Le champ dateCessation cote RELATION (4_clients.csv) n'est volontairement
+    PAS utilise comme borne de fin, et le flag ancienClient est ignore : les
+    deux se sont averes peu fiables pour dater une fin reelle de collaboration
+    - verifie sur le cas ESL & Network/PMI, marque ancienClient=True avec une
+    dateDesactivation de 2022, alors que 5 actions beneficiant explicitement
+    a "PHILIP MORRIS FRANCE" sont bien declarees sur l'exercice HATVP 2025 de
+    ESL & Network (dont une sur la fiscalite des sachets de nicotine,
+    confirmee par l'utilisateur) - ancienClient/dateDesactivation semblent
+    donc refleter une reclassification administrative cote HATVP, pas
+    forcement un arret reel de la relation. Seule la dateCessation PROPRE du
+    cabinet (fin d'inscription HATVP, un fait dur) sert donc de borne de fin.
+    Consequence : "cabinet actif pour X en 2024" signifie "relation
+    declaree existante et cabinet toujours inscrit a la HATVP en 2024", pas
+    "a facture une action pour X en 2024" - c'est le niveau de precision
+    maximal disponible avec les tables ouvertes par HATVP pour les clients."""
     if not org_siret:
         return []
     org_siren = str(org_siret)[:9]
@@ -103,25 +133,27 @@ def cabinets_by_year_for_org(clients, info, org_siret, years=CABINETS_YEARS):
     if matches.empty:
         return []
     matches["dateAjout_dt"] = pd.to_datetime(matches["dateAjout"], format="%d-%m-%Y %H:%M", errors="coerce")
-    matches["dateCessation_dt"] = pd.to_datetime(matches["dateCessation"], format="%d-%m-%Y %H:%M", errors="coerce")
 
-    years_by_rid = {}
+    cabinet_own_cessation = info.set_index("representants_id")["dateCessation"]
+    cabinet_own_cessation_dt = pd.to_datetime(cabinet_own_cessation, format="%d-%m-%Y %H:%M", errors="coerce")
+
+    years_by_name = {}
     for _, row in matches.iterrows():
-        start = row["dateAjout_dt"]
-        end = row["dateCessation_dt"]
-        for year in years:
-            year_start = pd.Timestamp(year, 1, 1)
-            year_end = pd.Timestamp(year, 12, 31, 23, 59, 59)
-            active = (pd.isna(start) or start <= year_end) and (pd.isna(end) or end >= year_start)
-            if active:
-                years_by_rid.setdefault(row["representants_id"], set()).add(year)
-
-    result = []
-    for rid, yrs in years_by_rid.items():
+        rid = row["representants_id"]
         name_row = info[info["representants_id"] == rid]
         if name_row.empty:
             continue
-        result.append({"name": name_row.iloc[0]["denomination"], "years": sorted(yrs)})
+        display_name = CABINET_NAME_ALIASES.get(name_row.iloc[0]["denomination"], name_row.iloc[0]["denomination"])
+        start = row["dateAjout_dt"]
+        cabinet_end = cabinet_own_cessation_dt.get(rid)
+        for year in years:
+            year_start = pd.Timestamp(year, 1, 1)
+            year_end = pd.Timestamp(year, 12, 31, 23, 59, 59)
+            active = (pd.isna(start) or start <= year_end) and (pd.isna(cabinet_end) or cabinet_end >= year_start)
+            if active:
+                years_by_name.setdefault(display_name, set()).add(year)
+
+    result = [{"name": name, "years": sorted(yrs)} for name, yrs in years_by_name.items()]
     result.sort(key=lambda r: r["name"])
     return result
 

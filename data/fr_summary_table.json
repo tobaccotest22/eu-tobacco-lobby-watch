@@ -41,7 +41,7 @@
           ]
         },
         {
-          "name": "ESL & NETWORK FRANCE SAS",
+          "name": "ESL Rivington",
           "years": [
             2024,
             2025
@@ -69,13 +69,6 @@
           ]
         },
         {
-          "name": "RIVINGTON",
-          "years": [
-            2024,
-            2025
-          ]
-        },
-        {
           "name": "TMA",
           "years": [
             2024,
@@ -83,7 +76,7 @@
           ]
         }
       ],
-      "nb_cabinets_hatvp": 9,
+      "nb_cabinets_hatvp": 8,
       "dgs_2025_montant_total": 116812,
       "dgs_2025_detail": {
         "montant_employes": 22862,
