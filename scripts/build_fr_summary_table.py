@@ -16,18 +16,26 @@ Construit le tableau resume France (un acteur par ligne) a partir de :
     une autre categorie plus tard, pas pour l'instant).
 
 Colonnes du tableau : Acteur, Categorie, Budget (fourchette HATVP declaree,
-exercice 2025), Cabinets utilises (+nombre), Salaries (nombre de personnes
-nommees dans la section "Personnes chargees de la representation d'interets"
-de la fiche HATVP - PAS l'ETP de 15_exercices.csv, juge trop approximatif/
-declaratif), Declaration DGS 2025 (montant total uniquement - detail
-cabinets/salaries DGS disponible en note a part si besoin).
+exercice 2025), Cabinets utilises (+nombre, avec pour chacun la ou les
+annees 2024/2025 ou la relation client etait active sur HATVP - voir
+cabinets_by_year_for_org), Salaries (nombre de personnes nommees dans la
+section "Personnes chargees de la representation d'interets" de la fiche
+HATVP - PAS l'ETP de 15_exercices.csv, juge trop approximatif/declaratif),
+Declaration DGS 2025 (montant total uniquement - detail cabinets/salaries
+DGS disponible en note a part si besoin).
 
-Le budget/cabinets HATVP sont lus sur l'exercice dont annee_fin = 2025 (le
-plus recent), pour rester coherent avec le point de comparaison DGS 2025
-demande par l'utilisateur. Les personnes (3_collaborateurs.csv) ne sont en
-revanche PAS specifiques a un exercice - c'est la photo actuelle de la
-fiche HATVP, deduplique par (nom, prenom) car HATVP liste parfois deux fois
-la meme personne (une fois avec sa fonction renseignee, une fois vide).
+Le budget HATVP est lu sur l'exercice dont annee_fin = 2025 (le plus
+recent), pour rester coherent avec le point de comparaison DGS 2025 demande
+par l'utilisateur. Les cabinets couvrent 2024 ET 2025 (verification de
+faisabilite faite avant generalisation : 4_clients.csv expose dateAjout/
+dateCessation par relation client, ce qui suffit a determiner l'annee
+d'activite - contrairement aux personnes/activites, aucune table HATVP ne
+rattache une action a un client precis, donc impossible d'aller plus loin
+que "relation client active sur l'annee", pas "a facture une action sur
+l'annee"). Les personnes (3_collaborateurs.csv) ne sont, elles, PAS
+specifiques a un exercice - c'est la photo actuelle de la fiche HATVP,
+deduplique par (nom, prenom) car HATVP liste parfois deux fois la meme
+personne (une fois avec sa fonction renseignee, une fois vide).
 """
 
 import glob
@@ -73,17 +81,81 @@ def load_hatvp():
     return info, exo, clients, collab
 
 
-def cabinets_for_org(clients, info, org_siret):
+CABINETS_YEARS = (2024, 2025)
+
+# Cas ou deux inscriptions HATVP distinctes (representants_id differents)
+# correspondent en realite a la meme organisation, suite a un changement de
+# marque/fusion - signale par l'utilisateur pour Rivington/ESL & Network,
+# verifie sur la fiche HATVP de ESL & NETWORK FRANCE SAS (SIREN 431853530) :
+# c'est bien l'organisation "ESL Rivington", et l'ancienne inscription
+# "RIVINGTON" (SIREN 533445318) a ete fermee le 01/01/2023 sur son propre
+# 1_informations_generales.csv (dateCessation) - coherent avec une
+# absorption/rebranding, pas deux cabinets distincts. Cle = denomination
+# HATVP brute, valeur = nom affiche fusionne. Verifie qu'aucun autre cabinet
+# de la liste des 14 acteurs ne presente le meme profil (une inscription avec
+# dateCessation propre + une autre visiblement liee) - RIVINGTON est, a ce
+# jour, le seul cas trouve dans les 26 cabinets jamais declares pour ces 14
+# organisations (cf. conversation).
+CABINET_NAME_ALIASES = {
+    "RIVINGTON": "ESL Rivington",
+    "ESL & NETWORK FRANCE SAS": "ESL Rivington",
+}
+
+
+def cabinets_by_year_for_org(clients, info, org_siret, years=CABINETS_YEARS):
+    """Cabinets ayant declare cet acteur comme client sur 4_clients.csv, avec
+    le ou les annees (parmi `years`) ou la relation pouvait etre active. Une
+    annee Y est retenue si la relation a commence au plus tard le 31/12/Y
+    (dateAjout, la seule date fiable du cote relation - voir plus bas) ET si
+    le cabinet lui-meme etait encore inscrit a la HATVP a un moment de
+    l'annee Y (dateCessation propre du cabinet sur 1_informations_generales.csv,
+    NaN ou posterieure au 01/01/Y).
+
+    Le champ dateCessation cote RELATION (4_clients.csv) n'est volontairement
+    PAS utilise comme borne de fin, et le flag ancienClient est ignore : les
+    deux se sont averes peu fiables pour dater une fin reelle de collaboration
+    - verifie sur le cas ESL & Network/PMI, marque ancienClient=True avec une
+    dateDesactivation de 2022, alors que 5 actions beneficiant explicitement
+    a "PHILIP MORRIS FRANCE" sont bien declarees sur l'exercice HATVP 2025 de
+    ESL & Network (dont une sur la fiscalite des sachets de nicotine,
+    confirmee par l'utilisateur) - ancienClient/dateDesactivation semblent
+    donc refleter une reclassification administrative cote HATVP, pas
+    forcement un arret reel de la relation. Seule la dateCessation PROPRE du
+    cabinet (fin d'inscription HATVP, un fait dur) sert donc de borne de fin.
+    Consequence : "cabinet actif pour X en 2024" signifie "relation
+    declaree existante et cabinet toujours inscrit a la HATVP en 2024", pas
+    "a facture une action pour X en 2024" - c'est le niveau de precision
+    maximal disponible avec les tables ouvertes par HATVP pour les clients."""
     if not org_siret:
         return []
     org_siren = str(org_siret)[:9]
-    matches = clients[
-        clients["identifiant_national_client"].astype(str).str.startswith(org_siren)
-        & clients["dateCessation"].isna()
-    ]
-    cabinet_ids = matches["representants_id"].unique()
-    names = info[info["representants_id"].isin(cabinet_ids)]["denomination"].tolist()
-    return sorted(set(names))
+    matches = clients[clients["identifiant_national_client"].astype(str).str.startswith(org_siren)].copy()
+    if matches.empty:
+        return []
+    matches["dateAjout_dt"] = pd.to_datetime(matches["dateAjout"], format="%d-%m-%Y %H:%M", errors="coerce")
+
+    cabinet_own_cessation = info.set_index("representants_id")["dateCessation"]
+    cabinet_own_cessation_dt = pd.to_datetime(cabinet_own_cessation, format="%d-%m-%Y %H:%M", errors="coerce")
+
+    years_by_name = {}
+    for _, row in matches.iterrows():
+        rid = row["representants_id"]
+        name_row = info[info["representants_id"] == rid]
+        if name_row.empty:
+            continue
+        display_name = CABINET_NAME_ALIASES.get(name_row.iloc[0]["denomination"], name_row.iloc[0]["denomination"])
+        start = row["dateAjout_dt"]
+        cabinet_end = cabinet_own_cessation_dt.get(rid)
+        for year in years:
+            year_start = pd.Timestamp(year, 1, 1)
+            year_end = pd.Timestamp(year, 12, 31, 23, 59, 59)
+            active = (pd.isna(start) or start <= year_end) and (pd.isna(cabinet_end) or cabinet_end >= year_start)
+            if active:
+                years_by_name.setdefault(display_name, set()).add(year)
+
+    result = [{"name": name, "years": sorted(yrs)} for name, yrs in years_by_name.items()]
+    result.sort(key=lambda r: r["name"])
+    return result
 
 
 def personnes_for_org(collab, rid):
@@ -169,9 +241,9 @@ def main():
                             "distinctes sur HATVP ; le budget affiche ici est donc valide."
                         )
 
-                cabinet_names = cabinets_for_org(clients, info, org_siret)
-                row["cabinets_hatvp"] = cabinet_names
-                row["nb_cabinets_hatvp"] = len(cabinet_names)
+                cabinets = cabinets_by_year_for_org(clients, info, org_siret)
+                row["cabinets_hatvp"] = cabinets
+                row["nb_cabinets_hatvp"] = len(cabinets)
 
                 # Personnes chargees de la representation d'interets (fiche HATVP,
                 # section dediee) - remplace l'ancien affichage en ETP (juge trop
