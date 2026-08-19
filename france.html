@@ -84,9 +84,10 @@
           organisation, inscrite sous ce second nom auprès de la HATVP). L'Association Française des Industriels
           du Tabac (Unifab), un temps ajoutée, a été retirée : son activité déborde du périmètre actuel de ce
           tableau (lobbying tabac au sens strict) — à réexaminer plus tard, pas exclue définitivement.
-          Budget et cabinets viennent du registre HATVP (exercice 2025) ; la colonne DGS reprend le montant
-          total déclaré au titre de la loi Transparence Tabac (détail par poste — salariés, cabinets, avantages —
-          disponible au survol). Trié par budget HATVP décroissant.
+          Budget et cabinets viennent du registre HATVP (budget : exercice 2025 ; cabinets : relation client
+          active en 2024 et/ou 2025, année précisée entre parenthèses pour chacun) ; la colonne DGS reprend le
+          montant total déclaré au titre de la loi Transparence Tabac (détail par poste — salariés, cabinets,
+          avantages — disponible au survol). Trié par budget HATVP décroissant.
         </p>
         <button class="fr-history-col-toggle fr-history-col-toggle-mobile" id="fr-history-col-toggle-mobile" aria-expanded="false">Et par rapport à avant ?</button>
         <div style="overflow: auto; border-radius: 12px;">
@@ -292,6 +293,10 @@ function frNoteMarker(row) {
   return '';
 }
 
+function formatCabinets(cabinets) {
+  return (cabinets || []).map(c => `${c.name} (${c.years.join('-')})`).join(', ');
+}
+
 function formatPersonnes(value) {
   if (value == null) return '<span class="muted">—</span>';
   return value.toLocaleString('fr-FR');
@@ -314,7 +319,7 @@ function computeFrTotals(rows) {
   const totalPersonnes = rows.reduce((sum, r) => sum + (r.nb_personnes_hatvp || 0), 0);
   const totalDgs = rows.reduce((sum, r) => sum + (r.dgs_2025_montant_total || 0), 0);
   const cabinetsSet = new Set();
-  rows.forEach(r => (r.cabinets_hatvp || []).forEach(c => cabinetsSet.add(c)));
+  rows.forEach(r => (r.cabinets_hatvp || []).forEach(c => cabinetsSet.add(c.name)));
 
   const historyTotals = {};
   FR_HISTORY_COL_YEARS.forEach(year => {
@@ -367,7 +372,7 @@ function renderFrActeursTable(data) {
       <td data-label="Catégorie">${row.categorie}</td>
       <td class="num" data-label="Budget HATVP 2025">${frBudgetDisplay(row)}</td>
       ${historyCells}
-      <td data-label="Cabinets utilisés">${row.nb_cabinets_hatvp ? `${row.cabinets_hatvp.join(', ')} (${row.nb_cabinets_hatvp})` : '<span class="muted">—</span>'}</td>
+      <td data-label="Cabinets utilisés">${row.nb_cabinets_hatvp ? `${formatCabinets(row.cabinets_hatvp)} — ${row.nb_cabinets_hatvp} au total` : '<span class="muted">—</span>'}</td>
       <td class="num" data-label="Salariés" title="${(row.personnes_hatvp || []).join(', ')}">${row.nb_personnes_hatvp ? formatPersonnes(row.nb_personnes_hatvp) : '<span class="muted">—</span>'}</td>
       <td class="num" data-label="DGS 2025">${frDgsDisplay(row)}</td>
     </tr>

@@ -19,15 +19,69 @@
       ],
       "nb_personnes_hatvp": 6,
       "cabinets_hatvp": [
-        "CILAB",
-        "ENOTIKO",
-        "ERNST & YOUNG SOCIETE D' AVOCATS",
-        "ESL & NETWORK FRANCE SAS",
-        "LYSIOS",
-        "PLEAD",
-        "RHEA CONSEIL",
-        "RIVINGTON",
-        "TMA"
+        {
+          "name": "CILAB",
+          "years": [
+            2024,
+            2025
+          ]
+        },
+        {
+          "name": "ENOTIKO",
+          "years": [
+            2024,
+            2025
+          ]
+        },
+        {
+          "name": "ERNST & YOUNG SOCIETE D' AVOCATS",
+          "years": [
+            2024,
+            2025
+          ]
+        },
+        {
+          "name": "ESL & NETWORK FRANCE SAS",
+          "years": [
+            2024,
+            2025
+          ]
+        },
+        {
+          "name": "LYSIOS",
+          "years": [
+            2024,
+            2025
+          ]
+        },
+        {
+          "name": "PLEAD",
+          "years": [
+            2024,
+            2025
+          ]
+        },
+        {
+          "name": "RHEA CONSEIL",
+          "years": [
+            2024,
+            2025
+          ]
+        },
+        {
+          "name": "RIVINGTON",
+          "years": [
+            2024,
+            2025
+          ]
+        },
+        {
+          "name": "TMA",
+          "years": [
+            2024,
+            2025
+          ]
+        }
       ],
       "nb_cabinets_hatvp": 9,
       "dgs_2025_montant_total": 116812,
@@ -63,12 +117,48 @@
       ],
       "nb_personnes_hatvp": 2,
       "cabinets_hatvp": [
-        "ASSOCIATION DES FOURNISSEURS DE TABACS A FUMER",
-        "ENOTIKO",
-        "ERNST & YOUNG SOCIETE D' AVOCATS",
-        "FORWARD PARTNERS",
-        "France Vapotage",
-        "MORENAS ADRIEN"
+        {
+          "name": "ASSOCIATION DES FOURNISSEURS DE TABACS A FUMER",
+          "years": [
+            2024,
+            2025
+          ]
+        },
+        {
+          "name": "ENOTIKO",
+          "years": [
+            2024,
+            2025
+          ]
+        },
+        {
+          "name": "ERNST & YOUNG SOCIETE D' AVOCATS",
+          "years": [
+            2024,
+            2025
+          ]
+        },
+        {
+          "name": "FORWARD PARTNERS",
+          "years": [
+            2024,
+            2025
+          ]
+        },
+        {
+          "name": "France Vapotage",
+          "years": [
+            2024,
+            2025
+          ]
+        },
+        {
+          "name": "MORENAS ADRIEN",
+          "years": [
+            2024,
+            2025
+          ]
+        }
       ],
       "nb_cabinets_hatvp": 6,
       "dgs_2025_montant_total": 146474,
@@ -105,11 +195,40 @@
       ],
       "nb_personnes_hatvp": 3,
       "cabinets_hatvp": [
-        "ARTCHER",
-        "COMMUNICATION & INSTITUTIONS",
-        "ENOTIKO",
-        "France Vapotage",
-        "LYSIOS"
+        {
+          "name": "ARTCHER",
+          "years": [
+            2025
+          ]
+        },
+        {
+          "name": "COMMUNICATION & INSTITUTIONS",
+          "years": [
+            2024,
+            2025
+          ]
+        },
+        {
+          "name": "ENOTIKO",
+          "years": [
+            2024,
+            2025
+          ]
+        },
+        {
+          "name": "France Vapotage",
+          "years": [
+            2024,
+            2025
+          ]
+        },
+        {
+          "name": "LYSIOS",
+          "years": [
+            2024,
+            2025
+          ]
+        }
       ],
       "nb_cabinets_hatvp": 5,
       "dgs_2025_montant_total": 65926,
@@ -129,8 +248,8 @@
       "acteur": "Seita (Imperial Brands)",
       "categorie": "Industriels du tabac",
       "hatvp_trouve": true,
-      "budget_hatvp_bas_2025": 100000,
-      "budget_hatvp_haut_2025": 200000,
+      "budget_hatvp_bas_2025": 200000,
+      "budget_hatvp_haut_2025": 300000,
       "personnes_hatvp": [
         "Caroline BRABANT",
         "Hervé NATALI",
@@ -139,15 +258,49 @@
       ],
       "nb_personnes_hatvp": 4,
       "cabinets_hatvp": [
-        "ASSOCIATION DES FOURNISSEURS DE TABACS A FUMER",
-        "ENOTIKO",
-        "EUROS AGENCY",
-        "France Vapotage",
-        "FÉDÉRATION DES FABRICANTS DE CIGARES",
-        "PUBLICIS CONSULTANTS FRANCE",
-        "STRATEGIES & PUBLICS"
+        {
+          "name": "ASSOCIATION DES FOURNISSEURS DE TABACS A FUMER",
+          "years": [
+            2024,
+            2025
+          ]
+        },
+        {
+          "name": "ENOTIKO",
+          "years": [
+            2024,
+            2025
+          ]
+        },
+        {
+          "name": "France Vapotage",
+          "years": [
+            2024,
+            2025
+          ]
+        },
+        {
+          "name": "FÉDÉRATION DES FABRICANTS DE CIGARES",
+          "years": [
+            2024,
+            2025
+          ]
+        },
+        {
+          "name": "PUBLICIS CONSULTANTS FRANCE",
+          "years": [
+            2024,
+            2025
+          ]
+        },
+        {
+          "name": "STRATEGIES & PUBLICS",
+          "years": [
+            2025
+          ]
+        }
       ],
-      "nb_cabinets_hatvp": 7,
+      "nb_cabinets_hatvp": 6,
       "dgs_2025_montant_total": 77876,
       "dgs_2025_detail": {
         "montant_employes": 11796,
@@ -177,9 +330,26 @@
       ],
       "nb_personnes_hatvp": 2,
       "cabinets_hatvp": [
-        "BOURY TALLON & ASSOCIES",
-        "CAP CORELI, COMMUNICATION & RELATIONS INSTITUTIONNELLES",
-        "M&M CONSEIL"
+        {
+          "name": "BOURY TALLON & ASSOCIES",
+          "years": [
+            2024,
+            2025
+          ]
+        },
+        {
+          "name": "CAP CORELI, COMMUNICATION & RELATIONS INSTITUTIONNELLES",
+          "years": [
+            2024,
+            2025
+          ]
+        },
+        {
+          "name": "M&M CONSEIL",
+          "years": [
+            2025
+          ]
+        }
       ],
       "nb_cabinets_hatvp": 3,
       "dgs_2025_montant_total": 103000,
@@ -230,10 +400,15 @@
       ],
       "nb_personnes_hatvp": 9,
       "cabinets_hatvp": [
-        "ARCTURUS FRANCE",
-        "STRATEGIES & PUBLICS"
+        {
+          "name": "ARCTURUS FRANCE",
+          "years": [
+            2024,
+            2025
+          ]
+        }
       ],
-      "nb_cabinets_hatvp": 2,
+      "nb_cabinets_hatvp": 1,
       "dgs_2025_montant_total": null,
       "dgs_2025_detail": null,
       "note": "Exercice 2025 pas encore publie sur HATVP au moment de cette extraction (0 activite, budget 0EUR, moyens non renseignes) - ne pas lire comme un montant declare a zero, juste une donnee pas encore disponible."
@@ -249,10 +424,8 @@
         "Morgan LAISNE"
       ],
       "nb_personnes_hatvp": 2,
-      "cabinets_hatvp": [
-        "EUROS AGENCY"
-      ],
-      "nb_cabinets_hatvp": 1,
+      "cabinets_hatvp": [],
+      "nb_cabinets_hatvp": 0,
       "dgs_2025_montant_total": null,
       "dgs_2025_detail": null,
       "note": "Aucune action de lobbying declaree pour cet exercice sur HATVP (0 activite), mais les moyens (budget/ETP) ont bien ete declares - ce sont deux declarations distinctes sur HATVP ; le budget affiche ici est donc valide."
@@ -282,7 +455,13 @@
       ],
       "nb_personnes_hatvp": 1,
       "cabinets_hatvp": [
-        "IMAGE 7"
+        {
+          "name": "IMAGE 7",
+          "years": [
+            2024,
+            2025
+          ]
+        }
       ],
       "nb_cabinets_hatvp": 1,
       "dgs_2025_montant_total": null,
@@ -300,7 +479,13 @@
       ],
       "nb_personnes_hatvp": 1,
       "cabinets_hatvp": [
-        "AI2P"
+        {
+          "name": "AI2P",
+          "years": [
+            2024,
+            2025
+          ]
+        }
       ],
       "nb_cabinets_hatvp": 1,
       "dgs_2025_montant_total": 174000,
@@ -343,7 +528,13 @@
       ],
       "nb_personnes_hatvp": 1,
       "cabinets_hatvp": [
-        "AI2P"
+        {
+          "name": "AI2P",
+          "years": [
+            2024,
+            2025
+          ]
+        }
       ],
       "nb_cabinets_hatvp": 1,
       "dgs_2025_montant_total": 221955,
