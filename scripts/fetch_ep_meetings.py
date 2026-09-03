@@ -25,6 +25,7 @@ depuis 2025.
 """
 
 import json
+import sys
 import time
 import urllib.parse
 from datetime import datetime, timezone
@@ -80,6 +81,7 @@ def main():
         live_data = {}
 
     now = datetime.now(timezone.utc).isoformat()
+    errors = []
 
     with ep_meetings_session() as fetch_csv:
         for entity in entities:
@@ -92,8 +94,17 @@ def main():
             print(f"Réunions PE : {name} ({register_id})")
             entry = live_data.setdefault(register_id, {"name": name, "register_id": register_id})
             entry["name"] = name
-            entry["ep_meetings"] = fetch_ep_meetings(fetch_csv, register_id)
-            entry["ep_meetings_last_fetched"] = now
+            result = fetch_ep_meetings(fetch_csv, register_id)
+            if "error" in result:
+                # On ne remplace pas les données de la veille par une erreur :
+                # ça écraserait un comptage valide par un 0 silencieux dans
+                # l'agrégat. On garde l'ancienne valeur et on fait échouer le
+                # job plus bas pour que l'échec soit visible.
+                errors.append(f"{name} ({register_id}) : {result['error']}")
+                print(f"  ÉCHEC : {result['error']}")
+            else:
+                entry["ep_meetings"] = result
+                entry["ep_meetings_last_fetched"] = now
             time.sleep(SLEEP_BETWEEN_REQUESTS)
 
     # Fusionne (plutôt que remplace) : les scripts de recherche mot-clé
@@ -107,6 +118,12 @@ def main():
         f.write("\n")
 
     print(f"\nTerminé. Résultats fusionnés dans {LIVE_DATA_PATH}")
+
+    if errors:
+        print(f"\n{len(errors)} organisation(s) en échec sur {len(entities)} :")
+        for err in errors:
+            print(f"  - {err}")
+        sys.exit(1)
 
 
 def compute_aggregate(live_data: dict) -> dict:

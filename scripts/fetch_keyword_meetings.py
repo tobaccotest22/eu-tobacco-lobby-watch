@@ -28,6 +28,7 @@ challenge JS AWS WAF posé depuis ~juillet 2026 sur ce endpoint.
 """
 
 import json
+import sys
 import time
 from datetime import datetime, timezone
 
@@ -85,6 +86,7 @@ def main():
     our_register_ids = load_our_register_ids()
 
     rows_by_keyword = {}
+    errors = []
     with ep_meetings_session() as fetch_csv:
         for keyword in KEYWORDS:
             print(f"Recherche mot-clé : {keyword}")
@@ -92,8 +94,17 @@ def main():
                 rows_by_keyword[keyword] = fetch_keyword_csv(fetch_csv, keyword)
             except Exception as exc:
                 print(f"  échec pour '{keyword}' : {exc}")
-                rows_by_keyword[keyword] = []
+                errors.append(f"{keyword} : {exc}")
             time.sleep(SLEEP_BETWEEN_REQUESTS)
+
+    if errors:
+        # Un mot-clé manquant fausserait le total à la baisse sans le
+        # signaler : on préfère garder les données de la veille (ne pas
+        # écrire le fichier) et faire échouer le job.
+        print(f"\n{len(errors)} mot(s)-clé en échec sur {len(KEYWORDS)} :")
+        for err in errors:
+            print(f"  - {err}")
+        sys.exit(1)
 
     meetings = dedupe_meetings(rows_by_keyword)
 
