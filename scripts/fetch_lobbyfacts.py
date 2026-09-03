@@ -43,6 +43,7 @@ partie "ep_meetings" qu'écrit scripts/fetch_ep_meetings.py.
 
 import json
 import re
+import sys
 import time
 import urllib.parse
 import urllib.request
@@ -296,6 +297,7 @@ def main():
     seen_accreditation_keys = {
         (a["register_id"], a["surname"], a["first_name"], a["start_date"]) for a in new_accreditations
     }
+    errors = []
 
     for entity in entities:
         register_id = entity.get("register_id")
@@ -307,9 +309,21 @@ def main():
         print(f"LobbyFacts + réunions EC + fiche registre : {name} ({register_id})")
         entry = live_data.setdefault(register_id, {"name": name, "register_id": register_id})
         entry["name"] = name
-        entry["lobbyfacts"] = fetch_lobbyfacts_snapshot(register_id)
+
+        lobbyfacts = fetch_lobbyfacts_snapshot(register_id)
+        if isinstance(lobbyfacts, dict) and "error" in lobbyfacts:
+            errors.append(f"{name} ({register_id}) - LobbyFacts : {lobbyfacts['error']}")
+        else:
+            entry["lobbyfacts"] = lobbyfacts
         time.sleep(SLEEP_BETWEEN_REQUESTS)
-        entry["ec_meetings"] = fetch_ec_meetings(register_id)
+
+        ec_meetings = fetch_ec_meetings(register_id)
+        if "error" in ec_meetings:
+            # Comme pour ep_meetings : ne pas écraser un comptage valide de
+            # la veille par une erreur, et remonter l'échec plus bas.
+            errors.append(f"{name} ({register_id}) - réunions EC : {ec_meetings['error']}")
+        else:
+            entry["ec_meetings"] = ec_meetings
         time.sleep(SLEEP_BETWEEN_REQUESTS)
 
         # Capturé avant écrasement : None si jamais récupéré (première
@@ -321,6 +335,7 @@ def main():
         register_detail = fetch_register_detail(register_id) or {}
         if "error" in register_detail:
             entry["register_detail_error"] = register_detail["error"]
+            errors.append(f"{name} ({register_id}) - fiche registre : {register_detail['error']}")
         else:
             entry["budget_low"] = register_detail.get("budget_low")
             entry["budget_high"] = register_detail.get("budget_high")
@@ -360,6 +375,12 @@ def main():
         f.write("\n")
 
     print(f"\nTerminé. Résultats fusionnés dans {LIVE_DATA_PATH}")
+
+    if errors:
+        print(f"\n{len(errors)} échec(s) sur {len(entities)} organisation(s) :")
+        for err in errors:
+            print(f"  - {err}")
+        sys.exit(1)
 
 
 if __name__ == "__main__":
