@@ -1,0 +1,62 @@
+name: Veille Presse (dry-run - non branché au site)
+
+# Tant que la section « Veille - Presse » n'a pas été validée (voir
+# docs/press-watch-test-run.md), ce workflow ne tourne QUE sur déclenchement
+# manuel et en --dry-run : il n'écrit pas data/press_watch.json et ne commite
+# rien, il publie seulement un rapport en artefact.
+#
+# Passage en production (après feu vert) :
+#   1. décommenter le bloc `schedule`
+#   2. retirer `--dry-run` de la commande
+#   3. décommenter l'étape « Sauvegarder » ci-dessous
+#   4. ajouter le secret ANTHROPIC_API_KEY dans les paramètres du dépôt
+
+on:
+  workflow_dispatch:
+    inputs:
+      backfill_days:
+        description: "Nombre de jours à traiter"
+        default: "1"
+  # schedule:
+  #   - cron: "30 4 * * *"   # 30 min après update_data.yml
+
+permissions:
+  contents: write
+
+jobs:
+  press-watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Installer les dépendances
+        run: pip install -r scripts/requirements.txt
+
+      - name: Pipeline Veille Presse (dry-run)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python scripts/fetch_press_watch.py \
+            --backfill-days "${{ github.event.inputs.backfill_days || '1' }}" \
+            --dry-run \
+            --report press_watch_report.md
+
+      - name: Publier le rapport en artefact
+        uses: actions/upload-artifact@v4
+        with:
+          name: press-watch-report
+          path: |
+            press_watch_report.md
+            data/press_watch.dryrun.json
+
+      # - name: Sauvegarder le résultat dans le dépôt (production uniquement)
+      #   run: |
+      #     git config user.name "github-actions"
+      #     git config user.email "github-actions@github.com"
+      #     git add data/press_watch.json
+      #     git commit -m "Veille presse : mise à jour quotidienne" || echo "Rien à sauvegarder"
+      #     git push

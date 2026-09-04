@@ -58,3 +58,26 @@ de classer à tort ces réunions comme provenant d'un acteur "hors liste".
    cabinet...), pas le secteur. C'est pourquoi cette sous-section est une
    veille brute non triée, tous types d'acteurs confondus, plutôt qu'une
    liste filtrée par catégorie.
+
+## Veille - Presse (pipeline LLM) — état au 2026-09-04
+
+`scripts/fetch_press_watch.py` + `scripts/press_watch/` : découverte RSS
+(Google News fr/en/de/it + flux directs des sources prioritaires) →
+classification par appel API Claude (prompt recopié verbatim de
+`prompt_test_veille_presse_tabac_UE2.md` §1) → dédoublonnage par
+`entites_citees` normalisées (§2) → phrase de synthèse du jour (§7) →
+`data/press_watch.json` (accumulé, jamais écrasé).
+
+**Non branché au site.** `data/press_watch.json` n'est référencé par aucune
+page ; le workflow `press_watch.yml` est en `workflow_dispatch` + `--dry-run`.
+Le rendu HTML dans `index.html` et le passage du workflow en `schedule`
+n'interviennent qu'après validation du rapport de test
+(`docs/press-watch-test-run.md`) — cf. §8 point 6 du cahier des charges.
+
+Prérequis production : secret `ANTHROPIC_API_KEY` dans les paramètres du dépôt.
+
+Points ouverts (voir `docs/press-watch-test-run.md` pour le détail) :
+- résolution des liens `news.google.com/rss/articles/...` : décodage base64 +
+  fallback lecture de page ; taux de résolution à surveiller dans les premières
+  semaines.
+- round 2 du cahier des charges (3 cas limites) non encore couvert.

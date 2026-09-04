@@ -1,3 +1,6 @@
 __pycache__/
 *.pyc
 data/_hatvp_raw/
+data/press_watch.dryrun.json
+data/press_watch_candidates.json
+scratchpad/
