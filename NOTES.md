@@ -76,8 +76,17 @@ n'interviennent qu'après validation du rapport de test
 
 Prérequis production : secret `ANTHROPIC_API_KEY` dans les paramètres du dépôt.
 
+Étiquette d'accès (`acces`, calculée par le pipeline, pas par le LLM) :
+`libre` | `sous_abonnement` (teaser public volontaire, ex. encadré « This
+article in 1 minute » de ftm.eu) | `non_recupere` (échec technique : cookie-wall,
+HTTP 3xx/4xx, corps inextricable — contenu inconnu). Les articles `non_recupere`
+ne sont **jamais publiés automatiquement** (toujours file de revue). C'est
+`acces` qui fait foi pour l'affichage, pas le champ `sous_abonnement` du JSON de
+classification.
+
 Points ouverts (voir `docs/press-watch-test-run.md` pour le détail) :
 - résolution des liens `news.google.com/rss/articles/...` : décodage base64 +
-  fallback lecture de page ; taux de résolution à surveiller dans les premières
-  semaines.
+  appel interne `batchexecute` + fallback lecture de page ; taux de résolution à
+  surveiller dans les premières semaines.
+- test avec la vraie clé API (§10 du rapport) à faire avant de merger.
 - round 2 du cahier des charges (3 cas limites) non encore couvert.

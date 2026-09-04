@@ -213,7 +213,7 @@ def classify_all(articles: list[dict], classifier, log: list) -> list[dict]:
     return articles
 
 
-def partition(articles: list[dict]):
+def partition(articles: list[dict], log: list):
     published, review, excluded, errored = [], [], [], []
     for art in articles:
         c = art.get("classified")
@@ -224,13 +224,60 @@ def partition(articles: list[dict]):
             excluded.append(art)
         elif c["confiance"] == "faible":
             review.append(art)
+        elif _acces_status(art) == "non_recupere":
+            # jamais de publication automatique d'un article dont on ne connaît
+            # pas le contenu, même si le modèle est confiant sur le titre.
+            log.append(f"[revue] {art['title'][:60]!r} : pertinent mais non "
+                       f"récupéré -> file de revue au lieu de publication.")
+            review.append(art)
         else:
             published.append(art)
     return published, review, excluded, errored
 
 
+def _acces_status(art: dict) -> str:
+    """Étiquette d'accès, calculée par le PIPELINE (pas par le LLM), à partir de
+    ce qui s'est réellement passé à l'extraction :
+
+    - "non_recupere" : erreur technique (cookie-wall, HTTP 3xx/4xx, corps
+      inextricable). On ne sait pas ce que contient l'article — seul le titre
+      (et parfois la meta-description) est connu.
+    - "sous_abonnement" : l'éditeur expose volontairement un teaser public
+      (chapô, encadré « This article in 1 minute »…). Le contenu est
+      partiellement connu et fiable.
+    - "libre" : article intégralement accessible.
+
+    C'est cette étiquette qui fait foi pour l'affichage, pas le champ
+    `sous_abonnement` du JSON de classification (que le modèle met à `true` dès
+    que le texte est incomplet, sans pouvoir distinguer les deux cas).
+    """
+    if art.get("fetch_error"):
+        return "non_recupere"
+    reason = art.get("paywall_reason") or ""
+    if "non extractible" in reason:
+        return "non_recupere"
+    if art.get("paywalled"):
+        return "sous_abonnement"
+    return "libre"
+
+
+_PREFIX_ABO = "Accès abonné —"
+_PREFIX_NR = "Article non récupéré —"
+
+
+def _adjust_resume(resume: str, acces: str) -> str:
+    """Aligne le préfixe du résumé sur l'étiquette d'accès réelle. Le prompt §1
+    ne connaît que « Accès abonné — » ; on le remplace quand le pipeline sait
+    que l'article n'a pas pu être récupéré."""
+    r = (resume or "").strip()
+    if acces == "non_recupere" and r.startswith(_PREFIX_ABO):
+        return _PREFIX_NR + r[len(_PREFIX_ABO):]
+    return r
+
+
 def _public_record(art: dict) -> dict:
     c = art["classified"]
+    acces = _acces_status(art)
     return {
         "id": art["id"],
         "url": art.get("final_url") or art["url"],
@@ -240,8 +287,9 @@ def _public_record(art: dict) -> dict:
         "published": art.get("published"),
         "discovered_at": art.get("discovered_at"),
         "angle": c["angle"],
-        "resume": c["resume"],
+        "resume": _adjust_resume(c["resume"], acces),
         "source_type": c["source_type"],
+        "acces": acces,
         "sous_abonnement": c["sous_abonnement"],
         "confiance": c["confiance"],
         "entites_citees": c["entites_citees"],
@@ -336,7 +384,7 @@ def main():
         manual = False
 
     articles = classify_all(articles, classifier, log)
-    published, review, excluded, errored = partition(articles)
+    published, review, excluded, errored = partition(articles, log)
     log.append(f"Classification : {len(published)} publiables, {len(review)} en revue "
                f"(confiance faible), {len(excluded)} exclus, {len(errored)} en erreur.")
 

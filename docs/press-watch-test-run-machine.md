@@ -50,14 +50,14 @@
 
 | Source | Titre | Date | Accès | Pertinent | Conf. | source_type | Angle |
 |---|---|---|---|---|---|---|---|
-| Luxemburger Wort | Luc Frieden empfängt Antonio Costa: Tabaktourismus oder starker EU-Haushalt? | 2026-09-01 | échec fetch (HTTP 302) | oui | faible | presse | visite de Costa au Luxembourg, question de la taxe tabac |
+| Luxemburger Wort | Luc Frieden empfängt Antonio Costa: Tabaktourismus oder starker EU-Haushalt? | 2026-09-01 | non récupéré (HTTP 302) | oui | faible | presse | visite de Costa au Luxembourg, question de la taxe tabac |
 | Tobacco Journal International | Swedish vote may delay EU tax agreement | 2026-09-01 | libre | oui | haute | presse | les élections suédoises pourraient retarder l'accord sur la directive accise tabac |
 | Tobacco Journal International | More than a filter | 2026-09-01 | libre | non | haute | contenu_sponsorise | présentation d'une initiative RSE du secteur du tabac |
 | Tobacco Reporter | Trump Taps Prominent Pastor to Advise on Tobacco Policy | 2026-09-01 | libre | non | haute | presse | nomination d'un conseiller tabac par Donald Trump |
 | Tobacco Reporter | Ruling Could End Reynolds’ Vuse Alto Royalty Payments to Altria | 2026-09-01 | libre | non | haute | presse | litige de brevets Reynolds contre Altria sur la Vuse Alto |
 | Vaping Post (FR) | Vapoter à l’adolescence a-t-il un impact sur l’espérance de vie ? Une étude a tenté d’y répondre | 2026-09-01 | libre | non | haute | blog_specialise | étude de modélisation sur vapotage adolescent et mortalité |
-| Virgule.lu | Luc Frieden reçoit António Costa: tourisme du tabac ou budget européen solide? | 2026-09-01 | échec fetch (HTTP 403) | oui | faible | presse | visite de Costa au Luxembourg, question de la fiscalité européenne du tabac |
-| Luxemburger Wort | Luc Frieden stellt sich weiter gegen EU-Tabaksteuer und Finanzmarktaufsicht | 2026-09-02 | échec fetch (HTTP 302) | oui | faible | presse | le Luxembourg maintient son opposition à la taxe tabac de l'UE |
+| Virgule.lu | Luc Frieden reçoit António Costa: tourisme du tabac ou budget européen solide? | 2026-09-01 | non récupéré (HTTP 403) | oui | faible | presse | visite de Costa au Luxembourg, question de la fiscalité européenne du tabac |
+| Luxemburger Wort | Luc Frieden stellt sich weiter gegen EU-Tabaksteuer und Finanzmarktaufsicht | 2026-09-02 | non récupéré (HTTP 302) | oui | faible | presse | le Luxembourg maintient son opposition à la taxe tabac de l'UE |
 | Tageblatt.lu | EU-Ratspräsident Costa in Luxemburg \| Frieden kritisiert EU-Tabaksteuer und zentralisierte Kapitalmarktaufsicht | 2026-09-02 | libre | oui | moyenne | presse | le Luxembourg conteste les taux minimaux d'accise tabac de l'UE |
 | Tobacco Journal International | CDC tobacco adviser appointment draws attention | 2026-09-02 | libre | non | haute | presse | nomination d'un conseiller santé tabac au CDC américain |
 | Tobacco Reporter | Altria Sues FDA Over Product Review System | 2026-09-02 | libre | non | haute | presse | contentieux Altria contre la FDA sur les délais d'examen |
@@ -65,7 +65,7 @@
 | Tobacco Reporter | Indonesia Looking to Bring Illegal Cigarettes Into Fold | 2026-09-02 | libre | non | haute | presse | réforme de l'accise cigarettes en Indonésie |
 | Tobacco Reporter | Malaysian MPs Want Vape Liquid Declared Controlled Poisons | 2026-09-02 | libre | non | haute | presse | classification des e-liquides comme poisons en Malaisie |
 | Vaping Post (FR) | TPD et lobbying de Big Tobacco : la médiatrice européenne ouvre une enquête | 2026-09-02 | libre | oui | haute | blog_specialise | la médiatrice européenne enquête sur les liens DG TRADE - industrie du tabac |
-| Virgule.lu | Face à Costa, Frieden maintient son opposition à la supervision financière centralisée et à une taxe européenne sur le tabac | 2026-09-02 | échec fetch (HTTP 302) | oui | faible | presse | le Luxembourg maintient son opposition à une taxe européenne sur le tabac |
+| Virgule.lu | Face à Costa, Frieden maintient son opposition à la supervision financière centralisée et à une taxe européenne sur le tabac | 2026-09-02 | non récupéré (HTTP 302) | oui | faible | presse | le Luxembourg maintient son opposition à une taxe européenne sur le tabac |
 | Génération sans tabac | EU Reporter, une tribune bruxelloise au service de l’industrie du tabac | 2026-09-03 | libre | oui | moyenne | blog_specialise | décryptage d'un média bruxellois relayant les arguments pro-industrie sur la nicotine |
 | The Examination | EU countries clash over nicotine pouch taxes, stalling broader tobacco talks | 2026-09-03 | libre | oui | haute | presse | blocage suédois de la taxe minimale sur les sachets de nicotine au Conseil |
 | Tobacco Journal International | Australia debates tobacco tax cuts | 2026-09-03 | libre | non | haute | presse | proposition de baisse de l'accise tabac en Australie |
@@ -79,47 +79,47 @@
 | Vaping Post (FR) | Au-delà du buzz : la véritable magie d’ARGUS Multi-Ohm Cartridge au service de la vape | 2026-09-03 | libre | non | haute | contenu_sponsorise | présentation promotionnelle d'un produit de vape |
 | Vaping Post (FR) | Royaume-Uni : face aux réglementations à venir, l’UKVIA tape du poing sur la table | 2026-09-03 | libre | non | haute | blog_specialise | campagne de l'UKVIA contre les restrictions britanniques sur la vape |
 | Tobacco Journal International | Davidoff exits ProCigar | 2026-09-04 | libre | non | haute | presse | retrait d'Oettinger Davidoff de l'association ProCigar |
-| ftm.eu | Big Tobacco stops Brussels from getting tough on vaping, despite proven harm | 2026-09-04 | payant / partiel | oui | haute | presse | enquête sur le lobbying pro-vape de l'industrie du tabac à Bruxelles |
+| ftm.eu | Big Tobacco stops Brussels from getting tough on vaping, despite proven harm | 2026-09-04 | sous abonnement (teaser public) | oui | haute | presse | enquête sur le lobbying pro-vape de l'industrie du tabac à Bruxelles |
 
 ## 4. Articles retenus (résumés produits)
 
 ### TPD et lobbying de Big Tobacco : la médiatrice européenne ouvre une enquête
-- Vaping Post (FR) · 2026-09-02 · blog_specialise · confiance haute
+- Vaping Post (FR) · 2026-09-02 · blog_specialise · confiance haute · accès : libre
 - https://fr.vapingpost.com/enquete-liens-commission-europenne-big-tobacco/
 - **Angle** : la médiatrice européenne enquête sur les liens DG TRADE - industrie du tabac
 - **Résumé** : Vaping Post rapporte que la médiatrice européenne Teresa Anjinho a ouvert le 18 août 2026 une enquête sur la manière dont la DG TRADE de la Commission gère ses contacts avec l'industrie du tabac, à la suite d'une plainte de l'association Contre-Feu. L'article s'appuie sur l'enquête « Behind Closed Doors » de Contre-Feu (15 décembre 2025), qui documente des contacts non divulgués en 2023-2024 entre cigarettiers et plusieurs directions générales, et sur les révélations de The Examination et Politico selon lesquelles Philip Morris International aurait obtenu l'aide de fonctionnaires de la DG TRADE pour peser sur des réglementations et fiscalités hors UE. Il replace l'affaire dans la lignée du « Dalli-gate » de 2012.
 - **entites_citees** : Médiatrice européenne, Teresa Anjinho, DG TRADE, Contre-Feu, Behind Closed Doors, Philip Morris International, The Examination, Politico, Dalli-gate, Swedish Match, ESTOC, OLAF
 
 ### Swedish vote may delay EU tax agreement
-- Tobacco Journal International · 2026-09-01 · presse · confiance haute
+- Tobacco Journal International · 2026-09-01 · presse · confiance haute · accès : libre
 - https://www.tobaccojournal.com/news/swedish-vote-may-delay-eu-tax-agreement/
 - **Angle** : les élections suédoises pourraient retarder l'accord sur la directive accise tabac
 - **Résumé** : Selon Tobacco Journal International, qui cite un article d'Euractiv, l'incertitude sur la formation d'un gouvernement après les élections législatives suédoises risque de retarder un accord du Conseil sur la révision de la directive sur les accises du tabac (TED). Des diplomates cités par Euractiv estiment que la réunion des représentants de l'UE du 14 septembre n'avancera guère, la Suède — principale opposante à la taxation des sachets de nicotine et du snus — pouvant s'abstenir lors d'un vote envisagé à l'ECOFIN du 9 octobre, alors que la présidence irlandaise vise un accord en octobre. L'article rappelle le clivage européen autour de la « réduction des risques ».
 - **entites_citees** : Tobacco Excise Directive, TED, Suède, élections législatives suédoises, Euractiv, présidence irlandaise du Conseil, ECOFIN 9 octobre, réunion du 14 septembre, sachets de nicotine, snus, Jessica Polfjärd, Smoke Free Sweden, Delon Human, Irlande
 
 ### Big Tobacco stops Brussels from getting tough on vaping, despite proven harm
-- ftm.eu · 2026-09-04 · presse · confiance haute · sous abonnement
+- ftm.eu · 2026-09-04 · presse · confiance haute · accès : sous abonnement (teaser public)
 - https://www.ftm.eu/articles/big-tobacco-stops-brussels-from-getting-tough-on-vaping
 - **Angle** : enquête sur le lobbying pro-vape de l'industrie du tabac à Bruxelles
 - **Résumé** : Accès abonné — D'après l'encadré « This article in 1 minute » en accès libre, cette enquête de Follow the Money soutient que l'industrie du tabac investit des millions dans la recherche et le lobbying pour imposer à Bruxelles l'idée que la vape, les sachets de nicotine et le tabac chauffé sont moins nocifs que la cigarette. L'enquête dit s'appuyer sur l'analyse de plus de cinquante documents de politique et de lobbying (2020-2026) et sur l'examen des liens entre eurodéputés favorables à la « réduction des risques » et l'industrie. Elle relie ce récit au vote du Parlement européen de juin 2026 contre la révision de la directive qui aurait soumis les nouveaux produits nicotinés à la taxe minimale sur le tabac.
 - **entites_citees** : Follow the Money, Charlie Weimers, World Nicotine Congress, Parlement européen vote de juin 2026, directive fiscale tabac, Open Eyes, Dutch Journal of Medicine, réduction des risques, 50 documents de lobbying
 
 ### EU Reporter, une tribune bruxelloise au service de l’industrie du tabac
-- Génération sans tabac · 2026-09-03 · blog_specialise · confiance moyenne
+- Génération sans tabac · 2026-09-03 · blog_specialise · confiance moyenne · accès : libre
 - https://www.generationsanstabac.org/en/decryptages/eu-reporter-une-tribune-bruxelloise-au-service-de-lindustrie-du-tabac/
 - **Angle** : décryptage d'un média bruxellois relayant les arguments pro-industrie sur la nicotine
 - **Résumé** : Génération Sans Tabac analyse un article publié le 31 août 2026 par EU Reporter, média basé à Bruxelles, qui présente l'autorisation par la FDA américaine de vingt sachets de nicotine Zyn (Swedish Match / PMI) comme un argument pour assouplir la réglementation européenne. Le décryptage, signé du Comité national contre le tabagisme, souligne que l'article d'EU Reporter passe sous silence les objections des sociétés savantes et organisations de santé publique américaines, et rappelle qu'EU Reporter est régulièrement pointé pour sa proximité éditoriale avec l'industrie du tabac. L'analyse replace le cas dans le contexte de l'influence pro-industrie sur le débat réglementaire de l'UE.
 - **entites_citees** : EU Reporter, Colin Stevens, FDA, Zyn, Swedish Match, Philip Morris International, CNCT, American Heart Association, Campaign for Tobacco-Free Kids
 
 ### EU countries clash over nicotine pouch taxes, stalling broader tobacco talks
-- The Examination · 2026-09-03 · presse · confiance haute
+- The Examination · 2026-09-03 · presse · confiance haute · accès : libre
 - https://www.theexamination.org/articles/eu-tobacco-tax-directive-nicotine-pouches
 - **Angle** : blocage suédois de la taxe minimale sur les sachets de nicotine au Conseil
 - **Résumé** : The Examination détaille comment la Suède, premier fabricant de sachets de nicotine, a bloqué cet été l'instauration d'une taxe minimale européenne sur ces produits, ce qui paralyse la révision plus large de la directive fiscale sur le tabac au Conseil de l'UE. La ministre des Finances Elisabeth Svantesson a revendiqué publiquement ce blocage ; environ un an après le début des discussions, le Conseil n'a toujours pas de compromis et le texte est progressivement édulcoré, selon Erin Roman (Smoke Free Partnership). L'article rappelle que l'UE cherche à relever pour la première fois depuis 2011 la taxe minimale sur les cigarettes et à y intégrer vape, tabac chauffé et sachets de nicotine.
 - **entites_citees** : The Examination, Suède, Elisabeth Svantesson, Conseil de l'UE, sachets de nicotine, snus, Smoke Free Partnership, Erin Roman, Philip Morris International, British American Tobacco, taxe minimale cigarette 2011, 1,80 euro, marché de 7 milliards de dollars
 
 ### EU-Ratspräsident Costa in Luxemburg \| Frieden kritisiert EU-Tabaksteuer und zentralisierte Kapitalmarktaufsicht
-- Tageblatt.lu · 2026-09-02 · presse · confiance moyenne
+- Tageblatt.lu · 2026-09-02 · presse · confiance moyenne · accès : libre
 - https://www.tageblatt.lu/Nachrichten/Frieden-kritisiert-EU-Tabaksteuer-und-zentralisierte-Kapitalmarktaufsicht-91227.html
 - **Angle** : le Luxembourg conteste les taux minimaux d'accise tabac de l'UE
 - **Résumé** : D'après le Tageblatt, lors de la visite du président du Conseil européen António Costa à Luxembourg le 2 septembre 2026, le Premier ministre Luc Frieden a réaffirmé l'opposition du Grand-Duché aux projets bruxellois de taux minimaux harmonisés d'accise sur le tabac, invoquant les pertes de recettes liées au tourisme du tabac transfrontalier. L'article, centré sur la visite de Costa (solidarité avec l'Ukraine, union des marchés de capitaux, budget pluriannuel de l'UE), traite la fiscalité du tabac comme l'un des points de friction, sans détailler l'état de la négociation au Conseil.
@@ -156,10 +156,10 @@ _Aucun._
 
 ## 7. File de validation humaine (confiance faible, dédoublonnée)
 
-| Source | Titre | Date | Angle | Résumé |
-|---|---|---|---|---|
-| Virgule.lu | Face à Costa, Frieden maintient son opposition à la supervision financière centralisée et à une taxe européenne sur le tabac | 2026-09-02 | le Luxembourg maintient son opposition à une taxe européenne sur le tabac | Accès abonné — D'après le seul titre disponible (article non récupérable, redirection), le Premier ministre luxembourgeois Luc Frieden a maintenu, face au président du Conseil européen António Costa, son opposition à une taxe européenne sur le tabac ainsi qu'à une supervision financière centralisée. Le détail des arguments et l'état de la négociation ne sont pas vérifiables sans le corps de l'article. |
-| Luxemburger Wort | Luc Frieden stellt sich weiter gegen EU-Tabaksteuer und Finanzmarktaufsicht | 2026-09-02 | le Luxembourg maintient son opposition à la taxe tabac de l'UE | Accès abonné — D'après le seul titre disponible (article non récupérable, redirection), le Premier ministre luxembourgeois Luc Frieden continue de s'opposer à la taxe tabac européenne et à une supervision centralisée des marchés financiers. Le corps de l'article n'a pas pu être lu ; les arguments et le contexte de négociation ne sont pas vérifiables. |
+| Source | Titre | Date | Accès | Angle | Résumé |
+|---|---|---|---|---|---|
+| Virgule.lu | Face à Costa, Frieden maintient son opposition à la supervision financière centralisée et à une taxe européenne sur le tabac | 2026-09-02 | non récupéré | le Luxembourg maintient son opposition à une taxe européenne sur le tabac | Article non récupéré — D'après le seul titre disponible (article non récupérable, redirection), le Premier ministre luxembourgeois Luc Frieden a maintenu, face au président du Conseil européen António Costa, son opposition à une taxe européenne sur le tabac ainsi qu'à une supervision financière centralisée. Le détail des arguments et l'état de la négociation ne sont pas vérifiables sans le corps de l'article. |
+| Luxemburger Wort | Luc Frieden stellt sich weiter gegen EU-Tabaksteuer und Finanzmarktaufsicht | 2026-09-02 | non récupéré | le Luxembourg maintient son opposition à la taxe tabac de l'UE | Article non récupéré — D'après le seul titre disponible (article non récupérable, redirection), le Premier ministre luxembourgeois Luc Frieden continue de s'opposer à la taxe tabac européenne et à une supervision centralisée des marchés financiers. Le corps de l'article n'a pas pu être lu ; les arguments et le contexte de négociation ne sont pas vérifiables. |
 
 ## 8. Texte de synthèse produit chaque jour
 

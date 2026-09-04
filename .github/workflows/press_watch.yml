@@ -15,8 +15,14 @@ on:
   workflow_dispatch:
     inputs:
       backfill_days:
-        description: "Nombre de jours à traiter"
+        description: "Nombre de jours à traiter (ignoré si 'since' est renseigné)"
         default: "1"
+      since:
+        description: "Date de début AAAA-MM-JJ (optionnel, prioritaire sur backfill_days)"
+        default: ""
+      until:
+        description: "Date de fin AAAA-MM-JJ (optionnel, défaut = aujourd'hui)"
+        default: ""
   # schedule:
   #   - cron: "30 4 * * *"   # 30 min après update_data.yml
 
@@ -40,10 +46,12 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          python scripts/fetch_press_watch.py \
-            --backfill-days "${{ github.event.inputs.backfill_days || '1' }}" \
-            --dry-run \
-            --report press_watch_report.md
+          ARGS="--backfill-days ${{ github.event.inputs.backfill_days || '1' }}"
+          if [ -n "${{ github.event.inputs.since }}" ]; then
+            ARGS="--since ${{ github.event.inputs.since }}"
+            [ -n "${{ github.event.inputs.until }}" ] && ARGS="$ARGS --until ${{ github.event.inputs.until }}"
+          fi
+          python scripts/fetch_press_watch.py $ARGS --dry-run --report press_watch_report.md
 
       - name: Publier le rapport en artefact
         uses: actions/upload-artifact@v4

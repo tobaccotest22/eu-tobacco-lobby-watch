@@ -135,19 +135,41 @@ massivement l'actualité industrielle mondiale. Le pré-filtre les laisse passer
 
 Les 4 dépêches luxembourgeoises « Frieden maintient son opposition à la taxe
 tabac de l'UE » (Virgule.lu ×2, Luxemburger Wort ×2) : **articles non
-récupérables** (HTTP 302, cookie-wall Mediahuis). Seul le titre est visible.
+récupérables** (HTTP 302/403, cookie-wall Mediahuis). Seul le titre est visible.
 
+- **Étiquette d'accès `non_recupere`** (voir §6-bis) — distincte de
+  `sous_abonnement`. Le résumé est réécrit avec le préfixe
+  « Article non récupéré — » au lieu de « Accès abonné — ».
 - Classées `pertinent: true` (c'est l'**exception §1** : un État membre qui se
-  positionne dans la négociation TTD au Conseil, pas une loi nationale),
-  mais `confiance: faible` → file de revue, **pas de publication automatique**.
+  positionne dans la négociation TTD au Conseil, pas une loi nationale).
+- **Jamais publiées automatiquement** : le pipeline force en file de revue tout
+  article `non_recupere`, même si le modèle était confiant sur le titre (ici de
+  toute façon `confiance: faible`).
 - Le dédoublonnage interne à la file les a fusionnées 4 → 2 (une par journée).
 - Le même événement est **par ailleurs publié** via l'article Tageblatt (#3),
   lui lisible. → un relecteur peut soit valider une des dépêches en complément,
   soit les ignorer puisque Tageblatt couvre déjà le sujet.
 
-⚠️ **Limite** : le dédoublonnage ne croise pas la file de revue et le pool
-publiable. Ici l'article Tageblatt (publié) et les dépêches Frieden (revue) ne
-sont pas rapprochés automatiquement. À améliorer si ça devient gênant.
+⚠️ **Limite acceptée** (§8.5) : le dédoublonnage ne croise pas la file de revue
+et le pool publiable. Ici l'article Tageblatt (publié) et les dépêches Frieden
+(revue) ne sont pas rapprochés automatiquement. Pas corrigé pour l'instant.
+
+---
+
+## 6-bis. Étiquettes d'accès
+
+Le pipeline distingue trois états, **calculés à partir de ce qui s'est réellement
+passé à l'extraction** (pas par le modèle) :
+
+| `acces` | Sens | Affichage | Exemple du test |
+|---|---|---|---|
+| `libre` | article intégralement lisible | — | The Examination, Vaping Post, Tageblatt… |
+| `sous_abonnement` | l'éditeur expose un **teaser public volontaire** (chapô, encadré « This article in 1 minute »). Contenu partiellement connu et fiable. | « sous abonnement » + résumé préfixé « Accès abonné — » | **Follow the Money** (encadré récupéré intégralement) |
+| `non_recupere` | **échec technique** (cookie-wall, HTTP 3xx/4xx, corps inextricable). On ne sait pas ce que contient l'article. | « non récupéré » + résumé préfixé « Article non récupéré — » | les **4 dépêches Mediahuis Luxembourg** |
+
+Le champ `sous_abonnement` du JSON de classification (mis à `true` par le modèle
+dès que le texte est incomplet) est conservé mais **n'est plus l'info
+d'affichage** : c'est `acces` qui fait foi.
 
 ---
 
@@ -175,7 +197,7 @@ sont pas rapprochés automatiquement. À améliorer si ça devient gênant.
 > décision de la FDA américaine sur les sachets Zyn.
 
 > **2026-09-04** · `evenement_unique` · 1 article
-> Follow the Money publie une enquête (accès abonné, résumé libre) selon laquelle
+> Follow the Money publie une enquête (accès abonné, teaser public) selon laquelle
 > l'industrie du tabac a investi des millions dans la recherche et le lobbying
 > pour imposer à Bruxelles le récit d'une moindre nocivité des nouveaux produits
 > nicotinés — récit qu'elle relie au rejet par le Parlement européen, en juin, de
@@ -188,34 +210,37 @@ la piste « Luxembourg » le 02/09 (`plusieurs_sujets`).
 
 ---
 
-## 8. Points à décider avant la mise en ligne
+## 8. Points à décider — arbitrages retenus (2026-09-04)
 
-1. **Coût API / volume.** ~30 appels de classification par jour en backfill 4
-   jours (≈ 7-8/jour en rythme quotidien), dont beaucoup pour exclure du bruit
-   Tobacco Reporter / TJI. Options : (a) laisser tel quel (coût Sonnet minime) ;
-   (b) durcir le pré-filtre pour ces deux flux précis (exiger un terme UE/TPD/TTD
-   dans le titre) ; (c) restreindre Tobacco Reporter/TJI à leurs rubriques
-   « Europe » si elles ont un flux dédié. **Reco : (a) pour démarrer, mesurer
-   une semaine, puis (b) si besoin.**
+1. **Coût API / volume de bruit Tobacco Reporter + TJI.**
+   → **Retenu : laisser tourner tel quel** (coût Sonnet minime), mesurer une
+   semaine, durcir le pré-filtre pour ces deux flux seulement si besoin. Pas de
+   changement pour l'instant.
 
-2. **Cas limite « multi-sujets » (#3 Tageblatt).** Valider ou non la règle
-   actuelle (pertinent si le sujet UE est traité substantiellement même sans être
-   l'objet principal). C'est le round-2 §5.2 du cahier.
+2. **Cas limite « multi-sujets » (#3 Tageblatt).**
+   → **Retenu : on ne touche pas à la règle.** Un seul exemple ne suffit pas à
+   l'ajuster. À revoir si le cas se répète (round 2 §5.2 du cahier).
 
-3. **Articles non récupérables (Mediahuis Luxembourg, 302).** Aujourd'hui traités
-   comme « sous abonnement » (résumé « Accès abonné — » minimal). Faut-il un
-   libellé distinct « article non récupéré » à l'affichage ? Et un `confiance:
-   faible` systématique (déjà le cas ici) ?
+3. **Articles non récupérables vs sous abonnement.**
+   → **Fait.** Étiquette `acces` à trois états (`libre` / `sous_abonnement` /
+   `non_recupere`), voir §6-bis. Les articles `non_recupere` ne sont jamais
+   publiés automatiquement.
 
-4. **Flux directs GST / STOP / TabakNee en panne.** Acceptable de s'appuyer sur
-   Google News pour ces 3 sources, ou faut-il investiguer (scraping HTML de leur
-   page « actualités », contact éditeur) ?
+4. **Flux directs GST / STOP / TabakNee en panne (channel vide).**
+   → **Retenu : on s'appuie sur Google News** pour ces trois sources (leurs
+   articles y sont bien indexés). Re-test périodique, pas d'investigation lourde.
 
-5. **Dédoublonnage revue ↔ publiés** (cf. §6) : à implémenter ou pas.
+5. **Dédoublonnage revue ↔ publiés.**
+   → **Retenu : ne pas sur-ingénierer.** Non implémenté. La limite est
+   documentée (§6). À faire seulement si ça gêne en pratique.
 
-6. **Round 2 du cahier des charges** (§5) : les 3 cas limites restent à couvrir
-   par des articles réels — non bloquant pour démarrer, à surveiller les
-   premières semaines.
+6. **Round 2 du cahier des charges (§5, 3 cas limites).**
+   → **Retenu : surveiller les premières semaines**, non bloquant pour démarrer.
+
+### Reste à faire avant de merger et de brancher le rendu HTML
+
+- **Test avec la vraie clé API** (§10) : une nuit récente, appel API réel (non
+  simulé), comparé à la simulation de cette même nuit.
 
 ---
 
@@ -229,3 +254,32 @@ la piste « Luxembourg » le 02/09 (`plusieurs_sujets`).
 - **Aucune modification de `index.html` / `common.js` / `styles.css`.** Le rendu
   HTML de la section « Veille – Presse » n'est pas encore écrit : il viendra dans
   une PR séparée, après ce feu vert.
+
+---
+
+## 10. Test avec la vraie clé API (à faire avant de merger)
+
+**Objectif** (formulé par le demandeur) : vérifier que l'appel API réel produit
+le **même type de sortie** que la simulation — pas re-tester le raisonnement.
+
+**Marche à suivre une fois `ANTHROPIC_API_KEY` ajouté aux secrets du dépôt :**
+
+1. Lancer le workflow `Veille Presse (dry-run…)` en `workflow_dispatch` avec
+   `since = 2026-09-03`, `until = 2026-09-03` (journée avec 2 publiés + du bruit
+   à exclure : The Examination + Génération Sans Tabac, ~7 candidats).
+   Le workflow tourne **sans `--classifications`** → appels API réels ; **avec
+   `--dry-run`** → n'écrit ni le site ni `data/press_watch.json`, publie juste
+   le rapport en artefact.
+2. Récupérer l'artefact `press-watch-report` et me le transmettre.
+3. Je compare, pour cette même journée, la sortie réelle à la simulation de ce
+   rapport (§4 et §7), sur :
+   - mêmes articles classés `pertinent` / exclus / en revue ?
+   - `source_type`, `sous_abonnement`, `acces`, `confiance` cohérents ?
+   - JSON strict bien parsé, aucun `schema_warning` inattendu ?
+   - résumés en français, préfixes « Accès abonné — » / « Article non récupéré — »
+     corrects ?
+   - le texte de synthèse du jour est du même ordre (fait daté privilégié,
+     attribution aux sources) ?
+
+> Le workflow accepte déjà `since`/`until` comme entrées (`workflow_dispatch`).
+> Rien d'autre à préparer côté code.
