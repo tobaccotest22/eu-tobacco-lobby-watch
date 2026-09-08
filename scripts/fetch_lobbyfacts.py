@@ -39,12 +39,32 @@ récupère deux choses et les écrit dans data/live_data.json :
 
 Le script fusionne ses résultats dans data/live_data.json sans écraser la
 partie "ep_meetings" qu'écrit scripts/fetch_ep_meetings.py.
+
+Résilience réseau : chaque requête HTTP est réessayée jusqu'à 2 fois (attente
+5s puis 15s) sur erreur transitoire (timeout, connexion coupée, handshake
+SSL, 5xx, 429).
+
+Détection des pannes durables : après les retries, on tient un compteur
+d'échecs consécutifs par organisation ET par point de collecte
+("lobbyfacts", "ec_meetings", "fiche_registre"), persisté d'une nuit à
+l'autre dans data/scrape_failure_streaks.json (clé "{register_id}:{champ}").
+Un succès remet le compteur à 0. Un échec isolé (compteur à 1) est logué mais
+laisse le job vert et n'écrase pas la donnée de la veille — on ne veut pas
+bloquer les étapes suivantes, indépendantes, du workflow pour un accident
+réseau. Dès qu'un compteur atteint STREAK_ALERT_THRESHOLD (2 nuits
+consécutives en échec sur le même point), le job échoue (exit 1) avec un
+message identifiant l'organisation et le point : c'est le signal d'une vraie
+panne durable, à investiguer.
 """
 
+import http.client
 import json
 import re
+import socket
+import ssl
 import sys
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
@@ -55,6 +75,7 @@ from pypdf import PdfReader
 
 ENTITIES_PATH = "data/entities.json"
 LIVE_DATA_PATH = "data/live_data.json"
+FAILURE_STREAKS_PATH = "data/scrape_failure_streaks.json"
 LOBBYFACTS_API = "https://api2.lobbyfacts.eu/api/1/representative"
 EC_MEETINGS_PDF = "https://ec.europa.eu/transparencyregister/public/meetings/{register_id}/pdf"
 REGISTER_DETAIL_FRAGMENT = "https://ec.europa.eu/transparencyregister/public/PUBLIC/ORGANISATION/{register_id}?lang=fr"
@@ -63,11 +84,82 @@ USER_AGENT = "eu-tobacco-lobby-watch/0.3"
 REQUEST_TIMEOUT = 20
 SLEEP_BETWEEN_REQUESTS = 1
 
+# Attentes (en secondes) avant chaque nouvelle tentative sur erreur réseau
+# transitoire. La longueur du tuple = nombre de retries (ici 2, soit 3 essais).
+RETRY_BACKOFFS = (5, 15)
+
+# Les points de collecte suivis indépendamment par le compteur d'échecs
+# consécutifs (une org peut échouer sur l'un et réussir sur les autres).
+STREAK_FIELDS = ("lobbyfacts", "ec_meetings", "fiche_registre")
+
+# Nombre de nuits consécutives en échec sur le même point pour la même
+# organisation à partir duquel on considère la panne durable et on fait
+# échouer le job (exit 1). En dessous, l'échec est jugé ponctuel : logué,
+# non bloquant, données de la veille conservées.
+STREAK_ALERT_THRESHOLD = 2
+
+
+def _is_transient(exc: Exception) -> bool:
+    """Vrai si l'exception est une erreur réseau passagère qui mérite une
+    nouvelle tentative (timeout, connexion coupée/reset, handshake SSL, 5xx,
+    429) — par opposition à un 404 ou une erreur de parsing qui, elle, ne se
+    résoudra pas toute seule."""
+    if isinstance(exc, urllib.error.HTTPError):
+        return exc.code in (429, 500, 502, 503, 504)
+    if isinstance(exc, urllib.error.URLError) and isinstance(exc.reason, Exception):
+        exc = exc.reason
+    return isinstance(exc, (
+        socket.timeout,
+        TimeoutError,
+        ConnectionError,  # inclut ConnectionResetError
+        ssl.SSLError,
+        http.client.IncompleteRead,
+        http.client.RemoteDisconnected,
+    ))
+
 
 def http_get(url: str) -> bytes:
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as response:
-        return response.read()
+    attempts = len(RETRY_BACKOFFS) + 1
+    for attempt in range(attempts):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+            with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as response:
+                return response.read()
+        except Exception as exc:
+            if attempt == attempts - 1 or not _is_transient(exc):
+                raise
+            wait = RETRY_BACKOFFS[attempt]
+            print(
+                f"  erreur réseau transitoire ({type(exc).__name__}: {exc}) sur {url} "
+                f"— nouvelle tentative dans {wait}s ({attempt + 1}/{len(RETRY_BACKOFFS)})"
+            )
+            time.sleep(wait)
+
+
+def streak_key(register_id: str, field: str) -> str:
+    return f"{register_id}:{field}"
+
+
+def load_failure_streaks() -> dict:
+    try:
+        with open(FAILURE_STREAKS_PATH, encoding="utf-8") as f:
+            data = json.load(f)
+        return {k: int(v) for k, v in data.items()}
+    except (FileNotFoundError, ValueError):
+        return {}
+
+
+def bump_streak(streaks: dict, register_id: str, field: str, *, failed: bool) -> int:
+    """Incrémente le compteur d'échecs consécutifs de ce point si `failed`,
+    le remet à 0 sinon. Renvoie la nouvelle valeur."""
+    key = streak_key(register_id, field)
+    streaks[key] = streaks.get(key, 0) + 1 if failed else 0
+    return streaks[key]
+
+
+def durable_failures(streaks: dict, threshold: int = STREAK_ALERT_THRESHOLD) -> list[str]:
+    """Clés '{register_id}:{champ}' dont le compteur atteint le seuil d'alerte."""
+    return sorted(k for k, v in streaks.items() if v >= threshold)
 
 
 def fetch_lobbyfacts_snapshot(register_id: str) -> dict | None:
@@ -298,6 +390,8 @@ def main():
         (a["register_id"], a["surname"], a["first_name"], a["start_date"]) for a in new_accreditations
     }
     errors = []
+    streaks = load_failure_streaks()
+    names_by_id = {e["register_id"]: e["name"] for e in entities if e.get("register_id")}
 
     for entity in entities:
         register_id = entity.get("register_id")
@@ -311,19 +405,23 @@ def main():
         entry["name"] = name
 
         lobbyfacts = fetch_lobbyfacts_snapshot(register_id)
-        if isinstance(lobbyfacts, dict) and "error" in lobbyfacts:
+        lf_failed = isinstance(lobbyfacts, dict) and "error" in lobbyfacts
+        if lf_failed:
             errors.append(f"{name} ({register_id}) - LobbyFacts : {lobbyfacts['error']}")
         else:
             entry["lobbyfacts"] = lobbyfacts
+        bump_streak(streaks, register_id, "lobbyfacts", failed=lf_failed)
         time.sleep(SLEEP_BETWEEN_REQUESTS)
 
         ec_meetings = fetch_ec_meetings(register_id)
-        if "error" in ec_meetings:
+        ec_failed = "error" in ec_meetings
+        if ec_failed:
             # Comme pour ep_meetings : ne pas écraser un comptage valide de
             # la veille par une erreur, et remonter l'échec plus bas.
             errors.append(f"{name} ({register_id}) - réunions EC : {ec_meetings['error']}")
         else:
             entry["ec_meetings"] = ec_meetings
+        bump_streak(streaks, register_id, "ec_meetings", failed=ec_failed)
         time.sleep(SLEEP_BETWEEN_REQUESTS)
 
         # Capturé avant écrasement : None si jamais récupéré (première
@@ -333,7 +431,8 @@ def main():
         previous_accredited = entry.get("accredited_persons")
 
         register_detail = fetch_register_detail(register_id) or {}
-        if "error" in register_detail:
+        rd_failed = "error" in register_detail
+        if rd_failed:
             entry["register_detail_error"] = register_detail["error"]
             errors.append(f"{name} ({register_id}) - fiche registre : {register_detail['error']}")
         else:
@@ -362,6 +461,7 @@ def main():
                         "detected_at": now,
                     })
 
+        bump_streak(streaks, register_id, "fiche_registre", failed=rd_failed)
         entry["lobbyfacts_last_fetched"] = now
         time.sleep(SLEEP_BETWEEN_REQUESTS)
 
@@ -374,13 +474,43 @@ def main():
         json.dump(live_data, f, ensure_ascii=False, indent=2)
         f.write("\n")
 
+    # On ne conserve que les compteurs des points encore suivis (une org
+    # retirée de entities.json ne doit pas laisser traîner de clé).
+    current_keys = {
+        streak_key(rid, field) for rid in names_by_id for field in STREAK_FIELDS
+    }
+    streaks = {k: v for k, v in streaks.items() if k in current_keys and v > 0}
+    with open(FAILURE_STREAKS_PATH, "w", encoding="utf-8") as f:
+        json.dump(streaks, f, ensure_ascii=False, indent=2, sort_keys=True)
+        f.write("\n")
+
     print(f"\nTerminé. Résultats fusionnés dans {LIVE_DATA_PATH}")
 
     if errors:
-        print(f"\n{len(errors)} échec(s) sur {len(entities)} organisation(s) :")
+        print(f"\n{len(errors)} échec(s) cette nuit (après retries) :")
         for err in errors:
             print(f"  - {err}")
+
+    durable = durable_failures(streaks)
+    if durable:
+        print(
+            f"\nPANNE DURABLE — {len(durable)} point(s) en échec depuis "
+            f"{STREAK_ALERT_THRESHOLD} nuits consécutives ou plus :"
+        )
+        for key in durable:
+            rid, field = key.split(":", 1)
+            print(
+                f"  - {names_by_id.get(rid, rid)} ({rid}) — {field} : "
+                f"{streaks[key]} nuits consécutives en échec"
+            )
+        print("\nÀ investiguer (source indisponible, blocage, ou changement de structure).")
         sys.exit(1)
+
+    if errors:
+        print(
+            "\nÉchecs isolés (compteur < 2) : données de la veille conservées "
+            "(non écrasées), poursuite du workflow (exit 0)."
+        )
 
 
 if __name__ == "__main__":
