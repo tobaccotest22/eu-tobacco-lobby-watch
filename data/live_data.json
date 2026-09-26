@@ -49,9 +49,9 @@
       "Transatlantic Public Affairs",
       "UTOPIA LAB S.R.L."
     ],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=51925911965-76&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=51925911965-76&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 106,
       "since_2025": [
         {
@@ -80,6 +80,14 @@
         },
         {
           "date": "2026-09-15",
+          "member_id": "257073",
+          "member_name": "BOCHEŃSKI Tobiasz",
+          "member_capacity": "Member",
+          "title": "Philip Morris's activities",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-09-15",
           "member_id": "257104",
           "member_name": "RAZZA Ruggero",
           "member_capacity": "Member",
@@ -100,14 +108,6 @@
           "member_name": "FIDANZA Carlo",
           "member_capacity": "Member",
           "title": "Legislative Update",
-          "procedure_reference": null
-        },
-        {
-          "date": "2026-09-15",
-          "member_id": "257073",
-          "member_name": "BOCHEŃSKI Tobiasz",
-          "member_capacity": "Member",
-          "title": "Philip Morris's activities",
           "procedure_reference": null
         },
         {
@@ -160,14 +160,6 @@
         },
         {
           "date": "2026-06-02",
-          "member_id": "257022",
-          "member_name": "JUNCO GARCÍA Nora",
-          "member_capacity": "Member",
-          "title": "Changes in tobacco insdustry",
-          "procedure_reference": null
-        },
-        {
-          "date": "2026-06-02",
           "member_id": "96810",
           "member_name": "FIDANZA Carlo",
           "member_capacity": "Member",
@@ -208,14 +200,6 @@
         },
         {
           "date": "2026-06-02",
-          "member_id": "197618",
-          "member_name": "GUALMINI Elisabetta",
-          "member_capacity": "Member",
-          "title": "ITRE committee",
-          "procedure_reference": null
-        },
-        {
-          "date": "2026-06-02",
           "member_id": "98341",
           "member_name": "MAYDELL Eva",
           "member_capacity": "Member",
@@ -236,6 +220,22 @@
           "member_name": "TROCHU Laurence",
           "member_capacity": "Member",
           "title": "Législation européenne sur le tabac",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-06-02",
+          "member_id": "197618",
+          "member_name": "GUALMINI Elisabetta",
+          "member_capacity": "Member",
+          "title": "ITRE committee",
+          "procedure_reference": null
+        },
+        {
+          "date": "2026-06-02",
+          "member_id": "257022",
+          "member_name": "JUNCO GARCÍA Nora",
+          "member_capacity": "Member",
+          "title": "Changes in tobacco insdustry",
           "procedure_reference": null
         },
         {
@@ -904,7 +904,7 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": [
       {
         "surname": "Mueller",
@@ -993,9 +993,9 @@
     "people_involved": 5,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=62460931291-40&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=62460931291-40&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 12,
       "since_2025": [
         {
@@ -1096,7 +1096,7 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": [
       {
         "surname": "Olivares Guerrero",
@@ -1149,9 +1149,9 @@
     "people_involved": 6,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=71175716023-03&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=71175716023-03&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 6,
       "since_2025": [
         {
@@ -1204,7 +1204,7 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": [
       {
         "surname": "Anastasiou",
@@ -1269,13 +1269,13 @@
     "people_involved": 2,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=124135527355-29&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=124135527355-29&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "2427500988-58": {
@@ -1314,9 +1314,9 @@
       "Savoir EU Advocacy & Legal Consulting",
       "Trade & Access Consulting"
     ],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=2427500988-58&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=2427500988-58&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 34,
       "since_2025": [
         {
@@ -1345,19 +1345,19 @@
         },
         {
           "date": "2026-06-16",
-          "member_id": "257104",
-          "member_name": "RAZZA Ruggero",
-          "member_capacity": "Member",
-          "title": "Incontro conoscitivo su tematiche SANT",
-          "procedure_reference": null
-        },
-        {
-          "date": "2026-06-16",
           "member_id": "103246",
           "member_name": "ZIJLSTRA Auke",
           "member_capacity": "Member",
           "title": "Tobacco tax directive",
           "procedure_reference": "2025/0581(CNS)"
+        },
+        {
+          "date": "2026-06-16",
+          "member_id": "257104",
+          "member_name": "RAZZA Ruggero",
+          "member_capacity": "Member",
+          "title": "Incontro conoscitivo su tematiche SANT",
+          "procedure_reference": null
         },
         {
           "date": "2026-06-02",
@@ -1593,7 +1593,7 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": [
       {
         "surname": "Maccione",
@@ -1640,13 +1640,13 @@
     "people_involved": 1,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=613360243179-87&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=613360243179-87&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "462081624095-48": {
@@ -1674,13 +1674,13 @@
     "people_involved": 3,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=462081624095-48&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=462081624095-48&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "78982871558-95": {
@@ -1708,13 +1708,13 @@
     "people_involved": 1,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=78982871558-95&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=78982871558-95&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "189661446368-32": {
@@ -1734,9 +1734,9 @@
     "intermediaries_current_year": [
       "UTOPIA LAB S.R.L."
     ],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=189661446368-32&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=189661446368-32&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 15,
       "since_2025": [
         {
@@ -1797,18 +1797,18 @@
         },
         {
           "date": "2025-11-24",
-          "member_id": "96810",
-          "member_name": "FIDANZA Carlo",
-          "member_capacity": "Member",
-          "title": "legislative update",
-          "procedure_reference": null
-        },
-        {
-          "date": "2025-11-24",
           "member_id": "197591",
           "member_name": "TINAGLI Irene",
           "member_capacity": "Member",
           "title": "Introductory meeting",
+          "procedure_reference": null
+        },
+        {
+          "date": "2025-11-24",
+          "member_id": "96810",
+          "member_name": "FIDANZA Carlo",
+          "member_capacity": "Member",
+          "title": "legislative update",
           "procedure_reference": null
         },
         {
@@ -1845,23 +1845,23 @@
         },
         {
           "date": "2025-03-18",
-          "member_id": "96810",
-          "member_name": "FIDANZA Carlo",
-          "member_capacity": "Member",
-          "title": "Introductory meeting",
-          "procedure_reference": null
-        },
-        {
-          "date": "2025-03-18",
           "member_id": "124799",
           "member_name": "MORETTI Alessandra",
           "member_capacity": "Member",
           "title": "sigaro toscano",
           "procedure_reference": null
+        },
+        {
+          "date": "2025-03-18",
+          "member_id": "96810",
+          "member_name": "FIDANZA Carlo",
+          "member_capacity": "Member",
+          "title": "Introductory meeting",
+          "procedure_reference": null
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": [
       {
         "surname": "Mariotti",
@@ -1902,13 +1902,13 @@
     "people_involved": 2,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=583622337776-40&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=583622337776-40&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": [
       {
         "surname": "Compensación al transporte de mercancías - Tratado de Funcionamiento de la UE",
@@ -1943,13 +1943,13 @@
     "people_involved": 2,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=891734924313-39&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=891734924313-39&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "701118397425-19": {
@@ -1969,13 +1969,13 @@
     "intermediaries_current_year": [
       "EUPPORTUNITY (QB, Lda.)"
     ],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=701118397425-19&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=701118397425-19&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": [
       {
         "surname": "Rodrigues",
@@ -2016,9 +2016,9 @@
     "people_involved": 4,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=923856024330-39&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=923856024330-39&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 1,
       "since_2025": [
         {
@@ -2031,7 +2031,7 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "224656024222-52": {
@@ -2059,9 +2059,9 @@
     "people_involved": 7,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=224656024222-52&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=224656024222-52&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 2,
       "since_2025": [
         {
@@ -2082,7 +2082,7 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "1496873833-97": {
@@ -2116,9 +2116,9 @@
     "people_involved": 3,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=1496873833-97&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=1496873833-97&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 6,
       "since_2025": [
         {
@@ -2171,7 +2171,7 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": [
       {
         "surname": "Konteas",
@@ -2212,13 +2212,13 @@
     "people_involved": null,
     "nb_intermediaries": null,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=30971284469-05&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=30971284469-05&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "0138855852-93": {
@@ -2248,13 +2248,13 @@
     "intermediaries_current_year": [
       "James Ramsay"
     ],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=0138855852-93&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=0138855852-93&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": [
       {
         "surname": "van der Mark",
@@ -2295,13 +2295,13 @@
     "people_involved": 2,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=876337940850-36&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=876337940850-36&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "92802501097-37": {
@@ -2332,9 +2332,9 @@
       "Aretera PA UG (haftungsbeschränkt)",
       "UTOPIA LAB S.R.L."
     ],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=92802501097-37&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=92802501097-37&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 22,
       "since_2025": [
         {
@@ -2515,7 +2515,7 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": [
       {
         "surname": "Varakas",
@@ -2550,9 +2550,9 @@
     "people_involved": 6,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=893796741802-11&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=893796741802-11&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 2,
       "since_2025": [
         {
@@ -2573,7 +2573,7 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "665729842737-11": {
@@ -2601,13 +2601,13 @@
     "people_involved": null,
     "nb_intermediaries": null,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=665729842737-11&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=665729842737-11&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "27567784437-46": {
@@ -2635,13 +2635,13 @@
     "people_involved": null,
     "nb_intermediaries": null,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=27567784437-46&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=27567784437-46&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "102135939541-25": {
@@ -2671,13 +2671,13 @@
     "intermediaries_current_year": [
       "Mayer Brown Europe-Brussels LLP"
     ],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=102135939541-25&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=102135939541-25&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": [
       {
         "surname": "Mayer Brown Europe-Brussels LLP",
@@ -2712,9 +2712,9 @@
     "people_involved": 1,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=209043544083-79&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=209043544083-79&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 1,
       "since_2025": [
         {
@@ -2727,7 +2727,7 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "87594253741-94": {
@@ -2755,13 +2755,13 @@
     "people_involved": 4,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=87594253741-94&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=87594253741-94&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "389796615375-43": {
@@ -2789,13 +2789,13 @@
     "people_involved": 1,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=389796615375-43&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=389796615375-43&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "835059415132-95": {
@@ -2823,13 +2823,13 @@
     "people_involved": 2,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=835059415132-95&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=835059415132-95&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "775494740511-57": {
@@ -2857,9 +2857,9 @@
     "people_involved": 2,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=775494740511-57&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=775494740511-57&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 5,
       "since_2025": [
         {
@@ -2904,7 +2904,7 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": [
       {
         "surname": "Mehrlein",
@@ -2939,9 +2939,9 @@
     "people_involved": 4,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=78764438624-42&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=78764438624-42&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 5,
       "since_2025": [
         {
@@ -2986,7 +2986,7 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": [
       {
         "surname": "Marchese",
@@ -3021,9 +3021,9 @@
     "people_involved": 2,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=066314042392-60&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=066314042392-60&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 1,
       "since_2025": [
         {
@@ -3036,7 +3036,7 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "756303940554-19": {
@@ -3064,13 +3064,13 @@
     "people_involved": 1,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=756303940554-19&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=756303940554-19&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "56705163713-93": {
@@ -3098,9 +3098,9 @@
     "people_involved": null,
     "nb_intermediaries": null,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=56705163713-93&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=56705163713-93&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 5,
       "since_2025": [
         {
@@ -3145,7 +3145,7 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "491937195894-38": {
@@ -3169,13 +3169,13 @@
     "people_involved": 2,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=491937195894-38&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=491937195894-38&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "220858648398-48": {
@@ -3193,13 +3193,13 @@
     "people_involved": null,
     "nb_intermediaries": null,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=220858648398-48&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=220858648398-48&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "203595432279-89": {
@@ -3227,9 +3227,9 @@
     "people_involved": 1,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=203595432279-89&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=203595432279-89&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 2,
       "since_2025": [
         {
@@ -3250,7 +3250,7 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "105924642733-12": {
@@ -3278,13 +3278,13 @@
     "people_involved": null,
     "nb_intermediaries": null,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=105924642733-12&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=105924642733-12&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "207263897934-45": {
@@ -3304,13 +3304,13 @@
     "intermediaries_current_year": [
       "EPPA SA"
     ],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=207263897934-45&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=207263897934-45&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "680379741539-17": {
@@ -3338,13 +3338,13 @@
     "people_involved": 7,
     "nb_intermediaries": null,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=680379741539-17&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=680379741539-17&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": [
       {
         "surname": "Next Generation EU",
@@ -3379,13 +3379,13 @@
     "people_involved": 1,
     "nb_intermediaries": null,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=354946837243-73&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=354946837243-73&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "347372799139-19": {
@@ -3403,13 +3403,13 @@
     "people_involved": 4,
     "nb_intermediaries": null,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=347372799139-19&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=347372799139-19&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "530382045552-40": {
@@ -3437,13 +3437,13 @@
     "people_involved": null,
     "nb_intermediaries": null,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=530382045552-40&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=530382045552-40&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "642478741759-44": {
@@ -3471,13 +3471,13 @@
     "people_involved": 1,
     "nb_intermediaries": null,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=642478741759-44&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=642478741759-44&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "432272548963-49": {
@@ -3495,9 +3495,9 @@
     "people_involved": 2,
     "nb_intermediaries": null,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=432272548963-49&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=432272548963-49&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 6,
       "since_2025": [
         {
@@ -3550,7 +3550,7 @@
         }
       ]
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": [
       {
         "surname": "Lundqvist",
@@ -3575,13 +3575,13 @@
     "people_involved": null,
     "nb_intermediaries": null,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=766884047993-79&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=766884047993-79&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "174447099137-38": {
@@ -3599,18 +3599,18 @@
     "people_involved": 2,
     "nb_intermediaries": 0,
     "intermediaries_current_year": [],
-    "lobbyfacts_last_fetched": "2026-09-25T09:28:49.292630+00:00",
+    "lobbyfacts_last_fetched": "2026-09-26T09:13:51.374387+00:00",
     "ep_meetings": {
-      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=174447099137-38&fromDate=01%2F01%2F2025&toDate=25%2F09%2F2026&exportFormat=CSV",
+      "source_url": "https://www.europarl.europa.eu/meps/en/search-meetings?transparencyRegisterIds=174447099137-38&fromDate=01%2F01%2F2025&toDate=26%2F09%2F2026&exportFormat=CSV",
       "since_2025_count": 0,
       "since_2025": []
     },
-    "ep_meetings_last_fetched": "2026-09-25T09:36:15.086368+00:00",
+    "ep_meetings_last_fetched": "2026-09-26T09:20:29.749971+00:00",
     "accredited_persons": []
   },
   "_aggregate": {
     "note": "budget_total = somme des bornes hautes (budget_high) : estimation maximale prudente, pas une moyenne.",
-    "computed_at": "2026-09-25T09:37:26.224968+00:00",
+    "computed_at": "2026-09-26T09:21:27.919077+00:00",
     "nb_organisations": 45,
     "budget_high_total": 14259974,
     "people_involved_total": 125,
@@ -3626,7 +3626,7 @@
       "snus",
       "tabac"
     ],
-    "ec_meetings_keyword_computed_at": "2026-09-25T09:39:15.282227+00:00",
+    "ec_meetings_keyword_computed_at": "2026-09-26T09:22:59.533794+00:00",
     "ec_meetings_outside_our_46_count": 26,
     "ec_meetings_outside_our_46": [
       {
@@ -3679,16 +3679,16 @@
       },
       {
         "date": "2025-12-11",
-        "org": "Fødevareforbundet NNF",
-        "org_id": "723641028862-15",
+        "org": "European Federation of Food, Agriculture and Tourism Trade Unions",
+        "org_id": "33130841043-14",
         "subject": "Revision of the Tobacco Taxation Directive",
         "dg": null,
         "host": "David Boublil (Head of Unit)"
       },
       {
         "date": "2025-12-11",
-        "org": "European Federation of Food, Agriculture and Tourism Trade Unions",
-        "org_id": "33130841043-14",
+        "org": "Fødevareforbundet NNF",
+        "org_id": "723641028862-15",
         "subject": "Revision of the Tobacco Taxation Directive",
         "dg": null,
         "host": "David Boublil (Head of Unit)"
@@ -3838,7 +3838,7 @@
         "host": "David Boublil (Head of Unit)"
       }
     ],
-    "ep_meetings_keyword_total_since_2025": 274,
+    "ep_meetings_keyword_total_since_2025": 268,
     "ep_meetings_keyword_terms": [
       "tobacco",
       "nicotine",
@@ -3848,8 +3848,8 @@
       "snus",
       "tabac"
     ],
-    "ep_meetings_keyword_computed_at": "2026-09-25T09:39:10.379468+00:00",
-    "ep_meetings_outside_our_46_count": 138,
+    "ep_meetings_keyword_computed_at": "2026-09-26T09:22:56.027373+00:00",
+    "ep_meetings_outside_our_46_count": 132,
     "ep_meetings_outside_our_46": [
       {
         "date": "2026-09-23",
@@ -4077,10 +4077,9 @@
         "title": "Tobacco Taxation Directive",
         "procedure_reference": null,
         "attendees": [
-          "Alliance contre le tabac"
+          "Contre-feu"
         ],
         "matched_keywords": [
-          "tabac",
           "tobacco"
         ]
       },
@@ -4250,7 +4249,7 @@
         "title": "L'Alliance contre l'industrie du Tabac",
         "procedure_reference": null,
         "attendees": [
-          "Alliance contre le tabac"
+          "Contre-feu"
         ],
         "matched_keywords": [
           "tabac"
@@ -4286,7 +4285,7 @@
         "title": "Tobacco Taxation Directive",
         "procedure_reference": null,
         "attendees": [
-          "International Tax Stamp Association"
+          "International Tax Stamp, Authentication and Traceability Association Ltd"
         ],
         "matched_keywords": [
           "tobacco"
@@ -4322,7 +4321,7 @@
         "title": "Tobacco Traceability: Challenges and Opportunities",
         "procedure_reference": null,
         "attendees": [
-          "International Tax Stamp Association"
+          "International Tax Stamp, Authentication and Traceability Association Ltd"
         ],
         "matched_keywords": [
           "tobacco"
@@ -4334,7 +4333,7 @@
         "title": "SANT / Tabac",
         "procedure_reference": null,
         "attendees": [
-          "International Tax Stamp Association"
+          "International Tax Stamp, Authentication and Traceability Association Ltd"
         ],
         "matched_keywords": [
           "tabac"
@@ -4394,22 +4393,10 @@
         "title": "Tobacco Taxation Directive",
         "procedure_reference": null,
         "attendees": [
-          "International Tax Stamp Association"
+          "International Tax Stamp, Authentication and Traceability Association Ltd"
         ],
         "matched_keywords": [
           "tobacco"
-        ]
-      },
-      {
-        "date": "2026-02-24",
-        "member_name": "JERKOVIĆ Romana",
-        "title": "Cardiovascular Health",
-        "procedure_reference": "2025/2132(INI)",
-        "attendees": [
-          "Alliance contre le tabac"
-        ],
-        "matched_keywords": [
-          "tabac"
         ]
       },
       {
@@ -4467,11 +4454,10 @@
         "title": "New tobacco-related nicotine products",
         "procedure_reference": null,
         "attendees": [
-          "Alliance contre le tabac"
+          "Contre-feu"
         ],
         "matched_keywords": [
           "nicotine",
-          "tabac",
           "tobacco"
         ]
       },
@@ -4532,7 +4518,7 @@
         "title": "Impact of cigarette filters on the environment",
         "procedure_reference": null,
         "attendees": [
-          "Recycling Netwerk Benelux"
+          "Fair Resource Foundation"
         ],
         "matched_keywords": [
           "cigarette"
@@ -4568,10 +4554,9 @@
         "title": "tobacco policy",
         "procedure_reference": null,
         "attendees": [
-          "Alliance contre le tabac"
+          "Contre-feu"
         ],
         "matched_keywords": [
-          "tabac",
           "tobacco"
         ]
       },
@@ -4896,10 +4881,9 @@
         "title": "Tobacco policy",
         "procedure_reference": null,
         "attendees": [
-          "Alliance contre le tabac"
+          "Contre-feu"
         ],
         "matched_keywords": [
-          "tabac",
           "tobacco"
         ]
       },
@@ -5260,7 +5244,7 @@
         "title": "report d ela révision de la législation anti tabac",
         "procedure_reference": null,
         "attendees": [
-          "Alliance contre le tabac"
+          "Contre-feu"
         ],
         "matched_keywords": [
           "tabac"
@@ -5303,37 +5287,12 @@
         ]
       },
       {
-        "date": "2025-04-08",
-        "member_name": "RAFOWICZ Emma",
-        "title": "Transparence et Lobbying",
-        "procedure_reference": null,
-        "attendees": [
-          "363299842989-87",
-          "Alliance contre le tabac"
-        ],
-        "matched_keywords": [
-          "tabac"
-        ]
-      },
-      {
         "date": "2025-04-03",
         "member_name": "CLERGEAU Christophe",
         "title": "Législation anti tabac pour la santé humaine",
         "procedure_reference": null,
         "attendees": [
-          "Alliance contre le tabac"
-        ],
-        "matched_keywords": [
-          "tabac"
-        ]
-      },
-      {
-        "date": "2025-04-02",
-        "member_name": "ANDRIUKAITIS Vytenis Povilas",
-        "title": "Health in the EU",
-        "procedure_reference": null,
-        "attendees": [
-          "Alliance contre le tabac"
+          "Contre-feu"
         ],
         "matched_keywords": [
           "tabac"
@@ -5424,18 +5383,6 @@
         ]
       },
       {
-        "date": "2025-03-10",
-        "member_name": "CHASTEL Olivier",
-        "title": "Politique de santé de l'Union européenne",
-        "procedure_reference": null,
-        "attendees": [
-          "Alliance contre le tabac"
-        ],
-        "matched_keywords": [
-          "tabac"
-        ]
-      },
-      {
         "date": "2025-03-04",
         "member_name": "KELLY Seán",
         "title": "Upcoming regulation on tobacco products",
@@ -5496,30 +5443,6 @@
         ]
       },
       {
-        "date": "2025-02-03",
-        "member_name": "MARTINS Catarina",
-        "title": "smoke free environment",
-        "procedure_reference": null,
-        "attendees": [
-          "Alliance contre le tabac"
-        ],
-        "matched_keywords": [
-          "tabac"
-        ]
-      },
-      {
-        "date": "2025-01-30",
-        "member_name": "CLERGEAU Christophe",
-        "title": "Lutte contre le tabagisme",
-        "procedure_reference": null,
-        "attendees": [
-          "Alliance contre le tabac"
-        ],
-        "matched_keywords": [
-          "tabac"
-        ]
-      },
-      {
         "date": "2025-01-10",
         "member_name": "SMIT Sander",
         "title": "ENVI",
@@ -5533,11 +5456,9 @@
       }
     ],
     "ep_meetings_outside_our_46_actors": [
-      "363299842989-87",
       "ACIT",
       "ACT - Alliance contre le tabac",
       "ANFIC",
-      "Alliance contre le tabac",
       "Altadis",
       "Altadis-Imperial Brands",
       "Amber Advisory",
@@ -5554,6 +5475,7 @@
       "Considerate Pouches",
       "Considerate pouchers",
       "Contre feu",
+      "Contre-feu",
       "Contre-feu, the Alliance against the tobacco industry",
       "Danish Cancer Society",
       "Director of Imperial Brand Hellas Corporate and Legal affairs manager",
@@ -5570,6 +5492,7 @@
       "European Society of Cardiology",
       "Expert on sin taxes",
       "FRANCE VAPOTAGE",
+      "Fair Resource Foundation",
       "Fondation Cancer",
       "Forward Global",
       "Frederic Reynaert,Tom Janssens, Philip Morris Benelux",
@@ -5578,7 +5501,7 @@
       "Global Snuss",
       "HG Innovation Ltd",
       "Independent European Vape Alliance",
-      "International Tax Stamp Association",
+      "International Tax Stamp, Authentication and Traceability Association Ltd",
       "JTI",
       "JTI Japan Tobacco International",
       "Japan Tobacco International",
@@ -5606,7 +5529,6 @@
       "Philip Morris Magyarország",
       "Philip Morris Magyarország Kft.",
       "Phillip Morris",
-      "Recycling Netwerk Benelux",
       "Representación Permanente de España en la Unión Europea",
       "SEITA/IMB La Réunion",
       "Skruf Snus AB",
@@ -5681,7 +5603,7 @@
       }
     ],
     "new_lobbyist_accreditations_count": 5,
-    "new_lobbyist_accreditations_computed_at": "2026-09-25T09:28:49.292630+00:00",
+    "new_lobbyist_accreditations_computed_at": "2026-09-26T09:13:51.374387+00:00",
     "new_tobacco_registrants": [
       {
         "id": "6574268105267-21",
@@ -6181,6 +6103,6 @@
       }
     ],
     "new_tobacco_registrants_count": 62,
-    "new_tobacco_registrants_computed_at": "2026-09-25T09:39:15.415033+00:00"
+    "new_tobacco_registrants_computed_at": "2026-09-26T09:22:59.699446+00:00"
   }
 }
