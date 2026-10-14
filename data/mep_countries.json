@@ -1,5 +1,5 @@
 {
-  "computed_at": "2026-07-27T13:53:27.701207+00:00",
+  "computed_at": "2026-10-09T11:22:08.177894+00:00",
   "meps": {
     "103246": {
       "country_code": "NLD",
@@ -528,6 +528,30 @@
     "96812": {
       "country_code": "ESP",
       "country_name": "Espagne"
+    },
+    "197627": {
+      "country_code": "FRA",
+      "country_name": "France"
+    },
+    "256834": {
+      "country_code": "AUT",
+      "country_name": "Autriche"
+    },
+    "256939": {
+      "country_code": "DEU",
+      "country_name": "Allemagne"
+    },
+    "96653": {
+      "country_code": "SVK",
+      "country_name": "Slovaquie"
+    },
+    "197652": {
+      "country_code": "AUT",
+      "country_name": "Autriche"
+    },
+    "256947": {
+      "country_code": "GRC",
+      "country_name": "Grèce"
     }
   }
 }
