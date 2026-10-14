@@ -69,6 +69,26 @@ class FailureStreakTests(unittest.TestCase):
             F.durable_failures(streaks), ["347372799139-19:ec_meetings"]
         )
 
+    def test_doublon_dans_entities_traite_une_seule_fois(self):
+        """Un register_id présent deux fois dans entities.json n'est traité
+        qu'une fois : sinon un seul échec réseau compterait pour 2 nuits et
+        déclencherait la PANNE DURABLE dès la première nuit (incident du
+        10/10/2026 sur 30971284469-05)."""
+        entities = [
+            {"name": "A", "register_id": "30971284469-05", "date_registration": "2010"},
+            {"name": "Sans id"},
+            {"name": "A (doublon)", "register_id": "30971284469-05"},
+            {"name": "Autre sans id"},
+        ]
+        unique = F.unique_entities(entities)
+        self.assertEqual([e["name"] for e in unique], ["A", "Sans id", "Autre sans id"])
+
+        streaks = {}
+        for entity in unique:
+            if entity.get("register_id"):
+                F.bump_streak(streaks, entity["register_id"], "ec_meetings", failed=True)
+        self.assertEqual(F.durable_failures(streaks), [])
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
