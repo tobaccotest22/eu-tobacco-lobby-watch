@@ -1,14 +1,14 @@
 """
 Pour chaque organisation de data/entities.json ayant un register_id, ce script
-récupère deux choses et les écrit dans data/live_data.json :
+récupère les informations suivantes et les écrit dans data/live_data.json :
 
-1. Un instantané LobbyFacts (statut, ETP/personnes déclarées) via
-   https://api2.lobbyfacts.eu/api/1/representative. ATTENTION : les données
-   LobbyFacts ne sont plus mises à jour depuis ~mars 2022 (vérifié sur
-   plusieurs organisations lors du développement) — ce n'est donc qu'un
-   instantané historique, pas une donnée "live". LobbyFacts n'expose par
-   ailleurs aucun champ budget/cabinets : ces valeurs restent celles saisies
-   manuellement dans data/entities.json.
+1. (Plus collecté.) L'instantané LobbyFacts (statut, ETP/personnes
+   déclarées) venait de l'API https://api2.lobbyfacts.eu, dont le nom de
+   domaine n'existe plus depuis le 10/10/2026 (le site www.lobbyfacts.eu,
+   lui, fonctionne mais n'expose pas d'API publique). Le dernier instantané
+   stocké dans live_data.json ("lobbyfacts") est conservé tel quel pour
+   l'affichage ; les données à jour du registre sont lues à la source
+   (points 2 à 4 ci-dessous).
 
 2. La vraie liste des réunions avec des membres de la Commission (Commissaires,
    cabinets, Directeurs généraux, et depuis le 1/1/2025 le personnel
@@ -46,7 +46,7 @@ SSL, 5xx, 429).
 
 Détection des pannes durables : après les retries, on tient un compteur
 d'échecs consécutifs par organisation ET par point de collecte
-("lobbyfacts", "ec_meetings", "fiche_registre"), persisté d'une nuit à
+("ec_meetings", "fiche_registre"), persisté d'une nuit à
 l'autre dans data/scrape_failure_streaks.json (clé "{register_id}:{champ}").
 Un succès remet le compteur à 0. Un échec isolé (compteur à 1) est logué mais
 laisse le job vert et n'écrase pas la donnée de la veille — on ne veut pas
@@ -55,6 +55,11 @@ réseau. Dès qu'un compteur atteint STREAK_ALERT_THRESHOLD (2 nuits
 consécutives en échec sur le même point), le job échoue (exit 1) avec un
 message identifiant l'organisation et le point : c'est le signal d'une vraie
 panne durable, à investiguer.
+
+Une organisation présente plusieurs fois dans entities.json (même
+register_id) n'est traitée qu'une fois par exécution : sinon son compteur
+serait incrémenté deux fois la même nuit et atteindrait le seuil d'alerte
+dès le premier échec.
 """
 
 import http.client
@@ -65,7 +70,6 @@ import ssl
 import sys
 import time
 import urllib.error
-import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 from io import BytesIO
@@ -76,7 +80,6 @@ from pypdf import PdfReader
 ENTITIES_PATH = "data/entities.json"
 LIVE_DATA_PATH = "data/live_data.json"
 FAILURE_STREAKS_PATH = "data/scrape_failure_streaks.json"
-LOBBYFACTS_API = "https://api2.lobbyfacts.eu/api/1/representative"
 EC_MEETINGS_PDF = "https://ec.europa.eu/transparencyregister/public/meetings/{register_id}/pdf"
 REGISTER_DETAIL_FRAGMENT = "https://ec.europa.eu/transparencyregister/public/PUBLIC/ORGANISATION/{register_id}?lang=fr"
 SINCE_DATE = "2025-01-01"
@@ -90,7 +93,7 @@ RETRY_BACKOFFS = (5, 15)
 
 # Les points de collecte suivis indépendamment par le compteur d'échecs
 # consécutifs (une org peut échouer sur l'un et réussir sur les autres).
-STREAK_FIELDS = ("lobbyfacts", "ec_meetings", "fiche_registre")
+STREAK_FIELDS = ("ec_meetings", "fiche_registre")
 
 # Nombre de nuits consécutives en échec sur le même point pour la même
 # organisation à partir duquel on considère la panne durable et on fait
@@ -162,38 +165,22 @@ def durable_failures(streaks: dict, threshold: int = STREAK_ALERT_THRESHOLD) -> 
     return sorted(k for k, v in streaks.items() if v >= threshold)
 
 
-def fetch_lobbyfacts_snapshot(register_id: str) -> dict | None:
-    """Résout le register_id en id interne LobbyFacts puis récupère la fiche complète."""
-    query = urllib.parse.quote(register_id)
-    search_url = f"{LOBBYFACTS_API}?q={query}&limit=5"
-    try:
-        search_data = json.loads(http_get(search_url))
-    except Exception as exc:
-        return {"error": f"recherche LobbyFacts échouée : {exc}"}
-
-    match = next(
-        (r for r in search_data.get("results", []) if r.get("identification_code") == register_id),
-        None,
-    )
-    if match is None:
-        return None
-
-    try:
-        detail = json.loads(http_get(f"{LOBBYFACTS_API}/{match['id']}"))
-    except Exception as exc:
-        return {"error": f"détail LobbyFacts échoué : {exc}"}
-
-    return {
-        "status": detail.get("status"),
-        "members": detail.get("members"),
-        "members_fte": detail.get("members_fte"),
-        "members_25": detail.get("members_25"),
-        "members_50": detail.get("members_50"),
-        "members_75": detail.get("members_75"),
-        "members_100": detail.get("members_100"),
-        "snapshot_date": detail.get("last_update_date"),
-        "lobbyfacts_url": f"https://www.lobbyfacts.eu/datacard/x?rid={register_id}",
-    }
+def unique_entities(entities: list[dict]) -> list[dict]:
+    """Garde la première occurrence de chaque register_id (les entités sans
+    register_id sont conservées telles quelles). Un doublon dans
+    entities.json ferait sinon compter deux échecs la même nuit pour la même
+    organisation."""
+    seen = set()
+    unique = []
+    for entity in entities:
+        register_id = entity.get("register_id")
+        if register_id:
+            if register_id in seen:
+                print(f"(doublon de register_id, ignoré) {entity['name']} ({register_id})")
+                continue
+            seen.add(register_id)
+        unique.append(entity)
+    return unique
 
 
 def parse_ec_meetings_pdf(pdf_bytes: bytes) -> list[dict]:
@@ -393,25 +380,16 @@ def main():
     streaks = load_failure_streaks()
     names_by_id = {e["register_id"]: e["name"] for e in entities if e.get("register_id")}
 
-    for entity in entities:
+    for entity in unique_entities(entities):
         register_id = entity.get("register_id")
         name = entity["name"]
         if not register_id:
             print(f"(pas de register_id, ignoré) {name}")
             continue
 
-        print(f"LobbyFacts + réunions EC + fiche registre : {name} ({register_id})")
+        print(f"Réunions EC + fiche registre : {name} ({register_id})")
         entry = live_data.setdefault(register_id, {"name": name, "register_id": register_id})
         entry["name"] = name
-
-        lobbyfacts = fetch_lobbyfacts_snapshot(register_id)
-        lf_failed = isinstance(lobbyfacts, dict) and "error" in lobbyfacts
-        if lf_failed:
-            errors.append(f"{name} ({register_id}) - LobbyFacts : {lobbyfacts['error']}")
-        else:
-            entry["lobbyfacts"] = lobbyfacts
-        bump_streak(streaks, register_id, "lobbyfacts", failed=lf_failed)
-        time.sleep(SLEEP_BETWEEN_REQUESTS)
 
         ec_meetings = fetch_ec_meetings(register_id)
         ec_failed = "error" in ec_meetings
