@@ -1,5 +1,5 @@
 {
-  "computed_at": "2026-11-05T12:04:16.367737+00:00",
+  "computed_at": "2026-11-06T12:00:57.146551+00:00",
   "meps": {
     "103246": {
       "country_code": "NLD",
@@ -552,6 +552,10 @@
     "256947": {
       "country_code": "GRC",
       "country_name": "Grèce"
+    },
+    "124828": {
+      "country_code": "ITA",
+      "country_name": "Italie"
     }
   }
 }
