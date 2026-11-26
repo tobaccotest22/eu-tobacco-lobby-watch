@@ -1,5 +1,5 @@
 {
-  "computed_at": "2026-11-25T14:05:17.296393+00:00",
+  "computed_at": "2026-11-26T13:44:55.159498+00:00",
   "meps": {
     "103246": {
       "country_code": "NLD",
@@ -568,6 +568,10 @@
     "128483": {
       "country_code": "DEU",
       "country_name": "Allemagne"
+    },
+    "220801": {
+      "country_code": "BEL",
+      "country_name": "Belgique"
     }
   }
 }
